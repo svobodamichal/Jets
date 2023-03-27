@@ -1,0 +1,265 @@
+//prior|R|pTlead|unfolding|centrality|binning|test
+//R=0.2
+//pTlead=4
+//Bayes
+diter_data_p5[2][0][4][0][1][3][1]=-1;
+diter_data_p5[4][0][4][0][1][3][1]=-1;
+diter_data_p5[5][0][4][0][1][3][1]=-1;
+diter_data_p5[6][0][4][0][1][3][1]=-1;
+diter_data_p5[7][0][4][0][1][3][1]=-1;
+diter_data_p5[8][0][4][0][1][3][1]=-1;
+diter_data_p5[9][0][4][0][1][3][1]=-1;
+diter_data_p5[10][0][4][0][1][3][1]=-1;
+diter_data_p5[11][0][4][0][1][3][1]=-1;
+diter_data_p5[12][0][4][0][1][3][1]=-1;
+diter_data_p5[13][0][4][0][1][3][1]=-1;
+diter_data_p5[14][0][4][0][1][3][1]=-1;
+diter_data_p5[15][0][4][0][1][3][1]=-1;
+//SVD
+diter_data_p5[2][0][4][1][1][3][1]=-1;
+diter_data_p5[4][0][4][1][1][3][1]=-1;
+diter_data_p5[5][0][4][1][1][3][1]=-1;
+diter_data_p5[6][0][4][1][1][3][1]=-1;
+diter_data_p5[7][0][4][1][1][3][1]=-1;
+diter_data_p5[8][0][4][1][1][3][1]=-1;
+diter_data_p5[9][0][4][1][1][3][1]=-1;
+diter_data_p5[10][0][4][1][1][3][1]=-1;
+diter_data_p5[11][0][4][1][1][3][1]=-1;
+diter_data_p5[12][0][4][1][1][3][1]=-1;
+diter_data_p5[13][0][4][1][1][3][1]=-1;
+diter_data_p5[14][0][4][1][1][3][1]=-1;
+diter_data_p5[15][0][4][1][1][3][1]=-1;
+//pTlead=5
+//Bayes
+diter_data_p5[2][0][5][0][1][3][1]=-1;
+diter_data_p5[4][0][5][0][1][3][1]=-1;
+diter_data_p5[5][0][5][0][1][3][1]=-1;
+diter_data_p5[6][0][5][0][1][3][1]=-1;
+diter_data_p5[7][0][5][0][1][3][1]=-1;
+diter_data_p5[8][0][5][0][1][3][1]=-1;
+diter_data_p5[9][0][5][0][1][3][1]=-1;
+diter_data_p5[10][0][5][0][1][3][1]=-1;
+diter_data_p5[11][0][5][0][1][3][1]=-1;
+diter_data_p5[12][0][5][0][1][3][1]=-1;
+diter_data_p5[13][0][5][0][1][3][1]=-1;
+diter_data_p5[14][0][5][0][1][3][1]=-1;
+diter_data_p5[15][0][5][0][1][3][1]=-1;
+//SVD
+diter_data_p5[2][0][5][1][1][3][1]=-1;
+diter_data_p5[4][0][5][1][1][3][1]=-1;
+diter_data_p5[5][0][5][1][1][3][1]=-1;
+diter_data_p5[6][0][5][1][1][3][1]=-1;
+diter_data_p5[7][0][5][1][1][3][1]=-1;
+diter_data_p5[8][0][5][1][1][3][1]=-1;
+diter_data_p5[9][0][5][1][1][3][1]=-1;
+diter_data_p5[10][0][5][1][1][3][1]=-1;
+diter_data_p5[11][0][5][1][1][3][1]=-1;
+diter_data_p5[12][0][5][1][1][3][1]=-1;
+diter_data_p5[13][0][5][1][1][3][1]=-1;
+diter_data_p5[14][0][5][1][1][3][1]=-1;
+diter_data_p5[15][0][5][1][1][3][1]=-1;
+//pTlead=6
+//Bayes
+diter_data_p5[2][0][6][0][1][3][1]=-1;
+diter_data_p5[4][0][6][0][1][3][1]=-1;
+diter_data_p5[5][0][6][0][1][3][1]=-1;
+diter_data_p5[6][0][6][0][1][3][1]=-1;
+diter_data_p5[7][0][6][0][1][3][1]=-1;
+diter_data_p5[8][0][6][0][1][3][1]=-1;
+diter_data_p5[9][0][6][0][1][3][1]=-1;
+diter_data_p5[10][0][6][0][1][3][1]=-1;
+diter_data_p5[11][0][6][0][1][3][1]=-1;
+diter_data_p5[12][0][6][0][1][3][1]=-1;
+diter_data_p5[13][0][6][0][1][3][1]=-1;
+diter_data_p5[14][0][6][0][1][3][1]=-1;
+diter_data_p5[15][0][6][0][1][3][1]=-1;
+//SVD
+diter_data_p5[2][0][6][1][1][3][1]=-1;
+diter_data_p5[4][0][6][1][1][3][1]=-1;
+diter_data_p5[5][0][6][1][1][3][1]=-1;
+diter_data_p5[6][0][6][1][1][3][1]=-1;
+diter_data_p5[7][0][6][1][1][3][1]=-1;
+diter_data_p5[8][0][6][1][1][3][1]=-1;
+diter_data_p5[9][0][6][1][1][3][1]=-1;
+diter_data_p5[10][0][6][1][1][3][1]=-1;
+diter_data_p5[11][0][6][1][1][3][1]=2; //backf_vs_meas=0.3, iter_change=0.7, curvature=45
+diter_data_p5[12][0][6][1][1][3][1]=-1;
+diter_data_p5[13][0][6][1][1][3][1]=-1;
+diter_data_p5[14][0][6][1][1][3][1]=-1;
+diter_data_p5[15][0][6][1][1][3][1]=2; //backf_vs_meas=0.3, iter_change=0.7, curvature=48
+//R=0.3
+//pTlead=4
+//Bayes
+diter_data_p5[2][1][4][0][1][3][1]=-1;
+diter_data_p5[4][1][4][0][1][3][1]=-1;
+diter_data_p5[5][1][4][0][1][3][1]=-1;
+diter_data_p5[6][1][4][0][1][3][1]=-1;
+diter_data_p5[7][1][4][0][1][3][1]=-1;
+diter_data_p5[8][1][4][0][1][3][1]=-1;
+diter_data_p5[9][1][4][0][1][3][1]=-1;
+diter_data_p5[10][1][4][0][1][3][1]=-1;
+diter_data_p5[11][1][4][0][1][3][1]=-1;
+diter_data_p5[12][1][4][0][1][3][1]=-1;
+diter_data_p5[13][1][4][0][1][3][1]=-1;
+diter_data_p5[14][1][4][0][1][3][1]=-1;
+diter_data_p5[15][1][4][0][1][3][1]=-1;
+//SVD
+diter_data_p5[2][1][4][1][1][3][1]=-1;
+diter_data_p5[4][1][4][1][1][3][1]=-1;
+diter_data_p5[5][1][4][1][1][3][1]=-1;
+diter_data_p5[6][1][4][1][1][3][1]=-1;
+diter_data_p5[7][1][4][1][1][3][1]=-1;
+diter_data_p5[8][1][4][1][1][3][1]=-1;
+diter_data_p5[9][1][4][1][1][3][1]=-1;
+diter_data_p5[10][1][4][1][1][3][1]=-1;
+diter_data_p5[11][1][4][1][1][3][1]=-1;
+diter_data_p5[12][1][4][1][1][3][1]=-1;
+diter_data_p5[13][1][4][1][1][3][1]=-1;
+diter_data_p5[14][1][4][1][1][3][1]=-1;
+diter_data_p5[15][1][4][1][1][3][1]=-1;
+//pTlead=5
+//Bayes
+diter_data_p5[2][1][5][0][1][3][1]=-1;
+diter_data_p5[4][1][5][0][1][3][1]=-1;
+diter_data_p5[5][1][5][0][1][3][1]=-1;
+diter_data_p5[6][1][5][0][1][3][1]=-1;
+diter_data_p5[7][1][5][0][1][3][1]=-1;
+diter_data_p5[8][1][5][0][1][3][1]=-1;
+diter_data_p5[9][1][5][0][1][3][1]=-1;
+diter_data_p5[10][1][5][0][1][3][1]=-1;
+diter_data_p5[11][1][5][0][1][3][1]=-1;
+diter_data_p5[12][1][5][0][1][3][1]=-1;
+diter_data_p5[13][1][5][0][1][3][1]=-1;
+diter_data_p5[14][1][5][0][1][3][1]=-1;
+diter_data_p5[15][1][5][0][1][3][1]=-1;
+//SVD
+diter_data_p5[2][1][5][1][1][3][1]=-1;
+diter_data_p5[4][1][5][1][1][3][1]=-1;
+diter_data_p5[5][1][5][1][1][3][1]=-1;
+diter_data_p5[6][1][5][1][1][3][1]=-1;
+diter_data_p5[7][1][5][1][1][3][1]=-1;
+diter_data_p5[8][1][5][1][1][3][1]=-1;
+diter_data_p5[9][1][5][1][1][3][1]=-1;
+diter_data_p5[10][1][5][1][1][3][1]=-1;
+diter_data_p5[11][1][5][1][1][3][1]=-1;
+diter_data_p5[12][1][5][1][1][3][1]=-1;
+diter_data_p5[13][1][5][1][1][3][1]=-1;
+diter_data_p5[14][1][5][1][1][3][1]=-1;
+diter_data_p5[15][1][5][1][1][3][1]=-1;
+//pTlead=6
+//Bayes
+diter_data_p5[2][1][6][0][1][3][1]=-1;
+diter_data_p5[4][1][6][0][1][3][1]=-1;
+diter_data_p5[5][1][6][0][1][3][1]=-1;
+diter_data_p5[6][1][6][0][1][3][1]=-1;
+diter_data_p5[7][1][6][0][1][3][1]=-1;
+diter_data_p5[8][1][6][0][1][3][1]=-1;
+diter_data_p5[9][1][6][0][1][3][1]=-1;
+diter_data_p5[10][1][6][0][1][3][1]=-1;
+diter_data_p5[11][1][6][0][1][3][1]=-1;
+diter_data_p5[12][1][6][0][1][3][1]=-1;
+diter_data_p5[13][1][6][0][1][3][1]=-1;
+diter_data_p5[14][1][6][0][1][3][1]=-1;
+diter_data_p5[15][1][6][0][1][3][1]=-1;
+//SVD
+diter_data_p5[2][1][6][1][1][3][1]=-1;
+diter_data_p5[4][1][6][1][1][3][1]=2; //backf_vs_meas=0.2, iter_change=0.8, curvature=35
+diter_data_p5[5][1][6][1][1][3][1]=-1;
+diter_data_p5[6][1][6][1][1][3][1]=-1;
+diter_data_p5[7][1][6][1][1][3][1]=-1;
+diter_data_p5[8][1][6][1][1][3][1]=2; //backf_vs_meas=0.3, iter_change=0.8, curvature=28
+diter_data_p5[9][1][6][1][1][3][1]=-1;
+diter_data_p5[10][1][6][1][1][3][1]=3; //backf_vs_meas=0.3, iter_change=0.5, curvature=44
+diter_data_p5[11][1][6][1][1][3][1]=2; //backf_vs_meas=0.2, iter_change=0.8, curvature=35
+diter_data_p5[12][1][6][1][1][3][1]=-1;
+diter_data_p5[13][1][6][1][1][3][1]=-1;
+diter_data_p5[14][1][6][1][1][3][1]=2; //backf_vs_meas=0.2, iter_change=0.7, curvature=27
+diter_data_p5[15][1][6][1][1][3][1]=2; //backf_vs_meas=0.3, iter_change=0.8, curvature=36
+//R=0.4
+//pTlead=4
+//Bayes
+diter_data_p5[2][2][4][0][1][3][1]=-1;
+diter_data_p5[4][2][4][0][1][3][1]=-1;
+diter_data_p5[5][2][4][0][1][3][1]=-1;
+diter_data_p5[6][2][4][0][1][3][1]=-1;
+diter_data_p5[7][2][4][0][1][3][1]=-1;
+diter_data_p5[8][2][4][0][1][3][1]=-1;
+diter_data_p5[9][2][4][0][1][3][1]=-1;
+diter_data_p5[10][2][4][0][1][3][1]=-1;
+diter_data_p5[11][2][4][0][1][3][1]=-1;
+diter_data_p5[12][2][4][0][1][3][1]=-1;
+diter_data_p5[13][2][4][0][1][3][1]=-1;
+diter_data_p5[14][2][4][0][1][3][1]=-1;
+diter_data_p5[15][2][4][0][1][3][1]=-1;
+//SVD
+diter_data_p5[2][2][4][1][1][3][1]=-1;
+diter_data_p5[4][2][4][1][1][3][1]=-1;
+diter_data_p5[5][2][4][1][1][3][1]=-1;
+diter_data_p5[6][2][4][1][1][3][1]=-1;
+diter_data_p5[7][2][4][1][1][3][1]=-1;
+diter_data_p5[8][2][4][1][1][3][1]=-1;
+diter_data_p5[9][2][4][1][1][3][1]=-1;
+diter_data_p5[10][2][4][1][1][3][1]=-1;
+diter_data_p5[11][2][4][1][1][3][1]=-1;
+diter_data_p5[12][2][4][1][1][3][1]=-1;
+diter_data_p5[13][2][4][1][1][3][1]=-1;
+diter_data_p5[14][2][4][1][1][3][1]=-1;
+diter_data_p5[15][2][4][1][1][3][1]=-1;
+//pTlead=5
+//Bayes
+diter_data_p5[2][2][5][0][1][3][1]=-1;
+diter_data_p5[4][2][5][0][1][3][1]=-1;
+diter_data_p5[5][2][5][0][1][3][1]=-1;
+diter_data_p5[6][2][5][0][1][3][1]=-1;
+diter_data_p5[7][2][5][0][1][3][1]=-1;
+diter_data_p5[8][2][5][0][1][3][1]=-1;
+diter_data_p5[9][2][5][0][1][3][1]=-1;
+diter_data_p5[10][2][5][0][1][3][1]=-1;
+diter_data_p5[11][2][5][0][1][3][1]=-1;
+diter_data_p5[12][2][5][0][1][3][1]=-1;
+diter_data_p5[13][2][5][0][1][3][1]=-1;
+diter_data_p5[14][2][5][0][1][3][1]=-1;
+diter_data_p5[15][2][5][0][1][3][1]=-1;
+//SVD
+diter_data_p5[2][2][5][1][1][3][1]=-1;
+diter_data_p5[4][2][5][1][1][3][1]=-1;
+diter_data_p5[5][2][5][1][1][3][1]=-1;
+diter_data_p5[6][2][5][1][1][3][1]=-1;
+diter_data_p5[7][2][5][1][1][3][1]=-1;
+diter_data_p5[8][2][5][1][1][3][1]=-1;
+diter_data_p5[9][2][5][1][1][3][1]=-1;
+diter_data_p5[10][2][5][1][1][3][1]=-1;
+diter_data_p5[11][2][5][1][1][3][1]=-1;
+diter_data_p5[12][2][5][1][1][3][1]=-1;
+diter_data_p5[13][2][5][1][1][3][1]=-1;
+diter_data_p5[14][2][5][1][1][3][1]=-1;
+diter_data_p5[15][2][5][1][1][3][1]=-1;
+//pTlead=6
+//Bayes
+diter_data_p5[2][2][6][0][1][3][1]=2; //backf_vs_meas=0.1, iter_change=0.2, curvature=41
+diter_data_p5[4][2][6][0][1][3][1]=2; //backf_vs_meas=0.1, iter_change=0.0, curvature=36
+diter_data_p5[5][2][6][0][1][3][1]=2; //backf_vs_meas=0.0, iter_change=0.0, curvature=36
+diter_data_p5[6][2][6][0][1][3][1]=2; //backf_vs_meas=0.0, iter_change=0.1, curvature=35
+diter_data_p5[7][2][6][0][1][3][1]=-1;
+diter_data_p5[8][2][6][0][1][3][1]=2; //backf_vs_meas=0.1, iter_change=0.1, curvature=38
+diter_data_p5[9][2][6][0][1][3][1]=2; //backf_vs_meas=0.0, iter_change=0.1, curvature=38
+diter_data_p5[10][2][6][0][1][3][1]=2; //backf_vs_meas=0.1, iter_change=0.1, curvature=39
+diter_data_p5[11][2][6][0][1][3][1]=2; //backf_vs_meas=0.1, iter_change=0.0, curvature=39
+diter_data_p5[12][2][6][0][1][3][1]=2; //backf_vs_meas=0.1, iter_change=0.1, curvature=39
+diter_data_p5[13][2][6][0][1][3][1]=2; //backf_vs_meas=0.1, iter_change=0.1, curvature=40
+diter_data_p5[14][2][6][0][1][3][1]=2; //backf_vs_meas=0.1, iter_change=0.0, curvature=40
+diter_data_p5[15][2][6][0][1][3][1]=2; //backf_vs_meas=0.1, iter_change=0.0, curvature=40
+//SVD
+diter_data_p5[2][2][6][1][1][3][1]=3; //backf_vs_meas=0.1, iter_change=0.5, curvature=40
+diter_data_p5[4][2][6][1][1][3][1]=2; //backf_vs_meas=0.2, iter_change=0.8, curvature=33
+diter_data_p5[5][2][6][1][1][3][1]=2; //backf_vs_meas=0.0, iter_change=1.0, curvature=47
+diter_data_p5[6][2][6][1][1][3][1]=3; //backf_vs_meas=0.1, iter_change=0.1, curvature=34
+diter_data_p5[7][2][6][1][1][3][1]=-1;
+diter_data_p5[8][2][6][1][1][3][1]=2; //backf_vs_meas=0.2, iter_change=0.8, curvature=25
+diter_data_p5[9][2][6][1][1][3][1]=3; //backf_vs_meas=0.0, iter_change=0.2, curvature=28
+diter_data_p5[10][2][6][1][1][3][1]=3; //backf_vs_meas=0.2, iter_change=0.4, curvature=34
+diter_data_p5[11][2][6][1][1][3][1]=2; //backf_vs_meas=0.1, iter_change=0.9, curvature=29
+diter_data_p5[12][2][6][1][1][3][1]=3; //backf_vs_meas=0.0, iter_change=0.2, curvature=33
+diter_data_p5[13][2][6][1][1][3][1]=3; //backf_vs_meas=0.1, iter_change=0.3, curvature=40
+diter_data_p5[14][2][6][1][1][3][1]=2; //backf_vs_meas=0.1, iter_change=0.8, curvature=23
+diter_data_p5[15][2][6][1][1][3][1]=2; //backf_vs_meas=0.1, iter_change=0.9, curvature=29

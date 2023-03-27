@@ -1,0 +1,189 @@
+opening file:../../plotting_out/systematics/central/GPC2/bining1/systematics_R0.2_pT5.root
+opening file:../../plotting_out/systematics/peripheral/GPC2/bining1/systematics_R0.2_pT5.root
+analyzing point 0, x=5.5
+analyzing point 1, x=6.45266
+analyzing point 2, x=7.44526
+analyzing point 3, x=8.78729
+analyzing point 4, x=10.7923
+analyzing point 5, x=12.8561
+analyzing point 6, x=14.9252
+analyzing point 7, x=17.5684
+JES - central
+pT:17.5684, sys. err. up [GeV]:+2.11407, down [GeV]:-0.533576
+JES [%]: +12.0333, -3.03713
+JES (B) [%]: +6.19391, -2.17852
+===================================================
+JES - peripheral
+pT:17.4999, sys. err. up [GeV]:+0.921797, down [GeV]:-0.202955
+JES [%]: +5.26745, -1.15975
+JES (B) [%]: +4.92666, -1.22693
+===================================================
+RCP:0.524289
+pT (central):17.5684 delta pT (from fit):-1.6793
+===================================================
+interpolated point (x,y):
+(21.0457,3.03887e-08)
+pT (central):17.5684 delta pT (from interpolation):-3.4773                                                                                                                                                                                                                     
+pT (central):17.5684 stat. err.:0.221361                                                                                                                                                                                                                                       
+pT (central):17.5684 sys. err.:0.503552                                                                                                                                                                                                                                        
+===================================================                                                                                                                                                                                                                            
+analyzing point 8, x=22.0123                                                                                                                                                                                                                                                   
+JES - central                                                                                                                                                                                                                                                                  
+pT:22.0123, sys. err. up [GeV]:+2.26609, down [GeV]:-0.549186                                                                                                                                                                                                                  
+JES [%]: +10.2946, -2.4949                                                                                                                                                                                                                                                     
+JES (B) [%]: +5.48996, -2.10766                                                                                                                                                                                                                                                
+===================================================                                                                                                                                                                                                                            
+JES - peripheral                                                                                                                                                                                                                                                               
+pT:22.0191, sys. err. up [GeV]:+1.49296, down [GeV]:-0.281337                                                                                                                                                                                                                  
+JES [%]: +6.78027, -1.27769                                                                                                                                                                                                                                                    
+JES (B) [%]: +4.85865, -1.74843                                                                                                                                                                                                                                                
+===================================================                                                                                                                                                                                                                            
+RCP:0.637346                                                                                                                                                                                                                                                                   
+pT (central):22.0123 delta pT (from fit):-1.39815                                                                                                                                                                                                                              
+===================================================                                                                                                                                                                                                                            
+interpolated point (x,y):                                                                                                                                                                                                                                                      
+(24.9747,7.36281e-09)                                                                                                                                                                                                                                                          
+pT (central):22.0123 delta pT (from interpolation):-2.96234
+pT (central):22.0123 stat. err.:0.452252
+pT (central):22.0123 sys. err.:0.70673
+===================================================
+analyzing point 9, x=26.6406
+JES - central
+pT:26.6406, sys. err. up [GeV]:+4.33083, down [GeV]:-0.521187
+JES [%]: +16.2565, -1.95636
+JES (B) [%]: +8.76794, -2.16858
+===================================================
+analyzing point 10, x=35
+
+************************************
+R=0.2 delta=-3.21982+-0.336807/0.336807+-0.605141/0.605141
+JES - central [%]: +9.83938, -2.32386
+JES - peripheral [%]: +5.45826, -1.3532
+************************************
+
+opening file:../../plotting_out/systematics/central/GPC2/bining1/systematics_R0.3_pT5.root
+opening file:../../plotting_out/systematics/peripheral/GPC2/bining1/systematics_R0.3_pT5.root
+analyzing point 0, x=5.5
+analyzing point 1, x=6.46023
+analyzing point 2, x=7.47319
+analyzing point 3, x=8.78308
+analyzing point 4, x=10.821
+analyzing point 5, x=12.8463
+analyzing point 6, x=14.9647
+analyzing point 7, x=17.5473
+JES - central
+pT:17.5473, sys. err. up [GeV]:+2.23181, down [GeV]:-0.51101
+JES [%]: +12.7189, -2.91219
+JES (B) [%]: +6.62049, -2.47442
+===================================================
+JES - peripheral
+pT:17.6275, sys. err. up [GeV]:+0.934835, down [GeV]:-0.271019
+JES [%]: +5.30327, -1.53748
+JES (B) [%]: +4.85025, -1.60998
+===================================================
+RCP:0.492347
+pT (central):17.5473 delta pT (from fit):-1.84905
+===================================================
+interpolated point (x,y):
+(21.037,4.6703e-08)
+pT (central):17.5473 delta pT (from interpolation):-3.48971
+pT (central):17.5473 stat. err.:0.148786
+pT (central):17.5473 sys. err.:0.473895
+===================================================
+analyzing point 8, x=21.9631
+JES - central
+pT:21.9631, sys. err. up [GeV]:+2.50369, down [GeV]:-0.517792
+JES [%]: +11.3995, -2.35755
+JES (B) [%]: +5.86616, -2.40117
+===================================================
+JES - peripheral
+pT:21.8916, sys. err. up [GeV]:+1.07327, down [GeV]:-0.245409
+JES [%]: +4.90267, -1.12102
+JES (B) [%]: +5.38995, -1.04488
+===================================================
+RCP:0.56528
+pT (central):21.9631 delta pT (from fit):-1.74383
+===================================================
+interpolated point (x,y):
+(25.1555,1.06747e-08)
+pT (central):21.9631 delta pT (from interpolation):-3.19236
+pT (central):21.9631 stat. err.:0.439198
+pT (central):21.9631 sys. err.:0.808451
+===================================================
+analyzing point 9, x=26.6515
+JES - central
+pT:26.6515, sys. err. up [GeV]:+4.61082, down [GeV]:-0.55426
+JES [%]: +17.3004, -2.07966
+JES (B) [%]: +8.81735, -2.56966
+===================================================
+analyzing point 10, x=35
+
+************************************
+R=0.3 delta=-3.34103+-0.293992/0.293992+-0.641173/0.641173
+JES - central [%]: +10.4538, -2.46578
+JES - peripheral [%]: +5.11153, -1.32834
+************************************
+
+opening file:../../plotting_out/systematics/central/GPC2/bining1/systematics_R0.4_pT5.root
+opening file:../../plotting_out/systematics/peripheral/GPC2/bining1/systematics_R0.4_pT5.root
+analyzing point 0, x=5.5
+analyzing point 1, x=6.49146
+analyzing point 2, x=7.49412
+analyzing point 3, x=8.78517
+analyzing point 4, x=10.8435
+analyzing point 5, x=12.8461
+analyzing point 6, x=14.9438
+analyzing point 7, x=17.5945
+JES - central
+pT:17.5945, sys. err. up [GeV]:+2.18686, down [GeV]:-0.646514
+JES [%]: +12.4293, -3.67453
+JES (B) [%]: +8.33633, -2.79958
+===================================================
+JES - peripheral
+pT:17.5945, sys. err. up [GeV]:+0.89871, down [GeV]:-0.253073
+JES [%]: +5.10789, -1.43836
+JES (B) [%]: +4.89944, -1.44961
+===================================================
+RCP:0.518235
+pT (central):17.5945 delta pT (from fit):-1.64068
+===================================================
+interpolated point (x,y):
+(20.9483,5.83684e-08)
+pT (central):17.5945 delta pT (from interpolation):-3.35385
+pT (central):17.5945 stat. err.:0.181923
+pT (central):17.5945 sys. err.:0.609184
+===================================================
+analyzing point 8, x=21.9207
+JES - central
+pT:21.9207, sys. err. up [GeV]:+2.43926, down [GeV]:-0.621767
+JES [%]: +11.1277, -2.83644
+JES (B) [%]: +8.37671, -2.10301
+===================================================
+JES - peripheral
+pT:21.9274, sys. err. up [GeV]:+1.04564, down [GeV]:-0.246648
+JES [%]: +4.76864, -1.12484
+JES (B) [%]: +5.1199, -1.06307
+===================================================
+RCP:0.594695
+pT (central):21.9207 delta pT (from fit):-1.47713
+===================================================
+interpolated point (x,y):
+(25.0752,1.27003e-08)
+pT (central):21.9207 delta pT (from interpolation):-3.15451
+pT (central):21.9207 stat. err.:0.468372
+pT (central):21.9207 sys. err.:0.835191
+===================================================
+analyzing point 9, x=26.6549
+JES - central
+pT:26.6549, sys. err. up [GeV]:+4.26464, down [GeV]:-0.741075
+JES [%]: +15.9995, -2.78026
+JES (B) [%]: +11.9558, -2.20869
+===================================================
+analyzing point 10, x=35
+
+************************************
+R=0.4 delta=-3.25418+-0.325147/0.325147+-0.722187/0.722187
+JES - central [%]: +11.3709, -2.73375
+JES - peripheral [%]: +4.97397, -1.26897
+************************************
+ 

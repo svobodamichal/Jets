@@ -1,0 +1,89 @@
+//prior|R|pTlead|unfolding|centrality|binning|test
+//R=0.3
+//pTlead=5
+//Bayes
+diter_data_RRho04[2][1][5][0][0][0][1]=2; //backf_vs_meas=0.2, iter_change=0.2, curvature=1
+diter_data_RRho04[4][1][5][0][0][0][1]=2; //backf_vs_meas=0.2, iter_change=0.2, curvature=1
+diter_data_RRho04[5][1][5][0][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_RRho04[6][1][5][0][0][0][1]=2; //backf_vs_meas=0.2, iter_change=0.0, curvature=1
+diter_data_RRho04[7][1][5][0][0][0][1]=5; //backf_vs_meas=0.3, iter_change=0.1, curvature=1
+diter_data_RRho04[8][1][5][0][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.2, curvature=1
+diter_data_RRho04[9][1][5][0][0][0][1]=3; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_RRho04[10][1][5][0][0][0][1]=3; //backf_vs_meas=0.2, iter_change=0.2, curvature=1
+diter_data_RRho04[11][1][5][0][0][0][1]=2; //backf_vs_meas=0.2, iter_change=0.1, curvature=1
+diter_data_RRho04[12][1][5][0][0][0][1]=3; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_RRho04[13][1][5][0][0][0][1]=3; //backf_vs_meas=0.3, iter_change=0.1, curvature=1
+diter_data_RRho04[14][1][5][0][0][0][1]=2; //backf_vs_meas=0.2, iter_change=0.1, curvature=1
+diter_data_RRho04[15][1][5][0][0][0][1]=2; //backf_vs_meas=0.3, iter_change=0.1, curvature=1
+//SVD
+diter_data_RRho04[2][1][5][1][0][0][1]=2; //backf_vs_meas=0.2, iter_change=0.6, curvature=1
+diter_data_RRho04[4][1][5][1][0][0][1]=3; //backf_vs_meas=0.1, iter_change=0.6, curvature=1
+diter_data_RRho04[5][1][5][1][0][0][1]=2; //backf_vs_meas=0.2, iter_change=0.8, curvature=1
+diter_data_RRho04[6][1][5][1][0][0][1]=3; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_RRho04[7][1][5][1][0][0][1]=5; //backf_vs_meas=0.1, iter_change=1.0, curvature=1
+diter_data_RRho04[8][1][5][1][0][0][1]=2; //backf_vs_meas=0.3, iter_change=0.6, curvature=0
+diter_data_RRho04[9][1][5][1][0][0][1]=3; //backf_vs_meas=0.2, iter_change=0.2, curvature=1
+diter_data_RRho04[10][1][5][1][0][0][1]=4; //backf_vs_meas=0.1, iter_change=0.4, curvature=1
+diter_data_RRho04[11][1][5][1][0][0][1]=2; //backf_vs_meas=0.2, iter_change=0.6, curvature=1
+diter_data_RRho04[12][1][5][1][0][0][1]=3; //backf_vs_meas=0.2, iter_change=0.2, curvature=1
+diter_data_RRho04[13][1][5][1][0][0][1]=4; //backf_vs_meas=0.1, iter_change=0.4, curvature=1
+diter_data_RRho04[14][1][5][1][0][0][1]=2; //backf_vs_meas=0.2, iter_change=0.5, curvature=1
+diter_data_RRho04[15][1][5][1][0][0][1]=3; //backf_vs_meas=0.2, iter_change=0.2, curvature=1
+//pTlead=6
+//Bayes
+diter_data_RRho04[2][1][6][0][0][0][1]=2; //backf_vs_meas=0.2, iter_change=0.1, curvature=1
+diter_data_RRho04[4][1][6][0][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.1, curvature=0
+diter_data_RRho04[5][1][6][0][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.0, curvature=0
+diter_data_RRho04[6][1][6][0][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_RRho04[7][1][6][0][0][0][1]=4; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_RRho04[8][1][6][0][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.1, curvature=0
+diter_data_RRho04[9][1][6][0][0][0][1]=2; //backf_vs_meas=0.2, iter_change=0.2, curvature=1
+diter_data_RRho04[10][1][6][0][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.2, curvature=0
+diter_data_RRho04[11][1][6][0][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.0, curvature=1
+diter_data_RRho04[12][1][6][0][0][0][1]=2; //backf_vs_meas=0.2, iter_change=0.2, curvature=1
+diter_data_RRho04[13][1][6][0][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_RRho04[14][1][6][0][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.0, curvature=1
+diter_data_RRho04[15][1][6][0][0][0][1]=2; //backf_vs_meas=0.2, iter_change=0.1, curvature=1
+//SVD
+diter_data_RRho04[2][1][6][1][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.6, curvature=1
+diter_data_RRho04[4][1][6][1][0][0][1]=2; //backf_vs_meas=0.2, iter_change=0.8, curvature=0
+diter_data_RRho04[5][1][6][1][0][0][1]=2; //backf_vs_meas=0.1, iter_change=1.0, curvature=0
+diter_data_RRho04[6][1][6][1][0][0][1]=3; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_RRho04[7][1][6][1][0][0][1]=3; //backf_vs_meas=0.3, iter_change=0.7, curvature=0
+diter_data_RRho04[8][1][6][1][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.8, curvature=0
+diter_data_RRho04[9][1][6][1][0][0][1]=3; //backf_vs_meas=0.2, iter_change=0.4, curvature=1
+diter_data_RRho04[10][1][6][1][0][0][1]=3; //backf_vs_meas=0.1, iter_change=0.5, curvature=1
+diter_data_RRho04[11][1][6][1][0][0][1]=2; //backf_vs_meas=0.2, iter_change=1.0, curvature=1
+diter_data_RRho04[12][1][6][1][0][0][1]=3; //backf_vs_meas=0.2, iter_change=0.3, curvature=1
+diter_data_RRho04[13][1][6][1][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.7, curvature=0
+diter_data_RRho04[14][1][6][1][0][0][1]=2; //backf_vs_meas=0.2, iter_change=0.8, curvature=1
+diter_data_RRho04[15][1][6][1][0][0][1]=3; //backf_vs_meas=0.2, iter_change=0.2, curvature=1
+//pTlead=7
+//Bayes
+diter_data_RRho04[2][1][7][0][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.1, curvature=0
+diter_data_RRho04[4][1][7][0][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.0, curvature=0
+diter_data_RRho04[5][1][7][0][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.0, curvature=0
+diter_data_RRho04[6][1][7][0][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.1, curvature=0
+diter_data_RRho04[7][1][7][0][0][0][1]=3; //backf_vs_meas=0.2, iter_change=0.2, curvature=0
+diter_data_RRho04[8][1][7][0][0][0][1]=2; //backf_vs_meas=0.0, iter_change=0.0, curvature=0
+diter_data_RRho04[9][1][7][0][0][0][1]=3; //backf_vs_meas=0.2, iter_change=0.1, curvature=0
+diter_data_RRho04[10][1][7][0][0][0][1]=2; //backf_vs_meas=0.0, iter_change=0.1, curvature=0
+diter_data_RRho04[11][1][7][0][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.1, curvature=0
+diter_data_RRho04[12][1][7][0][0][0][1]=2; //backf_vs_meas=0.2, iter_change=0.2, curvature=1
+diter_data_RRho04[13][1][7][0][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.0, curvature=0
+diter_data_RRho04[14][1][7][0][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.1, curvature=0
+diter_data_RRho04[15][1][7][0][0][0][1]=2; //backf_vs_meas=0.2, iter_change=0.2, curvature=1
+//SVD
+diter_data_RRho04[2][1][7][1][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.8, curvature=0
+diter_data_RRho04[4][1][7][1][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.8, curvature=0
+diter_data_RRho04[5][1][7][1][0][0][1]=3; //backf_vs_meas=0.1, iter_change=0.1, curvature=0
+diter_data_RRho04[6][1][7][1][0][0][1]=3; //backf_vs_meas=0.1, iter_change=0.1, curvature=0
+diter_data_RRho04[7][1][7][1][0][0][1]=3; //backf_vs_meas=0.1, iter_change=0.6, curvature=0
+diter_data_RRho04[8][1][7][1][0][0][1]=2; //backf_vs_meas=0.0, iter_change=1.0, curvature=0
+diter_data_RRho04[9][1][7][1][0][0][1]=3; //backf_vs_meas=0.2, iter_change=0.5, curvature=1
+diter_data_RRho04[10][1][7][1][0][0][1]=2; //backf_vs_meas=0.2, iter_change=0.8, curvature=0
+diter_data_RRho04[11][1][7][1][0][0][1]=3; //backf_vs_meas=0.1, iter_change=0.2, curvature=0
+diter_data_RRho04[12][1][7][1][0][0][1]=3; //backf_vs_meas=0.2, iter_change=0.5, curvature=1
+diter_data_RRho04[13][1][7][1][0][0][1]=2; //backf_vs_meas=0.1, iter_change=0.9, curvature=0
+diter_data_RRho04[14][1][7][1][0][0][1]=3; //backf_vs_meas=0.1, iter_change=0.2, curvature=1
+diter_data_RRho04[15][1][7][1][0][0][1]=3; //backf_vs_meas=0.1, iter_change=0.3, curvature=1

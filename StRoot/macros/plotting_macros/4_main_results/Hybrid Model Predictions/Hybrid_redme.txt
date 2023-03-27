@@ -1,0 +1,48 @@
+Dear Peter, Jana, Jan,
+
+sorry for the late reply. Please find attached a zip file with the following content:
+
+-010_RAA_wake_0_ignore_neg_0.dat : this is pi0 RAA, with eta cut 0.35.
+
+format:
+x    upper_band_med     lower_band_med      v      v_err    upper_band_ratio      lower_band_ratio
+
+
+-jet_RAAs and chjet_RAAs: these are the full jet and charged jet RAA for R from 0.1 to 0.6, with eta cut 1-R
+
+format:
+x    upper_band_med     lower_band_med      v      v_err    upper_band_ratio      lower_band_ratio
+
+
+-jet_specratio and chjet_specratio: these are the full jet and charged jet spectrum ratio between R (from 0.1 to 0.6) over R=0.2, with eta cut 1-R. Files starting with "0-10..." are for AuAu, while those starting with "VAC..." are for pp.
+
+format of AuAu:
+x    upper_band_numerator     lower_band_numerator   lower_band_denominator     lower_band_denominator     upper_band_ratio      lower_band_ratio
+
+format of pp:
+x    numerator     numerator_err   denominator     denominator_err     ratio      ratio_err
+
+
+plots: some plots of all these results
+
+
+The individual spectra are in terms of cross sections in mb, normalised by 1/2/Pi and 1/2/eta_cut.
+
+You will notice that the files are further classified with the following names:
+-wake_0_ignore_neg_0: means no medium response
+-wake_1_ignore_neg_1: means medium response including only the positive contribution from the wake
+-wake_1_ignore_neg_0: means full medium response, including also the negative contribution from the wake
+
+The value of the only free parameter in the model, kappa_sc, was fixed by using LHC hadron and jet data in https://arxiv.org/pdf/1808.07386.pdf. There, we saw some statistically significant tension between our pi0 RAA and the one measured by PHENIX.
+
+Qualitatively, one can see from the plots:
+-without medium response, jet suppression increases with R due to wider jets losing more energy
+-with medium response, only positive contribution (small delta phi wrt the sourcing jet) some lost energy is recovered by opening the cone, and suppression is more or less independent of R
+-with full medium response, including the negative contribution (large delta phi wrt the sourcing jet), the effect of the depletion of the medium caused by the "subleading" jet induces an effective suppression at the "leading" jet hemisphere, the larger the radius R of the "leading" jet is.
+
+The effect of the negative contribution from the wake is quite strong, notably more than at LHC (see https://arxiv.org/pdf/1907.12301.pdf). The reason is that at higher jet pt, due to the steeply falling spectrum at RHIC, the di-jet pair is more likely to be sitting at midrapidity. Given that the wake is localised in rapidity, it is only when the di-jets are aligned in rapidity that they can affect each other's environment through medium response. This is why you see the strong jet pt dependence of, let's say yield ratio of R=0.6 over R=0.2, when the negatives contribution are not omitted. Another reason is that the higher the pt of the "leading" jet, the larger the wake originated from the "subleading" jet can be, since the jets are originally more or less balanced in pt, and consequently the larger the negative contribution will be as well.
+
+Please let us know if you have any questions about these results, their format, or any aspect about our model and our treatment of medium response. Thanks again for your interest in our model.
+
+Cheers,
+Dani, Gui, Jorge and Krishna 

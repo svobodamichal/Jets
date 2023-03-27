@@ -1,0 +1,1 @@
+These are updated locations of Jan's AuAu Run11 embedding files for protons and kaons as were on PDSF, but with their location at RCF. In addition a file list from the same runs and files for charged pions is created as well which was completely missing at PDSF at the time of Jan's analysis of TPC reco efficiency

@@ -1,0 +1,265 @@
+//prior|R|pTlead|unfolding|centrality|binning|test
+//R=0.2
+//pTlead=5
+//Bayes
+diter_toy_normal[2][0][2][0][0][3][0]=-1;
+diter_toy_normal[4][0][2][0][0][3][0]=-1;
+diter_toy_normal[5][0][2][0][0][3][0]=-1;
+diter_toy_normal[6][0][2][0][0][3][0]=-1;
+diter_toy_normal[7][0][2][0][0][3][0]=-1;
+diter_toy_normal[8][0][2][0][0][3][0]=-1;
+diter_toy_normal[9][0][2][0][0][3][0]=-1;
+diter_toy_normal[10][0][2][0][0][3][0]=-1;
+diter_toy_normal[11][0][2][0][0][3][0]=-1;
+diter_toy_normal[12][0][2][0][0][3][0]=-1;
+diter_toy_normal[13][0][2][0][0][3][0]=-1;
+diter_toy_normal[14][0][2][0][0][3][0]=-1;
+diter_toy_normal[15][0][2][0][0][3][0]=-1;
+//SVD
+diter_toy_normal[2][0][2][1][0][3][0]=-1;
+diter_toy_normal[4][0][2][1][0][3][0]=-1;
+diter_toy_normal[5][0][2][1][0][3][0]=-1;
+diter_toy_normal[6][0][2][1][0][3][0]=-1;
+diter_toy_normal[7][0][2][1][0][3][0]=-1;
+diter_toy_normal[8][0][2][1][0][3][0]=-1;
+diter_toy_normal[9][0][2][1][0][3][0]=-1;
+diter_toy_normal[10][0][2][1][0][3][0]=-1;
+diter_toy_normal[11][0][2][1][0][3][0]=-1;
+diter_toy_normal[12][0][2][1][0][3][0]=-1;
+diter_toy_normal[13][0][2][1][0][3][0]=-1;
+diter_toy_normal[14][0][2][1][0][3][0]=-1;
+diter_toy_normal[15][0][2][1][0][3][0]=-1;
+//pTlead=6
+//Bayes
+diter_toy_normal[2][0][3][0][0][3][0]=-1;
+diter_toy_normal[4][0][3][0][0][3][0]=3; //backf_vs_meas=2.4, iter_change=1.8, curvature=3
+diter_toy_normal[5][0][3][0][0][3][0]=4; //backf_vs_meas=4.1, iter_change=1.6, curvature=3
+diter_toy_normal[6][0][3][0][0][3][0]=5; //backf_vs_meas=5.7, iter_change=2.7, curvature=3
+diter_toy_normal[7][0][3][0][0][3][0]=-1;
+diter_toy_normal[8][0][3][0][0][3][0]=-1;
+diter_toy_normal[9][0][3][0][0][3][0]=5; //backf_vs_meas=4.2, iter_change=2.6, curvature=3
+diter_toy_normal[10][0][3][0][0][3][0]=-1;
+diter_toy_normal[11][0][3][0][0][3][0]=7; //backf_vs_meas=0.3, iter_change=0.5, curvature=3
+diter_toy_normal[12][0][3][0][0][3][0]=4; //backf_vs_meas=3.2, iter_change=3.1, curvature=3
+diter_toy_normal[13][0][3][0][0][3][0]=-1;
+diter_toy_normal[14][0][3][0][0][3][0]=7; //backf_vs_meas=0.7, iter_change=0.9, curvature=3
+diter_toy_normal[15][0][3][0][0][3][0]=6; //backf_vs_meas=0.5, iter_change=0.9, curvature=3
+//SVD
+diter_toy_normal[2][0][3][1][0][3][0]=-1;
+diter_toy_normal[4][0][3][1][0][3][0]=-1;
+diter_toy_normal[5][0][3][1][0][3][0]=-1;
+diter_toy_normal[6][0][3][1][0][3][0]=-1;
+diter_toy_normal[7][0][3][1][0][3][0]=-1;
+diter_toy_normal[8][0][3][1][0][3][0]=-1;
+diter_toy_normal[9][0][3][1][0][3][0]=-1;
+diter_toy_normal[10][0][3][1][0][3][0]=-1;
+diter_toy_normal[11][0][3][1][0][3][0]=-1;
+diter_toy_normal[12][0][3][1][0][3][0]=-1;
+diter_toy_normal[13][0][3][1][0][3][0]=-1;
+diter_toy_normal[14][0][3][1][0][3][0]=-1;
+diter_toy_normal[15][0][3][1][0][3][0]=-1;
+//pTlead=7
+//Bayes
+diter_toy_normal[2][0][4][0][0][3][0]=-1;
+diter_toy_normal[4][0][4][0][0][3][0]=-1;
+diter_toy_normal[5][0][4][0][0][3][0]=-1;
+diter_toy_normal[6][0][4][0][0][3][0]=-1;
+diter_toy_normal[7][0][4][0][0][3][0]=-1;
+diter_toy_normal[8][0][4][0][0][3][0]=-1;
+diter_toy_normal[9][0][4][0][0][3][0]=-1;
+diter_toy_normal[10][0][4][0][0][3][0]=-1;
+diter_toy_normal[11][0][4][0][0][3][0]=-1;
+diter_toy_normal[12][0][4][0][0][3][0]=-1;
+diter_toy_normal[13][0][4][0][0][3][0]=-1;
+diter_toy_normal[14][0][4][0][0][3][0]=-1;
+diter_toy_normal[15][0][4][0][0][3][0]=-1;
+//SVD
+diter_toy_normal[2][0][4][1][0][3][0]=-1;
+diter_toy_normal[4][0][4][1][0][3][0]=-1;
+diter_toy_normal[5][0][4][1][0][3][0]=-1;
+diter_toy_normal[6][0][4][1][0][3][0]=-1;
+diter_toy_normal[7][0][4][1][0][3][0]=-1;
+diter_toy_normal[8][0][4][1][0][3][0]=-1;
+diter_toy_normal[9][0][4][1][0][3][0]=-1;
+diter_toy_normal[10][0][4][1][0][3][0]=-1;
+diter_toy_normal[11][0][4][1][0][3][0]=-1;
+diter_toy_normal[12][0][4][1][0][3][0]=-1;
+diter_toy_normal[13][0][4][1][0][3][0]=-1;
+diter_toy_normal[14][0][4][1][0][3][0]=-1;
+diter_toy_normal[15][0][4][1][0][3][0]=-1;
+//R=0.3
+//pTlead=5
+//Bayes
+diter_toy_normal[2][1][2][0][0][3][0]=-1;
+diter_toy_normal[4][1][2][0][0][3][0]=-1;
+diter_toy_normal[5][1][2][0][0][3][0]=-1;
+diter_toy_normal[6][1][2][0][0][3][0]=-1;
+diter_toy_normal[7][1][2][0][0][3][0]=-1;
+diter_toy_normal[8][1][2][0][0][3][0]=-1;
+diter_toy_normal[9][1][2][0][0][3][0]=-1;
+diter_toy_normal[10][1][2][0][0][3][0]=-1;
+diter_toy_normal[11][1][2][0][0][3][0]=-1;
+diter_toy_normal[12][1][2][0][0][3][0]=-1;
+diter_toy_normal[13][1][2][0][0][3][0]=-1;
+diter_toy_normal[14][1][2][0][0][3][0]=-1;
+diter_toy_normal[15][1][2][0][0][3][0]=-1;
+//SVD
+diter_toy_normal[2][1][2][1][0][3][0]=-1;
+diter_toy_normal[4][1][2][1][0][3][0]=-1;
+diter_toy_normal[5][1][2][1][0][3][0]=-1;
+diter_toy_normal[6][1][2][1][0][3][0]=-1;
+diter_toy_normal[7][1][2][1][0][3][0]=-1;
+diter_toy_normal[8][1][2][1][0][3][0]=-1;
+diter_toy_normal[9][1][2][1][0][3][0]=-1;
+diter_toy_normal[10][1][2][1][0][3][0]=-1;
+diter_toy_normal[11][1][2][1][0][3][0]=-1;
+diter_toy_normal[12][1][2][1][0][3][0]=-1;
+diter_toy_normal[13][1][2][1][0][3][0]=-1;
+diter_toy_normal[14][1][2][1][0][3][0]=-1;
+diter_toy_normal[15][1][2][1][0][3][0]=-1;
+//pTlead=6
+//Bayes
+diter_toy_normal[2][1][3][0][0][3][0]=-1;
+diter_toy_normal[4][1][3][0][0][3][0]=5; //backf_vs_meas=3.9, iter_change=0.9, curvature=2
+diter_toy_normal[5][1][3][0][0][3][0]=-1;
+diter_toy_normal[6][1][3][0][0][3][0]=-1;
+diter_toy_normal[7][1][3][0][0][3][0]=-1;
+diter_toy_normal[8][1][3][0][0][3][0]=2; //backf_vs_meas=3.9, iter_change=0.8, curvature=2
+diter_toy_normal[9][1][3][0][0][3][0]=-1;
+diter_toy_normal[10][1][3][0][0][3][0]=4; //backf_vs_meas=4.3, iter_change=4.0, curvature=3
+diter_toy_normal[11][1][3][0][0][3][0]=4; //backf_vs_meas=5.1, iter_change=1.5, curvature=2
+diter_toy_normal[12][1][3][0][0][3][0]=7; //backf_vs_meas=5.0, iter_change=1.4, curvature=2
+diter_toy_normal[13][1][3][0][0][3][0]=3; //backf_vs_meas=2.2, iter_change=3.3, curvature=3
+diter_toy_normal[14][1][3][0][0][3][0]=3; //backf_vs_meas=4.6, iter_change=1.0, curvature=3
+diter_toy_normal[15][1][3][0][0][3][0]=5; //backf_vs_meas=3.3, iter_change=1.4, curvature=3
+//SVD
+diter_toy_normal[2][1][3][1][0][3][0]=-1;
+diter_toy_normal[4][1][3][1][0][3][0]=-1;
+diter_toy_normal[5][1][3][1][0][3][0]=-1;
+diter_toy_normal[6][1][3][1][0][3][0]=-1;
+diter_toy_normal[7][1][3][1][0][3][0]=-1;
+diter_toy_normal[8][1][3][1][0][3][0]=-1;
+diter_toy_normal[9][1][3][1][0][3][0]=-1;
+diter_toy_normal[10][1][3][1][0][3][0]=-1;
+diter_toy_normal[11][1][3][1][0][3][0]=-1;
+diter_toy_normal[12][1][3][1][0][3][0]=-1;
+diter_toy_normal[13][1][3][1][0][3][0]=-1;
+diter_toy_normal[14][1][3][1][0][3][0]=-1;
+diter_toy_normal[15][1][3][1][0][3][0]=-1;
+//pTlead=7
+//Bayes
+diter_toy_normal[2][1][4][0][0][3][0]=-1;
+diter_toy_normal[4][1][4][0][0][3][0]=2; //backf_vs_meas=5.0, iter_change=2.3, curvature=2
+diter_toy_normal[5][1][4][0][0][3][0]=5; //backf_vs_meas=5.4, iter_change=1.1, curvature=3
+diter_toy_normal[6][1][4][0][0][3][0]=6; //backf_vs_meas=3.8, iter_change=1.7, curvature=2
+diter_toy_normal[7][1][4][0][0][3][0]=-1;
+diter_toy_normal[8][1][4][0][0][3][0]=2; //backf_vs_meas=2.2, iter_change=0.5, curvature=3
+diter_toy_normal[9][1][4][0][0][3][0]=6; //backf_vs_meas=4.8, iter_change=3.0, curvature=2
+diter_toy_normal[10][1][4][0][0][3][0]=3; //backf_vs_meas=3.3, iter_change=4.2, curvature=3
+diter_toy_normal[11][1][4][0][0][3][0]=5; //backf_vs_meas=3.0, iter_change=0.8, curvature=3
+diter_toy_normal[12][1][4][0][0][3][0]=6; //backf_vs_meas=2.9, iter_change=2.0, curvature=2
+diter_toy_normal[13][1][4][0][0][3][0]=7; //backf_vs_meas=1.5, iter_change=0.2, curvature=3
+diter_toy_normal[14][1][4][0][0][3][0]=5; //backf_vs_meas=2.4, iter_change=0.5, curvature=3
+diter_toy_normal[15][1][4][0][0][3][0]=5; //backf_vs_meas=4.0, iter_change=1.5, curvature=3
+//SVD
+diter_toy_normal[2][1][4][1][0][3][0]=-1;
+diter_toy_normal[4][1][4][1][0][3][0]=-1;
+diter_toy_normal[5][1][4][1][0][3][0]=-1;
+diter_toy_normal[6][1][4][1][0][3][0]=-1;
+diter_toy_normal[7][1][4][1][0][3][0]=-1;
+diter_toy_normal[8][1][4][1][0][3][0]=-1;
+diter_toy_normal[9][1][4][1][0][3][0]=-1;
+diter_toy_normal[10][1][4][1][0][3][0]=-1;
+diter_toy_normal[11][1][4][1][0][3][0]=-1;
+diter_toy_normal[12][1][4][1][0][3][0]=-1;
+diter_toy_normal[13][1][4][1][0][3][0]=-1;
+diter_toy_normal[14][1][4][1][0][3][0]=-1;
+diter_toy_normal[15][1][4][1][0][3][0]=-1;
+//R=0.4
+//pTlead=5
+//Bayes
+diter_toy_normal[2][2][2][0][0][3][0]=-1;
+diter_toy_normal[4][2][2][0][0][3][0]=7; //backf_vs_meas=6.0, iter_change=0.4, curvature=3
+diter_toy_normal[5][2][2][0][0][3][0]=-1;
+diter_toy_normal[6][2][2][0][0][3][0]=-1;
+diter_toy_normal[7][2][2][0][0][3][0]=-1;
+diter_toy_normal[8][2][2][0][0][3][0]=2; //backf_vs_meas=2.7, iter_change=2.8, curvature=3
+diter_toy_normal[9][2][2][0][0][3][0]=-1;
+diter_toy_normal[10][2][2][0][0][3][0]=-1;
+diter_toy_normal[11][2][2][0][0][3][0]=-1;
+diter_toy_normal[12][2][2][0][0][3][0]=-1;
+diter_toy_normal[13][2][2][0][0][3][0]=-1;
+diter_toy_normal[14][2][2][0][0][3][0]=-1;
+diter_toy_normal[15][2][2][0][0][3][0]=-1;
+//SVD
+diter_toy_normal[2][2][2][1][0][3][0]=-1;
+diter_toy_normal[4][2][2][1][0][3][0]=-1;
+diter_toy_normal[5][2][2][1][0][3][0]=-1;
+diter_toy_normal[6][2][2][1][0][3][0]=-1;
+diter_toy_normal[7][2][2][1][0][3][0]=-1;
+diter_toy_normal[8][2][2][1][0][3][0]=-1;
+diter_toy_normal[9][2][2][1][0][3][0]=-1;
+diter_toy_normal[10][2][2][1][0][3][0]=-1;
+diter_toy_normal[11][2][2][1][0][3][0]=-1;
+diter_toy_normal[12][2][2][1][0][3][0]=-1;
+diter_toy_normal[13][2][2][1][0][3][0]=-1;
+diter_toy_normal[14][2][2][1][0][3][0]=-1;
+diter_toy_normal[15][2][2][1][0][3][0]=-1;
+//pTlead=6
+//Bayes
+diter_toy_normal[2][2][3][0][0][3][0]=-1;
+diter_toy_normal[4][2][3][0][0][3][0]=2; //backf_vs_meas=4.5, iter_change=1.1, curvature=2
+diter_toy_normal[5][2][3][0][0][3][0]=-1;
+diter_toy_normal[6][2][3][0][0][3][0]=-1;
+diter_toy_normal[7][2][3][0][0][3][0]=-1;
+diter_toy_normal[8][2][3][0][0][3][0]=2; //backf_vs_meas=2.0, iter_change=0.3, curvature=2
+diter_toy_normal[9][2][3][0][0][3][0]=-1;
+diter_toy_normal[10][2][3][0][0][3][0]=4; //backf_vs_meas=3.9, iter_change=4.7, curvature=2
+diter_toy_normal[11][2][3][0][0][3][0]=5; //backf_vs_meas=4.8, iter_change=0.8, curvature=2
+diter_toy_normal[12][2][3][0][0][3][0]=-1;
+diter_toy_normal[13][2][3][0][0][3][0]=3; //backf_vs_meas=3.2, iter_change=3.0, curvature=3
+diter_toy_normal[14][2][3][0][0][3][0]=3; //backf_vs_meas=4.7, iter_change=0.9, curvature=3
+diter_toy_normal[15][2][3][0][0][3][0]=6; //backf_vs_meas=5.4, iter_change=1.1, curvature=2
+//SVD
+diter_toy_normal[2][2][3][1][0][3][0]=-1;
+diter_toy_normal[4][2][3][1][0][3][0]=4; //backf_vs_meas=1.4, iter_change=53.2, curvature=2
+diter_toy_normal[5][2][3][1][0][3][0]=-1;
+diter_toy_normal[6][2][3][1][0][3][0]=-1;
+diter_toy_normal[7][2][3][1][0][3][0]=5; //backf_vs_meas=2.2, iter_change=251.0, curvature=2
+diter_toy_normal[8][2][3][1][0][3][0]=-1;
+diter_toy_normal[9][2][3][1][0][3][0]=-1;
+diter_toy_normal[10][2][3][1][0][3][0]=-1;
+diter_toy_normal[11][2][3][1][0][3][0]=-1;
+diter_toy_normal[12][2][3][1][0][3][0]=-1;
+diter_toy_normal[13][2][3][1][0][3][0]=-1;
+diter_toy_normal[14][2][3][1][0][3][0]=-1;
+diter_toy_normal[15][2][3][1][0][3][0]=-1;
+//pTlead=7
+//Bayes
+diter_toy_normal[2][2][4][0][0][3][0]=-1;
+diter_toy_normal[4][2][4][0][0][3][0]=2; //backf_vs_meas=2.3, iter_change=1.0, curvature=2
+diter_toy_normal[5][2][4][0][0][3][0]=4; //backf_vs_meas=4.2, iter_change=0.8, curvature=2
+diter_toy_normal[6][2][4][0][0][3][0]=7; //backf_vs_meas=2.7, iter_change=0.9, curvature=2
+diter_toy_normal[7][2][4][0][0][3][0]=6; //backf_vs_meas=5.4, iter_change=5.8, curvature=3
+diter_toy_normal[8][2][4][0][0][3][0]=2; //backf_vs_meas=2.0, iter_change=0.1, curvature=2
+diter_toy_normal[9][2][4][0][0][3][0]=7; //backf_vs_meas=5.6, iter_change=2.2, curvature=2
+diter_toy_normal[10][2][4][0][0][3][0]=3; //backf_vs_meas=2.8, iter_change=3.8, curvature=2
+diter_toy_normal[11][2][4][0][0][3][0]=4; //backf_vs_meas=4.2, iter_change=1.3, curvature=3
+diter_toy_normal[12][2][4][0][0][3][0]=7; //backf_vs_meas=4.2, iter_change=1.6, curvature=2
+diter_toy_normal[13][2][4][0][0][3][0]=2; //backf_vs_meas=2.3, iter_change=1.1, curvature=3
+diter_toy_normal[14][2][4][0][0][3][0]=4; //backf_vs_meas=4.1, iter_change=0.9, curvature=3
+diter_toy_normal[15][2][4][0][0][3][0]=6; //backf_vs_meas=5.2, iter_change=1.1, curvature=3
+//SVD
+diter_toy_normal[2][2][4][1][0][3][0]=-1;
+diter_toy_normal[4][2][4][1][0][3][0]=-1;
+diter_toy_normal[5][2][4][1][0][3][0]=-1;
+diter_toy_normal[6][2][4][1][0][3][0]=-1;
+diter_toy_normal[7][2][4][1][0][3][0]=-1;
+diter_toy_normal[8][2][4][1][0][3][0]=-1;
+diter_toy_normal[9][2][4][1][0][3][0]=-1;
+diter_toy_normal[10][2][4][1][0][3][0]=-1;
+diter_toy_normal[11][2][4][1][0][3][0]=-1;
+diter_toy_normal[12][2][4][1][0][3][0]=-1;
+diter_toy_normal[13][2][4][1][0][3][0]=-1;
+diter_toy_normal[14][2][4][1][0][3][0]=-1;
+diter_toy_normal[15][2][4][1][0][3][0]=-1;

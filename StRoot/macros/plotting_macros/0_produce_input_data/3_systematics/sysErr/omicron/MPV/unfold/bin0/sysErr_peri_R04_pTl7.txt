@@ -1,0 +1,11 @@
+======================================
+======================================
+relative systematic error at 15 GeV/c:
+total sys. error:3.39434%
+total sys. error:-3.14838%
+relative systematic error at 18 GeV/c:
+total sys. error:5.46802%
+total sys. error:-4.96875%
+relative systematic error at 22.5 GeV/c:
+total sys. error:5.47584%
+total sys. error:-4.60889%

@@ -1,0 +1,2688 @@
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:39:03 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_normal/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.2_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:39:10 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_normal/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.2_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:39:17 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_normal/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.2_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:39:24 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_normal/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.2_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:39:31 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_normal/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.2_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:39:38 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_normal/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.2_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:39:45 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_normal/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.3_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:39:52 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_normal/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.3_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:39:59 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_normal/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.3_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:40:06 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_normal/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.3_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:40:13 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_normal/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.3_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:40:20 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_normal/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.3_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:40:27 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_normal/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.4_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:40:34 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_normal/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.4_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:40:41 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_normal/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.4_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:40:48 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_normal/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.4_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:40:55 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_normal/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.4_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:41:03 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_normal/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.4_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:41:10 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_normal/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.5_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:41:17 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_normal/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.5_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:41:24 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_normal/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.5_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:41:31 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_normal/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.5_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:41:38 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_normal/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.5_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:41:45 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_normal/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BGD_R0.5_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:41:52 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_pp/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.2_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:42:00 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_pp/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.2_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:42:07 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_pp/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.2_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:42:14 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_pp/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.2_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:42:21 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_pp/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.2_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:42:28 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_pp/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.2_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:42:34 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_pp/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.3_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:42:41 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_pp/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.3_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:42:48 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_pp/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.3_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:42:55 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_pp/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.3_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:43:01 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_pp/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.3_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:43:08 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_pp/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.3_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:43:15 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_pp/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.4_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:43:22 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_pp/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.4_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:43:29 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_pp/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.4_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:43:36 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_pp/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.4_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:43:43 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_pp/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.4_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:43:50 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_pp/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.4_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:43:56 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_pp/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.5_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:44:03 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_pp/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.5_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:44:10 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_pp/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.5_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:44:17 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_pp/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.5_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:44:24 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_pp/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.5_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:44:31 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_pp/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_pp/response_matrix_BGD_R0.5_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:44:38 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_g/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.2_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:44:45 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_g/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.2_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:44:53 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_g/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.2_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:45:00 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_g/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.2_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:45:07 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_g/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.2_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:45:13 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_g/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.2_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:45:21 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_g/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.3_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:45:28 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_g/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.3_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:45:35 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_g/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.3_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:45:42 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_g/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.3_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:45:49 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_g/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.3_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:45:56 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_g/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.3_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:46:03 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_g/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.4_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:46:10 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_g/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.4_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:46:18 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_g/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.4_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:46:25 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_g/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.4_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:46:32 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_g/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.4_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:46:39 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_g/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.4_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:46:46 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_g/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.5_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:46:53 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_g/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.5_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:47:00 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_g/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.5_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:47:07 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_g/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.5_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:47:13 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_g/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.5_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:47:20 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_g/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_g/response_matrix_BGD_R0.5_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:47:27 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_u/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.2_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:47:34 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_u/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.2_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:47:41 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_u/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.2_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:47:47 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_u/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.2_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:47:54 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_u/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.2_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:48:00 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_u/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.2_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:48:07 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_u/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.3_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:48:14 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_u/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.3_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:48:20 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_u/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.3_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:48:27 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_u/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.3_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:48:34 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_u/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.3_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:48:40 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_u/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.3_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:48:47 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_u/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.4_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:48:54 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_u/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.4_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:49:00 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_u/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.4_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:49:07 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_u/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.4_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:49:14 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_u/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.4_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:49:21 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_u/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.4_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:49:27 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_u/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.5_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:49:34 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_u/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.5_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:49:41 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_u/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.5_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:49:47 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_u/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.5_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:49:55 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_u/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.5_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:50:01 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_u/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_u/response_matrix_BGD_R0.5_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:50:08 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_m5/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.2_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:50:15 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_m5/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.2_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:50:21 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_m5/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.2_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:50:28 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_m5/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.2_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:50:35 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_m5/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.2_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:50:41 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_m5/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.2_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:50:48 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_m5/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.3_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:50:54 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_m5/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.3_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:51:01 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_m5/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.3_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:51:08 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_m5/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.3_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:51:14 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_m5/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.3_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:51:21 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_m5/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.3_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:51:28 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_m5/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.4_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:51:34 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_m5/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.4_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:51:41 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_m5/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.4_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:51:48 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_m5/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.4_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:51:54 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_m5/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.4_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:52:02 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_m5/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.4_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:52:08 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_m5/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.5_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:52:15 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_m5/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.5_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:52:22 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_m5/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.5_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:52:28 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_m5/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.5_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:52:36 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_m5/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.5_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:52:43 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_m5/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_m5/response_matrix_BGD_R0.5_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:52:49 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_p5/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.2_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:52:56 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_p5/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.2_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:53:03 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_p5/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.2_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:53:09 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_p5/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.2_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:53:16 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_p5/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.2_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:53:22 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_p5/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.2_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:53:29 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_p5/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.3_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:53:36 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_p5/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.3_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:53:42 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_p5/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.3_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:53:49 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_p5/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.3_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:53:56 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_p5/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.3_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:54:02 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_p5/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.3_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:54:09 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_p5/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.4_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:54:16 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_p5/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.4_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:54:22 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_p5/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.4_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:54:29 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_p5/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.4_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:54:36 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_p5/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.4_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:54:42 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_p5/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.4_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:54:50 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_p5/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.5_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:54:56 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_p5/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.5_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:55:03 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_p5/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.5_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:55:10 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_p5/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.5_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:55:16 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_p5/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.5_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:55:23 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_p5/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_p5/response_matrix_BGD_R0.5_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:55:30 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_v2/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.2_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:55:37 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_v2/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.2_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:55:43 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_v2/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.2_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:55:50 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_v2/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.2_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:55:57 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_v2/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.2_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:56:03 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.2
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.2_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.2_peripheral_v2/pythia_emb_R0.2.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.2_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:56:10 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_v2/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.3_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:56:17 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_v2/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.3_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:56:24 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_v2/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.3_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:56:30 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_v2/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.3_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:56:37 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_v2/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.3_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:56:44 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.3
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.3_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.3_peripheral_v2/pythia_emb_R0.3.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.3_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:56:51 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_v2/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.4_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:56:57 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_v2/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.4_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:57:05 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_v2/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.4_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:57:12 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_v2/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.4_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:57:18 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_v2/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.4_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:57:25 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.4
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.4_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.4_peripheral_v2/pythia_emb_R0.4.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.4_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:57:32 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 2
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead2.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_v2/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.5_pTlead2.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:57:38 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 3
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead3.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_v2/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.5_pTlead3.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:57:45 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 4
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead4.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_v2/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.5_pTlead4.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:57:52 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 6
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead6.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_v2/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.5_pTlead6.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:57:59 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 5
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead5.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_v2/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.5_pTlead5.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
+*** Float Point Exception is OFF ***
+ *** Start at Date : Thu May 17 07:58:05 2018
+QAInfo:You are using STAR_LEVEL : SL15e, ROOT_LEVEL : 5.34.09_1 and node : pdsf8 
+
+Processing multiply_matrix.C...
+R: 0.5
+pTlead: 7
+input1: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_normal/response_matrix_BG_sp_R0.5_pTlead7.root
+input2: /global/homes/r/rusnak/jet_analysis/toymodel/DataOut/pythia/jetonly/pyEmb_R0.5_peripheral_v2/pythia_emb_R0.5.root
+output: /global/homes/r/rusnak/jet_analysis/STARJet/out/MB/embedding_peripheral_main/rmatrix_v2/response_matrix_BGD_R0.5_pTlead7.root
+filling vectors
+multiplying BGxdete
+writing output
+
+This is the end of ROOT -- Goodbye
+
