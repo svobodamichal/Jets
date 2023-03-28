@@ -3,7 +3,7 @@
 #NOT USED
 
 #source ../set_paths.sh
-ANALYSISDIR="/gpfs01/star/pwg/licenrob/jets/"
+ANALYSISDIR="/gpfs01/star/pwg/svomich/Jets/"
 echo "ADir: $ANALYSISDIR"
 STARLIB_VER=pro
 starver $STARLIB_VER

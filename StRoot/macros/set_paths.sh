@@ -3,7 +3,7 @@ STARLIB_VER="SL19c"
 BASEPATH="/star/u/rusnak/JET_analysis_run11/STARJet"
 export STARJETBASEDIR="$BASEPATH" 
 #export ANALYSISDIR="$BASEPATH/analysis_$STARLIB_VER"
-export ANALYSISDIR="/gpfs01/star/pwg/licenrob/jets"
+export ANALYSISDIR="/gpfs01/star/pwg/svomich/Jets"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$ANALYSISDIR/lib"
 
 #export ROOUNFOLD="$BASEPATH/software_$STARLIB_VER/RooUnfold/v-trunk-custom"
