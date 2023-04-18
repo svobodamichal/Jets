@@ -375,7 +375,17 @@ int StPicoHFJetMaker::MakeJets() {
 		if (!towHit || towHit->isBad()) {/*cout << "bad tower information" << endl; TowArr.push_back(-1111); TowEta.push_back(-1111); TowPhi.push_back(-1111); Clusters.push_back(ids); */continue;} //if the tower is bad or missing info
 		int realtowID = towHit->numericIndex2SoftId(iTow);
 		//if (any_of(begin(BadTowerArr), end(BadTowerArr), [=](int n){return n == realtowID;})) {
-		if (BadTowerMap[realtowID]) {		
+
+		StEmcGeom* mEmcGeom;
+		mEmcGeom = StEmcGeom::getEmcGeom("bemc");
+		float Toweta_tmp = 0, Towphi = 0;
+		mEmcGeom->getEtaPhi(realtowID,Toweta_tmp,Towphi);
+		float Toweta = vertexCorrectedEta(Toweta_tmp, vz); //max eta 1.05258 max difference: ET = 0.124452 for E = 0.2, if we cut on |Vz| < 30 cm
+
+		static_cast<TH2D*>(mOutList->FindObject("heta_phi_tow"))->Fill(etacluster, phicluster+TMath::Pi(), weight);
+
+
+		if (BadTowerMap[realtowID]) {
 
 			//TowArr.push_back(-1111); TowEta.push_back(-1111); TowPhi.push_back(-1111); Clusters.push_back(ids);//if the tower is bad
 			continue;} //exclude bad towers
@@ -387,11 +397,7 @@ int StPicoHFJetMaker::MakeJets() {
 		//if (Sump[iTow] > 0)cout << "after hadroncorr " << towE << endl;
 		if (towE < 0) towE = 0;
 				
-		StEmcGeom* mEmcGeom;
-		mEmcGeom = StEmcGeom::getEmcGeom("bemc");
-		float Toweta_tmp = 0, Towphi = 0;
-		mEmcGeom->getEtaPhi(realtowID,Toweta_tmp,Towphi);
-		float Toweta = vertexCorrectedEta(Toweta_tmp, vz); //max eta 1.05258 max difference: ET = 0.124452 for E = 0.2, if we cut on |Vz| < 30 cm
+
 		double ET = towE/cosh(Toweta);
 		if (ET > 30) {/*cout << towE << endl;*/ TowArr.clear();TowEta.clear();TowPhi.clear();Clusters.clear(); return kStOK;} //discard events with E > 30 GeV towers 
 		//no clustering

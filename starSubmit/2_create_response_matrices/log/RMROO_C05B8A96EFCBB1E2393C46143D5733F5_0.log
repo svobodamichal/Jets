@@ -1,0 +1,55 @@
+We are starting on node: rcas6074.rcf.bnl.gov
+HOME is not defined
+Using getent method
+HOME is now /star/u/licenrob
+148541 We will spawn ourselves (/star/u/licenrob/licenrob/jets/starSubmit/2_create_response_matrices/tmp/schedC05B8A96EFCBB1E2393C46143D5733F5_0.csh )
+148541 We BEGIN on [Wed Dec 14 18:56:53 EST 2022]
+[1] 148771
+148541 We are waiting for 148771 
+148771 Stepping into the main SUMS wrapper program with []
+.... building sandbox
+Swapping $FILELIST with: /tmp/licenrob/C05B8A96EFCBB1E2393C46143D5733F5_0/INPUTFILES/C05B8A96EFCBB1E2393C46143D5733F5_0.local.list
++++++++++++local copy debug++++++++++++++++++++
+newFileList: /tmp/licenrob/C05B8A96EFCBB1E2393C46143D5733F5_0/INPUTFILES/C05B8A96EFCBB1E2393C46143D5733F5_0.local.list
+++++++++++++++++cat FILELIST+++++++++++++++++++
+++++++++++++++++++++find.++++++++++++++++++++++
+.
+./.errror.log
+./INPUTFILES
+./INPUTFILES/C05B8A96EFCBB1E2393C46143D5733F5_0.local.list
+./.sandboxFiles
+./buildResponseROO.C
+./.output.log
+++++++++++++++++INPUTFILE Var++++++++++++++++++
+FILELIST=/tmp/licenrob/C05B8A96EFCBB1E2393C46143D5733F5_0/INPUTFILES/C05B8A96EFCBB1E2393C46143D5733F5_0.local.list
+INPUTFILECOUNT=0
+LocalInputFileDir=/tmp/licenrob/C05B8A96EFCBB1E2393C46143D5733F5_0/INPUTFILES
+NewFILELIST=/tmp/licenrob/C05B8A96EFCBB1E2393C46143D5733F5_0/INPUTFILES/C05B8A96EFCBB1E2393C46143D5733F5_0.local.list
++++++++++++++++++++++++++++++++++++++++++++++++
+--------------------------------
+Simple Unified Meta Scheduler 1.10.50 we are starting in $SCRATCH : /home/tmp/licenrob/C05B8A96EFCBB1E2393C46143D5733F5_0
+--------------------------------
+total 8
+lrwxrwxrwx 1 licenrob rhstar   79 Dec 14 18:56 buildResponseROO.C -> /gpfs01/star/pwg/licenrob/jets/StRoot/macros/response_matrix/buildResponseROO.C
+drwxr-xr-x 2 licenrob rhstar 4096 Dec 14 18:56 INPUTFILES
+/gpfs01/star/pwg/licenrob/jets
+*** Float Point Exception is OFF ***
+ *** Start at Date : Wed Dec 14 18:56:56 2022
+QAInfo:You are using STAR_LEVEL : SL19c, ROOT_LEVEL : 5.34.30 and node : rcas6074.rcf.bnl.gov 
+
+Processing StRoot/macros/loadSharedHFLibraries.C...
+strangeArrayNames-arrayNames-__NARRAYS__ = 0
+ loading of shared libraries done
+ loading of shared HF libraries are done
+Processing StRoot/macros/response_matrix/buildResponseROO.C...
+reading input file /gpfs01/star/pwg/licenrob/jets/pythiaRM/pythia6_normalized_combined_response_embed.root
+reading prior file: /gpfs01/star/pwg/licenrob/jets/responseM_HT2/prior/priors_mtsalis.root
+priorL: gammapol_1
+
+This is the end of ROOT -- Goodbye
+
+Cleaning up sandbox file:  /tmp/licenrob/C05B8A96EFCBB1E2393C46143D5733F5_0/buildResponseROO.C
+Cleaning up sandbox file:  /tmp/licenrob/C05B8A96EFCBB1E2393C46143D5733F5_0/.sandboxFiles
+Error: Scheduler could not find any files in $SCRATCH matching your <output> tag fromScratch value: *.root 
+148541 Execution of (/star/u/licenrob/licenrob/jets/starSubmit/2_create_response_matrices/tmp/schedC05B8A96EFCBB1E2393C46143D5733F5_0.csh ) has ended, exiting normally
+148541 We END on [Wed Dec 14 18:57:02 EST 2022]
