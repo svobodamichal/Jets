@@ -382,7 +382,7 @@ int StPicoHFJetMaker::MakeJets() {
 		mEmcGeom->getEtaPhi(realtowID,Toweta_tmp,Towphi);
 		float Toweta = vertexCorrectedEta(Toweta_tmp, vz); //max eta 1.05258 max difference: ET = 0.124452 for E = 0.2, if we cut on |Vz| < 30 cm
 
-		static_cast<TH2D*>(mOutList->FindObject("heta_phi_tow"))->Fill(etacluster, phicluster+TMath::Pi(), weight);
+		static_cast<TH2D*>(mOutList->FindObject("heta_phi_tow"))->Fill(Toweta, Towphi+TMath::Pi(), weight);
 
 
 		if (BadTowerMap[realtowID]) {
