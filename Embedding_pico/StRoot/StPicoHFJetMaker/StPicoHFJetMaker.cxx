@@ -435,15 +435,19 @@ int StPicoHFJetMaker::InitJets() {
               			mOutList->Add(new TH1D(hname, hdesc, nptbins, ptminbin, ptmaxbin));
               			
               			hname = Form("hResponseMatrix_pTl%i_R0%.0lf_centbin%i",pTl,fR[r]*10,centbin);
-              			hdesc = "; p^{det}_{T}; p^{true} (GeV/c)";
+              			hdesc = "; p^{det}_{T} (GeV/c); p^{true} (GeV/c)";
               			mOutList->Add(new TH2D(hname, hdesc, 420, -20, 100, 420, -20, 100));
               						 	
+              			hname = Form("hMCmatchedpT_MCpTl%i_R0%.0lf_centbin%d",pTl,fR[r]*10, centbin);
+              			hdesc = "MC matched jets (p_{T,lead} on MC only); p^{true}_{T} (GeV/c)";
+              			mOutList->Add(new TH1D(hname, hdesc, 600, 0, ptmaxbin));
+              			
               			hname = Form("hMCmatchedpT_pTl%i_R0%.0lf_centbin%d",pTl,fR[r]*10, centbin);
-              			hdesc = "MC matched jets (p_{T,lead} on MC only); p^{true}_{T}";
+              			hdesc = "MC matched jets; p^{true}_{T} (GeV/c)";
               			mOutList->Add(new TH1D(hname, hdesc, 600, 0, ptmaxbin));
               			
               			hname = Form("hRCmatchedpT_pTl%i_R0%.0lf_centbin%d",pTl,fR[r]*10, centbin);
-              			hdesc = "RC matched jets (p_{T,lead} on MC only); p^{true}_{T}";
+              			hdesc = "RC matched jets; p^{det}_{T} (GeV/c)";
               			mOutList->Add(new TH1D(hname, hdesc, 600, 0, ptmaxbin));
             		}
                	}
@@ -951,9 +955,11 @@ int StPicoHFJetMaker::MakeJets() {
 			for(Int_t pTl = 0; pTl < npTlead; pTl++) {
 				if(pTl < pTlead) {
 				static_cast<TH2D*>(mOutList->FindObject(Form("hResponseMatrix_pTl%i_R0%.0lf_centbin%i",pTl,fR[i]*10,centrality)))->Fill(pT_corr_det, pT_true, weight);
+				static_cast<TH1D*>(mOutList->FindObject(Form("hRCmatchedpT_pTl%i_R0%.0lf_centbin%d",pTl,fR[i]*10, centrality)))->Fill(pT_corr_det, weight);
+				static_cast<TH1D*>(mOutList->FindObject(Form("hMCmatchedpT_pTl%i_R0%.0lf_centbin%d",pTl,fR[i]*10, centrality)))->Fill(pT_true, weight);
 				} 
 			 	if (pTl < MatchedpTleads[j].first){
-			 	static_cast<TH1D*>(mOutList->FindObject(Form("hMCmatchedpT_pTl%i_R0%.0lf_centbin%d",pTl,fR[i]*10, centrality)))->Fill(pT_true, weight);
+			 	static_cast<TH1D*>(mOutList->FindObject(Form("hMCmatchedpT_MCpTl%i_R0%.0lf_centbin%d",pTl,fR[i]*10, centrality)))->Fill(pT_true, weight);
 			 	}
 			}
 		}
