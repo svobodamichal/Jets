@@ -409,7 +409,7 @@ int StPicoHFJetMaker::MakeJets() {
         	StPicoTrack *trk = mPicoDst->track(mIdxPicoParticles[i]);
 
         TRandom3 *randGen = new TRandom3();  // Initialize random number generator
-        double randomNumber = randGen.Uniform(0, 1);
+        double randomNumber = randGen->Uniform(0, 1);
         if(randomNumber>0.96){continue;}
 
 
