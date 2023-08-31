@@ -408,7 +408,7 @@ int StPicoHFJetMaker::MakeJets() {
 	for (unsigned int i = 0; i < mIdxPicoParticles.size(); i++) {
         	StPicoTrack *trk = mPicoDst->track(mIdxPicoParticles[i]);
 
-        TRandom3 randGen;  // Initialize random number generator
+        TRandom3 randGen = new TRandom3();;  // Initialize random number generator
         double randomNumber = randGen.Uniform(0, 1);
         if(randomNumber>0.96){continue;}
 
