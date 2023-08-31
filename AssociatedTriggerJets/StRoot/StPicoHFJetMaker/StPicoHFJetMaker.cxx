@@ -28,6 +28,8 @@
 //#include <fastjet/internal/base.hh> //robotmon
 //#endif
 
+#include <TRandom3.h>
+
 
 using namespace std;  //robotmon
 using namespace fastjet;
@@ -405,6 +407,12 @@ int StPicoHFJetMaker::MakeJets() {
 	//loop over primary tracks
 	for (unsigned int i = 0; i < mIdxPicoParticles.size(); i++) {
         	StPicoTrack *trk = mPicoDst->track(mIdxPicoParticles[i]);
+
+        TRandom3 randGen;  // Initialize random number generator
+        double randomNumber = randGen.Uniform(0, 1);
+        if(randomNumber>0.96){continue;}
+
+
 		double pT = trk->pMom().Perp(); //using primary tracks
 		if(pT != pT) continue; // NaN test. 		
         	float eta = trk->pMom().PseudoRapidity();
