@@ -1,0 +1,26 @@
+#!/usr/bin/perl
+
+$fname = $ARGV[0];
+$countAll=0;
+$countMissing=0;
+
+print "We will check the list of embedding files $fname \n";
+
+open (FPTR, "<$fname") || die "Can't open input file.\n";
+
+while (<FPTR>)  # While still input lines in the file...
+{
+    ($data,$garb) = split ("#",$_);
+    ($filename, $garb)  = split ("\n",$data);
+    $countAll++;
+#    print "Checking: $data \n";
+    if (-e $filename) {
+#	 print "File $data exists! \n";
+    } else {
+	print "File $data does not exist! \n";
+	$countMissing++;
+    }
+
+}
+
+print "All files: $countAll, Missing files: $countMissing \n";

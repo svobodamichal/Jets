@@ -1,0 +1,14 @@
+Universe         = vanilla
+Notification     = never
+Executable       = /bin/sh
+Arguments        = "-c 'exec /star/u/licenrob/licenrob/jets/starSubmit/2_create_response_matrices/tmp/sched9E74E2991C20400A9797B312FAE0CFB1_0.csh'"
+Output           = /gpfs01/star/pwg/licenrob/jets/starSubmit/2_create_response_matrices/log/RMROO_9E74E2991C20400A9797B312FAE0CFB1_0.log
+Error            = /gpfs01/star/pwg/licenrob/jets/starSubmit/2_create_response_matrices/err/RMROO_9E74E2991C20400A9797B312FAE0CFB1_0.err
+Log              = /tmp/licenrob/sched9E74E2991C20400A9797B312FAE0CFB1.condor.log
+Initialdir       = /star/u/licenrob/licenrob/jets/starSubmit/2_create_response_matrices/tmp
+kill_sig         = SIGINT
+PeriodicRemove   = (NumJobStarts >=1 && JobStatus==1) || (JobStatus == 2 && (CurrentTime - JobCurrentStartDate > (54000)) && ((RemoteUserCpu+RemoteSysCpu)/(CurrentTime-JobCurrentStartDate) < 0.10)) || (((CurrentTime - EnteredCurrentStatus) > (2*24*3600)) && JobStatus == 5) || (JobRunCount >= 1 && JobStatus == 1)
+Accounting_group = group_star.cas
+Priority         = +10
+Queue
+

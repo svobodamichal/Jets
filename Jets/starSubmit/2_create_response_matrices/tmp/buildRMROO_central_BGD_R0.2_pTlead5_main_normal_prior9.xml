@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<job maxFilesPerProcess="1" simulateSubmission = "false" filesPerHour = "0.1">
+<command>
+setenv RMATRIX_TYPE BGD
+setenv NEVENTS 400000000
+setenv PRIOR_START 9
+setenv PRIOR_STOP 18
+setenv PRIOR_SKIP1 99
+setenv PRIOR_SKIP2 99
+setenv PRIOR_SKIP3 99
+setenv RPARAM 0.2
+setenv RM_PATH /gpfs01/star/pwg/licenrob/jets/pythiaRM
+setenv OUT_PATH /gpfs01/star/pwg/licenrob/jets/responseM_HT2/central/rmatrix_normal/ROOformat
+setenv PYEMB_PATH /gpfs01/star/pwg/licenrob/jets/pythiaRM
+setenv PRIOR_PATH /gpfs01/star/pwg/licenrob/jets/responseM_HT2/prior
+setenv PTTHRESH 5
+setenv CENTRALITY central
+starver SL19c
+  cd /gpfs01/star/pwg/licenrob/jets
+  pwd
+  root4star -l 'StRoot/macros/loadSharedHFLibraries.C' 'StRoot/macros/response_matrix/buildResponseROO.C' -q -b
+  </command>
+  <stdout URL="file:/gpfs01/star/pwg/licenrob/jets/starSubmit/2_create_response_matrices/log/RMROO_$JOBID.log"/>
+  <stderr URL="file:/gpfs01/star/pwg/licenrob/jets/starSubmit/2_create_response_matrices/err/RMROO_$JOBID.err"/>
+  <output fromScratch="*.root" toURL="file:/gpfs01/star/pwg/licenrob/jets/pythiaRM/"/>
+  <SandBox>
+  <Package>
+  <File>file:/gpfs01/star/pwg/licenrob/jets/StRoot/macros/response_matrix/buildResponseROO.C</File>
+  </Package>
+  </SandBox>
+</job>

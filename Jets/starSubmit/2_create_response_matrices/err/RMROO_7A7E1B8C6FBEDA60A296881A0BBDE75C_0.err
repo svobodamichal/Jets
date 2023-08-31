@@ -1,0 +1,8 @@
+[1]  + Done                          ( ( setenv SUMS_EXECUTION 1 && nohup $0 $* ) > $SCRATCH/.output.log ) >& $SCRATCH/.errror.log
+Warning in <TClass::TClass>: no dictionary for class StStrangeMuDst is available
+Warning in <TClass::TClass>: no dictionary for class StStrangeAssoc is available
+Error in <TUnixSystem::Load>: version mismatch, /gpfs/mnt/gpfs01/star/pwg/licenrob/jets/.sl73_gcc485/lib/StPicoCuts.so = 53438, ROOT = 53430
+Error in <TUnixSystem::Load>: version mismatch, /gpfs/mnt/gpfs01/star/pwg/licenrob/jets/.sl73_gcc485/lib/StPicoPrescales.so = 53438, ROOT = 53430
+Error in <TUnixSystem::Load>: version mismatch, /gpfs/mnt/gpfs01/star/pwg/licenrob/jets/.sl73_gcc485/lib/StPicoJetMaker.so = 53438, ROOT = 53430
+Error in <TUnixSystem::Load>: version mismatch, /gpfs/mnt/gpfs01/star/pwg/licenrob/jets/.sl73_gcc485/lib/StRefMultCorr.so = 53438, ROOT = 53430
+Error in <TUnixSystem::Load>: version mismatch, /gpfs/mnt/gpfs01/star/pwg/licenrob/jets/.sl73_gcc485/lib/StPicoHFJetMaker.so = 53438, ROOT = 53430

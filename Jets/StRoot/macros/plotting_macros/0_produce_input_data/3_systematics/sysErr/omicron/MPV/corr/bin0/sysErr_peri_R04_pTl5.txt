@@ -1,0 +1,53 @@
+======================================
+---------------------------------------
+relative systematic error at 15 GeV/c:
+nominal: 0%
+#epsilon(TPC) +5: -7.36413%
+#epsilon(TPC) -5: 12.9977%
+g frag.: 1.38768%
+u frag.: -1.10812%
+#rho: nremove=x-1: -1.3839%
+#rho: R=0.2: 1.29865%
+#rho: R=0.4: -5.07801%
+pp had. rat.: 0.368239%
+nfit>=20: -4.8409%
+v2 corr: -0.183744%
+pythia dpT: 7.29567%
+---------------------------------------
+relative systematic error at 18 GeV/c:
+nominal: 0%
+#epsilon(TPC) +5: -12.7744%
+#epsilon(TPC) -5: 10.5678%
+g frag.: -2.09658%
+u frag.: -5.58054%
+#rho: nremove=x-1: -7.73288%
+#rho: R=0.2: -4.58367%
+#rho: R=0.4: -5.53231%
+pp had. rat.: -4.21189%
+nfit>=20: -7.94521%
+v2 corr: -3.99886%
+pythia dpT: 8.00924%
+---------------------------------------
+relative systematic error at 22.5 GeV/c:
+nominal: 0%
+#epsilon(TPC) +5: -2.50542%
+#epsilon(TPC) -5: 25.149%
+g frag.: 10.4891%
+u frag.: 6.10299%
+#rho: nremove=x-1: 2.93886%
+#rho: R=0.2: 12.403%
+#rho: R=0.4: 9.54525%
+pp had. rat.: 7.38179%
+nfit>=20: 1.54669%
+v2 corr: 7.68975%
+pythia dpT: 23.0592%
+======================================
+relative systematic error at 15 GeV/c:
+total sys. error:15.0304%
+total sys. error:-10.3261%
+relative systematic error at 18 GeV/c:
+total sys. error:13.26%
+total sys. error:-20.1741%
+relative systematic error at 22.5 GeV/c:
+total sys. error:41.0008%
+total sys. error:-2.50542%

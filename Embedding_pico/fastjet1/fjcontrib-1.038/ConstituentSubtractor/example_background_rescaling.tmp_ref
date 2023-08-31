@@ -1,0 +1,15 @@
+IterativeConstituentSubtractor using [GridMedianBackgroundEstimator, with rectangular grid with rapidity extent -4 < rap < 4, tile size drap x dphi = 0.5 x 0.483322] to estimate the background
+IterativeConstituentSubtractor: perform mass subtraction: 1
+
+pt = 89.57, rap = 2.088, mass = 21.55, width = 0.1866
+pt = 144.5, rap = 0.6689, mass = 19.34, width = 0.06909
+pt = 220.1, rap = -1.068, mass = 18.09, width = 0.0337
+
+pt = 115.3, rap = 2.08, mass = 45.33, width = 0.2569
+pt = 167.3, rap = 0.6891, mass = 58.31, width = 0.1268
+pt = 230.5, rap = -1.065, mass = 46.2, width = 0.05647
+
+pt = 89.61, rap = 2.09, mass = 23.98, width = 0.1945
+pt = 144.1, rap = 0.6791, mass = 37.53, width = 0.07245
+pt = 214.3, rap = -1.071, mass = 26.15, width = 0.02693
+
