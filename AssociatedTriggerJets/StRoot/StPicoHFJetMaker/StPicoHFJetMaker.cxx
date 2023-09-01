@@ -404,11 +404,12 @@ int StPicoHFJetMaker::MakeJets() {
 		neutraljetTracks.push_back(inputTower);}
 	} //end get btow info
 
-	//loop over primary tracks
+    TRandom3 randGen;
+
+    //loop over primary tracks
 	for (unsigned int i = 0; i < mIdxPicoParticles.size(); i++) {
         	StPicoTrack *trk = mPicoDst->track(mIdxPicoParticles[i]);
 
-        TRandom3 randGen = new TRandom3();
         double randomNumber = randGen.Rndm();
         std::cout << "Random number " << i+1 << ": " << randomNumber << std::endl;
 
