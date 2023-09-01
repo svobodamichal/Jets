@@ -408,9 +408,9 @@ int StPicoHFJetMaker::MakeJets() {
 	for (unsigned int i = 0; i < mIdxPicoParticles.size(); i++) {
         	StPicoTrack *trk = mPicoDst->track(mIdxPicoParticles[i]);
 
-        TRandom3 *randGen = new TRandom3();  // Initialize random number generator
-        double randomNumber = randGen->Uniform(0, 1);
-        if(randomNumber>0.96){continue;}
+        TRandom3 randGen;
+        double randomNumber = randGen.Rndm();
+        std::cout << "Random number " << i+1 << ": " << randomNumber << std::endl;
 
 
 		double pT = trk->pMom().Perp(); //using primary tracks
