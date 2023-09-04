@@ -411,8 +411,6 @@ int StPicoHFJetMaker::MakeJets() {
         	StPicoTrack *trk = mPicoDst->track(mIdxPicoParticles[i]);
 
         double randomNumber = randGen.Rndm();
-        std::cout << "Random number " << i+1 << ": " << randomNumber << std::endl;
-
 
 		double pT = trk->pMom().Perp(); //using primary tracks
 		if(pT != pT) continue; // NaN test. 		
