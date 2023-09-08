@@ -411,6 +411,7 @@ int StPicoHFJetMaker::MakeJets() {
         	StPicoTrack *trk = mPicoDst->track(mIdxPicoParticles[i]);
 
         double randomNumber = randGen.Rndm();
+        if(randomNumber>0.96){continue;}
 
 		double pT = trk->pMom().Perp(); //using primary tracks
 		if(pT != pT) continue; // NaN test. 		

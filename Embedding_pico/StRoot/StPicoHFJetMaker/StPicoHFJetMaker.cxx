@@ -310,37 +310,7 @@ int StPicoHFJetMaker::InitJets() {
   //mOutList->Add(new TH2D("heta_phi_tow", "tower eta vs phi; #eta [-]; #phi [-]", netabins, etaminbin, etamaxbin, nphibins, phiminbin, phimaxbin));		
 	  mOutList->Add(new TH2D("heta_phi_tow", "tower eta vs phi; #eta [-]; #phi [-]", netabins/5, etaminbin, etamaxbin, nphibins, phiminbin, phimaxbin));		
 
-    if (isMcMode()) {cout << "MC mode activated" << endl;
-        //TODO: Add required histograms for MC Mode
-
-	for(unsigned int r=0; r<fR.size(); r++)
-	{
-		TString hname=Form("hjetpTembArea_R0%.0lf",fR[r]*10);
-		mOutList->Add(new TH2D(hname,"jet pTemb vs area; A [-]; p_{T} (GeV/c)", 100, 0, 1, nptembbins, ptembminbin, ptembmaxbin));
-		TString htitle = "delta pT for BG corrections, using sp probe; p_{T}^{emb} (GeV/c); #delta p_{T} (GeV/c)";
-		for (int centbin = -1; centbin < 9; centbin++) {
-			for(Int_t pTlcut = 0; pTlcut<npTlead; pTlcut++)	{
-				hname=Form("delta_pt_BG_sp_%i_R0%.0lf_centbin%i", pTlcut, fR[r]*10, centbin);
-					if (kEmbPythia == 1) {htitle = "delta pT for BG corrections, using pythia probe; p_{T}^{emb} (GeV/c); #delta p_{T} (GeV/c)"; hname=Form("delta_pt_BG_py_%i_R0%.0lf_centbin%i", pTlcut, fR[r]*10, centbin);}
-				//cout << hname << endl;
- 	   			mOutList->Add(new TH2D(hname, htitle, nptembbins, ptembminbin, ptembmaxbin, nptembbins, deltaptembminbin, deltaptembmaxbin));
-				}	
-			}
-	}
-
-
-		//initialize TPythia6 for pythia jet embedding
-		//Setting random seed
-	TDatime dt;
-	UInt_t curtime = dt.Get();
-	UInt_t procid = gSystem->GetPid();
-  	UInt_t seed = curtime - procid;
-  	gRandom->SetSeed(seed);
-
-	//PYTHIA
-	fpythia = new TPythia6();
-	fpythia->SetMRPY(1, seed);
-
+    if (isMcMode()) { //not used
     }
 
 	TString hname ="hrho";
@@ -484,21 +454,7 @@ int StPicoHFJetMaker::MakeJets() {
 	vector<PseudoJet> neutraljetTracks; //from bemc towers only
 	vector<PseudoJet> fullTracks;
 	vector<PseudoJet> MCjetTracks;
-	vector<PseudoJet> MCjetTowers;	
-
-//very rough centrality estimation - until proper centrality definition available
-		//int centrality = -1;
-
-	/*	if (refMult > 10 && refMult <= 21) centrality = 0;
-		if (refMult > 21 && refMult <= 40) centrality = 1;
-		if (refMult > 40 && refMult <= 71) centrality = 2;
-		if (refMult > 71 && refMult <= 115) centrality = 3;
-		if (refMult > 115 && refMult <= 176) centrality = 4;
-		if (refMult > 176 && refMult <= 257) centrality = 5;
-		if (refMult > 257 && refMult <= 364) centrality = 6;
-		if (refMult > 364 && refMult <= 430) centrality = 7;
-		if (refMult > 430) centrality = 8;
-	*/
+	//vector<PseudoJet> MCjetTowers;	
 
 	fRunNumber = mPicoDst->event()->runId();
 	int eventId = mPicoDst->event()->eventId(); //eventID
@@ -596,9 +552,16 @@ int StPicoHFJetMaker::MakeJets() {
 		neutraljetTracks.push_back(inputTower);}
 	} //end get btow info
 
-	//loop over primary tracks
+
+    TRandom3 randGen;
+
+    //loop over primary tracks
 	for (unsigned int i = 0; i < mIdxPicoParticles.size(); i++) {
-        	StPicoTrack *trk = mPicoDst->track(mIdxPicoParticles[i]);
+
+        double randomNumber = randGen.Rndm();
+        if(randomNumber>0.96){continue;}
+
+        StPicoTrack *trk = mPicoDst->track(mIdxPicoParticles[i]);
 		double pT = trk->pMom().Perp(); //using primary tracks
 		if(pT != pT) continue; // NaN test. 		
         	float eta = trk->pMom().PseudoRapidity();
@@ -659,99 +622,12 @@ int StPicoHFJetMaker::MakeJets() {
     	for (unsigned int i = 0; i < fR.size(); i++) { 
         	float maxRapJet = mPicoCuts->getCutEta() - fR[i];
 
-        	if (isMcMode()) {	
-		//TODO: Add MC code here
-		//embedding of simulated jet into real event
-		//vector<PseudoJet> input_vector;
-		float pT_emb=0;
-		//float eta_emb=0;
-		//float phi_emb=0;
-		//float maxRapJet=fMaxRap - 0.3; //fiducial jet acceptance
-
-		for (unsigned iemb = 0; iemb < fEmbPt.size(); iemb++)
-		{
-			//JetReco(input_vector, R, nJetsRemove, weight,iemb);
-			
-			pT_emb=fEmbPt[iemb];
-			//jetTracks_emb = EmbedJet(kEmbPythia,pT_emb,maxRapJet,jetTracks/*,&eta_emb,&phi_emb*/,"u"/*sParton*/,fpythia); //charged jets
-			jetTracks_emb = EmbedJet(kEmbPythia,pT_emb,maxRapJet,fullTracks/*,&eta_emb,&phi_emb*/,"u"/*sParton*/,fpythia); //full jets
-
-			//setup fastjet
-	            	JetDefinition jet_def(antikt_algorithm, fR[i]);
-	           	AreaDefinition area_def(active_area_explicit_ghosts, GhostedAreaSpec(fGhostMaxrap, 1, 0.01));
-	
-	            	//run jet reconstruction
-	            	ClusterSequenceArea clust_seq_hard(jetTracks_emb, jet_def, area_def);
-	           	vector<PseudoJet> jets_all = sorted_by_pt(clust_seq_hard.inclusive_jets(fJetPtMin));
-			//cout << "n all anti-kT jets: " << jets_all.size() << endl;
-	            	Selector Fiducial_cut_selector = SelectorAbsEtaMax(maxRapJet) * SelectorPtMin(0.01); // Fiducial cut for jets
-	            	vector<PseudoJet> jets = Fiducial_cut_selector(jets_all);
-			//cout << "n accepted anti-kT jets: " << jets.size() << endl;
-
-
-	           	// background estimation
-	           	JetDefinition jet_def_bkgd(kt_algorithm, fRBg);
-	           	AreaDefinition area_def_bkgd(active_area_explicit_ghosts,GhostedAreaSpec(fGhostMaxrap, 1, 0.01));
-			if (centrality == 0 || centrality == 1) nJetsRemove = 2; //remove two hardest jets in central collisions, one in others
-	        	Selector selector = SelectorAbsEtaMax(1.0) * (!SelectorNHardest(nJetsRemove)) * SelectorPtMin(0.01);
-	            	JetMedianBackgroundEstimator bkgd_estimator(selector, jet_def_bkgd, area_def_bkgd);
-	        	bkgd_estimator.set_particles(jetTracks_emb);
-						
-
-	   		float rho   = bkgd_estimator.rho();
-	   		float rho_sigma = bkgd_estimator.sigma();
-	
-						
-		 	for(unsigned int pjet = 0; pjet < jets.size(); pjet++) {
-                		float phi_jet = jets[pjet].phi();
-              			float eta_jet = jets[pjet].eta();
-                		float pT_jet = jets[pjet].perp();
-                		float area_jet = jets[pjet].area();
-                		vector<PseudoJet> constituents = sorted_by_pt(jets[pjet].constituents());
-							
-                		float pTlead = constituents[0].perp();
-                		float pTcorr_jet = pT_jet - area_jet*rho;
-							
-                		//set acceptance
-                		float etaMinCut = -(maxRapJet);
-                		float etaMaxCut = (maxRapJet);
-
-		                if(eta_jet < etaMinCut || eta_jet > etaMaxCut) continue; // fiducial acceptance
-
-				//*********************
-		      		//FILLING HISTOGRAMS
-				//*********************
-				bool found=false;
-				//is it embedded jet?
-				found=FindEmbeddedJet(constituents,pT_emb);
-				if(found) {
-					static_cast<TH2D*>(mOutList->FindObject(Form("hjetpTembArea_R0%.0lf",fR[i]*10)))->Fill(area_jet, pT_emb, weight);
-					if(area_jet < fAcuts[i]) continue;
-					double dpT=	pTcorr_jet-pT_emb;
-					//if (fabs(fR[i]-0.4) < 0.001) cout << "pTcorr " << pTcorr_jet << " pTemb " << pT_emb << " dpT " << dpT << endl;
-      					for(Int_t pTl=0; pTl<npTlead; pTl++)
-						{
-						if(pTlead >= pTl){
-						if (kEmbPythia == 1) {static_cast<TH2D*>(mOutList->FindObject(Form("delta_pt_BG_py_%i_R0%.0lf_centbin%i", pTl, fR[i]*10, centrality)))->Fill(pT_emb, dpT, weight);}
- 						else {static_cast<TH2D*>(mOutList->FindObject(Form("delta_pt_BG_sp_%i_R0%.0lf_centbin%i", pTl, fR[i]*10, centrality)))->Fill(pT_emb, dpT, weight);}
-						}
-					} //pTlead loop
-				} //if(found)
-			}//jet loop
-		}	//emb loop
-
-
-
-
-
-
-
+        	if (isMcMode()) {	//not used
 
         	} else { //!isMcMode()
 	        float maxRapJet = 1 - fR[i];
 		//MC jets first
 		
-		MCjetTracks.insert(MCjetTracks.end(),MCjetTowers.begin(),MCjetTowers.end());
 		//setup fastjet
 		JetDefinition Mcjet_def(antikt_algorithm, fR[i]);
         	AreaDefinition Mcarea_def(active_area_explicit_ghosts, GhostedAreaSpec(fGhostMaxrap, 1, 0.01));
@@ -779,71 +655,6 @@ int StPicoHFJetMaker::MakeJets() {
         	
         	//RC jets
 		//setup fastjet
-		//CHARGED JETS
-	/*	JetDefinition jet_def(antikt_algorithm, fR[i]);
-		// jet area definition
-		//GhostedAreaSpec area_spec(fGhostMaxrap);
-            	//AreaDefinition area_def(active_area, are0a_spec);
-          	 AreaDefinition area_def(active_area_explicit_ghosts, GhostedAreaSpec(fGhostMaxrap, 1, 0.01));
-
-            	//run jet reconstruction
-            	ClusterSequenceArea clust_seq_hard(jetTracks, jet_def, area_def);
-            	vector<PseudoJet> jets_all = sorted_by_pt(clust_seq_hard.inclusive_jets(fJetPtMin));
-		//cout << "n all anti-kT jets: " << jets_all.size() << endl;
-            	Selector Fiducial_cut_selector = SelectorAbsEtaMax(maxRapJet); // Fiducial cut for jets
-            	vector<PseudoJet> jets = Fiducial_cut_selector(jets_all);
-		//cout << "n accepted anti-kT jets: " << jets.size() << endl;
-
-
-            	for(unsigned int pjet = 0; pjet < jets.size(); pjet++) {
-            		float phi_jet = jets[pjet].phi();
-            		float eta_jet = jets[pjet].eta();
-            		float pT_jet = jets[pjet].perp();
-                	float area_jet = jets[pjet].area();
-            		vector<PseudoJet> constituents = sorted_by_pt(jets[pjet].constituents());				
-            		float pTlead = constituents[0].perp();
-			float pTcorr_jet = pT_jet - area_jet*rho;
-							
-                	//set acceptance
-                	float etaMinCut = -(maxRapJet);
-                	float etaMaxCut = (maxRapJet);
-
-                	if(eta_jet < etaMinCut || eta_jet > etaMaxCut) continue; // fiducial acceptance
-
-                	static_cast<TH1D*>(mOutList->FindObject(Form("hjetarea_R0%.0lf",fR[i]*10)))->Fill(area_jet, weight);
-                	static_cast<TH2D*>(mOutList->FindObject(Form("hjetpTarea_R0%.0lf",fR[i]*10)))->Fill(area_jet, pT_jet, weight);
-                	static_cast<TH2D*>(mOutList->FindObject(Form("hjetpTcorrArea_R0%.0lf",fR[i]*10)))->Fill(area_jet, pTcorr_jet, weight);
-
-                  	if(area_jet < fAcuts[i]) continue;
-                	int nparticles = constituents.size();
-			//cout << nparticles << endl;
-			for(unsigned int ic = 0; ic < constituents.size(); ++ic) {
-				float ceta = constituents[ic].eta();
-				float cphi = constituents[ic].phi();
-				static_cast<TH1D*>(mOutList->FindObject(Form("hceta_R0%.0lf",fR[i]*10)))->Fill(ceta, weight);
-				static_cast<TH1D*>(mOutList->FindObject(Form("hcphi_R0%.0lf",fR[i]*10)))->Fill(cphi, weight);
-			}		
-
-                	static_cast<TH1D*>(mOutList->FindObject(Form("hjetpT_R0%.0lf_centbin%d",fR[i]*10, centrality)))->Fill(pT_jet, weight);
-                	static_cast<TH1D*>(mOutList->FindObject(Form("hjetpTlead_R0%.0lf_centbin%d",fR[i]*10, centrality)))->Fill(pTlead, weight);
-
-			//static_cast<TH1D*>(mOutList->FindObject(Form("hjetpT_R0%.0lf_centbin%d_corr",fR[i]*10, centrality)))->Fill(pTcorr_jet);
-			//static_cast<TH2D*>(mOutList->FindObject(Form("hpT_pTlead_R0%.0lf",fR[i]*10)))->Fill(pTcorr_jet, pTlead);
-		    	static_cast<TH1D*>(mOutList->FindObject(Form("hpT_R0%.0lf",fR[i]*10)))->Fill(pT_jet, weight);
-                    	//static_cast<TH2D*>(mOutList->FindObject(Form("heta_phi_R0%.0lf", fR[i]*10)))->Fill(eta_jet, phi_jet);
-		    	static_cast<TH1D*>(mOutList->FindObject(Form("heta_R0%.0lf", fR[i]*10)))->Fill(eta_jet, weight);
-		    	static_cast<TH1D*>(mOutList->FindObject(Form("hphi_R0%.0lf", fR[i]*10)))->Fill(phi_jet, weight);
-                	static_cast<TH2D*>(mOutList->FindObject(Form("hnparticlesinjet_R0%.0lf",fR[i]*10)))->Fill(nparticles, pTlead); //this includes ghosts and is probably not correct!
-
-                   	for(Int_t pTl = 0; pTl < npTlead; pTl++) {
-                        	if(pTl < pTlead) {
-                        	    static_cast<TH1D*>(mOutList->FindObject(Form("hpT_pTl%i_R0%.0lf_centbin%d",pTl,fR[i]*10, centrality)))->Fill(pTcorr_jet, weight);
-                        	}
-                    	}
-             
-           	 } // for(unsigned int pjet = 0; pjet < jets.size(); pjet++)
-
-		*/
 		//full jet reconstruction
 		JetDefinition fjet_def(antikt_algorithm, fR[i]);
 		AreaDefinition farea_def(active_area_explicit_ghosts, GhostedAreaSpec(fGhostMaxrap, 1, 0.01));
