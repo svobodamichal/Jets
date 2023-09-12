@@ -1,0 +1,5 @@
+chmod +x list_files.sh
+
+./list_files.sh /path/to/output_directory/file_list.txt /path/to/source_directory1 /path/to/source_directory2 /path/to/source_directory3
+
+./list_files.sh /path/to/output_directory/file_list.txt /path/to/source_directory1 /path/to/source_directory2 /path/to/source_directory3
