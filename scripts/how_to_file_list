@@ -1,5 +1,13 @@
 chmod +x list_files.sh
 
-./list_files.sh /path/to/output_directory/file_list.txt /path/to/source_directory1 /path/to/source_directory2 /path/to/source_directory3
+chmod +x /gpfs/mnt/gpfs01/star/pwg/svomich/Jets/scripts/list_files.sh
 
 ./list_files.sh /path/to/output_directory/file_list.txt /path/to/source_directory1 /path/to/source_directory2 /path/to/source_directory3
+
+/path/to/script_directory/list_files.sh /path/to/output_directory/file_list.txt directory1 directory2 directory3
+
+
+
+/gpfs/mnt/gpfs01/star/pwg/svomich/Jets/scripts/list_files.sh /gpfs/mnt/gpfs01/star/pwg/svomich/Jets/Embedding_pico/filelists/file_list.txt /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt9_11_0/ /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt9_11_1/ /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt9_11_10/ /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt9_11_11/ /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt9_11_12/ /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt9_11_13/ /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt9_11_14/ /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt9_11_15/ /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt9_11_16/ /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt9_11_17/ /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt9_11_18/ /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt9_11_19/ /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt9_11_2/ /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt9_11_3/ /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt9_11_4/ /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt9_11_5/ /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt9_11_6/ /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt9_11_7/ /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt9_11_8/ /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt9_11_9/
+
+/gpfs/mnt/gpfs01/star/pwg/svomich/Jets/scripts/list_files.sh /gpfs/mnt/gpfs01/star/pwg/svomich/Jets/Embedding_pico/filelists/file_list.txt /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt50_-1_0/ /star/data105/embedding/Run14_AuAu200_Pythia6_PicoDst/pt50_-1_1/ 
