@@ -505,8 +505,8 @@ int StPicoHFJetMaker::MakeJets() {
 		PseudoJet inputMcParticle(mcpx, mcpy, mcpz, mcE);
 		//PseudoJet inputNeutralMcParticle(mcpx, mcpy, mcpz, mcp); //assume m = 0
 		//cout << inputNeutralMcParticle.perp() << endl; 
-		if (!mctrk->charge()) {inputMcParticle.set_user_index(geantId);MCjetTowers.push_back(inputMcParticle);} 
-		else {MCjetTracks.push_back(inputMcParticle);}  	
+        if (!mctrk->charge()) {inputMcParticle.set_user_index(geantId);}
+        MCjetTracks.push_back(inputMcParticle);
 	}
 	
 
