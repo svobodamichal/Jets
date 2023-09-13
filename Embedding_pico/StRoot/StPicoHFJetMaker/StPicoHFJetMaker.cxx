@@ -28,6 +28,7 @@
 //#include <fastjet/internal/base.hh> //robotmon
 //#endif
 
+#include <TRandom3.h>
 
 using namespace std;  //robotmon
 using namespace fastjet;
