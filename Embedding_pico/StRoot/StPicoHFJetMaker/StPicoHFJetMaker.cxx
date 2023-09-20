@@ -276,7 +276,9 @@ int StPicoHFJetMaker::InitJets() {
     float ptembmaxbin = 25;
     float deltaptembminbin = -30;
     float deltaptembmaxbin = 50;
-
+    
+    TH1::SetDefaultSumw2();
+    
 	mOutList->Add(new TH1D("hweight", "weight", 135, 0, 3));
 	mOutList->Add(new TH1D("hcent", "centrality", 10, -1, 9));
 
@@ -407,7 +409,7 @@ int StPicoHFJetMaker::InitJets() {
               			
               			hname = Form("hResponseMatrix_pTl%i_R0%.0lf_centbin%i",pTl,fR[r]*10,centbin);
               			hdesc = "; p^{det}_{T} (GeV/c); p^{true} (GeV/c)";
-              			mOutList->Add(new TH2D(hname, hdesc, 420, -20, 100, 420, -20, 100));
+              			mOutList->Add(new TH2D(hname, hdesc, 360, -20, 100, 360, -20, 100));
               						 	
               			hname = Form("hMCmatchedpT_MCpTl%i_R0%.0lf_centbin%d",pTl,fR[r]*10, centbin);
               			hdesc = "MC matched jets (p_{T,lead} on MC only); p^{true}_{T} (GeV/c)";
@@ -505,8 +507,8 @@ int StPicoHFJetMaker::MakeJets() {
 		PseudoJet inputMcParticle(mcpx, mcpy, mcpz, mcE);
 		//PseudoJet inputNeutralMcParticle(mcpx, mcpy, mcpz, mcp); //assume m = 0
 		//cout << inputNeutralMcParticle.perp() << endl; 
-        if (!mctrk->charge()) {inputMcParticle.set_user_index(geantId);}
-        MCjetTracks.push_back(inputMcParticle);
+		if (!mctrk->charge()) {inputMcParticle.set_user_index(geantId);} 
+		MCjetTracks.push_back(inputMcParticle);
 	}
 	
 
@@ -553,16 +555,15 @@ int StPicoHFJetMaker::MakeJets() {
 		neutraljetTracks.push_back(inputTower);}
 	} //end get btow info
 
-
     TRandom3 randGen;
 
     //loop over primary tracks
 	for (unsigned int i = 0; i < mIdxPicoParticles.size(); i++) {
+        	StPicoTrack *trk = mPicoDst->track(mIdxPicoParticles[i]);
 
         double randomNumber = randGen.Rndm();
         if(randomNumber>0.96){continue;}
 
-        StPicoTrack *trk = mPicoDst->track(mIdxPicoParticles[i]);
 		double pT = trk->pMom().Perp(); //using primary tracks
 		if(pT != pT) continue; // NaN test. 		
         	float eta = trk->pMom().PseudoRapidity();

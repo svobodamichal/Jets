@@ -102,23 +102,23 @@ int StPicoHFJetMaker::InitJets() {
     float ptembmaxbin = 25;
     float deltaptembminbin = -30;
     float deltaptembmaxbin = 50;
-
-		mOutList->Add(new TH1D("hweight", "weight", 135, 0, 3));
-		mOutList->Add(new TH1D("hcent", "centrality", 10, -1, 9));
-		
-		mOutList->Add(new TH2D("hrunIdcent", "runId vs centrality", 90913, 15076101, 15167014, 10, -1, 9));
+    
+	TH1::SetDefaultSumw2();
+	mOutList->Add(new TH1D("hweight", "weight", 135, 0, 3));
+	mOutList->Add(new TH1D("hcent", "centrality", 10, -1, 9));
+	//mOutList->Add(new TH2D("hrunIdcent", "runId vs centrality", 90913, 15076101, 15167014, 10, -1, 9)); //not used
 
     //General track QA
-    mOutList->Add(new TH2D("heta_phi_tr", "track phi vs. eta;#phi [-];#eta [-]", nphibins, phiminbin, phimaxbin, netabins, etaminbin, etamaxbin));
-		mOutList->Add(new TH1D("hphi_tr", "track phi;#phi", nphibins, phiminbin, phimaxbin));
-		mOutList->Add(new TH1D("heta_tr", "track eta;#eta", netabins, etaminbin, etamaxbin));    
-		mOutList->Add(new TH1D("hpT_tr", "track pT; p_{T} [GeV/c]", npttrackbins, pttrackmin, pttrackmax));
+	mOutList->Add(new TH2D("heta_phi_tr", "track phi vs. eta;#phi [-];#eta [-]", nphibins, phiminbin, phimaxbin, netabins, etaminbin, etamaxbin));
+	mOutList->Add(new TH1D("hphi_tr", "track phi;#phi", nphibins, phiminbin, phimaxbin));
+	mOutList->Add(new TH1D("heta_tr", "track eta;#eta", netabins, etaminbin, etamaxbin));    
+	mOutList->Add(new TH1D("hpT_tr", "track pT; p_{T} [GeV/c]", npttrackbins, pttrackmin, pttrackmax));
 	//	mOutList->Add(new TH1D("hE_tr", "track E from BEMC; E [GeV]", nEtrackbins, Etrackmin, Etrackmax));
 	//	mOutList->Add(new TH1D("hpTBEMC_tr", "track pT from BEMC; p_{T} [GeV/c]", nptBEMCtrackbins, ptBEMCtrackmin, ptBEMCtrackmax));
-    mOutList->Add(new TH2D("hdca_z_tr", "track DCA vs z-vertex", 90, 0, 3, zbins , zmin, zmax));
-    mOutList->Add(new TH1D("hdca_tr", "track DCA", 90, 0, 3));
-    mOutList->Add(new TH2D("hdca_pT", "track DCA vs. p_{T}", 90, 0, 3, npttrackbins, pttrackmin, pttrackmax));
-		mOutList->Add(new TH1D("hcharged_tr", "track charge", 90, 0, 3));	
+	mOutList->Add(new TH2D("hdca_z_tr", "track DCA vs z-vertex", 90, 0, 3, zbins , zmin, zmax));
+	mOutList->Add(new TH1D("hdca_tr", "track DCA", 90, 0, 3));
+    	mOutList->Add(new TH2D("hdca_pT", "track DCA vs. p_{T}", 90, 0, 3, npttrackbins, pttrackmin, pttrackmax));
+	mOutList->Add(new TH1D("hcharged_tr", "track charge", 90, 0, 3));	
 
 		//mOutList->Add(new TH1D("hdca_XY_tr", "global track DCA_XY; DCA_{xy} [cm]", 200, -20, 20));	
     //mOutList->Add(new TH1D("hdca_Z_tr", "global track DCA_Z; DCA_{z} [cm]", 200, -20, 20));	
@@ -362,7 +362,7 @@ int StPicoHFJetMaker::MakeJets() {
 	weight = mRefmultCorrUtil->weight();
 	static_cast<TH1D*>(mOutList->FindObject("hweight"))->Fill(weight);
 	static_cast<TH1D*>(mOutList->FindObject("hcent"))->Fill(centrality, weight);
-	static_cast<TH2D*>(mOutList->FindObject("hrunIdcent"))->Fill(fRunNumber,centrality,weight);
+	//static_cast<TH2D*>(mOutList->FindObject("hrunIdcent"))->Fill(fRunNumber,centrality,weight); //not used
 		
 	//if (centrality > 1) return kStOk; //REMEMBER NOW ONLY CENTRAL
 					
