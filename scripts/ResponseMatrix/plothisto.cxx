@@ -170,9 +170,9 @@ void plothisto(string prod = "combined_response")
 						}	
 						hResponseMrebin[pTlead][k][cent]->Write();
 						delete hResponseMrebin[pTlead][k][cent];
-
-					}
 */
+					}
+
 			/*hptleads_tmp[k][cent] = (TH2D*)list1->FindObject(Form("hpTleads_R0%.0f_cent%i", R*10,cent));
 			hptleads[k][cent] = (TH2D*)hptleads_tmp[k][cent]->Clone(Form("hpTleads_R0%.0f", R*10));
 			double intgrl = -1;
