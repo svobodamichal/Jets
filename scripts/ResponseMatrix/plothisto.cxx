@@ -146,7 +146,7 @@ void plothisto(string prod = "combined_response")
 				hRcMatchedpT[pTlead][k][cent]->Write();
 				}
 				hResponseM[pTlead][k][cent]->Draw("colz");
-				hResponseM[pTlead][k]->Write();
+				hResponseM[pTlead][k][cent]->Write();
 
 
 		latex->DrawLatex(lleft + 0*lstep, lbottom+1*lstep, Form("PYTHIA6 p+p #otimes Au+Au %s%%",centbin[cent].Data()));	

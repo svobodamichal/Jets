@@ -6,7 +6,7 @@
 using namespace std;
 
 
-void ploteffi(string prod = "MC")
+void ploteffi(string prod = "all")
 {
  
 	TFile *f1 = TFile::Open(Form("pythia6_%s.root", prod.c_str()));
@@ -20,17 +20,19 @@ void ploteffi(string prod = "MC")
 	array<TString, 2> centbin = {"0-10","60-80"};
 	
 	TH1D *hMcpT_central[10][3];
+	TH1D *hMcpT_central_tmp[10][3];	
 	TH1D *hMcMatchedpT_central[10][3];
 	TH1D *heffi_central[10][3];
 	
 	TH1D *hMcpT_peripheral[10][3];
+	TH1D *hMcpT_peripheral_tmp[10][3];	
 	TH1D *hMcMatchedpT_peripheral[10][3];
 	TH1D *heffi_peripheral[10][3];
 
 
 
 	TCanvas* can = new TCanvas("can", "can", 1600, 1400);
-	TLegend* leg = new TLegend(0.39, 0.34, 0.70, 0.69);
+	TLegend* leg = new TLegend(0.15, 0.59, 0.27, 0.79);
 	leg->SetBorderSize(0);
   	leg->SetFillColor(0);
 
@@ -39,7 +41,7 @@ void ploteffi(string prod = "MC")
 	latex->SetTextSize(0.05);
 	latex->SetNDC();
 	double lleft = 0.15; 
-	double lbottom = 0.10;
+	double lbottom = 0.8;
 	double lstep = 0.06;
 
 	for(double &R : Rarr)
@@ -61,17 +63,34 @@ void ploteffi(string prod = "MC")
 		//cout << "first" << endl;
 		for(int pTlead =0; pTlead < 10; pTlead++)
 		{
-			hMcpT_central[pTlead][k]=(TH1D*)f1->Get(Form("hMcpT_pTl%i_R0%.0f_cent1", pTlead, R*10));
-			hMcpT_central[pTlead][k]->Rebin(5);
-			hMcMatchedpT_central[pTlead][k]=(TH1D*)f1->Get(Form("hMcmatchedpT_pTl%i_R0%.0f_cent1", pTlead, R*10));	
+			hMcpT_central_tmp[pTlead][k]=(TH1D*)f1->Get(Form("hMCpT_pTl%i_R0%.0f_centbin1", pTlead, R*10));
+			hMcpT_central_tmp[pTlead][k]->Rebin(5);
+			
+			hMcpT_central[pTlead][k] = new TH1D(Form("hMCpT_pTl%i_R0%.0f_central", pTlead, R*10), "", 120,0,60);
+			int nbins = hMcpT_central[pTlead][k]->GetNbinsX();
+			for (int x = 1; x < nbins+1;x++){
+				hMcpT_central[pTlead][k]->SetBinContent(x,hMcpT_central_tmp[pTlead][k]->GetBinContent(x+80));
+				hMcpT_central[pTlead][k]->SetBinError(x,hMcpT_central_tmp[pTlead][k]->GetBinError(x+80));
+			}
+			
+			hMcMatchedpT_central[pTlead][k]=(TH1D*)f1->Get(Form("hMCmatchedpT_pTl%i_R0%.0f_centbin1", pTlead, R*10));	
 			hMcMatchedpT_central[pTlead][k]->Rebin(5);
 			heffi_central[pTlead][k]=(TH1D*)hMcMatchedpT_central[pTlead][k]->Clone(Form("heffi_pTl%i_R0%.0f_central", pTlead, R*10));
 			//heffi_central[pTlead][k]->Divide(hMcpT_central[pTlead][k]);	
 			heffi_central[pTlead][k]->Divide(hMcMatchedpT_central[pTlead][k],hMcpT_central[pTlead][k],1,1,"B");	
 					
-			hMcpT_peripheral[pTlead][k]=(TH1D*)f1->Get(Form("hMcpT_pTl%i_R0%.0f_cent8", pTlead, R*10));
-			hMcpT_peripheral[pTlead][k]->Rebin(5);
-			hMcMatchedpT_peripheral[pTlead][k]=(TH1D*)f1->Get(Form("hMcmatchedpT_pTl%i_R0%.0f_cent8", pTlead, R*10));	
+			hMcpT_peripheral_tmp[pTlead][k]=(TH1D*)f1->Get(Form("hMCpT_pTl%i_R0%.0f_centbin8", pTlead, R*10));
+			hMcpT_peripheral_tmp[pTlead][k]->Rebin(5);
+						
+			hMcpT_peripheral[pTlead][k] = new TH1D(Form("hMCpT_pTl%i_R0%.0f_peripheral", pTlead, R*10), "", 120,0,60);
+			nbins = hMcpT_peripheral[pTlead][k]->GetNbinsX();
+			for (int x = 1; x < nbins+1;x++){
+				hMcpT_peripheral[pTlead][k]->SetBinContent(x,hMcpT_peripheral_tmp[pTlead][k]->GetBinContent(x+80));
+				hMcpT_peripheral[pTlead][k]->SetBinError(x,hMcpT_peripheral_tmp[pTlead][k]->GetBinError(x+80));
+			}
+			
+			
+			hMcMatchedpT_peripheral[pTlead][k]=(TH1D*)f1->Get(Form("hMCmatchedpT_pTl%i_R0%.0f_centbin8", pTlead, R*10));	
 			hMcMatchedpT_peripheral[pTlead][k]->Rebin(5);
 			heffi_peripheral[pTlead][k]=(TH1D*)hMcMatchedpT_peripheral[pTlead][k]->Clone(Form("heffi_pTl%i_R0%.0f_peripheral", pTlead, R*10));
 			//heffi_peripheral[pTlead][k]->Divide(hMcpT_peripheral[pTlead][k]);			
@@ -82,7 +101,8 @@ void ploteffi(string prod = "MC")
 			heffi_central[pTlead][k]->SetMarkerColor(kBlack);
 			heffi_central[pTlead][k]->GetXaxis()->SetRangeUser(0.,65.);
 			heffi_central[pTlead][k]->GetXaxis()->SetTitle("p^{MC}_{T,jet}");			
-			heffi_central[pTlead][k]->GetYaxis()->SetTitle("matching efficiency");			
+			heffi_central[pTlead][k]->GetYaxis()->SetTitle("matching efficiency");	
+			heffi_central[pTlead][k]->GetYaxis()->SetRangeUser(0.,1.);		
 			heffi_central[pTlead][k]->Draw();
 			//latex->DrawLatex(lleft + 0*lstep, lbottom+1*lstep, Form("PYTHIA6 p+p #otimes Au+Au %s%%",centbin[0].Data()));	
 			latex->DrawLatex(lleft + 0*lstep, lbottom+1*lstep, "PYTHIA6 p+p #otimes Au+Au MB");				
@@ -95,6 +115,9 @@ void ploteffi(string prod = "MC")
 			heffi_peripheral[pTlead][k]->SetMarkerStyle(21);
 			heffi_peripheral[pTlead][k]->SetMarkerColor(kBlue);
 			heffi_peripheral[pTlead][k]->GetXaxis()->SetRangeUser(0.,65.);
+			heffi_peripheral[pTlead][k]->GetYaxis()->SetTitle("matching efficiency");
+			heffi_peripheral[pTlead][k]->GetXaxis()->SetTitle("p^{MC}_{T,jet}");
+			heffi_peripheral[pTlead][k]->GetYaxis()->SetRangeUser(0.,1.);								
 			heffi_peripheral[pTlead][k]->Draw("same");
 			//latex->DrawLatex(lleft + 0*lstep, lbottom+1*lstep, Form("PYTHIA6 p+p #otimes Au+Au %s%%",centbin[1].Data()));	
 			//latex->DrawLatex(lleft + 0*lstep, lbottom+2*lstep, Form("Anti-k_{T}, R = %.1f, #it{p}_{T}^{lead} > %d GeV/#it{c}", R, pTlead));

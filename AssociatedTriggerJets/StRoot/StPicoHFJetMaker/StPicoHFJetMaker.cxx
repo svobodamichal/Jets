@@ -102,6 +102,9 @@ int StPicoHFJetMaker::InitJets() {
     float ptembmaxbin = 25;
     float deltaptembminbin = -30;
     float deltaptembmaxbin = 50;
+
+    bool trackErr = false;
+    bool towErr = true;
     
 	TH1::SetDefaultSumw2();
 	mOutList->Add(new TH1D("hweight", "weight", 135, 0, 3));
@@ -378,9 +381,15 @@ int StPicoHFJetMaker::MakeJets() {
 		if (BadTowerMap[realtowID]) continue; //exclude bad towers (map in JetInfo.h)
 
 		double towE = GetTowerCalibEnergy(iTow+1); //get tower energy
+
+        if(towErr = true){
+
+            towE = towE + 0.038*towE;
+        }
+
 		towE-= fHadronCorr*Sump[iTow]; //subtract hadronic energy deposition
 		if (towE < 0) towE = 0;
-						
+
 		StEmcGeom* mEmcGeom;
 		mEmcGeom = StEmcGeom::getEmcGeom("bemc");
 		float Toweta_tmp = 0, Towphi = 0;
@@ -409,9 +418,10 @@ int StPicoHFJetMaker::MakeJets() {
     //loop over primary tracks
 	for (unsigned int i = 0; i < mIdxPicoParticles.size(); i++) {
         	StPicoTrack *trk = mPicoDst->track(mIdxPicoParticles[i]);
-
-        double randomNumber = randGen.Rndm();
-        if(randomNumber>0.96){continue;}
+        if(trackErr = true) {
+            double randomNumber = randGen.Rndm();
+            if (randomNumber > 0.96) { continue; }
+        }
 
 		double pT = trk->pMom().Perp(); //using primary tracks
 		if(pT != pT) continue; // NaN test. 		
