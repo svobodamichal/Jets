@@ -36,7 +36,8 @@ using namespace fastjet;
 
 ClassImp(StPicoHFJetMaker)
 
-
+bool trackErr = false;
+bool towErr = true;
 
 //_________________________________match MC tracks to TPC tracks...has to be here, fastjet cannot be included in StPicoHFJetMaker.h file___________________________________________________________
 bool MatchTracks(vector<PseudoJet> &McTracks,vector<PseudoJet> &RcTracks){
@@ -277,8 +278,6 @@ int StPicoHFJetMaker::InitJets() {
     float deltaptembminbin = -30;
     float deltaptembmaxbin = 50;
 
-    bool trackErr = false;
-    bool towErr = true;
     
     TH1::SetDefaultSumw2();
     

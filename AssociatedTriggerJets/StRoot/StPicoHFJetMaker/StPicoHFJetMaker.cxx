@@ -37,6 +37,10 @@ using namespace fastjet;
 
 ClassImp(StPicoHFJetMaker)
 
+
+bool trackErr = false;
+bool towErr = true;
+
 // was
 //
 //StPicoHFJetMaker::StPicoHFJetMaker(char const* name, StPicoDstMaker* picoMaker, char const* outputBaseFileName) : StPicoJetMaker(name, picoMaker, outputBaseFileName) {
@@ -103,8 +107,7 @@ int StPicoHFJetMaker::InitJets() {
     float deltaptembminbin = -30;
     float deltaptembmaxbin = 50;
 
-    bool trackErr = false;
-    bool towErr = true;
+
     
 	TH1::SetDefaultSumw2();
 	mOutList->Add(new TH1D("hweight", "weight", 135, 0, 3));
