@@ -533,7 +533,7 @@ int StPicoHFJetMaker::MakeJets() {
 
         if(towErr = true){
 
-            towE = towE + 0.038*towE;
+            towE = towE - 0.038*towE;
         }
 
 		towE-= fHadronCorr*Sump[iTow]; //subtract hadronic energy deposition
