@@ -39,7 +39,7 @@ ClassImp(StPicoHFJetMaker)
 
 
 bool trackErr = false;
-bool towErr = true;
+bool towErr = false;
 
 // was
 //

@@ -37,7 +37,7 @@ using namespace fastjet;
 ClassImp(StPicoHFJetMaker)
 
 bool trackErr = false;
-bool towErr = true;
+bool towErr = false;
 
 //_________________________________match MC tracks to TPC tracks...has to be here, fastjet cannot be included in StPicoHFJetMaker.h file___________________________________________________________
 bool MatchTracks(vector<PseudoJet> &McTracks,vector<PseudoJet> &RcTracks){
