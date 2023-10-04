@@ -1,0 +1,158 @@
+// Example for fitting signal/background. 
+// This example can be executed with:
+// root > .x FittingDemo.C  (using the CINT interpreter)
+// root > .x FittingDemo.C+ (using the native complier via ACLIC)
+// function is : f(x) = (ax+b)exp(c(x-1.73)) + d*exp(-[(x-xo)/2sigma ]^2)   
+#include "TH1.h"
+#include "TH2.h"
+#include "TMath.h"
+#include "TF1.h"
+#include "TLegend.h"
+#include "TCanvas.h"
+#include "TFile.h"
+#include "TLatex.h"
+#include "TTree.h"
+#include "Riostream.h"
+#include "TStyle.h"
+
+void plot(TString trigger="MB", Float_t Rpar=0.4) {
+
+  TString input=Form("root/%s/R%.1lf/histos_inclusivejet_R0.4.root",trigger.Data(),Rpar);
+  const Int_t nptcut=4;
+  Int_t ptCut[nptcut]={0,3,4,5};  
+
+ /* Int_t binX;
+  Float_t infX;
+  Float_t supX;*/
+  TString title_x;
+  Int_t binY;
+  Float_t infY;
+  Float_t supY;
+  TString title_y;
+  TString t1;
+  TString t2;
+  TString label;
+  TString cut2;
+  Double_t pi;
+
+  /*
+  TF1 *fitFcn = new TF1("fitFcn","gaus",infX,supX);
+  fitFcn->SetLineWidth(2);
+  fitFcn->SetLineColor(2);
+    */
+  pi=3.1415;
+    
+  /*binX = 100;
+  infX = -0.5;
+  supX = 0.5;
+  */
+  title_x = "p_{T, corr}^{charged} (GeV/c)";
+  title_y = "1/N_{events} 1/2#pi d^{2}N/d#etadp_{T}^{ch}";
+  Int_t can_x=1600;
+  Int_t can_y=900;
+  
+     gROOT->SetStyle("Plain");
+  gStyle->SetPalette(1);
+  gStyle->SetPadLeftMargin(0.12);
+  gStyle->SetPadRightMargin(0.09);
+  gStyle->SetPadTopMargin(0.1);
+  gStyle->SetPadBottomMargin(0.15);
+  gStyle->SetTitleSize(0.055,"Y");
+  gStyle->SetTitleOffset(0.95,"Y");
+  gStyle->SetTitleSize(0.06,"X");
+  gStyle->SetTitleOffset(0.95,"X");
+  gStyle->SetLabelSize(0.03,"X");
+  gStyle->SetLabelSize(0.03,"Y");
+  /*if(doFit==1){
+  gStyle->SetOptStat(11);
+  gStyle->SetOptFit(101);
+}
+else{
+  gStyle->SetOptStat(0);
+}*/
+  gStyle->SetOptStat(0);
+  gStyle->SetOptDate(1);
+  
+  TFile *f =new TFile(input);
+  f->cd(); 
+  TH1I* hevents= (TH1I*) f->Get("hevts");
+  Int_t nEvents=hevents->GetEntries();
+
+  Double_t hole=(1-0.14066); //full acceptance minus fraction of acceptance which was droped due to the bad sector
+  Double_t jetScale = 1./(1.2*2.*TMath::Pi()*nEvents*hole);
+  
+  
+  TH1F* histo[nptcut];
+  for(Int_t ptcut=0; ptcut<nptcut;ptcut++){
+  TString inHistName=Form("hpT_pTlead_nobadsec");
+  TString outHistName=Form("histo_%i",ptcut);
+  TH2D* histo2D = (TH2D*) f->Get(inHistName);
+  Int_t firstbin=histo2D->GetYaxis()->FindBin(ptCut[ptcut]);
+  Int_t lastbin=histo2D->GetNbinsY();
+  TH1F* histo1D = (TH1F*) histo2D->ProjectionX("_px",firstbin,lastbin,"e");
+  histo[ptcut] = (TH1F*) histo1D->Clone(outHistName);
+  }
+ 
+ TH1 *frame = new TH1I("frame", "", 1000, -100, +100);
+   TCanvas *c1 = new TCanvas("c1","",10,10,can_x,can_y);
+   c1->SetFillColor(0);
+   c1->SetFrameFillColor(0);
+   c1->SetGrid();
+   gPad->SetLogy();
+   //histo->SetAxisRange(0,500,"Y");
+   frame->SetXTitle(title_x); 
+   frame->SetYTitle(title_y); 
+   frame->SetAxisRange(-25,40,"x");
+   frame->SetAxisRange(1E-7,1E0,"y");
+   frame->Draw("");
+   //if(doFit==1)histo->Fit("fitFcn","R");
+   //histo->SetMarkerStyle(24);
+   for(Int_t ptcut=0; ptcut<nptcut;ptcut++){
+     histo[ptcut]->Scale(jetScale, "width");
+     histo[ptcut]->SetLineColor(ptcut+1);
+     histo[ptcut]->SetLineWidth(2);
+     histo[ptcut]->DrawCopy("esame");
+   }
+   //histo->Sumw2();
+   //histo2->Sumw2();
+   
+   //if(doFit==1)fitFcn->Draw("same");
+  TString legName[nptcut];
+  TLegend *leg = new TLegend(0.6467, 0.60, 0.89, 0.90);
+  leg->SetTextSize(0.03);
+  leg->SetFillStyle(0);
+  leg->SetBorderSize(0);
+  for(Int_t ptcut=0; ptcut<nptcut;ptcut++){
+  legName[ptcut]=Form("p^{leading}_{T}>%i GeV/c",ptCut[ptcut]);
+  leg->AddEntry(histo[ptcut],legName[ptcut],"l");}
+  leg->Draw();
+  
+   TLatex *latex = new TLatex();
+  latex->SetNDC();
+  latex->SetTextSize(0.035);
+    latex->DrawLatex(0.35, 0.3,"STAR Preliminary");
+
+  
+   TLegend *model_info = new TLegend(0.12037, 0.5625, 0.3348, 0.900);
+  model_info->SetFillStyle(0);
+  model_info->SetBorderSize(0);
+  model_info->SetMargin(0.05);
+  model_info->SetHeader("Run11 AuAu 200 GeV/c");
+  //model_info->AddEntry("", "Single Particle", "");
+  model_info->AddEntry("", "0-10% Central Collisions", "");
+  model_info->AddEntry("", Form("N_{events} = %.1lfM", nEvents/1E6), "");
+  model_info->AddEntry("", Form("Anti-k_{T} \t \t R = %.1lf",Rpar), "");
+  model_info->AddEntry("", "p_{T}^{const} > 0.2 GeV/c", "");
+  model_info->AddEntry("", "A_{reco jet} > 0.4sr", "");
+  //model_info->AddEntry("", Form("p_{T}^{leading} > %.1lf GeV/c", pTthresh), "");
+  //model_info->AddEntry("", Form("prior distribution: %s", prior_type[priorNo].Data()), "");
+  model_info->DrawClone("same");
+   
+       
+  TString output=Form("obr/jetpt_%s_R%.1f.png",trigger.Data(),Rpar);
+  c1->SaveAs(output);
+  //TString output=Form("obr/%s.ps",quant.Data());
+  //c1->SaveAs(output);
+}
+     
+   

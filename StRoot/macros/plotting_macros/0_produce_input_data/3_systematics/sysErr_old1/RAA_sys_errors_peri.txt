@@ -1,0 +1,107 @@
+
+======================================
+peri, R=0.2, pTlead>5GeV
+---------------------------------------
+relative systematic error at 11 GeV/c:
+normal: 0%
+#epsilon(TPC) +5: -10.3146%
+#epsilon(TPC) -5: 2.86745%
+g frag.: -4.8862%
+u frag.: -3.81889%
+#rho: nremove=1: -7.00022%
+nfit/nmax=0.52: -4.3404%
+nfit>=20: -5.68181%
+#rho: R=0.2: -3.82807%
+#rho: R=0.4: -4.02589%
+v2 corr: -4.11093%
+AuAu: -2.4971%
+---------------------------------------
+relative systematic error at 18 GeV/c:
+normal: 0%
+#epsilon(TPC) +5: -19.5785%
+#epsilon(TPC) -5: -0.0156327%
+g frag.: -7.27854%
+u frag.: -9.23289%
+#rho: nremove=1: -13.003%
+nfit/nmax=0.52: -4.59039%
+nfit>=20: -16.1291%
+#rho: R=0.2: -10.6647%
+#rho: R=0.4: -8.58719%
+v2 corr: -10.1145%
+AuAu: -7.24261%
+======================================
+relative systematic error at 11 GeV/c:
+total sys. error (+):2.86745%
+total sys. error (-):-17.2908%
+relative systematic error at 18 GeV/c:
+total sys. error (+):0%
+total sys. error (-):-36.2501%
+
+
+
+
+======================================
+peri, R=0.4, pTlead>5GeV
+---------------------------------------
+relative systematic error at 11 GeV/c:
+normal: 0%
+#epsilon(TPC) +5: -10.7902%
+#epsilon(TPC) -5: 8.1848%
+g frag.: 0.208503%
+u frag.: -3.10422%
+#rho: nremove=1: -4.16553%
+nfit/nmax=0.52: -4.21439%
+nfit>=20: -5.0439%
+#rho: R=0.2: -3.34452%
+#rho: R=0.4: -5.48295%
+v2 corr: -1.24158%
+AuAu: -1.74857%
+---------------------------------------
+relative systematic error at 18 GeV/c:
+normal: 0%
+#epsilon(TPC) +5: -19.4647%
+#epsilon(TPC) -5: 5.14653%
+g frag.: -4.98782%
+u frag.: -9.60865%
+#rho: nremove=1: -6.29464%
+nfit/nmax=0.52: -3.7573%
+nfit>=20: -10.2681%
+#rho: R=0.2: -9.19642%
+#rho: R=0.4: -6.14939%
+v2 corr: -7.57492%
+AuAu: -7.75093%
+======================================
+relative systematic error at 11 GeV/c:
+total sys. error (+):8.18746%
+total sys. error (-):-15.2468%
+relative systematic error at 18 GeV/c:
+total sys. error (+):5.14653%
+total sys. error (-):-29.9182%
+
+
+
+********************************
+UNFOLDING
+********************************
+---------------------------------------
+peri, R=0.2, pTlead>5GeV
+---------------------------------------
+relative systematic error at 11 GeV/c:
+total sys. error (+):4.11363%
+total sys. error (-):-5.43128%
+relative systematic error at 18 GeV/c:
+total sys. error (+):7.5133%
+total sys. error (-):-10.8126%
+
+
+---------------------------------------
+peri, R=0.4, pTlead>5GeV
+---------------------------------------
+relative systematic error at 11 GeV/c:
+total sys. error (+):3.16259%
+total sys. error (-):-1.81954%
+relative systematic error at 18 GeV/c:
+total sys. error (+):3.42987%
+total sys. error (-):-5.48651%
+
+

@@ -1,0 +1,18 @@
+void NLO_centerOfGravity(char *file="star_ct10_200_05_R04_sc1.dat"){
+  gROOT->LoadMacro("~/SkyDrive/Research/Resources/rootMacros/Utility.C");
+  gROOT->LoadMacro("~/SkyDrive/Research/Resources/rootMacros/UtilityGraph.C");
+  gROOT->LoadMacro("../util.C");
+  TGraphErrors *g=gReadData2(file);
+  gStyle->SetOptStat(0);
+  TCanvas *cfig1=new TCanvas("cfig1","fig1",100,10,500,400);
+  cfig1->SetMargin(0.12,0.05,0.12,0.05);
+  cfig1->SetLogy(1);
+  TH1D *h1=new TH1D("h1","",10,0,100);
+  h1->SetXTitle("p_{T}  (GeV)");h1->SetYTitle("d#sigma/2#pid#etadp_{T}  (pb/GeV^{-1})");
+  h1->SetMinimum(1e-6);h1->SetMaximum(1e8);
+  h1->Draw();
+  g->SetLineColor(2);g->Draw("l");
+  keyLine(0.38,0.70,file,2,1);
+  //cfig1->SaveAs(Form("NLO_%s.gif",R));
+  //cfig1->SaveAs(Form("NLO_%s.pdf",R));
+}

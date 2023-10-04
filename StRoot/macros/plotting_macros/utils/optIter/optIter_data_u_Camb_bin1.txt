@@ -1,0 +1,89 @@
+//prior|R|pTlead|unfolding|centrality|binning|test
+//R=0.3
+//pTlead=5
+//Bayes
+diter_data_u[2][1][5][0][0][1][1]=7; //backf_vs_meas=0.1, iter_change=0.1, curvature=2
+diter_data_u[4][1][5][0][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.1, curvature=2
+diter_data_u[5][1][5][0][0][1][1]=3; //backf_vs_meas=0.1, iter_change=0.0, curvature=2
+diter_data_u[6][1][5][0][0][1][1]=3; //backf_vs_meas=0.0, iter_change=0.0, curvature=1
+diter_data_u[7][1][5][0][0][1][1]=-1;
+diter_data_u[8][1][5][0][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.1, curvature=2
+diter_data_u[9][1][5][0][0][1][1]=5; //backf_vs_meas=0.1, iter_change=0.0, curvature=1
+diter_data_u[10][1][5][0][0][1][1]=-1;
+diter_data_u[11][1][5][0][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.0, curvature=2
+diter_data_u[12][1][5][0][0][1][1]=6; //backf_vs_meas=0.1, iter_change=0.0, curvature=1
+diter_data_u[13][1][5][0][0][1][1]=-1;
+diter_data_u[14][1][5][0][0][1][1]=6; //backf_vs_meas=0.1, iter_change=0.0, curvature=2
+diter_data_u[15][1][5][0][0][1][1]=6; //backf_vs_meas=0.1, iter_change=0.0, curvature=2
+//SVD
+diter_data_u[2][1][5][1][0][1][1]=6; //backf_vs_meas=0.1, iter_change=0.1, curvature=2
+diter_data_u[4][1][5][1][0][1][1]=3; //backf_vs_meas=0.1, iter_change=0.6, curvature=2
+diter_data_u[5][1][5][1][0][1][1]=3; //backf_vs_meas=0.1, iter_change=0.2, curvature=2
+diter_data_u[6][1][5][1][0][1][1]=3; //backf_vs_meas=0.1, iter_change=0.1, curvature=2
+diter_data_u[7][1][5][1][0][1][1]=6; //backf_vs_meas=0.1, iter_change=0.4, curvature=2
+diter_data_u[8][1][5][1][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.2, curvature=2
+diter_data_u[9][1][5][1][0][1][1]=-1;
+diter_data_u[10][1][5][1][0][1][1]=5; //backf_vs_meas=0.1, iter_change=0.1, curvature=2
+diter_data_u[11][1][5][1][0][1][1]=6; //backf_vs_meas=0.1, iter_change=0.1, curvature=2
+diter_data_u[12][1][5][1][0][1][1]=5; //backf_vs_meas=0.1, iter_change=0.1, curvature=2
+diter_data_u[13][1][5][1][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.8, curvature=2
+diter_data_u[14][1][5][1][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.4, curvature=2
+diter_data_u[15][1][5][1][0][1][1]=5; //backf_vs_meas=0.1, iter_change=0.1, curvature=2
+//pTlead=6
+//Bayes
+diter_data_u[2][1][6][0][0][1][1]=3; //backf_vs_meas=0.1, iter_change=0.1, curvature=2
+diter_data_u[4][1][6][0][0][1][1]=2; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_u[5][1][6][0][0][1][1]=2; //backf_vs_meas=0.1, iter_change=0.0, curvature=1
+diter_data_u[6][1][6][0][0][1][1]=2; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_u[7][1][6][0][0][1][1]=5; //backf_vs_meas=0.1, iter_change=0.1, curvature=2
+diter_data_u[8][1][6][0][0][1][1]=2; //backf_vs_meas=0.0, iter_change=0.1, curvature=1
+diter_data_u[9][1][6][0][0][1][1]=4; //backf_vs_meas=0.0, iter_change=0.1, curvature=1
+diter_data_u[10][1][6][0][0][1][1]=3; //backf_vs_meas=0.1, iter_change=0.1, curvature=2
+diter_data_u[11][1][6][0][0][1][1]=2; //backf_vs_meas=0.1, iter_change=0.0, curvature=1
+diter_data_u[12][1][6][0][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_u[13][1][6][0][0][1][1]=3; //backf_vs_meas=0.1, iter_change=0.1, curvature=2
+diter_data_u[14][1][6][0][0][1][1]=2; //backf_vs_meas=0.1, iter_change=0.0, curvature=2
+diter_data_u[15][1][6][0][0][1][1]=3; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+//SVD
+diter_data_u[2][1][6][1][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.3, curvature=1
+diter_data_u[4][1][6][1][0][1][1]=3; //backf_vs_meas=0.1, iter_change=0.2, curvature=1
+diter_data_u[5][1][6][1][0][1][1]=2; //backf_vs_meas=0.1, iter_change=0.9, curvature=1
+diter_data_u[6][1][6][1][0][1][1]=3; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_u[7][1][6][1][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.6, curvature=2
+diter_data_u[8][1][6][1][0][1][1]=2; //backf_vs_meas=0.1, iter_change=0.8, curvature=1
+diter_data_u[9][1][6][1][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.1, curvature=2
+diter_data_u[10][1][6][1][0][1][1]=3; //backf_vs_meas=0.1, iter_change=0.6, curvature=2
+diter_data_u[11][1][6][1][0][1][1]=3; //backf_vs_meas=0.1, iter_change=0.1, curvature=2
+diter_data_u[12][1][6][1][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.2, curvature=2
+diter_data_u[13][1][6][1][0][1][1]=2; //backf_vs_meas=0.1, iter_change=0.7, curvature=1
+diter_data_u[14][1][6][1][0][1][1]=3; //backf_vs_meas=0.1, iter_change=0.1, curvature=2
+diter_data_u[15][1][6][1][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.2, curvature=2
+//pTlead=7
+//Bayes
+diter_data_u[2][1][7][0][0][1][1]=3; //backf_vs_meas=0.1, iter_change=0.0, curvature=2
+diter_data_u[4][1][7][0][0][1][1]=2; //backf_vs_meas=0.1, iter_change=0.0, curvature=1
+diter_data_u[5][1][7][0][0][1][1]=2; //backf_vs_meas=0.1, iter_change=0.0, curvature=1
+diter_data_u[6][1][7][0][0][1][1]=2; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_u[7][1][7][0][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_u[8][1][7][0][0][1][1]=2; //backf_vs_meas=0.0, iter_change=0.0, curvature=1
+diter_data_u[9][1][7][0][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_u[10][1][7][0][0][1][1]=2; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_u[11][1][7][0][0][1][1]=2; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_u[12][1][7][0][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_u[13][1][7][0][0][1][1]=2; //backf_vs_meas=0.1, iter_change=0.0, curvature=1
+diter_data_u[14][1][7][0][0][1][1]=2; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_u[15][1][7][0][0][1][1]=3; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+//SVD
+diter_data_u[2][1][7][1][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_u[4][1][7][1][0][1][1]=2; //backf_vs_meas=0.1, iter_change=0.8, curvature=1
+diter_data_u[5][1][7][1][0][1][1]=3; //backf_vs_meas=0.1, iter_change=0.1, curvature=1
+diter_data_u[6][1][7][1][0][1][1]=3; //backf_vs_meas=0.1, iter_change=0.2, curvature=1
+diter_data_u[7][1][7][1][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.3, curvature=1
+diter_data_u[8][1][7][1][0][1][1]=2; //backf_vs_meas=0.0, iter_change=0.9, curvature=1
+diter_data_u[9][1][7][1][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.1, curvature=2
+diter_data_u[10][1][7][1][0][1][1]=3; //backf_vs_meas=0.1, iter_change=0.3, curvature=1
+diter_data_u[11][1][7][1][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.0, curvature=2
+diter_data_u[12][1][7][1][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.2, curvature=2
+diter_data_u[13][1][7][1][0][1][1]=2; //backf_vs_meas=0.1, iter_change=0.9, curvature=1
+diter_data_u[14][1][7][1][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.1, curvature=2
+diter_data_u[15][1][7][1][0][1][1]=4; //backf_vs_meas=0.1, iter_change=0.1, curvature=2

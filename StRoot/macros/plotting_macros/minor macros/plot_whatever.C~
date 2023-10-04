@@ -1,0 +1,174 @@
+plot_measured()
+{ 
+  gStyle->SetOptStat(0);
+  gStyle->SetPalette(1);
+  gStyle->SetOptDate(0);
+  gStyle->SetPadLeftMargin(0.12);
+  gStyle->SetPadRightMargin(0.09);
+  gStyle->SetPadTopMargin(0.1);
+  gStyle->SetPadBottomMargin(0.15);
+  gStyle->SetTitleSize(0.055,"Y");
+  gStyle->SetTitleOffset(0.95,"Y");
+  gStyle->SetTitleSize(0.06,"X");
+  gStyle->SetTitleOffset(0.95,"X");
+  gStyle->SetLabelSize(0.03,"X");
+  gStyle->SetLabelSize(0.03,"Y");
+  
+    Int_t markerU=21; //marker style for unfolding
+  Int_t markerP=20; //marker style for prior
+  Int_t markerM=29; //marker style for measured
+  Int_t markerB=22; //marker style for backfolded
+  Int_t markerU2=25; //marker style for unfolding2
+  Int_t markerP2=24; //marker style for prior2
+  Int_t markerM2=30; //marker style for measured2
+  Int_t markerB2=26; //marker style for backfolded2
+  
+  Float_t marker_size=1.2;
+  Float_t line_width=2;
+  
+    Color_t colorList[]={kBlack,kRed,kGreen+3,kMagenta+2,kBlue,kOrange+2,kYellow+2,kBlue-4,kOrange-2,kGreen,kRed+2,7,kGreen+4,13,14,15,16,17,18,19,20,21,22,23,24,25,26,29,28};
+
+  
+  //canvas size
+  Int_t can_x=1200; //1600
+  Int_t can_y=680; //900
+  
+  Double_t R=0.4;
+  TString trigger="MB";
+  
+    Float_t spectraXmin=-30;
+  Float_t spectraXmax=40;
+  Float_t spectraYmin=1E-8;
+  Float_t spectraYmax=1E0;
+  
+
+  
+   TString str = "./root/MB/R0.4/histos_inclusivejet_R0.4.root";
+  TFile *f = new TFile(str.Data(), "OPEN");
+  TH1I* hevents;
+  hevents= (TH1I*) f->Get("hevts");
+  Int_t nevents=hevents->GetEntries();
+
+  Double_t hole=(1/12)+(R*2)/(2*TMath::Pi());
+  Double_t scale_jets = 1./(2*(1-R)*2.*TMath::Pi()*nevents*(1-hole));
+  
+  TH2D* histo2d=(TH2D*) f->Get("hpT_pTlead_nobadsecedge1R");
+  TH1D* hmeasured=histo2d->ProjectionX("histoold1",histo2d->GetYaxis()->FindBin(0.0),histo2d->GetYaxis()->GetNbins());
+  hmeasured->SetMarkerStyle(markerM);
+  hmeasured->SetLineColor(colorList[0]);
+  hmeasured->SetLineWidth(line_width);
+  hmeasured->SetMarkerColor(colorList[0]);
+  hmeasured->SetMarkerSize(marker_size);
+  hmeasured->Scale(scale_jets,"width");
+  
+    TH1 *frame = new TH1I("frame", "", 1000, -100, +100);
+
+    TCanvas *spectra = new TCanvas("cspectra","cspectra",10,10,can_x,can_y);
+  cspectra->cd();
+  cspectra->SetGrid();
+  cspectra->SetLogy();
+  frame->GetXaxis()->SetTitle("p_{T, corr}^{charged} (GeV/c)");
+  frame->GetYaxis()->SetTitle("1/N_{events} 1/2#pi d^{2}N/dp_{T}^{ch}d#eta (GeV/c)^{-1}");
+  frame->GetXaxis()->SetRangeUser(spectraXmin, spectraXmax);
+  frame->GetYaxis()->SetRangeUser(spectraYmin, spectraYmax);
+  //frame->GetYaxis()->SetRangeUser(1E-3, 1E5);
+  str="";
+  frame->SetTitle(str);
+  frame->DrawCopy("");
+  hmeasured->DrawCopy("E same");
+  
+   TLegend *model_info = new TLegend(0.14, 0.48, 0.35, 0.900);
+  model_info->SetTextSize(0.035);
+  model_info->SetFillStyle(0);
+  model_info->SetBorderSize(0);
+  model_info->SetMargin(0.05);
+  model_info->SetHeader("Run 11 Au+Au #sqrt{s_{NN}}=200 GeV, 6 #mub^{-1}");
+  model_info->AddEntry("", "0-10% Central Collisions", "");
+  model_info->AddEntry("", Form("Anti-k_{T} \t \t R = %.1lf",R), "");
+  model_info->AddEntry("", "p_{T}^{const} > 0.2 GeV/c", "");
+  //model_info->AddEntry("", Form("p_{T}^{leading} > %.1lf GeV/c",pTthresh), "");
+   
+  if(R>0.35) model_info->AddEntry("", "A_{reco jet} > 0.4 sr", "");
+  else if(R>0.25) model_info->AddEntry("", "A_{reco jet} > 0.2 sr", "");
+  else model_info->AddEntry("", "A_{reco jet} > 0.09 sr", "");
+      model_info->DrawClone("same");
+      
+      
+        TLatex *latex = new TLatex();
+  latex->SetNDC();
+  latex->SetTextSize(0.035);
+      latex->DrawLatex(0.4, 0.3,"STAR Preliminary");
+}
+
+plot_RM(TString type="BG_sp")
+{
+
+  gStyle->SetOptStat(0);
+  gStyle->SetPalette(1);
+  gStyle->SetOptDate(0);
+  gStyle->SetPadLeftMargin(0.12);
+  gStyle->SetPadRightMargin(0.09);
+  gStyle->SetPadTopMargin(0.1);
+  gStyle->SetPadBottomMargin(0.15);
+  gStyle->SetTitleSize(0.055,"Y");
+  gStyle->SetTitleOffset(0.95,"Y");
+  gStyle->SetTitleSize(0.06,"X");
+  gStyle->SetTitleOffset(0.95,"X");
+  gStyle->SetLabelSize(0.03,"X");
+  gStyle->SetLabelSize(0.03,"Y");
+  
+    Int_t markerU=21; //marker style for unfolding
+  Int_t markerP=20; //marker style for prior
+  Int_t markerM=29; //marker style for measured
+  Int_t markerB=22; //marker style for backfolded
+  Int_t markerU2=25; //marker style for unfolding2
+  Int_t markerP2=24; //marker style for prior2
+  Int_t markerM2=30; //marker style for measured2
+  Int_t markerB2=26; //marker style for backfolded2
+  
+  Float_t marker_size=1.2;
+  Float_t line_width=2;
+  
+    Color_t colorList[]={kBlack,kRed,kGreen+3,kMagenta+2,kBlue,kOrange+2,kYellow+2,kBlue-4,kOrange-2,kGreen,kRed+2,7,kGreen+4,13,14,15,16,17,18,19,20,21,22,23,24,25,26,29,28};
+
+  
+  //canvas size
+  Int_t can_x=1200; //1600
+  Int_t can_y=680; //900
+  
+  Float_t spectraXmin=-30;
+  Float_t spectraXmax=60;
+  Float_t spectraYmin=0;
+  Float_t spectraYmax=60;
+  
+  Double_t R=0.4;
+  TString trigger="MB";
+   TString str = Form("./root/response_matrix/response_matrix_%s_R0.4_interpol.root",type.Data());
+  TFile *f = new TFile(str.Data(), "OPEN");
+  TH2D* hmatrix=(TH2D*)f->Get("hResponse_1E9");
+  
+   TH2I *frame = new TH2I("frame", "", 1000, -100, +100,1000, -100, +100);
+
+    TCanvas *spectra = new TCanvas("cspectra","cspectra",10,10,can_x,can_y);
+  cspectra->cd();
+  cspectra->SetGrid();
+  if(type=="dete")cspectra->SetLogz();
+  frame->GetXaxis()->SetTitle("p_{T, jet}^{measured} (GeV/c)");
+  frame->GetYaxis()->SetTitle("p_{T, jet}^{true} (GeV/c)");
+  frame->GetXaxis()->SetRangeUser(spectraXmin, spectraXmax);
+  frame->GetYaxis()->SetRangeUser(spectraYmin, spectraYmax);
+  //frame->GetYaxis()->SetRangeUser(1E-3, 1E5);
+  str="Response Matrix";
+  frame->SetTitle(str);
+  frame->DrawCopy("");
+  hmatrix->Draw("COLsame");
+  
+  TLatex *latex = new TLatex();
+  latex->SetNDC();
+  latex->SetTextSize(0.04);
+  latex->DrawLatex(0.15, 0.6,"STAR Preliminary");
+  
+  str=Form("./fig/RM_%s.png",type.Data());
+  cspectra->SaveAs(str.Data());
+}
+  

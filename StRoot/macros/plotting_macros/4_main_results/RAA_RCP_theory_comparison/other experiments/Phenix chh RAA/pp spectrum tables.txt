@@ -1,0 +1,133 @@
+
+"Midrapidity Neutral Pion Production in Proton-Proton Collisions 
+at sqrt(s) = 200 GeV"
+S.S. Adler et al, accepted for publication in PRL
+
+
+Fig.1a
+
+The efficiency of the 2x2 high pt trigger for pi0's
+
+pt bin   eff
+1.0-1.5  0.23+-0.01
+1.5-2.0  0.55+-0.02
+2.0-2.5  0.68+-0.02
+2.5-3.0  0.75+-0.03
+3.0-3.5  0.76+-0.03
+3.5-4.0  0.79+-0.04
+4.0-4.5  0.80+-0.05
+4.5-5.0  0.76+-0.07
+5.0-5.5  0.82+-0.12
+
+Fig.1b
+
+The fraction of the inclusive pi0 yield which satisfied 
+the MB trigger condition
+
+pt bin    fraction
+1.0-1.5   0.730+-0.017
+1.5-2.0   0.738+-0.016
+2.0-2.5   0.743+-0.016
+2.5-3.0   0.755+-0.016
+3.0-3.5   0.762+-0.016
+3.5-4.0   0.745+-0.017
+4.0-4.5   0.751+-0.018
+4.5-5.0   0.757+-0.021
+5.0-5.5   0.717+-0.024
+5.5-6.0   0.747+-0.030
+6.0-6.5   0.744+-0.036
+6.5-7.0   0.697+-0.051
+7.0-7.5   0.774+-0.059
+7.5-8.0   0.784+-0.070
+8.0-9.0   0.717+-0.069
+9.0-10.0  0.708+-0.093
+
+
+Table 2 and Fig.2a,b
+
+Pi0 invariant differential cross section (mb GeV^{-2} c^{3}) 
+vs pt* (GeV/c); pt* is the pt for which the cross section 
+equals its average over the bin.
+The absolute normalization error of 9.6% is not included.
+
+pt bin       pt*      cross section  stat. error         syst. error 
+1.0-1.5      1.215    3.733e-01      6.117e-03 ( 1.6%)   2.731e-02 ( 7.3%)  
+1.5-2.0      1.719    6.052e-02      1.075e-03 ( 1.8%)   4.284e-03 ( 7.1%)  
+2.0-2.5      2.223    1.221e-02      3.011e-04 ( 2.5%)   8.644e-04 ( 7.1%)  
+2.5-3.0      2.726    3.308e-03      1.181e-04 ( 3.6%)   2.375e-04 ( 7.2%)  
+3.0-3.5      3.228    9.978e-04      5.652e-05 ( 5.7%)   7.278e-05 ( 7.3%)  
+3.5-4.0      3.730    3.385e-04      2.456e-05 ( 7.3%)   2.591e-05 ( 7.7%)  
+4.0-4.5      4.232    1.187e-04      2.906e-06 ( 2.4%)   9.888e-06 ( 8.3%)  
+4.5-5.0      4.733    4.726e-05      1.990e-06 ( 4.2%)   4.001e-06 ( 8.5%)  
+5.0-5.5      5.234    2.206e-05      1.096e-06 ( 5.0%)   1.929e-06 ( 8.7%)  
+5.5-6.0      5.735    1.113e-05      5.005e-07 ( 4.5%)   1.028e-06 ( 9.2%)  
+6.0-6.5      6.236    4.999e-06      3.172e-07 ( 6.3%)   4.759e-07 ( 9.5%)  
+6.5-7.0      6.737    3.003e-06      2.304e-07 ( 7.7%)   2.950e-07 ( 9.8%)  
+7.0-8.0      7.452    1.080e-06      9.530e-08 ( 8.8%)   1.092e-07 (10.1%) 
+8.0-9.0      8.457    4.853e-07      5.832e-08 (12.0%)   5.253e-08 (10.8%) 
+9.0-10.0     9.460    1.643e-07      3.166e-08 (19.3%)   1.813e-08 (11.0%) 
+10.0-12.0   10.861    5.227e-08      1.169e-08 (22.4%)   6.137e-09 (11.7%) 
+12.0-15.0   13.250    1.190e-08      4.910e-09 (41.3%)   1.894e-09 (15.9%) 
+
+Fig.2c
+
+The relative difference in cross section between
+the data and the theory, delta=(Data-QCD)/QCD, 
+using KKP set of fragmentation functions for the
+renormalization and factorization scales of m= pt/2, pt, and 2pt.
+For m=pt, the error on delta value is also shown, 
+which is derived from the the quadrature sum of data stat. 
+and syst. error, the absolute normalization error of 9.6% being not included
+
+pt bin     delta(m=p2/2)    delta(m=pt)   delta(m=2pt) 
+1.0-1.5                    -0.45+-0.04       0.01      
+1.5-2.0                    -0.23+-0.06       0.68      
+2.0-2.5      -0.58         -0.04+-0.07       0.99      
+2.5-3.0      -0.51          0.14+-0.09       1.25      
+3.0-3.5      -0.44          0.19+-0.11       1.26      
+3.5-4.0      -0.39          0.17+-0.12       1.15      
+4.0-4.5      -0.41          0.06+-0.09       0.90      
+4.5-5.0      -0.42         -0.02+-0.09       0.72      
+5.0-5.5      -0.40         -0.02+-0.10       0.70      
+5.5-6.0      -0.37         -0.01+-0.10       0.69      
+6.0-6.5      -0.45         -0.16+-0.10       0.43      
+6.5-7.0      -0.39         -0.08+-0.11       0.54      
+7.0-8.0      -0.51         -0.28+-0.10       0.20      
+8.0-9.0      -0.39         -0.13+-0.14       0.44      
+9.0-10.0     -0.49         -0.28+-0.16       0.18      
+10.0-12.0    -0.50         -0.30+-0.18       0.14      
+12.0-15.0    -0.41         -0.16+-0.37       0.34      
+
+Fig.2d
+
+The relative difference in cross section between
+the data and the theory, delta=(Data-QCD)/QCD, 
+using Kretzer set of fragmentation functions for the
+renormalization and factorization scales of m= pt/2, pt, and 2pt.
+For m=pt, the error on delta value is also shown, 
+which is derived from the the quadrature sum of data stat. 
+and syst. error, the absolute normalization error of 9.6% being not included
+
+pt bin      delta(m=p2/2)  delta(m=pt)   delta(m=2pt)
+	                 			      
+pt bin                   			      
+1.0-1.5                   -0.01+-0.07       1.22     
+1.5-2.0                    0.94+-0.14       2.80     
+2.0-2.5        0.03        1.47+-0.19       3.48     
+2.5-3.0        0.77        1.90+-0.23       3.98     
+3.0-3.5        1.15        1.97+-0.27       3.90     
+3.5-4.0        1.27        1.85+-0.30       3.55     
+4.0-4.5        1.08        1.50+-0.22       2.90     
+4.5-5.0        0.91        1.23+-0.21       2.43     
+5.0-5.5        0.86        1.17+-0.22       2.30     
+5.5-6.0        0.82        1.12+-0.22       2.21     
+6.0-6.5        0.51        0.75+-0.20       1.64     
+6.5-7.0        0.59        0.86+-0.23       1.79     
+7.0-8.0        0.20        0.41+-0.19       1.11     
+8.0-9.0        0.37        0.63+-0.26       1.43     
+9.0-10.0       0.07        0.29+-0.29       0.92     
+10.0-12.0     -0.03        0.20+-0.30       0.78     
+12.0-15.0      0.04        0.33+-0.59       0.99       
+
+
+ 

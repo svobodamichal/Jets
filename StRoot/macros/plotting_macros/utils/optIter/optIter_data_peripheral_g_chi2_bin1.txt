@@ -1,0 +1,265 @@
+//prior|R|pTlead|unfolding|centrality|binning|test
+//R=0.2
+//pTlead=4
+//Bayes
+diter_data_g[2][0][1][0][1][1][0]=-1;
+diter_data_g[4][0][1][0][1][1][0]=-1;
+diter_data_g[5][0][1][0][1][1][0]=-1;
+diter_data_g[6][0][1][0][1][1][0]=-1;
+diter_data_g[7][0][1][0][1][1][0]=-1;
+diter_data_g[8][0][1][0][1][1][0]=-1;
+diter_data_g[9][0][1][0][1][1][0]=-1;
+diter_data_g[10][0][1][0][1][1][0]=-1;
+diter_data_g[11][0][1][0][1][1][0]=-1;
+diter_data_g[12][0][1][0][1][1][0]=-1;
+diter_data_g[13][0][1][0][1][1][0]=-1;
+diter_data_g[14][0][1][0][1][1][0]=-1;
+diter_data_g[15][0][1][0][1][1][0]=-1;
+//SVD
+diter_data_g[2][0][1][1][1][1][0]=-1;
+diter_data_g[4][0][1][1][1][1][0]=5; //backf_vs_meas=1.5, iter_change=402.5, curvature=1
+diter_data_g[5][0][1][1][1][1][0]=5; //backf_vs_meas=3.5, iter_change=405.2, curvature=2
+diter_data_g[6][0][1][1][1][1][0]=4; //backf_vs_meas=0.5, iter_change=408.2, curvature=2
+diter_data_g[7][0][1][1][1][1][0]=7; //backf_vs_meas=0.5, iter_change=356.6, curvature=2
+diter_data_g[8][0][1][1][1][1][0]=5; //backf_vs_meas=1.6, iter_change=358.1, curvature=2
+diter_data_g[9][0][1][1][1][1][0]=4; //backf_vs_meas=2.1, iter_change=437.2, curvature=2
+diter_data_g[10][0][1][1][1][1][0]=6; //backf_vs_meas=0.5, iter_change=347.6, curvature=2
+diter_data_g[11][0][1][1][1][1][0]=5; //backf_vs_meas=1.7, iter_change=433.2, curvature=2
+diter_data_g[12][0][1][1][1][1][0]=5; //backf_vs_meas=2.0, iter_change=444.8, curvature=2
+diter_data_g[13][0][1][1][1][1][0]=6; //backf_vs_meas=1.7, iter_change=431.3, curvature=2
+diter_data_g[14][0][1][1][1][1][0]=5; //backf_vs_meas=1.4, iter_change=492.6, curvature=1
+diter_data_g[15][0][1][1][1][1][0]=-1;
+//pTlead=5
+//Bayes
+diter_data_g[2][0][2][0][1][1][0]=6; //backf_vs_meas=1.2, iter_change=5.6, curvature=1
+diter_data_g[4][0][2][0][1][1][0]=5; //backf_vs_meas=0.1, iter_change=5.8, curvature=1
+diter_data_g[5][0][2][0][1][1][0]=5; //backf_vs_meas=0.1, iter_change=5.0, curvature=1
+diter_data_g[6][0][2][0][1][1][0]=5; //backf_vs_meas=0.1, iter_change=4.3, curvature=1
+diter_data_g[7][0][2][0][1][1][0]=6; //backf_vs_meas=0.7, iter_change=5.9, curvature=1
+diter_data_g[8][0][2][0][1][1][0]=6; //backf_vs_meas=0.9, iter_change=4.3, curvature=1
+diter_data_g[9][0][2][0][1][1][0]=5; //backf_vs_meas=0.1, iter_change=5.1, curvature=1
+diter_data_g[10][0][2][0][1][1][0]=6; //backf_vs_meas=1.0, iter_change=5.2, curvature=1
+diter_data_g[11][0][2][0][1][1][0]=6; //backf_vs_meas=1.3, iter_change=4.6, curvature=1
+diter_data_g[12][0][2][0][1][1][0]=6; //backf_vs_meas=1.2, iter_change=4.2, curvature=1
+diter_data_g[13][0][2][0][1][1][0]=6; //backf_vs_meas=1.0, iter_change=5.3, curvature=1
+diter_data_g[14][0][2][0][1][1][0]=6; //backf_vs_meas=1.3, iter_change=5.0, curvature=1
+diter_data_g[15][0][2][0][1][1][0]=6; //backf_vs_meas=1.2, iter_change=4.9, curvature=1
+//SVD
+diter_data_g[2][0][2][1][1][1][0]=4; //backf_vs_meas=1.9, iter_change=265.7, curvature=1
+diter_data_g[4][0][2][1][1][1][0]=4; //backf_vs_meas=2.7, iter_change=112.9, curvature=1
+diter_data_g[5][0][2][1][1][1][0]=4; //backf_vs_meas=0.8, iter_change=86.9, curvature=1
+diter_data_g[6][0][2][1][1][1][0]=4; //backf_vs_meas=0.5, iter_change=71.5, curvature=1
+diter_data_g[7][0][2][1][1][1][0]=5; //backf_vs_meas=2.1, iter_change=194.9, curvature=2
+diter_data_g[8][0][2][1][1][1][0]=4; //backf_vs_meas=3.5, iter_change=158.1, curvature=1
+diter_data_g[9][0][2][1][1][1][0]=4; //backf_vs_meas=0.7, iter_change=103.6, curvature=1
+diter_data_g[10][0][2][1][1][1][0]=4; //backf_vs_meas=2.8, iter_change=259.9, curvature=2
+diter_data_g[11][0][2][1][1][1][0]=4; //backf_vs_meas=2.6, iter_change=164.5, curvature=1
+diter_data_g[12][0][2][1][1][1][0]=4; //backf_vs_meas=0.4, iter_change=137.5, curvature=1
+diter_data_g[13][0][2][1][1][1][0]=4; //backf_vs_meas=3.3, iter_change=253.3, curvature=2
+diter_data_g[14][0][2][1][1][1][0]=4; //backf_vs_meas=1.9, iter_change=206.5, curvature=1
+diter_data_g[15][0][2][1][1][1][0]=4; //backf_vs_meas=2.4, iter_change=185.5, curvature=1
+//pTlead=6
+//Bayes
+diter_data_g[2][0][3][0][1][1][0]=4; //backf_vs_meas=0.1, iter_change=4.6, curvature=1
+diter_data_g[4][0][3][0][1][1][0]=3; //backf_vs_meas=1.0, iter_change=6.0, curvature=1
+diter_data_g[5][0][3][0][1][1][0]=3; //backf_vs_meas=1.2, iter_change=5.1, curvature=1
+diter_data_g[6][0][3][0][1][1][0]=3; //backf_vs_meas=1.4, iter_change=4.4, curvature=1
+diter_data_g[7][0][3][0][1][1][0]=4; //backf_vs_meas=0.2, iter_change=4.5, curvature=1
+diter_data_g[8][0][3][0][1][1][0]=4; //backf_vs_meas=0.0, iter_change=3.5, curvature=1
+diter_data_g[9][0][3][0][1][1][0]=3; //backf_vs_meas=1.6, iter_change=5.7, curvature=1
+diter_data_g[10][0][3][0][1][1][0]=4; //backf_vs_meas=0.1, iter_change=4.1, curvature=1
+diter_data_g[11][0][3][0][1][1][0]=4; //backf_vs_meas=0.2, iter_change=3.7, curvature=1
+diter_data_g[12][0][3][0][1][1][0]=4; //backf_vs_meas=0.1, iter_change=3.4, curvature=1
+diter_data_g[13][0][3][0][1][1][0]=4; //backf_vs_meas=0.1, iter_change=4.2, curvature=1
+diter_data_g[14][0][3][0][1][1][0]=4; //backf_vs_meas=0.1, iter_change=4.0, curvature=1
+diter_data_g[15][0][3][0][1][1][0]=4; //backf_vs_meas=0.1, iter_change=3.9, curvature=1
+//SVD
+diter_data_g[2][0][3][1][1][1][0]=4; //backf_vs_meas=2.0, iter_change=71.7, curvature=1
+diter_data_g[4][0][3][1][1][1][0]=3; //backf_vs_meas=2.7, iter_change=79.1, curvature=1
+diter_data_g[5][0][3][1][1][1][0]=4; //backf_vs_meas=3.0, iter_change=25.3, curvature=1
+diter_data_g[6][0][3][1][1][1][0]=4; //backf_vs_meas=2.5, iter_change=27.8, curvature=1
+diter_data_g[7][0][3][1][1][1][0]=4; //backf_vs_meas=4.1, iter_change=138.9, curvature=1
+diter_data_g[8][0][3][1][1][1][0]=3; //backf_vs_meas=4.1, iter_change=105.9, curvature=1
+diter_data_g[9][0][3][1][1][1][0]=4; //backf_vs_meas=0.7, iter_change=50.4, curvature=1
+diter_data_g[10][0][3][1][1][1][0]=4; //backf_vs_meas=2.1, iter_change=59.2, curvature=1
+diter_data_g[11][0][3][1][1][1][0]=4; //backf_vs_meas=0.6, iter_change=44.4, curvature=1
+diter_data_g[12][0][3][1][1][1][0]=4; //backf_vs_meas=1.0, iter_change=52.3, curvature=1
+diter_data_g[13][0][3][1][1][1][0]=3; //backf_vs_meas=4.2, iter_change=178.0, curvature=2
+diter_data_g[14][0][3][1][1][1][0]=4; //backf_vs_meas=0.9, iter_change=51.0, curvature=1
+diter_data_g[15][0][3][1][1][1][0]=4; //backf_vs_meas=1.6, iter_change=51.8, curvature=1
+//R=0.3
+//pTlead=4
+//Bayes
+diter_data_g[2][1][1][0][1][1][0]=-1;
+diter_data_g[4][1][1][0][1][1][0]=-1;
+diter_data_g[5][1][1][0][1][1][0]=-1;
+diter_data_g[6][1][1][0][1][1][0]=-1;
+diter_data_g[7][1][1][0][1][1][0]=-1;
+diter_data_g[8][1][1][0][1][1][0]=-1;
+diter_data_g[9][1][1][0][1][1][0]=-1;
+diter_data_g[10][1][1][0][1][1][0]=-1;
+diter_data_g[11][1][1][0][1][1][0]=-1;
+diter_data_g[12][1][1][0][1][1][0]=-1;
+diter_data_g[13][1][1][0][1][1][0]=-1;
+diter_data_g[14][1][1][0][1][1][0]=-1;
+diter_data_g[15][1][1][0][1][1][0]=-1;
+//SVD
+diter_data_g[2][1][1][1][1][1][0]=5; //backf_vs_meas=1.7, iter_change=330.6, curvature=1
+diter_data_g[4][1][1][1][1][1][0]=4; //backf_vs_meas=2.7, iter_change=406.9, curvature=1
+diter_data_g[5][1][1][1][1][1][0]=4; //backf_vs_meas=1.8, iter_change=289.8, curvature=1
+diter_data_g[6][1][1][1][1][1][0]=4; //backf_vs_meas=1.3, iter_change=235.6, curvature=1
+diter_data_g[7][1][1][1][1][1][0]=6; //backf_vs_meas=1.0, iter_change=335.3, curvature=1
+diter_data_g[8][1][1][1][1][1][0]=4; //backf_vs_meas=1.4, iter_change=438.3, curvature=1
+diter_data_g[9][1][1][1][1][1][0]=4; //backf_vs_meas=1.5, iter_change=256.6, curvature=1
+diter_data_g[10][1][1][1][1][1][0]=5; //backf_vs_meas=1.2, iter_change=305.4, curvature=1
+diter_data_g[11][1][1][1][1][1][0]=4; //backf_vs_meas=1.1, iter_change=474.0, curvature=1
+diter_data_g[12][1][1][1][1][1][0]=4; //backf_vs_meas=1.1, iter_change=375.0, curvature=1
+diter_data_g[13][1][1][1][1][1][0]=5; //backf_vs_meas=0.7, iter_change=325.1, curvature=1
+diter_data_g[14][1][1][1][1][1][0]=5; //backf_vs_meas=1.7, iter_change=310.8, curvature=1
+diter_data_g[15][1][1][1][1][1][0]=5; //backf_vs_meas=1.9, iter_change=329.7, curvature=1
+//pTlead=5
+//Bayes
+diter_data_g[2][1][2][0][1][1][0]=5; //backf_vs_meas=0.3, iter_change=5.0, curvature=1
+diter_data_g[4][1][2][0][1][1][0]=4; //backf_vs_meas=0.4, iter_change=5.0, curvature=1
+diter_data_g[5][1][2][0][1][1][0]=4; //backf_vs_meas=0.5, iter_change=4.0, curvature=1
+diter_data_g[6][1][2][0][1][1][0]=3; //backf_vs_meas=0.7, iter_change=5.4, curvature=1
+diter_data_g[7][1][2][0][1][1][0]=5; //backf_vs_meas=0.4, iter_change=5.1, curvature=1
+diter_data_g[8][1][2][0][1][1][0]=4; //backf_vs_meas=0.5, iter_change=6.0, curvature=1
+diter_data_g[9][1][2][0][1][1][0]=4; //backf_vs_meas=0.7, iter_change=4.4, curvature=1
+diter_data_g[10][1][2][0][1][1][0]=5; //backf_vs_meas=0.3, iter_change=4.4, curvature=1
+diter_data_g[11][1][2][0][1][1][0]=5; //backf_vs_meas=0.4, iter_change=3.8, curvature=1
+diter_data_g[12][1][2][0][1][1][0]=4; //backf_vs_meas=0.6, iter_change=5.8, curvature=1
+diter_data_g[13][1][2][0][1][1][0]=5; //backf_vs_meas=0.2, iter_change=4.6, curvature=1
+diter_data_g[14][1][2][0][1][1][0]=5; //backf_vs_meas=0.3, iter_change=4.3, curvature=1
+diter_data_g[15][1][2][0][1][1][0]=5; //backf_vs_meas=0.4, iter_change=4.2, curvature=1
+//SVD
+diter_data_g[2][1][2][1][1][1][0]=4; //backf_vs_meas=2.6, iter_change=135.8, curvature=1
+diter_data_g[4][1][2][1][1][1][0]=3; //backf_vs_meas=2.2, iter_change=112.7, curvature=1
+diter_data_g[5][1][2][1][1][1][0]=3; //backf_vs_meas=4.5, iter_change=36.9, curvature=1
+diter_data_g[6][1][2][1][1][1][0]=4; //backf_vs_meas=1.0, iter_change=32.7, curvature=1
+diter_data_g[7][1][2][1][1][1][0]=5; //backf_vs_meas=0.5, iter_change=93.9, curvature=1
+diter_data_g[8][1][2][1][1][1][0]=3; //backf_vs_meas=3.7, iter_change=201.5, curvature=1
+diter_data_g[9][1][2][1][1][1][0]=4; //backf_vs_meas=0.6, iter_change=55.6, curvature=1
+diter_data_g[10][1][2][1][1][1][0]=4; //backf_vs_meas=2.2, iter_change=115.2, curvature=1
+diter_data_g[11][1][2][1][1][1][0]=4; //backf_vs_meas=1.3, iter_change=73.7, curvature=1
+diter_data_g[12][1][2][1][1][1][0]=4; //backf_vs_meas=1.1, iter_change=70.5, curvature=1
+diter_data_g[13][1][2][1][1][1][0]=4; //backf_vs_meas=1.4, iter_change=115.3, curvature=1
+diter_data_g[14][1][2][1][1][1][0]=4; //backf_vs_meas=0.9, iter_change=95.5, curvature=1
+diter_data_g[15][1][2][1][1][1][0]=4; //backf_vs_meas=1.0, iter_change=89.9, curvature=1
+//pTlead=6
+//Bayes
+diter_data_g[2][1][3][0][1][1][0]=4; //backf_vs_meas=0.1, iter_change=2.7, curvature=1
+diter_data_g[4][1][3][0][1][1][0]=3; //backf_vs_meas=0.7, iter_change=2.6, curvature=1
+diter_data_g[5][1][3][0][1][1][0]=2; //backf_vs_meas=0.8, iter_change=4.1, curvature=1
+diter_data_g[6][1][3][0][1][1][0]=2; //backf_vs_meas=0.8, iter_change=3.2, curvature=1
+diter_data_g[7][1][3][0][1][1][0]=4; //backf_vs_meas=0.4, iter_change=2.6, curvature=1
+diter_data_g[8][1][3][0][1][1][0]=3; //backf_vs_meas=0.6, iter_change=3.5, curvature=1
+diter_data_g[9][1][3][0][1][1][0]=2; //backf_vs_meas=1.0, iter_change=5.8, curvature=1
+diter_data_g[10][1][3][0][1][1][0]=3; //backf_vs_meas=0.5, iter_change=4.8, curvature=1
+diter_data_g[11][1][3][0][1][1][0]=3; //backf_vs_meas=0.7, iter_change=3.8, curvature=1
+diter_data_g[12][1][3][0][1][1][0]=3; //backf_vs_meas=0.8, iter_change=3.3, curvature=1
+diter_data_g[13][1][3][0][1][1][0]=3; //backf_vs_meas=0.6, iter_change=5.0, curvature=1
+diter_data_g[14][1][3][0][1][1][0]=3; //backf_vs_meas=0.6, iter_change=4.5, curvature=1
+diter_data_g[15][1][3][0][1][1][0]=3; //backf_vs_meas=0.7, iter_change=4.2, curvature=1
+//SVD
+diter_data_g[2][1][3][1][1][1][0]=4; //backf_vs_meas=0.9, iter_change=39.1, curvature=1
+diter_data_g[4][1][3][1][1][1][0]=3; //backf_vs_meas=2.2, iter_change=22.1, curvature=1
+diter_data_g[5][1][3][1][1][1][0]=3; //backf_vs_meas=3.1, iter_change=4.9, curvature=1
+diter_data_g[6][1][3][1][1][1][0]=3; //backf_vs_meas=3.7, iter_change=2.2, curvature=1
+diter_data_g[7][1][3][1][1][1][0]=4; //backf_vs_meas=3.6, iter_change=75.9, curvature=1
+diter_data_g[8][1][3][1][1][1][0]=3; //backf_vs_meas=2.3, iter_change=37.4, curvature=1
+diter_data_g[9][1][3][1][1][1][0]=3; //backf_vs_meas=4.0, iter_change=22.0, curvature=1
+diter_data_g[10][1][3][1][1][1][0]=3; //backf_vs_meas=4.9, iter_change=106.6, curvature=1
+diter_data_g[11][1][3][1][1][1][0]=3; //backf_vs_meas=2.0, iter_change=31.3, curvature=1
+diter_data_g[12][1][3][1][1][1][0]=3; //backf_vs_meas=3.4, iter_change=26.5, curvature=1
+diter_data_g[13][1][3][1][1][1][0]=4; //backf_vs_meas=0.6, iter_change=26.1, curvature=1
+diter_data_g[14][1][3][1][1][1][0]=3; //backf_vs_meas=2.9, iter_change=50.1, curvature=1
+diter_data_g[15][1][3][1][1][1][0]=3; //backf_vs_meas=3.0, iter_change=39.9, curvature=1
+//R=0.4
+//pTlead=4
+//Bayes
+diter_data_g[2][2][1][0][1][1][0]=-1;
+diter_data_g[4][2][1][0][1][1][0]=-1;
+diter_data_g[5][2][1][0][1][1][0]=7; //backf_vs_meas=1.2, iter_change=5.3, curvature=2
+diter_data_g[6][2][1][0][1][1][0]=7; //backf_vs_meas=1.1, iter_change=4.7, curvature=2
+diter_data_g[7][2][1][0][1][1][0]=-1;
+diter_data_g[8][2][1][0][1][1][0]=7; //backf_vs_meas=1.3, iter_change=4.8, curvature=2
+diter_data_g[9][2][1][0][1][1][0]=6; //backf_vs_meas=1.3, iter_change=5.1, curvature=2
+diter_data_g[10][2][1][0][1][1][0]=-1;
+diter_data_g[11][2][1][0][1][1][0]=7; //backf_vs_meas=1.1, iter_change=5.4, curvature=2
+diter_data_g[12][2][1][0][1][1][0]=7; //backf_vs_meas=0.7, iter_change=5.0, curvature=2
+diter_data_g[13][2][1][0][1][1][0]=-1;
+diter_data_g[14][2][1][0][1][1][0]=-1;
+diter_data_g[15][2][1][0][1][1][0]=-1;
+//SVD
+diter_data_g[2][2][1][1][1][1][0]=4; //backf_vs_meas=3.0, iter_change=394.9, curvature=1
+diter_data_g[4][2][1][1][1][1][0]=4; //backf_vs_meas=3.3, iter_change=175.6, curvature=1
+diter_data_g[5][2][1][1][1][1][0]=4; //backf_vs_meas=2.5, iter_change=132.6, curvature=1
+diter_data_g[6][2][1][1][1][1][0]=5; //backf_vs_meas=1.5, iter_change=202.0, curvature=2
+diter_data_g[7][2][1][1][1][1][0]=5; //backf_vs_meas=2.2, iter_change=383.2, curvature=2
+diter_data_g[8][2][1][1][1][1][0]=4; //backf_vs_meas=2.3, iter_change=193.6, curvature=1
+diter_data_g[9][2][1][1][1][1][0]=4; //backf_vs_meas=3.0, iter_change=131.5, curvature=1
+diter_data_g[10][2][1][1][1][1][0]=5; //backf_vs_meas=1.8, iter_change=166.7, curvature=1
+diter_data_g[11][2][1][1][1][1][0]=4; //backf_vs_meas=2.1, iter_change=237.6, curvature=1
+diter_data_g[12][2][1][1][1][1][0]=4; //backf_vs_meas=1.8, iter_change=198.0, curvature=1
+diter_data_g[13][2][1][1][1][1][0]=5; //backf_vs_meas=1.5, iter_change=192.0, curvature=1
+diter_data_g[14][2][1][1][1][1][0]=4; //backf_vs_meas=2.9, iter_change=366.7, curvature=1
+diter_data_g[15][2][1][1][1][1][0]=4; //backf_vs_meas=1.0, iter_change=309.4, curvature=1
+//pTlead=5
+//Bayes
+diter_data_g[2][2][2][0][1][1][0]=5; //backf_vs_meas=0.2, iter_change=3.6, curvature=1
+diter_data_g[4][2][2][0][1][1][0]=3; //backf_vs_meas=1.5, iter_change=4.7, curvature=1
+diter_data_g[5][2][2][0][1][1][0]=2; //backf_vs_meas=0.3, iter_change=5.5, curvature=1
+diter_data_g[6][2][2][0][1][1][0]=2; //backf_vs_meas=0.4, iter_change=5.3, curvature=1
+diter_data_g[7][2][2][0][1][1][0]=5; //backf_vs_meas=0.6, iter_change=3.5, curvature=1
+diter_data_g[8][2][2][0][1][1][0]=4; //backf_vs_meas=0.5, iter_change=3.7, curvature=1
+diter_data_g[9][2][2][0][1][1][0]=3; //backf_vs_meas=1.3, iter_change=4.1, curvature=1
+diter_data_g[10][2][2][0][1][1][0]=4; //backf_vs_meas=0.6, iter_change=5.0, curvature=1
+diter_data_g[11][2][2][0][1][1][0]=4; //backf_vs_meas=0.4, iter_change=4.1, curvature=1
+diter_data_g[12][2][2][0][1][1][0]=4; //backf_vs_meas=0.3, iter_change=3.6, curvature=1
+diter_data_g[13][2][2][0][1][1][0]=4; //backf_vs_meas=0.5, iter_change=5.4, curvature=1
+diter_data_g[14][2][2][0][1][1][0]=4; //backf_vs_meas=0.4, iter_change=5.0, curvature=1
+diter_data_g[15][2][2][0][1][1][0]=4; //backf_vs_meas=0.4, iter_change=4.7, curvature=1
+//SVD
+diter_data_g[2][2][2][1][1][1][0]=4; //backf_vs_meas=0.4, iter_change=74.1, curvature=1
+diter_data_g[4][2][2][1][1][1][0]=3; //backf_vs_meas=4.4, iter_change=39.3, curvature=1
+diter_data_g[5][2][2][1][1][1][0]=4; //backf_vs_meas=2.6, iter_change=16.5, curvature=1
+diter_data_g[6][2][2][1][1][1][0]=4; //backf_vs_meas=2.0, iter_change=20.9, curvature=1
+diter_data_g[7][2][2][1][1][1][0]=5; //backf_vs_meas=1.2, iter_change=45.4, curvature=1
+diter_data_g[8][2][2][1][1][1][0]=3; //backf_vs_meas=0.7, iter_change=91.3, curvature=1
+diter_data_g[9][2][2][1][1][1][0]=3; //backf_vs_meas=3.8, iter_change=27.3, curvature=1
+diter_data_g[10][2][2][1][1][1][0]=4; //backf_vs_meas=0.5, iter_change=52.1, curvature=1
+diter_data_g[11][2][2][1][1][1][0]=3; //backf_vs_meas=2.9, iter_change=80.9, curvature=1
+diter_data_g[12][2][2][1][1][1][0]=3; //backf_vs_meas=2.9, iter_change=45.2, curvature=1
+diter_data_g[13][2][2][1][1][1][0]=3; //backf_vs_meas=5.0, iter_change=251.2, curvature=1
+diter_data_g[14][2][2][1][1][1][0]=3; //backf_vs_meas=2.7, iter_change=147.8, curvature=1
+diter_data_g[15][2][2][1][1][1][0]=3; //backf_vs_meas=3.3, iter_change=106.9, curvature=1
+//pTlead=6
+//Bayes
+diter_data_g[2][2][3][0][1][1][0]=3; //backf_vs_meas=0.8, iter_change=3.9, curvature=1
+diter_data_g[4][2][3][0][1][1][0]=2; //backf_vs_meas=0.1, iter_change=1.5, curvature=1
+diter_data_g[5][2][3][0][1][1][0]=2; //backf_vs_meas=0.1, iter_change=1.1, curvature=1
+diter_data_g[6][2][3][0][1][1][0]=2; //backf_vs_meas=0.3, iter_change=2.4, curvature=1
+diter_data_g[7][2][3][0][1][1][0]=3; //backf_vs_meas=1.4, iter_change=4.0, curvature=1
+diter_data_g[8][2][3][0][1][1][0]=2; //backf_vs_meas=0.0, iter_change=3.5, curvature=1
+diter_data_g[9][2][3][0][1][1][0]=2; //backf_vs_meas=0.3, iter_change=3.3, curvature=1
+diter_data_g[10][2][3][0][1][1][0]=3; //backf_vs_meas=1.1, iter_change=2.4, curvature=1
+diter_data_g[11][2][3][0][1][1][0]=2; //backf_vs_meas=0.1, iter_change=3.4, curvature=1
+diter_data_g[12][2][3][0][1][1][0]=2; //backf_vs_meas=0.1, iter_change=2.7, curvature=1
+diter_data_g[13][2][3][0][1][1][0]=3; //backf_vs_meas=0.9, iter_change=2.5, curvature=1
+diter_data_g[14][2][3][0][1][1][0]=2; //backf_vs_meas=0.1, iter_change=5.8, curvature=1
+diter_data_g[15][2][3][0][1][1][0]=2; //backf_vs_meas=0.1, iter_change=4.4, curvature=1
+//SVD
+diter_data_g[2][2][3][1][1][1][0]=3; //backf_vs_meas=3.0, iter_change=87.1, curvature=1
+diter_data_g[4][2][3][1][1][1][0]=3; //backf_vs_meas=1.9, iter_change=4.6, curvature=1
+diter_data_g[5][2][3][1][1][1][0]=3; //backf_vs_meas=1.8, iter_change=0.5, curvature=1
+diter_data_g[6][2][3][1][1][1][0]=3; //backf_vs_meas=2.6, iter_change=7.6, curvature=1
+diter_data_g[7][2][3][1][1][1][0]=4; //backf_vs_meas=2.6, iter_change=41.9, curvature=1
+diter_data_g[8][2][3][1][1][1][0]=3; //backf_vs_meas=0.5, iter_change=11.1, curvature=1
+diter_data_g[9][2][3][1][1][1][0]=3; //backf_vs_meas=1.1, iter_change=17.8, curvature=1
+diter_data_g[10][2][3][1][1][1][0]=3; //backf_vs_meas=1.8, iter_change=57.2, curvature=1
+diter_data_g[11][2][3][1][1][1][0]=3; //backf_vs_meas=0.7, iter_change=7.8, curvature=1
+diter_data_g[12][2][3][1][1][1][0]=3; //backf_vs_meas=1.0, iter_change=11.9, curvature=1
+diter_data_g[13][2][3][1][1][1][0]=3; //backf_vs_meas=2.5, iter_change=39.6, curvature=1
+diter_data_g[14][2][3][1][1][1][0]=3; //backf_vs_meas=0.7, iter_change=17.7, curvature=1
+diter_data_g[15][2][3][1][1][1][0]=3; //backf_vs_meas=0.6, iter_change=12.9, curvature=1
