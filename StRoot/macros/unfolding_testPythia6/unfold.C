@@ -116,6 +116,13 @@ void unfold(Int_t priorNo=2,Double_t pTlead =5.0,TH1D* hepsilon=NULL)
 		tmp_array2=binarr8b;
    }
 
+    else if(binChoice==9)
+    {
+        tmp_nbins=nbinsarr9a;
+        tmp_nbins2=nbinsarr9b;
+        tmp_array=binarr9a;
+        tmp_array2=binarr9b;
+    }
 
   const Int_t newbins=tmp_nbins;
   float *pTbinArray=tmp_array;

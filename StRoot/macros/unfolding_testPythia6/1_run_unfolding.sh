@@ -111,7 +111,7 @@ do
 for TSUFF in `echo $TSUFFIX_ARR`
 do
 export TSUFF
-SYS="TrackEff" #SYSTEMATIC UNCERTAINTY VARIATION
+SYS="main" #SYSTEMATIC UNCERTAINTY VARIATION
 export SYS
 
 
@@ -128,7 +128,7 @@ export RMATRIX_PATH="$WRKDIR/responseM_${TRG}/Pythia6"
 #export EPSILON_PATH="$TOYMODELDIR/DataOut/pythia/jetonly/pyEmb_R${RPARAM}_${SUFFIX}${SYSSUF2}${TSUFF}/"
 export EPSILON_PATH="$WRKDIR/matchingeffi"
 
-for BININGCH in 8 #7 - equidistant #-test binning #5 #-full jets  #6 #0 1 4 #1 2 3 4 #choice of bining arrays 0: nu=nm, 1: nu<nm, 2: nu<nm
+for BININGCH in 9 #7 - equidistant #-test binning #5 #-full jets  #6 #0 1 4 #1 2 3 4 #choice of bining arrays 0: nu=nm, 1: nu<nm, 2: nu<nm
 do
 export BININGCH 
 #for PRIOR in 15 #2 4 5 6 7 8 9 10 11 12 13 14 15 #0: truth, 1: flat, 2: biased pythia, 3: pT^(-3), 4:pT^(-4) 5: pT^(-5) 6:pT^(-6) 7: levy I 8: levy II
