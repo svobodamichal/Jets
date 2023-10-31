@@ -106,72 +106,86 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
 		double nfractionMc = 0;
 		double neutralpTMc = 0;
 		double pT_jetMc = McJets[i].perp();
-		cout<<"MC pT  "<<i<<"  "<<pT_jetMc<<"  "<<McJets[i].eta()<<"  "<<McJets[i].phi()<<endl;
-		cout<<"---------------------------------------------------------"<<endl;
-		for(unsigned int ic = 0; ic < constituentsMc.size(); ++ic) {
-			int uidxMC = constituentsMc[ic].user_index();
-			if (uidxMC>-1) mcindex.push_back(uidxMC);//select matched mc tracks
-			if (uidxMC==0) neutralpTMc+= constituentsMc[ic].perp();
-			}	
-		nfractionMc = neutralpTMc/pT_jetMc;
-		    cout<<"Počet recontructed  "<<RcJets.size()<<endl;
-       		for (unsigned int j = 0; j < RcJets.size(); j++){
-			double pT_jetRc = RcJets[j].perp();
-			vector<PseudoJet> constituentsRc = sorted_by_pt(RcJets[j].constituents());
-			double nfractionRc = 0;
-			double neutralpTRc = 0;
-			double pTmatch = 0;
-                cout<<"RC pT  "<<j<<"  "<<pT_jetRc<<"  "<<RcJets[j].eta()<<"  "<<RcJets[j].phi()<<endl;
+		if(pT_jetMc>10.2 && pT_jetMc<10.22) {
+            cout << "MC pT  " << i << "  " << pT_jetMc << "  " << McJets[i].eta() << "  " << McJets[i].phi() << endl;
 
-                for(unsigned int irc = 0; irc < constituentsRc.size(); ++irc){
-				int uidx = constituentsRc[irc].user_index();
-				double constpT = constituentsRc[irc].perp();
-                    if(constpT>0.1){cout<<irc<<"    "<<constpT<<endl;}
+            cout << "---------------------------------------------------------" << endl;
+            for (unsigned int ic = 0; ic < constituentsMc.size(); ++ic) {
+                int uidxMC = constituentsMc[ic].user_index();
+                if (uidxMC > -1) mcindex.push_back(uidxMC);//select matched mc tracks
+                if (uidxMC == 0) neutralpTMc += constituentsMc[ic].perp();
+            }
+            nfractionMc = neutralpTMc / pT_jetMc;
+            cout << "Počet recontructed  " << RcJets.size() << endl;
+            for (unsigned int j = 0; j < RcJets.size(); j++) {
+                double pT_jetRc = RcJets[j].perp();
+                vector <PseudoJet> constituentsRc = sorted_by_pt(RcJets[j].constituents());
+                double nfractionRc = 0;
+                double neutralpTRc = 0;
+                double pTmatch = 0;
+                cout << "RC pT  " << j << "  " << pT_jetRc << "  " << RcJets[j].eta() << "  " << RcJets[j].phi()
+                     << endl;
 
-                        std::vector<int>::iterator it;
-				it = std::find(mcindex.begin(), mcindex.end(), uidx);
-				int idx = std::distance(mcindex.begin(), it);
-				if (uidx > 0 && it != mcindex.end()) {pTmatch+=constpT; //search for RC track user index in the mcidx vector 			
-					}
-				else if (uidx == 0 || uidx == 9999) {neutralpTRc+=constpT;}//select towers
-			}	
-			if (pTmatch > 0) {found = true; // found at least one RC track which matches track at MC level
-				matchtrackpT.push_back(pTmatch);
-				nfractionRc = neutralpTRc/pT_jetRc;
-				matchedNeutralFractionTmp.push_back(make_pair(nfractionMc, nfractionRc));		
-				matchedTmp.push_back(make_pair(McJets[i], RcJets[j]));
-				matchedPtLeadTmp.push_back(make_pair(McPtLeads[i], RcPtLeads[j]));
-                cout<<"Kontrola počet recontructed  "<<RcJets.size()<<endl;
+                for (unsigned int irc = 0; irc < constituentsRc.size(); ++irc) {
+                    int uidx = constituentsRc[irc].user_index();
+                    double constpT = constituentsRc[irc].perp();
+                    if (constpT > 0.1) { cout << irc << "    " << constpT << endl; }
 
-                jvec.push_back(j);
-				} //end of if (pTmatch > 0) - track match candidate found 
-			} //end of RC jets loop
-			cout<<"========================================================"<<endl;
-			if (!found) {jvec.clear();mcindex.clear();matchtrackpT.clear();matchedTmp.clear();matchedPtLeadTmp.clear();matchedNeutralFractionTmp.clear();continue;} //no match
-			std::vector<double>::iterator result;
-			result = std::max_element(matchtrackpT.begin(),matchtrackpT.end());
-			int index = std::distance(matchtrackpT.begin(), result);
-					
-				//apply area and eta cut
-			RcJets.erase(RcJets.begin()+jvec[index]); //remove already-matched det-lvl jet
-			RcPtLeads.erase(RcPtLeads.begin()+jvec[index]); //and corresponding pTlead
-			//cout << "removed jet no. " << jvec[index] << endl;
-			double area = matchedTmp[index].second.area();
-			double Area_cuts[3] = {0.07,0.2,0.4}; //stupid way to "access" fAcuts
-			int ac = R*10-2; //find index R=0.2 -> 0, R=0.3 -> 1, R=0.4 -> 2
-			if (area > Area_cuts[ac] && fabs(matchedTmp[index].second.eta()) < 1-R && fabs(matchedTmp[index].first.eta()) < 1-R && matchedNeutralFractionTmp[index].second < 0.95) { 
-				matched->push_back((pair<PseudoJet,PseudoJet>)matchedTmp[index]);
-				matchedPtLead->push_back(matchedPtLeadTmp[index]); 
-				matchedNeutralFraction->push_back(matchedNeutralFractionTmp[index]);
-			}
-			//}
-	
-		jvec.clear();
-		mcindex.clear();
-		matchtrackpT.clear();
-		matchedTmp.clear();
-		matchedPtLeadTmp.clear();
-		matchedNeutralFractionTmp.clear();	
+                    std::vector<int>::iterator it;
+                    it = std::find(mcindex.begin(), mcindex.end(), uidx);
+                    int idx = std::distance(mcindex.begin(), it);
+                    if (uidx > 0 && it != mcindex.end()) {
+                        pTmatch += constpT; //search for RC track user index in the mcidx vector
+                    } else if (uidx == 0 || uidx == 9999) { neutralpTRc += constpT; }//select towers
+                }
+                if (pTmatch > 0) {
+                    found = true; // found at least one RC track which matches track at MC level
+                    matchtrackpT.push_back(pTmatch);
+                    nfractionRc = neutralpTRc / pT_jetRc;
+                    matchedNeutralFractionTmp.push_back(make_pair(nfractionMc, nfractionRc));
+                    matchedTmp.push_back(make_pair(McJets[i], RcJets[j]));
+                    matchedPtLeadTmp.push_back(make_pair(McPtLeads[i], RcPtLeads[j]));
+                    cout << "Kontrola počet recontructed  " << RcJets.size() << endl;
+
+                    jvec.push_back(j);
+                } //end of if (pTmatch > 0) - track match candidate found
+            } //end of RC jets loop
+            cout << "========================================================" << endl;
+            if (!found) {
+                jvec.clear();
+                mcindex.clear();
+                matchtrackpT.clear();
+                matchedTmp.clear();
+                matchedPtLeadTmp.clear();
+                matchedNeutralFractionTmp.clear();
+                continue;
+            } //no match
+            std::vector<double>::iterator result;
+            result = std::max_element(matchtrackpT.begin(), matchtrackpT.end());
+            int index = std::distance(matchtrackpT.begin(), result);
+
+            //apply area and eta cut
+            RcJets.erase(RcJets.begin() + jvec[index]); //remove already-matched det-lvl jet
+            RcPtLeads.erase(RcPtLeads.begin() + jvec[index]); //and corresponding pTlead
+            //cout << "removed jet no. " << jvec[index] << endl;
+            double area = matchedTmp[index].second.area();
+            double Area_cuts[3] = {0.07, 0.2, 0.4}; //stupid way to "access" fAcuts
+            int ac = R * 10 - 2; //find index R=0.2 -> 0, R=0.3 -> 1, R=0.4 -> 2
+            if (area > Area_cuts[ac] && fabs(matchedTmp[index].second.eta()) < 1 - R &&
+                fabs(matchedTmp[index].first.eta()) < 1 - R && matchedNeutralFractionTmp[index].second < 0.95) {
+                matched->push_back((pair <PseudoJet, PseudoJet>) matchedTmp[index]);
+                matchedPtLead->push_back(matchedPtLeadTmp[index]);
+                matchedNeutralFraction->push_back(matchedNeutralFractionTmp[index]);
+            }
+            //}
+
+            jvec.clear();
+            mcindex.clear();
+            matchtrackpT.clear();
+            matchedTmp.clear();
+            matchedPtLeadTmp.clear();
+            matchedNeutralFractionTmp.clear();
+        } //test event
     	}
 
 for (unsigned int i = 0; i < matched->size(); i++) cout << matched->at(i).first.perp() << " " << matched->at(i).second.perp() << endl;
