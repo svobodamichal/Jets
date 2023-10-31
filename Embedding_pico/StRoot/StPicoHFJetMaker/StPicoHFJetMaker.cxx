@@ -114,7 +114,7 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
 			if (uidxMC==0) neutralpTMc+= constituentsMc[ic].perp();
 			}	
 		nfractionMc = neutralpTMc/pT_jetMc;
-		    cout<<"Počet recontructed  "<<RcJets.size();<<endl;
+		    cout<<"Počet recontructed  "<<RcJets.size()<<endl;
        		for (unsigned int j = 0; j < RcJets.size(); j++){
 			double pT_jetRc = RcJets[j].perp();
 			vector<PseudoJet> constituentsRc = sorted_by_pt(RcJets[j].constituents());
