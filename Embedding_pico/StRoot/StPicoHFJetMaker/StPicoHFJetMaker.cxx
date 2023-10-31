@@ -107,6 +107,7 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
 		double neutralpTMc = 0;
 		double pT_jetMc = McJets[i].perp();
 		cout<<"MC pT  "<<i<<"  "<<pT_jetMc<<"  "<<McJets[i].eta()<<"  "<<McJets[i].phi()<<endl;
+		cout<<"---------------------------------------------------------"<<endl;
 		for(unsigned int ic = 0; ic < constituentsMc.size(); ++ic) {
 			int uidxMC = constituentsMc[ic].user_index();
 			if (uidxMC>-1) mcindex.push_back(uidxMC);//select matched mc tracks
@@ -140,6 +141,7 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
 				jvec.push_back(j);		
 				} //end of if (pTmatch > 0) - track match candidate found 
 			} //end of RC jets loop
+			cout<<"========================================================"<<endl;
 			if (!found) {jvec.clear();mcindex.clear();matchtrackpT.clear();matchedTmp.clear();matchedPtLeadTmp.clear();matchedNeutralFractionTmp.clear();continue;} //no match
 			std::vector<double>::iterator result;
 			result = std::max_element(matchtrackpT.begin(),matchtrackpT.end());
