@@ -140,8 +140,10 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
 				nfractionRc = neutralpTRc/pT_jetRc;
 				matchedNeutralFractionTmp.push_back(make_pair(nfractionMc, nfractionRc));		
 				matchedTmp.push_back(make_pair(McJets[i], RcJets[j]));
-				matchedPtLeadTmp.push_back(make_pair(McPtLeads[i], RcPtLeads[j]));	
-				jvec.push_back(j);		
+				matchedPtLeadTmp.push_back(make_pair(McPtLeads[i], RcPtLeads[j]));
+                cout<<"Kontrola počet recontructed  "<<RcJets.size()<<endl;
+
+                jvec.push_back(j);
 				} //end of if (pTmatch > 0) - track match candidate found 
 			} //end of RC jets loop
 			cout<<"========================================================"<<endl;
