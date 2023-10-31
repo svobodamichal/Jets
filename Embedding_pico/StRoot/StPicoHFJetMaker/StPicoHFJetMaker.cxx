@@ -121,7 +121,7 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
 			double nfractionRc = 0;
 			double neutralpTRc = 0;
 			double pTmatch = 0;
-                cout<<"RC pT  "<<j<<"  "<<pT_jetRc<<"  "<<RcJets[i].eta()<<"  "<<RcJets[i].phi()<<endl;
+                cout<<"RC pT  "<<j<<"  "<<pT_jetRc<<"  "<<RcJets[j].eta()<<"  "<<RcJets[j].phi()<<endl;
 
                 for(unsigned int irc = 0; irc < constituentsRc.size(); ++irc){
 				int uidx = constituentsRc[irc].user_index();
