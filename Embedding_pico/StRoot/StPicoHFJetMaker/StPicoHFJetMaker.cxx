@@ -110,7 +110,9 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
             cout << "MC pT  " << i << "  " << pT_jetMc << "  " << McJets[i].eta() << "  " << McJets[i].phi() << endl;
 
             cout << "---------------------------------------------------------" << endl;
-            for (unsigned int ic = 0; ic < constituentsMc.size(); ++ic) {
+            for (unsigned int ic = 0; ic < constituentsMc.size(); ++ic)
+                cout<<"MC consr" << ic << "    " << constituentsMc[ic].perp() <<"  " <<constituentsMc[ic].eta()<<"   "<<constituentsMc[ic].phi()  <<endl; }
+
                 int uidxMC = constituentsMc[ic].user_index();
                 if (uidxMC > -1) mcindex.push_back(uidxMC);//select matched mc tracks
                 if (uidxMC == 0) neutralpTMc += constituentsMc[ic].perp();
@@ -123,13 +125,13 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
                 double nfractionRc = 0;
                 double neutralpTRc = 0;
                 double pTmatch = 0;
-                cout << "RC pT  " << j << "  " << pT_jetRc << "  " << RcJets[j].eta() << "  " << RcJets[j].phi()
-                     << endl;
+                cout << "RC pT  " << j << "  " << pT_jetRc << "  " << RcJets[j].eta() << "  " << RcJets[j].phi()<< endl;
+                cout <<"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"<<endl;
 
                 for (unsigned int irc = 0; irc < constituentsRc.size(); ++irc) {
                     int uidx = constituentsRc[irc].user_index();
                     double constpT = constituentsRc[irc].perp();
-                    if (constpT > 0.1) { cout << irc << "    " << constpT << endl; }
+                    if (constpT > 0.1) { cout << irc << "    " << constpT <<"  " <<constituentsRc[irc].eta()<<"   "<<constituentsRc[irc].phi()  <<endl; }
 
                     std::vector<int>::iterator it;
                     it = std::find(mcindex.begin(), mcindex.end(), uidx);
