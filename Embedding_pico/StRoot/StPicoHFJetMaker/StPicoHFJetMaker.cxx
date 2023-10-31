@@ -114,6 +114,7 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
 			if (uidxMC==0) neutralpTMc+= constituentsMc[ic].perp();
 			}	
 		nfractionMc = neutralpTMc/pT_jetMc;
+		    cout<<"Počet recontructed  "<<RcJets.size();<<endl;
        		for (unsigned int j = 0; j < RcJets.size(); j++){
 			double pT_jetRc = RcJets[j].perp();
 			vector<PseudoJet> constituentsRc = sorted_by_pt(RcJets[j].constituents());
@@ -572,7 +573,7 @@ int StPicoHFJetMaker::MakeJets() {
 	//THIS FUNCTION WILL NOT WORK ON EMBEDDING, UNLESS THE EMBEDDING IS INTO HT EVENTS				
 	//if (!FindTriggerTowers(2)) return kStOk; //2 = HT2, don't continue if there is no HT2-trigger tower with sufficient energy
 	
-	
+	cout<<"Centralita  "<<centrality<<endl;
 	//MC tracks
 	int noMCtracks = mPicoDst->numberOfMcTracks();
 	for (int i = 0; i < noMCtracks; i++){
