@@ -126,7 +126,7 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
                 for(unsigned int irc = 0; irc < constituentsRc.size(); ++irc){
 				int uidx = constituentsRc[irc].user_index();
 				double constpT = constituentsRc[irc].perp();
-                    cout<<irc<<"    "<<constpT<<endl;
+                    if(constpT>0.1){cout<<irc<<"    "<<constpT<<endl;}
 
                         std::vector<int>::iterator it;
 				it = std::find(mcindex.begin(), mcindex.end(), uidx);
