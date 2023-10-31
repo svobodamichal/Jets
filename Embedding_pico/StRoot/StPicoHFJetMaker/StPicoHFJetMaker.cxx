@@ -111,7 +111,7 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
 
             cout << "---------------------------------------------------------" << endl;
             for (unsigned int ic = 0; ic < constituentsMc.size(); ++ic){
-                cout<<"MC const" << ic << "    " << constituentsMc[ic].perp() <<"  " <<constituentsMc[ic].eta()<<"   "<<constituentsMc[ic].phi()  <<endl;
+                if (constpT > 0.1) {cout<<"MC const " << ic << "    " << constituentsMc[ic].perp() <<"  " <<constituentsMc[ic].eta()<<"   "<<constituentsMc[ic].phi()<<" "<< constituentsMc[ic].user_index()  <<endl;}
 
                 int uidxMC = constituentsMc[ic].user_index();
                 if (uidxMC > -1) mcindex.push_back(uidxMC);//select matched mc tracks
@@ -131,7 +131,7 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
                 for (unsigned int irc = 0; irc < constituentsRc.size(); ++irc) {
                     int uidx = constituentsRc[irc].user_index();
                     double constpT = constituentsRc[irc].perp();
-                    if (constpT > 0.1) { cout << irc << "    " << constpT <<"  " <<constituentsRc[irc].eta()<<"   "<<constituentsRc[irc].phi()  <<endl; }
+                    if (constpT > 0.1) { cout << irc << "    " << constpT <<"  " <<constituentsRc[irc].eta()<<"   "<<constituentsRc[irc].phi()<<"  "<<constituentsRc[irc].user_index()  <<endl; }
 
                     std::vector<int>::iterator it;
                     it = std::find(mcindex.begin(), mcindex.end(), uidx);
@@ -593,7 +593,6 @@ int StPicoHFJetMaker::MakeJets() {
 	//THIS FUNCTION WILL NOT WORK ON EMBEDDING, UNLESS THE EMBEDDING IS INTO HT EVENTS				
 	//if (!FindTriggerTowers(2)) return kStOk; //2 = HT2, don't continue if there is no HT2-trigger tower with sufficient energy
 	
-	cout<<"Centralita  "<<centrality<<endl;
 	//MC tracks
 	int noMCtracks = mPicoDst->numberOfMcTracks();
 	for (int i = 0; i < noMCtracks; i++){
