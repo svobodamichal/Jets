@@ -87,7 +87,125 @@ bool MatchTracks(vector<PseudoJet> &McTracks,vector<PseudoJet> &RcTracks){
 	return found;
 }
 
+//_________________________________rewritten jet matching using matched tracks using idTruth and qaTruth...has to be here, fastjet cannot be included in StEffEmbed.h file___________________________________________________________
+bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double> McPtLeads, vector<double> Rcleads, vector<pair<PseudoJet,PseudoJet>>* matched, vector<pair<double,double>>* matchedPtLead,
+		vector<pair<double,double>>* matchedNeutralFraction, double R){
+	bool found = false;
+	vector<PseudoJet> RcJets = Rcjets; //copy RC jets, so we can remove after match
+	vector<double> RcPtLeads = Rcleads; //copy RC leading particles, so we can remove after match
+	vector<double> matchpT,matchR,matchpTfrac,matchR2,matchpTfrac2,matchdeltapT; //must be cleared at the end (of first loop)
+	vector<pair<PseudoJet,PseudoJet>> matchedTmp, matchedTmp2;	//must be cleared at the end
+	vector<pair<double,double>> matchedPtLeadTmp;	//must be cleared at the end
+	vector<pair<double,double>> matchedNeutralFractionTmp;//must be cleared at the end
+	vector<int> jvec; //indices of matched jet candidates
+	vector<int> mcindex; //user indices of MC tracks, must be cleared at the end
+	vector<double> matchtrackpT; //pT from matched tracks, must be cleared at the end
+    vector<double> diffEta;
+    vector<double> diffPhi;
 
+    for (unsigned int i = 0; i < McJets.size(); i++) {
+		found = false;
+		vector<PseudoJet> constituentsMc = sorted_by_pt(McJets[i].constituents());
+		double nfractionMc = 0;
+		double neutralpTMc = 0;
+		double pT_jetMc = McJets[i].perp();
+//		if(pT_jetMc>10.2 && pT_jetMc<10.22) {
+//            cout << "MC pT  " << i << "  " << pT_jetMc << "  " << McJets[i].eta() << "  " << McJets[i].phi() << endl;
+
+            for (unsigned int ic = 0; ic < constituentsMc.size(); ++ic){
+//                if (constituentsMc[ic].perp() > 0.1) {cout<<"MC const " << ic << "    " << constituentsMc[ic].perp() <<"  " <<constituentsMc[ic].eta()<<"   "<<constituentsMc[ic].phi()<<" "<< constituentsMc[ic].user_index()  <<endl;}
+
+                int uidxMC = constituentsMc[ic].user_index();
+                if (uidxMC > -1) mcindex.push_back(uidxMC);//select matched mc tracks
+                if (uidxMC == 0) neutralpTMc += constituentsMc[ic].perp();
+            }
+            nfractionMc = neutralpTMc / pT_jetMc;
+//            cout << "Počet recontructed  " << RcJets.size() << endl;
+            for (unsigned int j = 0; j < RcJets.size(); j++) {
+                double pT_jetRc = RcJets[j].perp();
+                vector <PseudoJet> constituentsRc = sorted_by_pt(RcJets[j].constituents());
+                double nfractionRc = 0;
+                double neutralpTRc = 0;
+                double pTmatch = 0;
+//                cout << "RC pT  " << j << "  " << pT_jetRc << "  " << RcJets[j].eta() << "  " << RcJets[j].phi()<< endl;
+
+
+                double etaMC = McJets[j].eta();
+                double phiMC = McJets[j].phi();
+                double etaRC = RcJets[j].eta();
+                double phiRC = RcJets[j].phi();
+                double etaDiff = etaMC - etaRC;
+                double phiDiff = phiMC - phiRC;
+                diffEta.push_back(etaDiff);
+                diffPhi.push_back(phiDiff);
+
+
+                for (unsigned int irc = 0; irc < constituentsRc.size(); ++irc) {
+                    int uidx = constituentsRc[irc].user_index();
+                    double constpT = constituentsRc[irc].perp();
+//                    if (constpT > 0.1) { cout << irc << "    " << constpT <<"  " <<constituentsRc[irc].eta()<<"   "<<constituentsRc[irc].phi()<<"  "<<constituentsRc[irc].user_index()  <<endl; }
+
+                    std::vector<int>::iterator it;
+                    it = std::find(mcindex.begin(), mcindex.end(), uidx);
+                    int idx = std::distance(mcindex.begin(), it);
+                    if (uidx > 0 && it != mcindex.end()) {
+                        pTmatch += constpT; //search for RC track user index in the mcidx vector
+                    } else if (uidx == 0 || uidx == 9999) { neutralpTRc += constpT; }//select towers
+                }
+                if (pTmatch > 0) {
+                    found = true; // found at least one RC track which matches track at MC level
+                    matchtrackpT.push_back(pTmatch);
+                    nfractionRc = neutralpTRc / pT_jetRc;
+                    matchedNeutralFractionTmp.push_back(make_pair(nfractionMc, nfractionRc));
+                    matchedTmp.push_back(make_pair(McJets[i], RcJets[j]));
+                    matchedPtLeadTmp.push_back(make_pair(McPtLeads[i], RcPtLeads[j]));
+
+
+                    jvec.push_back(j);
+                } //end of if (pTmatch > 0) - track match candidate found
+            } //end of RC jets loop
+            if (!found) {
+                jvec.clear();
+                mcindex.clear();
+                matchtrackpT.clear();
+                matchedTmp.clear();
+                matchedPtLeadTmp.clear();
+                matchedNeutralFractionTmp.clear();
+                continue;
+            } //no match
+            std::vector<double>::iterator result;
+            result = std::max_element(matchtrackpT.begin(), matchtrackpT.end());
+            int index = std::distance(matchtrackpT.begin(), result);
+
+            //apply area and eta cut
+            RcJets.erase(RcJets.begin() + jvec[index]); //remove already-matched det-lvl jet
+            RcPtLeads.erase(RcPtLeads.begin() + jvec[index]); //and corresponding pTlead
+            //cout << "removed jet no. " << jvec[index] << endl;
+            double area = matchedTmp[index].second.area();
+            double Area_cuts[3] = {0.07, 0.2, 0.4}; //stupid way to "access" fAcuts
+            int ac = R * 10 - 2; //find index R=0.2 -> 0, R=0.3 -> 1, R=0.4 -> 2
+            if (area > Area_cuts[ac] && fabs(matchedTmp[index].second.eta()) < 1 - R &&
+                fabs(matchedTmp[index].first.eta()) < 1 - R && matchedNeutralFractionTmp[index].second < 0.95) {
+                matched->push_back((pair <PseudoJet, PseudoJet>) matchedTmp[index]);
+                matchedPtLead->push_back(matchedPtLeadTmp[index]);
+                matchedNeutralFraction->push_back(matchedNeutralFractionTmp[index]);
+            }
+            //}
+
+            jvec.clear();
+            mcindex.clear();
+            matchtrackpT.clear();
+            matchedTmp.clear();
+            matchedPtLeadTmp.clear();
+            matchedNeutralFractionTmp.clear();
+//        } //test event
+    	}
+
+for (unsigned int i = 0; i < matched->size(); i++) cout << matched->at(i).first.perp() << " " << matched->at(i).second.perp() << endl;
+
+
+    return found;
+}
 
 bool MatchJetsOld(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double> McPtLeads, vector<double> Rcleads, vector<pair<PseudoJet,PseudoJet>>* matched, vector<pair<double,double>>* matchedPtLead, 
 		vector<pair<double,double>>* matchedNeutralFraction, /*vector<pair<int,int>>* matchedNNeutral, vector<pair<int,int>>* matchedNCharged, vector<pair<int,int>>* matchedNTot,*/ double R){
@@ -762,7 +880,9 @@ int StPicoHFJetMaker::MakeJets() {
 		//vector<pair<int, int>> MatchedNNeutral, MatchedNCharged, MatchedNTot;
 		MatchJets(McJets, RcJets, McPtLeads, RcPtLeads, &Matched, &MatchedpTleads, &MatchedNeutralFraction, /*&MatchedNNeutral, &MatchedNCharged, &MatchedNTot, */fR[i]);
 		//cout << deltaR << " " << deltapT << " " << pTtrue << endl;
-	
+
+                static_cast<TH1D*>(mOutList->FindObject("heta_MCRC"))->Fill(diffEta, weight);
+                static_cast<TH1D*>(mOutList->FindObject("hphi_MCRC"))->Fill(diffPhi, weight);
 
 		for (unsigned int j = 0; j < Matched.size(); j++) {
 			double pT_det = Matched[j].second.perp();
@@ -807,123 +927,6 @@ int StPicoHFJetMaker::MakeJets() {
 	Triggers.clear();
 	
 	return kStOK;
-}
-
-//_________________________________rewritten jet matching using matched tracks using idTruth and qaTruth...has to be here, fastjet cannot be included in StEffEmbed.h file___________________________________________________________
-bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double> McPtLeads, vector<double> Rcleads, vector<pair<PseudoJet,PseudoJet>>* matched, vector<pair<double,double>>* matchedPtLead,
-               vector<pair<double,double>>* matchedNeutralFraction, double R){
-    bool found = false;
-    vector<PseudoJet> RcJets = Rcjets; //copy RC jets, so we can remove after match
-    vector<double> RcPtLeads = Rcleads; //copy RC leading particles, so we can remove after match
-    vector<double> matchpT,matchR,matchpTfrac,matchR2,matchpTfrac2,matchdeltapT; //must be cleared at the end (of first loop)
-    vector<pair<PseudoJet,PseudoJet>> matchedTmp, matchedTmp2;	//must be cleared at the end
-    vector<pair<double,double>> matchedPtLeadTmp;	//must be cleared at the end
-    vector<pair<double,double>> matchedNeutralFractionTmp;//must be cleared at the end
-    vector<int> jvec; //indices of matched jet candidates
-    vector<int> mcindex; //user indices of MC tracks, must be cleared at the end
-    vector<double> matchtrackpT; //pT from matched tracks, must be cleared at the end
-    for (unsigned int i = 0; i < McJets.size(); i++) {
-        found = false;
-        vector<PseudoJet> constituentsMc = sorted_by_pt(McJets[i].constituents());
-        double nfractionMc = 0;
-        double neutralpTMc = 0;
-        double pT_jetMc = McJets[i].perp();
-//		if(pT_jetMc>10.2 && pT_jetMc<10.22) {
-//            cout << "MC pT  " << i << "  " << pT_jetMc << "  " << McJets[i].eta() << "  " << McJets[i].phi() << endl;
-
-        for (unsigned int ic = 0; ic < constituentsMc.size(); ++ic){
-//                if (constituentsMc[ic].perp() > 0.1) {cout<<"MC const " << ic << "    " << constituentsMc[ic].perp() <<"  " <<constituentsMc[ic].eta()<<"   "<<constituentsMc[ic].phi()<<" "<< constituentsMc[ic].user_index()  <<endl;}
-
-            int uidxMC = constituentsMc[ic].user_index();
-            if (uidxMC > -1) mcindex.push_back(uidxMC);//select matched mc tracks
-            if (uidxMC == 0) neutralpTMc += constituentsMc[ic].perp();
-        }
-        nfractionMc = neutralpTMc / pT_jetMc;
-//            cout << "Počet recontructed  " << RcJets.size() << endl;
-        for (unsigned int j = 0; j < RcJets.size(); j++) {
-            double pT_jetRc = RcJets[j].perp();
-            vector <PseudoJet> constituentsRc = sorted_by_pt(RcJets[j].constituents());
-            double nfractionRc = 0;
-            double neutralpTRc = 0;
-            double pTmatch = 0;
-//                cout << "RC pT  " << j << "  " << pT_jetRc << "  " << RcJets[j].eta() << "  " << RcJets[j].phi()<< endl;
-
-
-            double etaMC = McJets[j].eta();
-            double phiMC = McJets[j].phi();
-            double etaRC = RcJets[j].eta();
-            double phiRC = RcJets[j].phi();
-            double etaDiff = etaMC - etaRC;
-            double phiDiff = phiMC - phiRC;
-            static_cast<TH1D*>(mOutList->FindObject("heta_MCRC"))->Fill(etaDiff, weight);
-            static_cast<TH1D*>(mOutList->FindObject("hphi_MCRC"))->Fill(phiDiff, weight);
-
-
-            for (unsigned int irc = 0; irc < constituentsRc.size(); ++irc) {
-                int uidx = constituentsRc[irc].user_index();
-                double constpT = constituentsRc[irc].perp();
-//                    if (constpT > 0.1) { cout << irc << "    " << constpT <<"  " <<constituentsRc[irc].eta()<<"   "<<constituentsRc[irc].phi()<<"  "<<constituentsRc[irc].user_index()  <<endl; }
-
-                std::vector<int>::iterator it;
-                it = std::find(mcindex.begin(), mcindex.end(), uidx);
-                int idx = std::distance(mcindex.begin(), it);
-                if (uidx > 0 && it != mcindex.end()) {
-                    pTmatch += constpT; //search for RC track user index in the mcidx vector
-                } else if (uidx == 0 || uidx == 9999) { neutralpTRc += constpT; }//select towers
-            }
-            if (pTmatch > 0) {
-                found = true; // found at least one RC track which matches track at MC level
-                matchtrackpT.push_back(pTmatch);
-                nfractionRc = neutralpTRc / pT_jetRc;
-                matchedNeutralFractionTmp.push_back(make_pair(nfractionMc, nfractionRc));
-                matchedTmp.push_back(make_pair(McJets[i], RcJets[j]));
-                matchedPtLeadTmp.push_back(make_pair(McPtLeads[i], RcPtLeads[j]));
-
-
-                jvec.push_back(j);
-            } //end of if (pTmatch > 0) - track match candidate found
-        } //end of RC jets loop
-        if (!found) {
-            jvec.clear();
-            mcindex.clear();
-            matchtrackpT.clear();
-            matchedTmp.clear();
-            matchedPtLeadTmp.clear();
-            matchedNeutralFractionTmp.clear();
-            continue;
-        } //no match
-        std::vector<double>::iterator result;
-        result = std::max_element(matchtrackpT.begin(), matchtrackpT.end());
-        int index = std::distance(matchtrackpT.begin(), result);
-
-        //apply area and eta cut
-        RcJets.erase(RcJets.begin() + jvec[index]); //remove already-matched det-lvl jet
-        RcPtLeads.erase(RcPtLeads.begin() + jvec[index]); //and corresponding pTlead
-        //cout << "removed jet no. " << jvec[index] << endl;
-        double area = matchedTmp[index].second.area();
-        double Area_cuts[3] = {0.07, 0.2, 0.4}; //stupid way to "access" fAcuts
-        int ac = R * 10 - 2; //find index R=0.2 -> 0, R=0.3 -> 1, R=0.4 -> 2
-        if (area > Area_cuts[ac] && fabs(matchedTmp[index].second.eta()) < 1 - R &&
-            fabs(matchedTmp[index].first.eta()) < 1 - R && matchedNeutralFractionTmp[index].second < 0.95) {
-            matched->push_back((pair <PseudoJet, PseudoJet>) matchedTmp[index]);
-            matchedPtLead->push_back(matchedPtLeadTmp[index]);
-            matchedNeutralFraction->push_back(matchedNeutralFractionTmp[index]);
-        }
-        //}
-
-        jvec.clear();
-        mcindex.clear();
-        matchtrackpT.clear();
-        matchedTmp.clear();
-        matchedPtLeadTmp.clear();
-        matchedNeutralFractionTmp.clear();
-//        } //test event
-    }
-
-    for (unsigned int i = 0; i < matched->size(); i++) cout << matched->at(i).first.perp() << " " << matched->at(i).second.perp() << endl;
-
-
-    return found;
 }
 
 Double_t StPicoHFJetMaker::GetTowerCalibEnergy(Int_t TowerId)
