@@ -49,6 +49,8 @@ class StEmcADCtoEMaker;
 class StBemcTables;
 
 void FillHistogramsFromVectors(const std::vector<double>& diffEta, const std::vector<double>& diffPhi, TList* mOutList);
+vector<double> diffEta;
+vector<double> diffPhi;
 
 class StPicoHFJetMaker : public StPicoJetMaker {
  public:
@@ -124,8 +126,7 @@ private:
 	vector<float> fEmbPt;
 
 
-    vector<double> diffEta;
-    vector<double> diffPhi;
+
 
 	bool kEmbPythia;
 
