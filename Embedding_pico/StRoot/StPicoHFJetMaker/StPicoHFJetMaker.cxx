@@ -1029,9 +1029,7 @@ Bool_t StPicoHFJetMaker::GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPri
 	return Triggers.size();
  }
 
-void FillHistogramsFromVectors(diffEta, diffPhi) {
-
-
+void FillHistogramsFromVectors(const std::vector<double>& diffEta, const std::vector<double>& diffPhi) {
     // Fill the histograms with values from the vectors
     for (double value : diffPhi) {
         static_cast<TH1D*>(mOutList->FindObject("hphi_MCRC"))->Fill(value + TMath::Pi(), weight);
@@ -1040,6 +1038,5 @@ void FillHistogramsFromVectors(diffEta, diffPhi) {
     for (double value : diffEta) {
         static_cast<TH1D*>(mOutList->FindObject("heta_MCRC"))->Fill(value, weight);
     }
-
 }
 
