@@ -204,7 +204,7 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
 //        } //test event
     	}
 
-for (unsigned int i = 0; i < matched->size(); i++) cout << matched->at(i).first.perp() << " " << matched->at(i).second.perp() << endl;
+// for (unsigned int i = 0; i < matched->size(); i++) cout << matched->at(i).first.perp() << " " << matched->at(i).second.perp() << endl;
 
 
     return found;
@@ -405,8 +405,8 @@ int StPicoHFJetMaker::InitJets() {
     
     TH1::SetDefaultSumw2();
 
-    mOutList->Add(new TH1D("hphi_MCRC", "phi MC-RC", 128, -7, 7));
-    mOutList->Add(new TH1D("heta_MCRC", "eta MC-RC", 200, -1, 1));
+    mOutList->Add(new TH1D("hphi_MCRC", "phi MC-RC", nphibins, phiminbin, phimaxbin));
+    mOutList->Add(new TH1D("heta_MCRC", "eta MC-RC", netabins, etaminbin, etamaxbin));
 
     mOutList->Add(new TH1D("hweight", "weight", 135, 0, 3));
 	mOutList->Add(new TH1D("hcent", "centrality", 10, -1, 9));
