@@ -1028,8 +1028,8 @@ Bool_t StPicoHFJetMaker::GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPri
 
 void FillHistogramsFromVectors(const std::vector<double>& diffEta, const std::vector<double>& diffPhi, TList* mOutList) {
 
-    TH1D* hphi_MCRC = new TH1D("hphi_MCRC", "phi MC-RC", nphibins, phiminbin, phimaxbin);
-    TH1D* heta_MCRC = new TH1D("heta_MCRC", "eta MC-RC", netabins, etaminbin, etamaxbin);
+    TH1D* hphi_MCRC = new TH1D("hphi_MCRC", "phi MC-RC", 128, -7, 7);
+    TH1D* heta_MCRC = new TH1D("heta_MCRC", "eta MC-RC", 200, -1, 1);
 
     // Fill the histograms with values from the vectors
     for (double value : diffPhi) {
