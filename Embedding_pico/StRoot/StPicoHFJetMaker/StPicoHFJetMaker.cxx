@@ -100,8 +100,7 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
 	vector<int> jvec; //indices of matched jet candidates
 	vector<int> mcindex; //user indices of MC tracks, must be cleared at the end
 	vector<double> matchtrackpT; //pT from matched tracks, must be cleared at the end
-    vector<double> diffEta;
-    vector<double> diffPhi;
+
 
     for (unsigned int i = 0; i < McJets.size(); i++) {
 		found = false;

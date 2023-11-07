@@ -122,6 +122,10 @@ private:
 	vector<float> fAcuts;
 	vector<float> fEmbPt;
 
+
+    vector<double> diffEta;
+    vector<double> diffPhi;
+
 	bool kEmbPythia;
 
 	float fRBg;
