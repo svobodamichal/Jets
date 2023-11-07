@@ -48,8 +48,6 @@ class StPicoTrack;
 class StEmcADCtoEMaker;
 class StBemcTables;
 
-extern vector<double> differEta;
-extern vector<double> differPhi;
 
 class StPicoHFJetMaker : public StPicoJetMaker {
  public:
