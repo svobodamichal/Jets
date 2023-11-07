@@ -579,6 +579,18 @@ int StPicoHFJetMaker::FinishJets() {
 // _________________________________________________________
 int StPicoHFJetMaker::MakeJets() {
 
+
+    void FillHistogramsFromVectors(const std::vector<double>& diffEta, const std::vector<double>& diffPhi) {
+        // Fill the histograms with values from the vectors
+        for (double value : diffPhi) {
+            static_cast<TH1D*>(mOutList->FindObject("hphi_MCRC"))->Fill(value + TMath::Pi(), weight);
+        }
+
+        for (double value : diffEta) {
+            static_cast<TH1D*>(mOutList->FindObject("heta_MCRC"))->Fill(value, weight);
+        }
+    }
+
 	vector<PseudoJet> jetTracks;
 	vector<PseudoJet> jetTracks_emb; //tmp for embedding
 	vector<PseudoJet> neutraljetTracks; //from bemc towers only
@@ -1029,14 +1041,4 @@ Bool_t StPicoHFJetMaker::GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPri
 	return Triggers.size();
  }
 
-void FillHistogramsFromVectors(const std::vector<double>& diffEta, const std::vector<double>& diffPhi) {
-    // Fill the histograms with values from the vectors
-    for (double value : diffPhi) {
-        static_cast<TH1D*>(mOutList->FindObject("hphi_MCRC"))->Fill(value + TMath::Pi(), weight);
-    }
-
-    for (double value : diffEta) {
-        static_cast<TH1D*>(mOutList->FindObject("heta_MCRC"))->Fill(value, weight);
-    }
-}
 
