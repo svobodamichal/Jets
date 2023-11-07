@@ -48,7 +48,6 @@ class StPicoTrack;
 class StEmcADCtoEMaker;
 class StBemcTables;
 
-void FillHistogramsFromVectors(const std::vector<double>& diffEta, const std::vector<double>& diffPhi);
 vector<double> diffEta;
 vector<double> diffPhi;
 
@@ -68,7 +67,10 @@ class StPicoHFJetMaker : public StPicoJetMaker {
 	virtual Bool_t GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPrimVtx);
 	virtual Int_t FindTriggerTowers(Int_t level);
 
-  StEmcADCtoEMaker *mADCtoEMaker;
+    void FillHistogramsFromVectors(const std::vector<double>& diffEta, const std::vector<double>& diffPhi);
+
+
+    StEmcADCtoEMaker *mADCtoEMaker;
   StBemcTables     *mTables;
 
   //void setRefMutCorr(StRefMultCorr *gRefMultCorr) { mRefmultCorrUtil = gRefMultCorr; }
