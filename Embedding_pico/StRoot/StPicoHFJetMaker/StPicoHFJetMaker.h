@@ -48,6 +48,7 @@ class StPicoTrack;
 class StEmcADCtoEMaker;
 class StBemcTables;
 
+void FillHistogramsFromVectors(const std::vector<double>& diffEta, const std::vector<double>& diffPhi, TList* mOutList);
 
 class StPicoHFJetMaker : public StPicoJetMaker {
  public:

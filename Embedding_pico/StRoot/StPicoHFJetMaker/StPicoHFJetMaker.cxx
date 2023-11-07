@@ -27,6 +27,7 @@
 //#include </gpfs01/star/pwg/licenrob/jets/fastjet/contrib/RecursiveSoftDrop.hh>
 //#include <fastjet/internal/base.hh> //robotmon
 //#endif
+#include <vector>
 
 #include <TRandom3.h>
 
@@ -400,10 +401,6 @@ int StPicoHFJetMaker::InitJets() {
     float deltaptembmaxbin = 50;
     
     TH1::SetDefaultSumw2();
-
-    // Diff RC eta and MC eta
-    mOutList->Add(new TH1D("hphi_MCRC", "phi MC-RC", nphibins, phiminbin, phimaxbin));
-    mOutList->Add(new TH1D("heta_MCRC", "eta MC-RC", netabins, etaminbin, etamaxbin));
 
     mOutList->Add(new TH1D("hweight", "weight", 135, 0, 3));
 	mOutList->Add(new TH1D("hcent", "centrality", 10, -1, 9));
@@ -880,8 +877,7 @@ int StPicoHFJetMaker::MakeJets() {
 		MatchJets(McJets, RcJets, McPtLeads, RcPtLeads, &Matched, &MatchedpTleads, &MatchedNeutralFraction, /*&MatchedNNeutral, &MatchedNCharged, &MatchedNTot, */fR[i]);
 		//cout << deltaR << " " << deltapT << " " << pTtrue << endl;
 
-                static_cast<TH1D*>(mOutList->FindObject("heta_MCRC"))->Fill(diffEta, weight);
-                static_cast<TH1D*>(mOutList->FindObject("hphi_MCRC"))->Fill(diffPhi, weight);
+		FillHistogramsFromVectors(diffEta, diffPhi, mOutList);
 
 		for (unsigned int j = 0; j < Matched.size(); j++) {
 			double pT_det = Matched[j].second.perp();
@@ -1029,3 +1025,23 @@ Bool_t StPicoHFJetMaker::GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPri
 	
 	return Triggers.size();
  }
+
+void FillHistogramsFromVectors(const std::vector<double>& diffEta, const std::vector<double>& diffPhi, TList* mOutList) {
+
+    TH1D* hphi_MCRC = new TH1D("hphi_MCRC", "phi MC-RC", nphibins, phiminbin, phimaxbin);
+    TH1D* heta_MCRC = new TH1D("heta_MCRC", "eta MC-RC", netabins, etaminbin, etamaxbin);
+
+    // Fill the histograms with values from the vectors
+    for (double value : diffPhi) {
+        hphi_MCRC->Fill(value);
+    }
+
+    for (double value : diffEta) {
+        heta_MCRC->Fill(value);
+    }
+
+    // Add histograms to the output list
+    mOutList->Add(hphi_MCRC);
+    mOutList->Add(heta_MCRC);
+}
+
