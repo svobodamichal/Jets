@@ -402,6 +402,9 @@ int StPicoHFJetMaker::InitJets() {
     
     TH1::SetDefaultSumw2();
 
+    mOutList->Add(new TH1D("hphi_MCRC", "phi MC-RC", 128, -7, 7));
+    mOutList->Add(new TH1D("heta_MCRC", "eta MC-RC", 200, -1, 1));
+
     mOutList->Add(new TH1D("hweight", "weight", 135, 0, 3));
 	mOutList->Add(new TH1D("hcent", "centrality", 10, -1, 9));
 
@@ -1026,22 +1029,17 @@ Bool_t StPicoHFJetMaker::GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPri
 	return Triggers.size();
  }
 
-void FillHistogramsFromVectors(diffEta, diffPhi, mOutList) {
+void FillHistogramsFromVectors(diffEta, diffPhi, ) {
 
-    TH1D* hphi_MCRC = new TH1D("hphi_MCRC", "phi MC-RC", 128, -7, 7);
-    TH1D* heta_MCRC = new TH1D("heta_MCRC", "eta MC-RC", 200, -1, 1);
 
     // Fill the histograms with values from the vectors
     for (double value : diffPhi) {
-        hphi_MCRC->Fill(value);
+        static_cast<TH1D*>(mOutList->FindObject("hphi_MCRC"))->Fill(value + TMath::Pi(), weight);
     }
 
     for (double value : diffEta) {
-        heta_MCRC->Fill(value);
+        static_cast<TH1D*>(mOutList->FindObject("heta_MCRC"))->Fill(value, weight);
     }
 
-    // Add histograms to the output list
-    mOutList->Add(hphi_MCRC);
-    mOutList->Add(heta_MCRC);
 }
 
