@@ -1029,7 +1029,7 @@ Bool_t StPicoHFJetMaker::GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPri
 	return Triggers.size();
  }
 
-void FillHistogramsFromVectors(diffEta, diffPhi, ) {
+void FillHistogramsFromVectors(diffEta, diffPhi) {
 
 
     // Fill the histograms with values from the vectors
