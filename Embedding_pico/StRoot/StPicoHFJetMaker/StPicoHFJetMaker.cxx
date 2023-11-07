@@ -136,8 +136,8 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
                 double phiRC = RcJets[j].phi();
                 double etaDiff = etaMC - etaRC;
                 double phiDiff = phiMC - phiRC;
-                diffEta.push_back(etaDiff);
-                diffPhi.push_back(phiDiff);
+                differEta.push_back(etaDiff);
+                differPhi.push_back(phiDiff);
 
 
                 for (unsigned int irc = 0; irc < constituentsRc.size(); ++irc) {
@@ -884,11 +884,11 @@ int StPicoHFJetMaker::MakeJets() {
 		MatchJets(McJets, RcJets, McPtLeads, RcPtLeads, &Matched, &MatchedpTleads, &MatchedNeutralFraction, /*&MatchedNNeutral, &MatchedNCharged, &MatchedNTot, */fR[i]);
 		//cout << deltaR << " " << deltapT << " " << pTtrue << endl;
 
-                for (double value : diffPhi) {
+                for (double value : differPhi) {
                     static_cast<TH1D*>(mOutList->FindObject("hphi_MCRC"))->Fill(value + TMath::Pi(), weight);
                 }
 
-                for (double value : diffEta) {
+                for (double value : differEta) {
                     static_cast<TH1D*>(mOutList->FindObject("heta_MCRC"))->Fill(value, weight);
                 }
 
