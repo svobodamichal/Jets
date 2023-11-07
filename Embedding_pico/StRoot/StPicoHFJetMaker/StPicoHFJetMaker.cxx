@@ -580,16 +580,8 @@ int StPicoHFJetMaker::FinishJets() {
 int StPicoHFJetMaker::MakeJets() {
 
 
-    void FillHistogramsFromVectors(const std::vector<double>& diffEta, const std::vector<double>& diffPhi) {
-        // Fill the histograms with values from the vectors
-        for (double value : diffPhi) {
-            static_cast<TH1D*>(mOutList->FindObject("hphi_MCRC"))->Fill(value + TMath::Pi(), weight);
-        }
 
-        for (double value : diffEta) {
-            static_cast<TH1D*>(mOutList->FindObject("heta_MCRC"))->Fill(value, weight);
-        }
-    }
+
 
 	vector<PseudoJet> jetTracks;
 	vector<PseudoJet> jetTracks_emb; //tmp for embedding
@@ -892,9 +884,15 @@ int StPicoHFJetMaker::MakeJets() {
 		MatchJets(McJets, RcJets, McPtLeads, RcPtLeads, &Matched, &MatchedpTleads, &MatchedNeutralFraction, /*&MatchedNNeutral, &MatchedNCharged, &MatchedNTot, */fR[i]);
 		//cout << deltaR << " " << deltapT << " " << pTtrue << endl;
 
-		FillHistogramsFromVectors(diffEta, diffPhi, mOutList);
+                for (double value : diffPhi) {
+                    static_cast<TH1D*>(mOutList->FindObject("hphi_MCRC"))->Fill(value + TMath::Pi(), weight);
+                }
 
-		for (unsigned int j = 0; j < Matched.size(); j++) {
+                for (double value : diffEta) {
+                    static_cast<TH1D*>(mOutList->FindObject("heta_MCRC"))->Fill(value, weight);
+                }
+
+                for (unsigned int j = 0; j < Matched.size(); j++) {
 			double pT_det = Matched[j].second.perp();
 			double pT_true = Matched[j].first.perp();
 			double pT_corr_det = pT_det - Matched[j].second.area()*frho;

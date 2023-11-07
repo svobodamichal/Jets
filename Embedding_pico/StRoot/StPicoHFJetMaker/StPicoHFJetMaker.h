@@ -67,8 +67,6 @@ class StPicoHFJetMaker : public StPicoJetMaker {
 	virtual Bool_t GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPrimVtx);
 	virtual Int_t FindTriggerTowers(Int_t level);
 
-    void FillHistogramsFromVectors(const std::vector<double>& diffEta, const std::vector<double>& diffPhi);
-
 
     StEmcADCtoEMaker *mADCtoEMaker;
   StBemcTables     *mTables;
