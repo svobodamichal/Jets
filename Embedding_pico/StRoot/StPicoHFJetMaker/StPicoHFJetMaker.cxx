@@ -210,6 +210,43 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
     return found;
 }
 
+/*bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double> McPtLeads, vector<double> Rcleads, vector<pair<PseudoJet, PseudoJet>>* matched, vector<pair<double, double>>* matchedPtLead, vector<pair<double, double>>* matchedNeutralFraction, double R) {
+
+
+
+
+    for (unsigned int i = 0; i < McJets.size(); i++) {
+        const PseudoJet& mcJet = McJets[i];
+        double mcEta = mcJet.eta();
+        double mcPhi = mcJet.phi();
+
+        for (unsigned int j = 0; j < Rcjets.size(); j++) {
+            const PseudoJet& rcJet = Rcjets[j];
+            double rcEta = rcJet.eta();
+            double rcPhi = rcJet.phi();
+
+            // Check if RC jet and MC jet match based on spatial properties
+            if (deltaR(mcEta, mcPhi, rcEta, rcPhi) < R) {
+                matched->push_back(make_pair(mcJet, rcJet));
+                matchedPtLead->push_back(make_pair(McPtLeads[i], Rcleads[j]));
+
+                double nfractionMc = CalculateNeutralFraction(mcJet);
+                double nfractionRc = CalculateNeutralFraction(rcJet);
+
+                matchedNeutralFraction->push_back(make_pair(nfractionMc, nfractionRc));
+
+                // Remove the matched RC jet to avoid duplicates
+                Rcjets.erase(Rcjets.begin() + j);
+                break;  // Exit the RC jet loop since we've found a match
+            }
+        }
+    }
+
+    return true;
+}*/
+
+
+
 bool MatchJetsOld(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double> McPtLeads, vector<double> Rcleads, vector<pair<PseudoJet,PseudoJet>>* matched, vector<pair<double,double>>* matchedPtLead, 
 		vector<pair<double,double>>* matchedNeutralFraction, /*vector<pair<int,int>>* matchedNNeutral, vector<pair<int,int>>* matchedNCharged, vector<pair<int,int>>* matchedNTot,*/ double R){
 	bool found = false;
@@ -407,6 +444,8 @@ int StPicoHFJetMaker::InitJets() {
 
     mOutList->Add(new TH1D("hphi_MCRC", "phi MC-RC", nphibins, phiminbin, phimaxbin));
     mOutList->Add(new TH1D("heta_MCRC", "eta MC-RC", netabins, etaminbin, etamaxbin));
+    mOutList->Add(new TH2D("hEtaPhi_MC-RC", "MC-RC #eta, #phi; #eta (-); #phi (-)", netabins, etaminbin, etamaxbin,nphibins, phiminbin, phimaxbin));
+
 
     mOutList->Add(new TH1D("hweight", "weight", 135, 0, 3));
 	mOutList->Add(new TH1D("hcent", "centrality", 10, -1, 9));
@@ -893,6 +932,13 @@ int StPicoHFJetMaker::MakeJets() {
 
                 for (double value : differEta) {
                     static_cast<TH1D*>(mOutList->FindObject("heta_MCRC"))->Fill(value, weight);
+                }
+
+                for (size_t i = 0; i < differEta.size(); ++i) {
+                    double etaValue = differEta[i];
+                    double phiValue = differPhi[i];
+
+                    static_cast<TH2D*>(mOutList->FindObject("hEtaPhi_MC-RC"))->Fill(etaValue, phiValue + TMath::Pi(), weight);
                 }
 
                 for (unsigned int j = 0; j < Matched.size(); j++) {
