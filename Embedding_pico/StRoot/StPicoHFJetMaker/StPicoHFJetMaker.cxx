@@ -303,7 +303,7 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
             fabs(matchedTmp[index].first.eta()) < 1 - R && matchedNeutralFractionTmp[index].second < 0.95) {
             matched->push_back((pair <PseudoJet, PseudoJet>) matchedTmp[index]);
             matchedPtLead->push_back(matchedPtLeadTmp[index]);
-            matchedNeutralFraction->push_back(matchedNeutralFractionTmp[index]);
+       //     matchedNeutralFraction->push_back(matchedNeutralFractionTmp[index]);
         }
 
 
