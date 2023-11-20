@@ -275,10 +275,7 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
                 matchedTmp.push_back(make_pair(mcJet, rcJet));
                 matchedPtLeadTmp.push_back(make_pair(McPtLeads[i], Rcleads[j]));
 
-                double nfractionMc = CalculateNeutralFraction(mcJet);
-                double nfractionRc = CalculateNeutralFraction(rcJet);
-
-                matchedNeutralFraction->push_back(make_pair(nfractionMc, nfractionRc));
+                matchedNeutralFraction->push_back(matchedNeutralFractionTmp[index]);
                 jvec.push_back(j);
 
             }
@@ -296,7 +293,7 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
         result = std::max_element(matchtrackpT.begin(), matchtrackpT.end());
         int index = std::distance(matchtrackpT.begin(), result);
         //apply area and eta cut
-        rcJet.erase(rcJet.begin() + jvec[index]); //remove already-matched det-lvl jet
+        RcJets.erase(RcJets.begin() + jvec[index]); //remove already-matched det-lvl jet
         RcPtLeads.erase(RcPtLeads.begin() + jvec[index]); //and corresponding pTlead
         //cout << "removed jet no. " << jvec[index] << endl;
         double area = matchedTmp[index].second.area();
