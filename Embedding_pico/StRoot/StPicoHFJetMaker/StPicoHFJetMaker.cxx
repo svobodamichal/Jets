@@ -116,7 +116,7 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
 //            cout << "MC pT  " << i << "  " << pT_jetMc << "  " << McJets[i].eta() << "  " << McJets[i].phi() << endl;
 
             for (unsigned int ic = 0; ic < constituentsMc.size(); ++ic){
-//                if (constituentsMc[ic].perp() > 0.1) {cout<<"MC const " << ic << "    " << constituentsMc[ic].perp() <<"  " <<constituentsMc[ic].eta()<<"   "<<constituentsMc[ic].phi()<<" "<< constituentsMc[ic].user_index()  <<endl;}
+                if (constituentsMc[ic].perp() > 0.1) {cout<<"MC const " << ic << "    " << constituentsMc[ic].perp() <<"  " <<constituentsMc[ic].eta()<<"   "<<constituentsMc[ic].phi()<<" "<< constituentsMc[ic].user_index()  <<endl;}
 
                 int uidxMC = constituentsMc[ic].user_index();
                 if (uidxMC > -1) mcindex.push_back(uidxMC);//select matched mc tracks
