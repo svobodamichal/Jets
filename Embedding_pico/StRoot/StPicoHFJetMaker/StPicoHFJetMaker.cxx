@@ -1007,14 +1007,14 @@ int StPicoHFJetMaker::MakeJets() {
                 }
 
                 for (double value : differEta) {
-                    static_cast<TH1D*>(mOutList->FindObject("heta_MCRC"))->Fill(value, weight);
+                    static_cast<TH1D*>(mOutList->FindObject("heta_MCRC"))->Fill(value);
                 }
 
                 for (size_t i = 0; i < differEta.size(); ++i) {
                     double etaValue = differEta[i];
                     double phiValue = differPhi[i];
 
-                    static_cast<TH2D*>(mOutList->FindObject("hEtaPhi_MC-RC"))->Fill(etaValue, phiValue + TMath::Pi(), weight);
+                    static_cast<TH2D*>(mOutList->FindObject("hEtaPhi_MC-RC"))->Fill(etaValue, phiValue + TMath::Pi());
                 }
 
                 for (unsigned int j = 0; j < Matched.size(); j++) {
