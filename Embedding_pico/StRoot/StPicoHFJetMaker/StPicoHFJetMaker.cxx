@@ -138,7 +138,9 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
                 double etaRC = RcJets[j].eta();
                 double phiRC = RcJets[j].phi();
                 double etaDiff = etaMC - etaRC;
-                double phiDiff = min(phiMC - phiRC, phiRC-phiMC);
+                double phiDiff = phiMC - phiRC;
+                if(phiDiff<=TMath::Pi()){phiDiff=phiDiff+TMath::TwoPi()}
+                if(phiDiff>=TMath::Pi()){phiDiff=phiDiff-TMath::TwoPi()}
                 differEta.push_back(etaDiff);
                 differPhi.push_back(phiDiff);
 
