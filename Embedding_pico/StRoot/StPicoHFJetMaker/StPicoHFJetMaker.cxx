@@ -130,7 +130,7 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
                 double nfractionRc = 0;
                 double neutralpTRc = 0;
                 double pTmatch = 0;
-//                cout << "RC pT  " << j << "  " << pT_jetRc << "  " << RcJets[j].eta() << "  " << RcJets[j].phi()<< endl;
+                cout << "RC pT  " << j << "  " << pT_jetRc << "  " << RcJets[j].eta() << "  " << RcJets[j].phi()<< endl;
 
 
                 double etaMC = McJets[j].eta();
@@ -138,9 +138,11 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
                 double etaRC = RcJets[j].eta();
                 double phiRC = RcJets[j].phi();
                 double etaDiff = etaMC - etaRC;
-                double phiDiff = phiMC - phiRC;
-                if(phiDiff<=-TMath::Pi()){phiDiff=phiDiff+TMath::TwoPi();}
-                if(phiDiff>=TMath::Pi()){phiDiff=phiDiff-TMath::TwoPi();}
+                double phiDifft = phiMC - phiRC;
+                double phiDiff;
+                if(phiDifft<=-TMath::Pi()){phiDiff=phiDifft+TMath::TwoPi();}
+                if(phiDifft>=-TMath::Pi() && phiDifft<=TMath::Pi()){phiDiff=phiDifft;}
+                if(phiDifft>=TMath::Pi()){phiDiff=phiDifft-TMath::TwoPi();}
                 differEta.push_back(etaDiff);
                 differPhi.push_back(phiDiff);
 
