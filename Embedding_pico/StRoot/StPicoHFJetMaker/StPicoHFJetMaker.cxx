@@ -116,7 +116,7 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
 //            cout << "MC pT  " << i << "  " << pT_jetMc << "  " << McJets[i].eta() << "  " << McJets[i].phi() << endl;
 
             for (unsigned int ic = 0; ic < constituentsMc.size(); ++ic){
-                if (constituentsMc[ic].perp() > 0.1) {cout<<"MC const " << ic << "    " << constituentsMc[ic].perp() <<"  " <<constituentsMc[ic].eta()<<"   "<<constituentsMc[ic].phi()<<" "<< constituentsMc[ic].user_index()  <<endl;}
+//                if (constituentsMc[ic].perp() > 0.1) {cout<<"MC const " << ic << "    " << constituentsMc[ic].perp() <<"  " <<constituentsMc[ic].eta()<<"   "<<constituentsMc[ic].phi()<<" "<< constituentsMc[ic].user_index()  <<endl;}
 
                 int uidxMC = constituentsMc[ic].user_index();
                 if (uidxMC > -1) mcindex.push_back(uidxMC);//select matched mc tracks
@@ -130,7 +130,7 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
                 double nfractionRc = 0;
                 double neutralpTRc = 0;
                 double pTmatch = 0;
-                cout << "RC pT  " << j << "  " << pT_jetRc << "  " << RcJets[j].eta() << "  " << RcJets[j].phi()<< endl;
+//                cout << "RC pT  " << j << "  " << pT_jetRc << "  " << RcJets[j].eta() << "  " << RcJets[j].phi()<< endl;
 
 
                 double etaMC = McJets[j].eta();
@@ -139,6 +139,7 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
                 double phiRC = RcJets[j].phi();
                 double etaDiff = etaMC - etaRC;
                 double phiDifft = phiMC - phiRC;
+                cout << "phiDiff  " << phiDifft << endl;
                 double phiDiff;
                 if(phiDifft<=-TMath::Pi()){phiDiff=phiDifft+TMath::TwoPi();}
                 if(phiDifft>=-TMath::Pi() && phiDifft<=TMath::Pi()){phiDiff=phiDifft;}
