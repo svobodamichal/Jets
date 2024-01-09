@@ -211,7 +211,7 @@ void runPicoHFJetMaker(const Char_t *inputFile, const Char_t *outputFile="output
   picoCuts->setCutNHitsFitMin(14);
   picoCuts->setCutNHitsFitnHitsMax(0.52);
   picoCuts->setCutRequireHFT(false);
-  picoCuts->setCutTPCNSigma(30.0);
+  picoCuts->setCutTPCNSigma(3.0);
 
   picoCuts->setCutDcaMin(1.0);
   picoCuts->setCutEta(1);
