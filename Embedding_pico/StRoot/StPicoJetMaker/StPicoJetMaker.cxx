@@ -164,10 +164,10 @@ Int_t StPicoJetMaker::Make() {
 
 
           if(mPicoCuts->isGoodPrimaryTrack(trk)){
-		    static_cast<TH1D*>(mOutList->FindObject("hpT_tr_wnsigma"))->Fill(pTtrack, weight);
+		    static_cast<TH1D*>(mOutList->FindObject("hpT_tr_wnsigma"))->Fill(pTtrack);
         }
 		if(mPicoCuts->isGoodPrimaryTrackWithNsigma(trk)){
-		    static_cast<TH1D*>(mOutList->FindObject("hpT_tr_wonsigma"))->Fill(pTtrack, weight);
+		    static_cast<TH1D*>(mOutList->FindObject("hpT_tr_wonsigma"))->Fill(pTtrack);
 		}
 
 			 if (!trk || !mPicoCuts->isGoodPrimaryTrack(trk)) continue;
