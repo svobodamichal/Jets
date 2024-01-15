@@ -227,17 +227,31 @@ bool StPicoCuts::isGoodTrack(StPicoTrack const * const trk) const {
 // _________________________________________________________
 bool StPicoCuts::isGoodPrimaryTrack(StPicoTrack const * const trk) const {
 
-    //float nSigma = max(max(fabs(trk->nSigmaPion()), fabs(trk->nSigmaKaon())), fabs(trk->nSigmaProton()));
-    float nSigma = min(min(fabs(trk->nSigmaPion()), fabs(trk->nSigmaKaon())), fabs(trk->nSigmaProton()));
     float eta = trk->pMom().PseudoRapidity();
     float dca = (mPrimVtx - trk->origin()).Mag();
 		float pT = trk->pMom().Perp();
 		float nHitsFit = trk->nHitsFit();
 
     return ((!mRequireHFT || trk->isHFTTrack()) && nHitsFit > mNHitsFitMin && ((float)nHitsFit/(float)trk->nHitsMax()) > mNHitsFitnHitsMax
+            && pT > mPtRange[0] && pT < mPtRange[1] && fabs(eta) < mEta && dca < mDcaMin);
+
+}
+
+// _________________________________________________________
+bool StPicoCuts::isGoodPrimaryTrackWithNsigma(StPicoTrack const * const trk) const {
+
+    //float nSigma = max(max(fabs(trk->nSigmaPion()), fabs(trk->nSigmaKaon())), fabs(trk->nSigmaProton()));
+    float nSigma = min(min(fabs(trk->nSigmaPion()), fabs(trk->nSigmaKaon())), fabs(trk->nSigmaProton()));
+    float eta = trk->pMom().PseudoRapidity();
+    float dca = (mPrimVtx - trk->origin()).Mag();
+    float pT = trk->pMom().Perp();
+    float nHitsFit = trk->nHitsFit();
+
+    return ((!mRequireHFT || trk->isHFTTrack()) && nHitsFit > mNHitsFitMin && ((float)nHitsFit/(float)trk->nHitsMax()) > mNHitsFitnHitsMax
             && pT > mPtRange[0] && pT < mPtRange[1] && nSigma <= mTPCNSigmaMax && fabs(eta) < mEta && dca < mDcaMin);
 
 }
+
 
 // _________________________________________________________
 bool StPicoCuts::isGoodTowHit(StPicoBTowHit const * const towHit) const {

@@ -147,7 +147,7 @@ Int_t StPicoJetMaker::Make() {
   
   Int_t iReturn = kStOK;
 
-  if (setupEvent()) {
+    if (setupEvent()) {
     UInt_t nTracks = mPicoDst->numberOfTracks();
 
     // -- Fill vectors of particle types
@@ -155,9 +155,20 @@ Int_t StPicoJetMaker::Make() {
       for (unsigned short iTrack = 0; iTrack < nTracks; ++iTrack) {
         StPicoTrack* trk = mPicoDst->track(iTrack);
 
-				if (trk->pMom().Perp() > 30) return kStOK; //throw out events with trk > 30 GeV/c
      // if (!trk || !mPicoCuts->isGoodTrack(trk)) continue;
 		//good primary tracks only
+
+          double pTtrack = trk->pMom().Perp(); //using primary tracks
+
+          if (pTtrack > 30) return kStOK; //throw out events with trk > 30 GeV/c
+
+
+          if(mPicoCuts->isGoodPrimaryTrack(trk)){
+		    static_cast<TH1D*>(mOutList->FindObject("hpT_tr_wnsigma"))->Fill(pTtrack, weight);
+        }
+		if(mPicoCuts->isGoodPrimaryTrackWithNsigma(trk)){
+		    static_cast<TH1D*>(mOutList->FindObject("hpT_tr_wonsigma"))->Fill(pTtrack, weight);
+		}
 
 			 if (!trk || !mPicoCuts->isGoodPrimaryTrack(trk)) continue;
 
@@ -167,7 +178,8 @@ Int_t StPicoJetMaker::Make() {
     }
 
     // -- call method of daughter class
-    iReturn = MakeJets();
+    //// Uncomment here to include jets again
+   // iReturn = MakeJets();
 
     //TODO: Fill good event histograms here - expand for other observables
     static_cast<TH1I*>(mOutList->FindObject("hevents_acc"))->Fill(1);
@@ -265,6 +277,11 @@ void StPicoJetMaker::initializeEventStats() {
   mOutList->Add(new TH2D("hz_refmult_acc", "zvertex vs refmult; z [cm]; refMult", zbins, zmin, zmax, refmultbins, refmultmin, refmultmax));
   
   mOutList->Add(new TH1I("hrunId_acc", "accepted events runId", 90913, 15076101, 15167014)); //15076101−15167014
+
+  mOutList->Add(new TH1D("hpT_tr_wnsigma", "track pT; p_{T} (GeV/c)", 120, 0, 30));
+  mOutList->Add(new TH1D("hpT_tr_wonsigma", "track pT; p_{T} (GeV/c)", 120, 0, 30));
+
+
 }
 
 //________________________________________________________________________

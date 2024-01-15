@@ -46,7 +46,9 @@ class StPicoCuts : public TNamed
   bool isGoodTrigger(StPicoEvent const * const picoEvent) const;
   bool isGoodTrack(StPicoTrack const * const trk) const;
   bool isGoodPrimaryTrack(StPicoTrack const * const trk) const;
-	bool isGoodTowHit(StPicoBTowHit const * const towHit) const;
+  bool isGoodPrimaryTrackWithNsigma(StPicoTrack const * const trk) const;
+
+    bool isGoodTowHit(StPicoBTowHit const * const towHit) const;
 
 	//bool isGoodBTow(StPicoTrack const * const picoTrack) const;
 
