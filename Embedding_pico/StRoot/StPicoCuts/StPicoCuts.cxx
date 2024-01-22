@@ -220,7 +220,7 @@ bool StPicoCuts::isGoodTrack(StPicoTrack const * const trk) const {
 		float nHitsFit = trk->nHitsFit();
 
     return ((!mRequireHFT || trk->isHFTTrack()) && nHitsFit > mNHitsFitMin && ((float)nHitsFit/(float)trk->nHitsMax()) > mNHitsFitnHitsMax
-            && pT > mPtRange[0] && pT < mPtRange[1] && nSigma <= mTPCNSigmaMax && fabs(eta) < mEta && dca < mDcaMin);
+            && pT > mPtRange[0] && pT < mPtRange[1] && fabs(eta) < mEta && dca < mDcaMin);
 
 }
 

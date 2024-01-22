@@ -163,12 +163,12 @@ Int_t StPicoJetMaker::Make() {
           if (pTtrack > 30) return kStOK; //throw out events with trk > 30 GeV/c
 
 
-          if(mPicoCuts->isGoodPrimaryTrack(trk)){
+/*          if(mPicoCuts->isGoodPrimaryTrack(trk)){
 		    static_cast<TH1D*>(mOutList->FindObject("hpT_tr_wonsigma"))->Fill(pTtrack);
         }
 		if(mPicoCuts->isGoodPrimaryTrackWithNsigma(trk)){
 		    static_cast<TH1D*>(mOutList->FindObject("hpT_tr_wnsigma"))->Fill(pTtrack);
-		}
+		} */
 
 			 if (!trk || !mPicoCuts->isGoodPrimaryTrack(trk)) continue;
 
@@ -179,7 +179,7 @@ Int_t StPicoJetMaker::Make() {
 
     // -- call method of daughter class
     //// Uncomment here to include jets again
-   // iReturn = MakeJets();
+    iReturn = MakeJets();
 
     //TODO: Fill good event histograms here - expand for other observables
     static_cast<TH1I*>(mOutList->FindObject("hevents_acc"))->Fill(1);
@@ -278,8 +278,8 @@ void StPicoJetMaker::initializeEventStats() {
   
   mOutList->Add(new TH1I("hrunId_acc", "accepted events runId", 90913, 15076101, 15167014)); //15076101−15167014
 
-  mOutList->Add(new TH1D("hpT_tr_wnsigma", "track pT; p_{T} (GeV/c)", 120, 0, 30));
-  mOutList->Add(new TH1D("hpT_tr_wonsigma", "track pT; p_{T} (GeV/c)", 120, 0, 30));
+//  mOutList->Add(new TH1D("hpT_tr_wnsigma", "track pT; p_{T} (GeV/c)", 120, 0, 30));
+//  mOutList->Add(new TH1D("hpT_tr_wonsigma", "track pT; p_{T} (GeV/c)", 120, 0, 30));
 
 
 }
