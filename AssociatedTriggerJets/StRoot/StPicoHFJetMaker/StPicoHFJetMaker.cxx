@@ -265,7 +265,10 @@ int StPicoHFJetMaker::InitJets() {
             mOutList->Add(new TH1D(hname, "jet neutral energy fraction; NEF", 100, 0, 1));
 
                 hname = Form("hNF_pT_R0%.0lf",fR[r]*10);
-            mOutList->Add(new TH2D(hname, "jet neutral energy fraction vs pT", nptbins, ptminbin, ptmaxbin, 100, 0, 1));
+            mOutList->Add(new TH2D(hname, "jet neutral energy fraction vs jet pT", nptbins, ptminbin, ptmaxbin, 100, 0, 1));
+
+            hname = Form("hNF_pT_corr_R0%.0lf",fR[r]*10);
+            mOutList->Add(new TH2D(hname, "jet neutral energy fraction vs jet pT corr", nptbins, ptminbin, ptmaxbin, 100, 0, 1));
 
             for (int centbin = -1; centbin < 9; centbin++) {
 						
@@ -695,6 +698,8 @@ int StPicoHFJetMaker::MakeJets() {
 			//cout << "neutral fraction " << nfraction << endl;
 			static_cast<TH1D*>(mOutList->FindObject(Form("hNF_R0%.0lf",fR[i]*10)))->Fill(nfraction, weight);
             static_cast<TH2D*>(mOutList->FindObject(Form("hNF_pT_R0%.0lf",fR[i]*10)))->Fill(pT_jet, nfraction, weight);
+            static_cast<TH2D*>(mOutList->FindObject(Form("hNF_pT_corr_R0%.0lf",fR[i]*10)))->Fill(pTcorr_jet, nfraction, weight);
+
 
             if (nfraction > maxneutralfrac) continue; //keep only jets with reasonable cluster fraction of jet pT (default 0.95)
 			naccJets++;		
