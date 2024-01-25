@@ -287,10 +287,12 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
 
                // matchedNeutralFraction->push_back(matchedNeutralFractionTmp[index]);
                 jvec.push_back(j);
-
+                cout << "Kde padám 1"<<endl;
             }
         } // RC loop
         if (!found) {
+            cout << "Kde padám 2"<<endl;
+
             jvec.clear();
             mcindex.clear();
             matchtrackpT.clear();
@@ -299,6 +301,8 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
             matchedNeutralFractionTmp.clear();
             continue;
         } //no match
+        cout << "Kde padám 3"<<endl;
+
         std::vector<double>::iterator result;
         result = std::max_element(matchtrackpT.begin(), matchtrackpT.end());
         int index = std::distance(matchtrackpT.begin(), result);
