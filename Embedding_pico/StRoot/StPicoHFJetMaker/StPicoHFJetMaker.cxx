@@ -328,9 +328,11 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
         matchedTmp.clear();
         matchedPtLeadTmp.clear();
         matchedNeutralFractionTmp.clear();
+        cout << "Kde padám 4"<<endl;
 
     } // MC loop
 
+    cout << "Kde padám 5"<<endl;
 
     return found;
 }
