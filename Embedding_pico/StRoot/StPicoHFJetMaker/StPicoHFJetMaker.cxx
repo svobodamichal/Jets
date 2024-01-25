@@ -223,6 +223,7 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
     vector<int> jvec; //indices of matched jet candidates
     vector<int> mcindex; //user indices of MC tracks, must be cleared at the end
     vector<double> matchtrackpT; //pT from matched tracks, must be cleared at the end
+    cout << "MC jets  "<< Mcjets.size()<<endl;
 
     for (unsigned int i = 0; i < McJets.size(); i++) {
         found = false;
@@ -242,6 +243,7 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
             if (uidxMC == 0) neutralpTMc += constituentsMc[ic].perp();
         }
         nfractionMc = neutralpTMc / pT_jetMc;
+        cout << "RC jets  "<< Rcjets.size()<<endl;
         for (unsigned int j = 0; j < Rcjets.size(); j++) {
             const PseudoJet& rcJet = Rcjets[j];
             double rcEta = rcJet.eta();
@@ -272,6 +274,8 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
                 } else if (uidx == 0 || uidx == 9999) { neutralpTRc += constpT; }//select towers
             }
             // Check if RC jet and MC jet match based on spatial properties
+            cout << "Eta diff  "<< etaDiff<<endl;
+            cout << "Phi diff  "<< phiDiff<<endl;
             if (etaDiff<0.0998778 && phiDiff<0.121524) {
                 found = true;
                 matchtrackpT.push_back(pTmatch);
