@@ -223,9 +223,9 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
     vector<int> jvec; //indices of matched jet candidates
     vector<int> mcindex; //user indices of MC tracks, must be cleared at the end
     vector<double> matchtrackpT; //pT from matched tracks, must be cleared at the end
+    cout << "MC jets  "<< McJets.size()<<endl;
 
     for (unsigned int i = 0; i < McJets.size(); i++) {
-        cout << "MC jets  "<< Mcjets.size()<<endl;
         found = false;
         vector<PseudoJet> constituentsMc = sorted_by_pt(McJets[i].constituents());
         double nfractionMc = 0;
@@ -243,8 +243,9 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
             if (uidxMC == 0) neutralpTMc += constituentsMc[ic].perp();
         }
         nfractionMc = neutralpTMc / pT_jetMc;
+        cout << "RC jets  "<< Rcjets.size()<<endl;
+
         for (unsigned int j = 0; j < Rcjets.size(); j++) {
-            cout << "RC jets  "<< Rcjets.size()<<endl;
             const PseudoJet& rcJet = Rcjets[j];
             double rcEta = rcJet.eta();
             double rcPhi = rcJet.phi();
