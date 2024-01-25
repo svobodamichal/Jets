@@ -287,11 +287,9 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
 
                // matchedNeutralFraction->push_back(matchedNeutralFractionTmp[index]);
                 jvec.push_back(j);
-                cout << "Kde padám 1"<<endl;
             }
         } // RC loop
         if (!found) {
-            cout << "Kde padám 2"<<endl;
 
             jvec.clear();
             mcindex.clear();
@@ -313,8 +311,12 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
         double area = matchedTmp[index].second.area();
         double Area_cuts[3] = {0.07, 0.2, 0.4}; //stupid way to "access" fAcuts
         int ac = R * 10 - 2; //find index R=0.2 -> 0, R=0.3 -> 1, R=0.4 -> 2
+        cout << "Kde padám 3.1"<<endl;
+
         if (area > Area_cuts[ac] && fabs(matchedTmp[index].second.eta()) < 1 - R &&
             fabs(matchedTmp[index].first.eta()) < 1 - R && matchedNeutralFractionTmp[index].second < 0.95) {
+            cout << "Kde padám 3.2"<<endl;
+
             matched->push_back((pair <PseudoJet, PseudoJet>) matchedTmp[index]);
             matchedPtLead->push_back(matchedPtLeadTmp[index]);
        //     matchedNeutralFraction->push_back(matchedNeutralFractionTmp[index]);
