@@ -105,7 +105,7 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
 	vector<int> mcindex; //user indices of MC tracks, must be cleared at the end
 	vector<double> matchtrackpT; //pT from matched tracks, must be cleared at the end
 
-//    for (unsigned int i = 0; i < McJets.size(); i++) {
+    for (unsigned int i = 0; i < McJets.size(); i++) {
 		found = false;
 		vector<PseudoJet> constituentsMc = sorted_by_pt(McJets[i].constituents());
 		double nfractionMc = 0;
@@ -449,6 +449,7 @@ bool MatchJetsOld(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<dou
 				//apply area and eta cut
 			RcJets.erase(RcJets.begin()+jvec[index]); //remove already-matched det-lvl jet
 
+			cout << "Size RC "<<RcJets.size() <<endl;
 			RcPtLeads.erase(RcPtLeads.begin()+jvec[index]); //and corresponding pTlead
 			//cout << "removed jet no. " << jvec[index] << endl;
 			double area = matchedTmp[index].second.area();
