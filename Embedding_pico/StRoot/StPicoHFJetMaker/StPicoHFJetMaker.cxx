@@ -105,8 +105,7 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
 	vector<int> mcindex; //user indices of MC tracks, must be cleared at the end
 	vector<double> matchtrackpT; //pT from matched tracks, must be cleared at the end
 
-    cout << "MC jets  "<< McJets.size()<<endl;
-    for (unsigned int i = 0; i < McJets.size(); i++) {
+//    for (unsigned int i = 0; i < McJets.size(); i++) {
 		found = false;
 		vector<PseudoJet> constituentsMc = sorted_by_pt(McJets[i].constituents());
 		double nfractionMc = 0;
@@ -124,7 +123,6 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
             }
             nfractionMc = neutralpTMc / pT_jetMc;
 //            cout << "Počet recontructed  " << RcJets.size() << endl;
-            cout << "RC jets  "<< Rcjets.size()<<endl;
 
             for (unsigned int j = 0; j < RcJets.size(); j++) {
                 double pT_jetRc = RcJets[j].perp();
@@ -180,7 +178,6 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
                 matchedNeutralFractionTmp.clear();
                 continue;
             } //no match
-            cout << "Kde padám 3"<<endl;
 
             std::vector<double>::iterator result;
             result = std::max_element(matchtrackpT.begin(), matchtrackpT.end());
@@ -193,7 +190,6 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
             double area = matchedTmp[index].second.area();
             double Area_cuts[3] = {0.07, 0.2, 0.4}; //stupid way to "access" fAcuts
             int ac = R * 10 - 2; //find index R=0.2 -> 0, R=0.3 -> 1, R=0.4 -> 2
-           cout << "Kde padám 3.1"<<endl;
 
             if (area > Area_cuts[ac] && fabs(matchedTmp[index].second.eta()) < 1 - R &&
                 fabs(matchedTmp[index].first.eta()) < 1 - R && matchedNeutralFractionTmp[index].second < 0.95) {
@@ -210,12 +206,10 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
             matchedPtLeadTmp.clear();
             matchedNeutralFractionTmp.clear();
 //        } //test event
-        cout << "Kde padám 4"<<endl;
 
     	}
 
 // for (unsigned int i = 0; i < matched->size(); i++) cout << matched->at(i).first.perp() << " " << matched->at(i).second.perp() << endl;
-    cout << "Kde padám 5"<<endl;
 
 
     return found;
@@ -383,7 +377,9 @@ bool MatchJetsOld(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<dou
 		nfractionMc = neutralpTMc/pT_jetMc;
        		for (unsigned int j = 0; j < RcJets.size(); j++){
 			double pT_jetRc = RcJets[j].perp();
-			//if (pT_jetMc > 0) pTfrac = pT_jetRc/pT_jetMc;
+                cout << "Size RC "<<RcJets.size() <<endl;
+
+                //if (pT_jetMc > 0) pTfrac = pT_jetRc/pT_jetMc;
 			//deltaphi = fabs(McJets[i].phi() - RcJets[j].phi());
 			//deltaeta = fabs(McJets[i].eta() - RcJets[j].eta());
 			//if (deltaeta < R && deltaphi > (2*TMath::Pi()-R)) deltaphi = 2*TMath::Pi() - deltaphi;
@@ -452,6 +448,8 @@ bool MatchJetsOld(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<dou
 				//cout << "found 2way match between MC jet " << matchedTmp[index].first.perp() << " and RC jets " << matchedTmp[index].second.perp() << " which should correspond to " << RcJets[jvec[index]].perp() << endl;
 				//apply area and eta cut
 			RcJets.erase(RcJets.begin()+jvec[index]); //remove already-matched det-lvl jet
+
+			cout << "Size RC "<<RcJets.size() <<endl;
 			RcPtLeads.erase(RcPtLeads.begin()+jvec[index]); //and corresponding pTlead
 			//cout << "removed jet no. " << jvec[index] << endl;
 			double area = matchedTmp[index].second.area();
@@ -463,8 +461,9 @@ bool MatchJetsOld(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<dou
 				matchedNeutralFraction->push_back(matchedNeutralFractionTmp[index]);
 			}
 			//}
-	
-		jvec.clear();
+        cout << "Size RC "<<RcJets.size() <<endl;
+
+        jvec.clear();
 		mcidx.clear();
 		matchtrackpT.clear();
 		//matchR.clear();
@@ -1028,7 +1027,7 @@ int StPicoHFJetMaker::MakeJets() {
 		vector<pair<double, double>> MatchedpTleads;
 		vector<pair<double, double>> MatchedNeutralFraction;
 		//vector<pair<int, int>> MatchedNNeutral, MatchedNCharged, MatchedNTot;
-		MatchJets(McJets, RcJets, McPtLeads, RcPtLeads, &Matched, &MatchedpTleads, &MatchedNeutralFraction, /*&MatchedNNeutral, &MatchedNCharged, &MatchedNTot, */fR[i]);
+		MatchJetsEtaPhi(McJets, RcJets, McPtLeads, RcPtLeads, &Matched, &MatchedpTleads, &MatchedNeutralFraction, /*&MatchedNNeutral, &MatchedNCharged, &MatchedNTot, */fR[i]);
 		//cout << deltaR << " " << deltapT << " " << pTtrue << endl;
 
                 for (double value : differPhi) {
