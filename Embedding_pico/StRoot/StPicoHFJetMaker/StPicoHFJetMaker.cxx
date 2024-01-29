@@ -449,7 +449,6 @@ bool MatchJetsOld(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<dou
 				//apply area and eta cut
 			RcJets.erase(RcJets.begin()+jvec[index]); //remove already-matched det-lvl jet
 
-			cout << "Size RC "<<RcJets.size() <<endl;
 			RcPtLeads.erase(RcPtLeads.begin()+jvec[index]); //and corresponding pTlead
 			//cout << "removed jet no. " << jvec[index] << endl;
 			double area = matchedTmp[index].second.area();
