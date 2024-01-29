@@ -343,6 +343,7 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
     cout << "Kde padám 5"<<endl;
 
     return found;
+    cout << "Test"<< endl;
 }
 
 
