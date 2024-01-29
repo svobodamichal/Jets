@@ -178,6 +178,8 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
                 matchedNeutralFractionTmp.clear();
                 continue;
             } //no match
+            cout << "Kde padám 3"<<endl;
+
             std::vector<double>::iterator result;
             result = std::max_element(matchtrackpT.begin(), matchtrackpT.end());
             int index = std::distance(matchtrackpT.begin(), result);
@@ -204,9 +206,12 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
             matchedPtLeadTmp.clear();
             matchedNeutralFractionTmp.clear();
 //        } //test event
+        cout << "Kde padám 4"<<endl;
+
     	}
 
 // for (unsigned int i = 0; i < matched->size(); i++) cout << matched->at(i).first.perp() << " " << matched->at(i).second.perp() << endl;
+    cout << "Kde padám 5"<<endl;
 
 
     return found;
