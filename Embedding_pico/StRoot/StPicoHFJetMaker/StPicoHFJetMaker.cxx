@@ -283,7 +283,7 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
                 nfractionRc = neutralpTRc / pT_jetRc;
                 matchedNeutralFractionTmp.push_back(make_pair(nfractionMc, nfractionRc));
                 matchedTmp.push_back(make_pair(mcJet, rcJet));
-                matchedPtLeadTmp.push_back(make_pair(McPtLeads[i], RcPtleads[j]));
+                matchedPtLeadTmp.push_back(make_pair(McPtLeads[i], RcPtLeads[j]));
 
                // matchedNeutralFraction->push_back(matchedNeutralFractionTmp[index]);
                 jvec.push_back(j);
