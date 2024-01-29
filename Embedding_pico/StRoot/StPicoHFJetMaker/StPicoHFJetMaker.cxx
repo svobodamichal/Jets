@@ -308,7 +308,10 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
         result = std::max_element(matchtrackpT.begin(), matchtrackpT.end());
         int index = std::distance(matchtrackpT.begin(), result);
         //apply area and eta cut
+        cout << "Size RC "<<RcJets.size() <<endl;
+
         RcJets.erase(RcJets.begin() + jvec[index]); //remove already-matched det-lvl jet
+        cout << "Size RC "<<RcJets.size() <<endl;
         RcPtLeads.erase(RcPtLeads.begin() + jvec[index]); //and corresponding pTlead
         //cout << "removed jet no. " << jvec[index] << endl;
         double area = matchedTmp[index].second.area();
@@ -377,7 +380,6 @@ bool MatchJetsOld(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<dou
 		nfractionMc = neutralpTMc/pT_jetMc;
        		for (unsigned int j = 0; j < RcJets.size(); j++){
 			double pT_jetRc = RcJets[j].perp();
-                cout << "Size RC "<<RcJets.size() <<endl;
 
                 //if (pT_jetMc > 0) pTfrac = pT_jetRc/pT_jetMc;
 			//deltaphi = fabs(McJets[i].phi() - RcJets[j].phi());
@@ -449,7 +451,6 @@ bool MatchJetsOld(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<dou
 				//apply area and eta cut
 			RcJets.erase(RcJets.begin()+jvec[index]); //remove already-matched det-lvl jet
 
-			cout << "Size RC "<<RcJets.size() <<endl;
 			RcPtLeads.erase(RcPtLeads.begin()+jvec[index]); //and corresponding pTlead
 			//cout << "removed jet no. " << jvec[index] << endl;
 			double area = matchedTmp[index].second.area();
@@ -461,7 +462,6 @@ bool MatchJetsOld(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<dou
 				matchedNeutralFraction->push_back(matchedNeutralFractionTmp[index]);
 			}
 			//}
-        cout << "Size RC "<<RcJets.size() <<endl;
 
         jvec.clear();
 		mcidx.clear();
