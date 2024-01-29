@@ -277,13 +277,13 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
             // Check if RC jet and MC jet match based on spatial properties
             cout << "Eta diff  "<< etaDiff<<endl;
             cout << "Phi diff  "<< phiDiff<<endl;
-            if (etaDiff<0.0998778 && phiDiff<0.121524) {
+            if (abs(etaDiff)<0.0998778 && abs(phiDiff)<0.121524) {
                 found = true;
                 matchtrackpT.push_back(pTmatch);
                 nfractionRc = neutralpTRc / pT_jetRc;
                 matchedNeutralFractionTmp.push_back(make_pair(nfractionMc, nfractionRc));
                 matchedTmp.push_back(make_pair(mcJet, rcJet));
-                matchedPtLeadTmp.push_back(make_pair(McPtLeads[i], Rcleads[j]));
+                matchedPtLeadTmp.push_back(make_pair(McPtLeads[i], RcPtleads[j]));
 
                // matchedNeutralFraction->push_back(matchedNeutralFractionTmp[index]);
                 jvec.push_back(j);
