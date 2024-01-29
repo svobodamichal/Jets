@@ -105,7 +105,7 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
 	vector<int> mcindex; //user indices of MC tracks, must be cleared at the end
 	vector<double> matchtrackpT; //pT from matched tracks, must be cleared at the end
 
-
+    cout << "MC jets  "<< McJets.size()<<endl;
     for (unsigned int i = 0; i < McJets.size(); i++) {
 		found = false;
 		vector<PseudoJet> constituentsMc = sorted_by_pt(McJets[i].constituents());
@@ -124,6 +124,8 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
             }
             nfractionMc = neutralpTMc / pT_jetMc;
 //            cout << "Počet recontructed  " << RcJets.size() << endl;
+            cout << "RC jets  "<< Rcjets.size()<<endl;
+
             for (unsigned int j = 0; j < RcJets.size(); j++) {
                 double pT_jetRc = RcJets[j].perp();
                 vector <PseudoJet> constituentsRc = sorted_by_pt(RcJets[j].constituents());
@@ -191,6 +193,8 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
             double area = matchedTmp[index].second.area();
             double Area_cuts[3] = {0.07, 0.2, 0.4}; //stupid way to "access" fAcuts
             int ac = R * 10 - 2; //find index R=0.2 -> 0, R=0.3 -> 1, R=0.4 -> 2
+           cout << "Kde padám 3.1"<<endl;
+
             if (area > Area_cuts[ac] && fabs(matchedTmp[index].second.eta()) < 1 - R &&
                 fabs(matchedTmp[index].first.eta()) < 1 - R && matchedNeutralFractionTmp[index].second < 0.95) {
                 matched->push_back((pair <PseudoJet, PseudoJet>) matchedTmp[index]);
