@@ -133,8 +133,8 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
 //                cout << "RC pT  " << j << "  " << pT_jetRc << "  " << RcJets[j].eta() << "  " << RcJets[j].phi()<< endl;
 
 
-                double etaMC = McJets[j].eta();
-                double phiMC = McJets[j].phi();
+                double etaMC = McJets[i].eta();
+                double phiMC = McJets[i].phi();
                 double etaRC = RcJets[j].eta();
                 double phiRC = RcJets[j].phi();
                 double etaDiff = etaMC - etaRC;
@@ -343,7 +343,6 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
     cout << "Kde padám 5"<<endl;
 
     return found;
-    cout << "Test"<< endl;
 }
 
 
