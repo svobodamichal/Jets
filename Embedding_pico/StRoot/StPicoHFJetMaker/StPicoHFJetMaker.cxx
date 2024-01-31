@@ -224,7 +224,6 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
     vector<int> jvec; //indices of matched jet candidates
     vector<int> mcindex; //user indices of MC tracks, must be cleared at the end
     vector<double> matchtrackpT; //pT from matched tracks, must be cleared at the end
-    cout << "MC jets  " << McJets.size() << endl;
 
     for (unsigned int i = 0; i < McJets.size(); i++) {
         found = false;
@@ -266,8 +265,6 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
             }
 
             // Check if RC jet and MC jet match based on spatial properties
-            cout << "Eta diff  " << etaDiff << endl;
-            cout << "Phi diff  " << phiDiff << endl;
             if (abs(etaDiff) < 0.0998778 && abs(phiDiff) < 0.121524) {
                 found = true;
                 matchtrackpT.push_back(pTmatch);
@@ -1132,7 +1129,7 @@ int StPicoHFJetMaker::MakeJets() {
 		vector<pair<double, double>> MatchedpTleads;
 		vector<pair<double, double>> MatchedNeutralFraction;
 		//vector<pair<int, int>> MatchedNNeutral, MatchedNCharged, MatchedNTot;
-		MatchJetsEtaPhi(McJets, RcJets, McPtLeads, RcPtLeads, &Matched, &MatchedpTleads, &MatchedNeutralFraction, /*&MatchedNNeutral, &MatchedNCharged, &MatchedNTot, */fR[i]);
+		MatchJets(McJets, RcJets, McPtLeads, RcPtLeads, &Matched, &MatchedpTleads, &MatchedNeutralFraction, /*&MatchedNNeutral, &MatchedNCharged, &MatchedNTot, */fR[i]);
 		//cout << deltaR << " " << deltapT << " " << pTtrue << endl;
 
                 for (double value : differPhi) {
@@ -1164,9 +1161,9 @@ int StPicoHFJetMaker::MakeJets() {
 			double RCmatchedeta = Matched[j].second.eta();
 			double RCmatchedphi = Matched[j].second.phi();
 
-			cout << "Eta MC  " << MCmatchedeta << "Eta RC " << RCmatchedeta << endl;
+		/*	cout << "Eta MC  " << MCmatchedeta << "Eta RC " << RCmatchedeta << endl;
 			cout << "Phi MC  " << MCmatchedphi << "Phi RC " << RCmatchedphi << endl;
-			cout << "pT  MC  " << pT_true  << "pT RC  " << pT_det <<"pT_corr  "<<pT_corr_det<<endl;
+			cout << "pT  MC  " << pT_true  << "pT RC  " << pT_det <<"pT_corr  "<<pT_corr_det<<endl;*/
 
 
 			static_cast<TH2D*>(mOutList->FindObject(Form("hetaphi_MCmatched_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(MCmatchedeta,MCmatchedphi, weight);
