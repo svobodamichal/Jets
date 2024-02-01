@@ -234,7 +234,7 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
         double mcEta = mcJet.eta();
         double mcPhi = mcJet.phi();
         double pT_jetMc = mcJet.perp();
-        cout<<"MC eta  " << mcEta << "MC phi  " << mcPhi <<endl;
+        cout<<"MC eta  " << mcEta << "MC phi  " << mcPhi <<" MC pT "<< pT_jetMc <<endl;
         for (unsigned int j = 0; j < Rcjets.size(); j++) {
             const PseudoJet& rcJet = Rcjets[j];
             double rcEta = rcJet.eta();
@@ -243,10 +243,10 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
             double phiDiff = mcPhi - rcPhi;
             if (phiDiff <= -TMath::Pi()) { phiDiff = phiDiff + TMath::TwoPi(); }
             if (phiDiff >= TMath::Pi()) { phiDiff = phiDiff - TMath::TwoPi(); }
-
-            cout<<"RC eta  " << rcEta << "RC phi  " << rcPhi <<endl;
-
             double pT_jetRc = rcJet.perp();
+
+            cout<<"RC eta  " << rcEta << "RC phi  " << rcPhi <<" RC pT "<< pT_jetRc<<endl;
+
             vector<PseudoJet> constituentsRc = sorted_by_pt(rcJet.constituents());
             double nfractionRc = 0;
             double neutralpTRc = 0;
