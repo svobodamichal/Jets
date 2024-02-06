@@ -1040,11 +1040,6 @@ int StPicoHFJetMaker::MakeJets() {
 			double RCmatchedeta = Matched[j].second.eta();
 			double RCmatchedphi = Matched[j].second.phi();
 
-			cout << "Eta MC  " << MCmatchedeta << "Eta RC " << RCmatchedeta << endl;
-			cout << "Phi MC  " << MCmatchedphi << "Phi RC " << RCmatchedphi << endl;
-			cout << "pT  MC  " << pT_true  << "pT RC  " << pT_det <<"pT_corr  "<<pT_corr_det<<endl;
-
-
 			static_cast<TH2D*>(mOutList->FindObject(Form("hetaphi_MCmatched_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(MCmatchedeta,MCmatchedphi, weight);
 			static_cast<TH2D*>(mOutList->FindObject(Form("hetaphi_RCmatched_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(RCmatchedeta,RCmatchedphi, weight);	
 
@@ -1056,9 +1051,13 @@ int StPicoHFJetMaker::MakeJets() {
 			double pTlead = MatchedRCpTlead; //pTlead cut on detector level only
 			double matchedNF = MatchedNeutralFraction[j].first;
 
-			cout << "Matched neutral fraction" << matchedNF << endl;
 			if (matchedNF < 0.01) continue; //throw out track-only MC jets
-			static_cast<TH2D*>(mOutList->FindObject(Form("hpTleads_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(MatchedRCpTlead,MatchedMCpTlead,weight);
+                    cout << "Eta MC  " << MCmatchedeta << "Eta RC " << RCmatchedeta << endl;
+                    cout << "Phi MC  " << MCmatchedphi << "Phi RC " << RCmatchedphi << endl;
+                    cout << "pT  MC  " << pT_true  << "pT RC  " << pT_det <<"pT_corr  "<<pT_corr_det<<endl;
+                    cout << "Matched neutral fraction" << matchedNF << endl;
+
+                    static_cast<TH2D*>(mOutList->FindObject(Form("hpTleads_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(MatchedRCpTlead,MatchedMCpTlead,weight);
 			for(Int_t pTl = 0; pTl < npTlead; pTl++) {
 				if(pTl < pTlead) {
 				static_cast<TH2D*>(mOutList->FindObject(Form("hResponseMatrix_pTl%i_R0%.0lf_centbin%i",pTl,fR[i]*10,centrality)))->Fill(pT_corr_det, pT_true, weight);
