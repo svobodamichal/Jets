@@ -234,6 +234,14 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
         double mcEta = mcJet.eta();
         double mcPhi = mcJet.phi();
         double pT_jetMc = mcJet.perp();
+
+        for (unsigned int ic = 0; ic < constituentsMc.size(); ++ic){
+            int uidxMC = constituentsMc[ic].user_index();
+            if (uidxMC > -1) mcindex.push_back(uidxMC);//select matched mc tracks
+            if (uidxMC == 0) neutralpTMc += constituentsMc[ic].perp();
+        }
+        nfractionMc = neutralpTMc / pT_jetMc;
+
 //        cout<<"MC eta  " << mcEta << "MC phi  " << mcPhi <<" MC pT "<< pT_jetMc <<endl;
         for (unsigned int j = 0; j < Rcjets.size(); j++) {
             const PseudoJet& rcJet = Rcjets[j];
