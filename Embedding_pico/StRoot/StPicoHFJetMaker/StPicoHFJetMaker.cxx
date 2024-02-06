@@ -1032,9 +1032,9 @@ int StPicoHFJetMaker::MakeJets() {
 			double RCmatchedeta = Matched[j].second.eta();
 			double RCmatchedphi = Matched[j].second.phi();
 
-/*			cout << "Eta MC  " << MCmatchedeta << "Eta RC " << RCmatchedeta << endl;
+			cout << "Eta MC  " << MCmatchedeta << "Eta RC " << RCmatchedeta << endl;
 			cout << "Phi MC  " << MCmatchedphi << "Phi RC " << RCmatchedphi << endl;
-			cout << "pT  MC  " << pT_true  << "pT RC  " << pT_det <<"pT_corr  "<<pT_corr_det<<endl;*/
+			cout << "pT  MC  " << pT_true  << "pT RC  " << pT_det <<"pT_corr  "<<pT_corr_det<<endl;
 
 
 			static_cast<TH2D*>(mOutList->FindObject(Form("hetaphi_MCmatched_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(MCmatchedeta,MCmatchedphi, weight);
