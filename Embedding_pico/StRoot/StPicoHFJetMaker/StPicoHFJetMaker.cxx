@@ -1047,6 +1047,8 @@ int StPicoHFJetMaker::MakeJets() {
 			//double pTlead = min(MatchedMCpTlead,MatchedRCpTlead); //pTlead cut on both levels 
 			double pTlead = MatchedRCpTlead; //pTlead cut on detector level only
 			double matchedNF = MatchedNeutralFraction[j].first;
+
+			cout << "Matched neutral fraction" << matchedNF << endl;
 			if (matchedNF < 0.01) continue; //throw out track-only MC jets
 			static_cast<TH2D*>(mOutList->FindObject(Form("hpTleads_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(MatchedRCpTlead,MatchedMCpTlead,weight);
 			for(Int_t pTl = 0; pTl < npTlead; pTl++) {
