@@ -224,7 +224,7 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
     vector<int> jvec; //indices of matched jet candidates
     vector<int> mcindex; //user indices of MC tracks, must be cleared at the end
     vector<double> matchtrackpT; //pT from matched tracks, must be cleared at the end
-
+cout<< "Test 1"<<endl;
     for (unsigned int i = 0; i < McJets.size(); i++) {
         found = false;
         vector<PseudoJet> constituentsMc = sorted_by_pt(McJets[i].constituents());
@@ -234,11 +234,14 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
         double mcEta = mcJet.eta();
         double mcPhi = mcJet.phi();
         double pT_jetMc = mcJet.perp();
+        cout<< "Test 2"<<endl;
 
         for (unsigned int ic = 0; ic < constituentsMc.size(); ++ic){
             int uidxMC = constituentsMc[ic].user_index();
             if (uidxMC > -1) mcindex.push_back(uidxMC);//select matched mc tracks
             if (uidxMC == 0) neutralpTMc += constituentsMc[ic].perp();
+            cout<< "Test 3"<<endl;
+
         }
         nfractionMc = neutralpTMc / pT_jetMc;
 
@@ -252,6 +255,7 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
             if (phiDiff <= -TMath::Pi()) { phiDiff = phiDiff + TMath::TwoPi(); }
             if (phiDiff >= TMath::Pi()) { phiDiff = phiDiff - TMath::TwoPi(); }
             double pT_jetRc = rcJet.perp();
+            cout<< "Test 4"<<endl;
 
 //            cout<<"RC eta  " << rcEta << "RC phi  " << rcPhi <<" RC pT "<< pT_jetRc<<endl;
 
@@ -272,6 +276,8 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
                 if (uidx > 0 && it != mcindex.end()) {
                     pTmatch += constpT; //search for RC track user index in the mcidx vector
                 } else if (uidx == 0 || uidx == 9999) { neutralpTRc += constpT; } //select towers
+                cout<< "Test 5"<<endl;
+
             }
 
             // Check if RC jet and MC jet match based on spatial properties
@@ -282,6 +288,7 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
                 matchedNeutralFractionTmp.push_back(make_pair(nfractionMc, nfractionRc));
                 matchedTmp.push_back(make_pair(mcJet, rcJet));
                 matchedPtLeadTmp.push_back(make_pair(McPtLeads[i], RcPtLeads[j]));
+                cout<< "Test 6"<<endl;
 
                 jvec.push_back(j);
             }
@@ -308,12 +315,15 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
         double area = matchedTmp[index].second.area();
         double Area_cuts[3] = { 0.07, 0.2, 0.4 };
         int ac = R * 10 - 2;
+        cout<< "Test 7"<<endl;
 
         if (area > Area_cuts[ac] && fabs(matchedTmp[index].second.eta()) < 1 - R &&
             fabs(matchedTmp[index].first.eta()) < 1 - R && matchedNeutralFractionTmp[index].second < 0.95) {
             matched->push_back(make_pair(matchedTmp[index].first, matchedTmp[index].second));
             matchedPtLead->push_back(make_pair(matchedPtLeadTmp[index].first, matchedPtLeadTmp[index].second));
             matchedNeutralFraction->push_back(make_pair(matchedNeutralFractionTmp[index].first, matchedNeutralFractionTmp[index].second));
+            cout<< "Test 8"<<endl;
+
         }
 
         jvec.clear();
@@ -1008,10 +1018,8 @@ int StPicoHFJetMaker::MakeJets() {
 		vector<pair<double, double>> MatchedpTleads;
 		vector<pair<double, double>> MatchedNeutralFraction;
 		//vector<pair<int, int>> MatchedNNeutral, MatchedNCharged, MatchedNTot;
-		cout << "Test před matchem"<< endl;
 		MatchJetsEtaPhi(McJets, RcJets, McPtLeads, RcPtLeads, &Matched, &MatchedpTleads, &MatchedNeutralFraction, /*&MatchedNNeutral, &MatchedNCharged, &MatchedNTot, */fR[i]);
 		//cout << deltaR << " " << deltapT << " " << pTtrue << endl;
-                cout << "Test po matchi"<< endl;
 
                 for (double value : differPhi) {
                     static_cast<TH1D*>(mOutList->FindObject("hphi_MCRC"))->Fill(value + TMath::Pi());
@@ -1052,14 +1060,12 @@ int StPicoHFJetMaker::MakeJets() {
 			//double pTlead = min(MatchedMCpTlead,MatchedRCpTlead); //pTlead cut on both levels 
 			double pTlead = MatchedRCpTlead; //pTlead cut on detector level only
 			double matchedNF = MatchedNeutralFraction[j].first;
-                    cout << "Test před matchNF"<< endl;
 
                     if (matchedNF < 0.01) continue; //throw out track-only MC jets
             /*        cout << "Eta MC  " << MCmatchedeta << "Eta RC " << RCmatchedeta << endl;
                     cout << "Phi MC  " << MCmatchedphi << "Phi RC " << RCmatchedphi << endl;
                     cout << "pT  MC  " << pT_true  << "pT RC  " << pT_det <<"pT_corr  "<<pT_corr_det<<endl;
                     cout << "Matched neutral fraction" << matchedNF << endl;*/
-                    cout << "Test po matchNF"<< endl;
 
                     static_cast<TH2D*>(mOutList->FindObject(Form("hpTleads_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(MatchedRCpTlead,MatchedMCpTlead,weight);
 			for(Int_t pTl = 0; pTl < npTlead; pTl++) {
