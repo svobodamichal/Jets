@@ -303,14 +303,17 @@ cout<< "Test 1"<<endl;
             matchedNeutralFractionTmp.clear();
             continue;
         } //no match
+        cout<< "Test 6.1"<<endl;
 
         std::vector<double>::iterator result;
         result = std::max_element(matchtrackpT.begin(), matchtrackpT.end());
         int index = std::distance(matchtrackpT.begin(), result);
+        cout<< "Test 6.2"<<endl;
 
         //apply area and eta cut
         RcJets.erase(RcJets.begin() + jvec[index]); //remove already-matched det-lvl jet
         RcPtLeads.erase(RcPtLeads.begin() + jvec[index]); //and corresponding pTlead
+        cout<< "Test 6.3"<<endl;
 
         double area = matchedTmp[index].second.area();
         double Area_cuts[3] = { 0.07, 0.2, 0.4 };
