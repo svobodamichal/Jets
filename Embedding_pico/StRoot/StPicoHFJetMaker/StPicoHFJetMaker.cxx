@@ -309,7 +309,7 @@ cout<< "Test 1"<<endl;
         result = std::max_element(matchtrackpT.begin(), matchtrackpT.end());
         int index = std::distance(matchtrackpT.begin(), result);
         cout<< "Test 6.2"<<endl;
-
+        cout << "Index  "<<index<<endl;
         //apply area and eta cut
         RcJets.erase(RcJets.begin() + jvec[index]); //remove already-matched det-lvl jet
         RcPtLeads.erase(RcPtLeads.begin() + jvec[index]); //and corresponding pTlead
