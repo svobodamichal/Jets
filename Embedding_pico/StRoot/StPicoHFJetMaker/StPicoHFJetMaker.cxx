@@ -312,6 +312,7 @@ cout<< "Test 1"<<endl;
         cout << "Index  "<<index<<endl;
         //apply area and eta cut
         RcJets.erase(RcJets.begin() + jvec[index]); //remove already-matched det-lvl jet
+        cout << "Index  "<<index<<endl;
         RcPtLeads.erase(RcPtLeads.begin() + jvec[index]); //and corresponding pTlead
         cout<< "Test 6.3"<<endl;
 
