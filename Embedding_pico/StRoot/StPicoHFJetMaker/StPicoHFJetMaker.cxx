@@ -184,13 +184,8 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
             int index = std::distance(matchtrackpT.begin(), result);
 
             //apply area and eta cut
-        cout << "Index  "<<index<<endl;
-
-        RcJets.erase(RcJets.begin() + jvec[index]); //remove already-matched det-lvl jet
-
-        cout << "Index  "<<index<<endl;
-
-        RcPtLeads.erase(RcPtLeads.begin() + jvec[index]); //and corresponding pTlead
+            RcJets.erase(RcJets.begin() + jvec[index]); //remove already-matched det-lvl jet
+            RcPtLeads.erase(RcPtLeads.begin() + jvec[index]); //and corresponding pTlead
             //cout << "removed jet no. " << jvec[index] << endl;
             double area = matchedTmp[index].second.area();
             double Area_cuts[3] = {0.07, 0.2, 0.4}; //stupid way to "access" fAcuts
@@ -251,7 +246,7 @@ cout<< "Test 1"<<endl;
         nfractionMc = neutralpTMc / pT_jetMc;
 
 //        cout<<"MC eta  " << mcEta << "MC phi  " << mcPhi <<" MC pT "<< pT_jetMc <<endl;
-        for (unsigned int j = 0; j < Rcjets.size(); j++) {
+        for (unsigned int j = 0; j < RcJets.size(); j++) {
             const PseudoJet& rcJet = Rcjets[j];
             double rcEta = rcJet.eta();
             double rcPhi = rcJet.phi();
@@ -314,10 +309,8 @@ cout<< "Test 1"<<endl;
         result = std::max_element(matchtrackpT.begin(), matchtrackpT.end());
         int index = std::distance(matchtrackpT.begin(), result);
         cout<< "Test 6.2"<<endl;
-        cout << "Index  "<<index<<endl;
         //apply area and eta cut
         RcJets.erase(RcJets.begin() + jvec[index]); //remove already-matched det-lvl jet
-        cout << "Index  "<<index<<endl;
         RcPtLeads.erase(RcPtLeads.begin() + jvec[index]); //and corresponding pTlead
         cout<< "Test 6.3"<<endl;
 
@@ -1027,7 +1020,7 @@ int StPicoHFJetMaker::MakeJets() {
 		vector<pair<double, double>> MatchedpTleads;
 		vector<pair<double, double>> MatchedNeutralFraction;
 		//vector<pair<int, int>> MatchedNNeutral, MatchedNCharged, MatchedNTot;
-		MatchJets(McJets, RcJets, McPtLeads, RcPtLeads, &Matched, &MatchedpTleads, &MatchedNeutralFraction, /*&MatchedNNeutral, &MatchedNCharged, &MatchedNTot, */fR[i]);
+		MatchJetsEtaPhi(McJets, RcJets, McPtLeads, RcPtLeads, &Matched, &MatchedpTleads, &MatchedNeutralFraction, /*&MatchedNNeutral, &MatchedNCharged, &MatchedNTot, */fR[i]);
 		//cout << deltaR << " " << deltapT << " " << pTtrue << endl;
 
                 for (double value : differPhi) {
