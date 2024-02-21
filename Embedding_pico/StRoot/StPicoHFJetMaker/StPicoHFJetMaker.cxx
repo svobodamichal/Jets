@@ -184,8 +184,13 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
             int index = std::distance(matchtrackpT.begin(), result);
 
             //apply area and eta cut
-            RcJets.erase(RcJets.begin() + jvec[index]); //remove already-matched det-lvl jet
-            RcPtLeads.erase(RcPtLeads.begin() + jvec[index]); //and corresponding pTlead
+        cout << "Index  "<<index<<endl;
+
+        RcJets.erase(RcJets.begin() + jvec[index]); //remove already-matched det-lvl jet
+
+        cout << "Index  "<<index<<endl;
+
+        RcPtLeads.erase(RcPtLeads.begin() + jvec[index]); //and corresponding pTlead
             //cout << "removed jet no. " << jvec[index] << endl;
             double area = matchedTmp[index].second.area();
             double Area_cuts[3] = {0.07, 0.2, 0.4}; //stupid way to "access" fAcuts
@@ -1022,7 +1027,7 @@ int StPicoHFJetMaker::MakeJets() {
 		vector<pair<double, double>> MatchedpTleads;
 		vector<pair<double, double>> MatchedNeutralFraction;
 		//vector<pair<int, int>> MatchedNNeutral, MatchedNCharged, MatchedNTot;
-		MatchJetsEtaPhi(McJets, RcJets, McPtLeads, RcPtLeads, &Matched, &MatchedpTleads, &MatchedNeutralFraction, /*&MatchedNNeutral, &MatchedNCharged, &MatchedNTot, */fR[i]);
+		MatchJets(McJets, RcJets, McPtLeads, RcPtLeads, &Matched, &MatchedpTleads, &MatchedNeutralFraction, /*&MatchedNNeutral, &MatchedNCharged, &MatchedNTot, */fR[i]);
 		//cout << deltaR << " " << deltapT << " " << pTtrue << endl;
 
                 for (double value : differPhi) {
