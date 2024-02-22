@@ -187,7 +187,7 @@ Int_t StPicoJetMaker::Make() {
     static_cast<TH1F*>(mOutList->FindObject("hzvertex_acc"))->Fill(mPrimVtx.z());
     static_cast<TH1D*>(mOutList->FindObject("hdeltaz_acc"))->Fill(mPrimVtx.z() - mPicoDst->event()->vzVpd());
     static_cast<TH2D*>(mOutList->FindObject("hz_refmult_acc"))->Fill(mPrimVtx.z(), mPicoDst->event()->refMult());
-    static_cast<TH1I*>(mOutList->FindObject("hrunId_acc"))->Fill(mPicoDst->event()->runId());
+//    static_cast<TH1I*>(mOutList->FindObject("hrunId_acc"))->Fill(mPicoDst->event()->runId());
 
 
   }
@@ -203,7 +203,7 @@ Int_t StPicoJetMaker::Make() {
   static_cast<TH1F*>(mOutList->FindObject("hzvertex"))->Fill(mPrimVtx.z());
   static_cast<TH1D*>(mOutList->FindObject("hdeltaz"))->Fill(mPrimVtx.z() - mPicoDst->event()->vzVpd());
   static_cast<TH2D*>(mOutList->FindObject("hz_refmult"))->Fill(mPrimVtx.z(), mPicoDst->event()->refMult());
-  static_cast<TH1I*>(mOutList->FindObject("hrunId"))->Fill(mPicoDst->event()->runId());
+//  static_cast<TH1I*>(mOutList->FindObject("hrunId"))->Fill(mPicoDst->event()->runId());
 
   // -- reset event to be in a defined state
   resetEvent();
@@ -267,7 +267,7 @@ void StPicoJetMaker::initializeEventStats() {
   mOutList->Add(new TH1D("hdeltaz", "zTPC-zVPD; #Delta [cm]", 80, -10, 10));
   mOutList->Add(new TH2D("hz_refmult", "zvertex vs refmult; z [cm]; refMult", zbins, zmin, zmax, refmultbins, refmultmin, refmultmax));
 
-  mOutList->Add(new TH1I("hrunId", "runId", 90913, 15076101, 15167014));
+ // mOutList->Add(new TH1I("hrunId", "runId", 90913, 15076101, 15167014));
 
   //Accepted event histograms
   mOutList->Add(new TH1I("hevents_acc", "number of events", 2, 0, 2));
@@ -276,7 +276,7 @@ void StPicoJetMaker::initializeEventStats() {
   mOutList->Add(new TH1D("hdeltaz_acc", "zTPC-zVPD; #Delta [cm]", 80, -10, 10));
   mOutList->Add(new TH2D("hz_refmult_acc", "zvertex vs refmult; z [cm]; refMult", zbins, zmin, zmax, refmultbins, refmultmin, refmultmax));
   
-  mOutList->Add(new TH1I("hrunId_acc", "accepted events runId", 90913, 15076101, 15167014)); //15076101−15167014
+//  mOutList->Add(new TH1I("hrunId_acc", "accepted events runId", 90913, 15076101, 15167014)); //15076101−15167014
 
 //  mOutList->Add(new TH1D("hpT_tr_wnsigma", "track pT; p_{T} (GeV/c)", 120, 0, 30));
 //  mOutList->Add(new TH1D("hpT_tr_wonsigma", "track pT; p_{T} (GeV/c)", 120, 0, 30));
