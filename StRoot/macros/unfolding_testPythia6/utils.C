@@ -188,7 +188,9 @@ TH2D* rebin_histogram2D(TH2D* hinput, TH1D* htemplate_x, TH1D* htemplate_y,TStri
 			double err=hrebinY->GetBinError(biny);
 			hnewXnewY->SetBinContent(binx,biny,cont);
 			hnewXnewY->SetBinError(binx,biny,err);
-		}
+            if (err > 0 && cont/err < sqrt(10)) {hnewXnewY->SetBinContent(binx, biny,0);hnewXnewY->SetBinError(binx,biny,0);};
+
+        }
 		delete hprojectionY;
 		delete hrebinY;
 	}
