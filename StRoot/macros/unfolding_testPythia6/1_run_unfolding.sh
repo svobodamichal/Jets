@@ -115,7 +115,7 @@ SYS="EtaPhi" #SYSTEMATIC UNCERTAINTY VARIATION
 export SYS
 
 
-for RPARAM in 0.2 #0.4 #0.3
+for RPARAM in 0.2 0.4 #0.3
 #for RPARAM in 0.2 #0.4 #0.3 test
 do
 export RPARAM
