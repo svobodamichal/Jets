@@ -114,8 +114,9 @@ void plothisto(string prod = "combined_response")
 				hResponseM_tmp[pTlead][k][cent]->Scale(1./Nevents);
 					
 				//normalize each column in pTtrue to 1
-				hResponseM[pTlead][k][cent] = (TH2D*)hResponseM_tmp[pTlead][k][cent]->Clone(Form("hResponseMatrix_pTl%i_R0%.0f_centbin%i", pTlead, R*10,cent));
-				double integral = -1;
+                hResponseM[pTlead][k][cent] = (TH2D*)hResponseM_tmp[pTlead][k][cent]->Clone(Form("hResponseMatrix_pTl%i_R0%.0f_%s", pTlead, R*10,centrality[cent].Data()));
+
+                    double integral = -1;
 				/*for (int y = 1; y < hResponseM_tmp[pTlead][k][cent]->GetNbinsY()+1; y++) {
 					integral = hResponseM_tmp[pTlead][k][cent]->Integral(hResponseM_tmp[pTlead][k][cent]->FindFirstBinAbove(0), hResponseM_tmp[pTlead][k][cent]->FindLastBinAbove(0), y, y);
 					if (integral == 0) integral = 1;
@@ -139,7 +140,7 @@ void plothisto(string prod = "combined_response")
 				//heffi[pTlead][k][cent]->Add(heffi[pTlead][k][cent-1]);
 				//heffi[pTlead][k][cent]->Write();
 				hMcpT[pTlead][k][cent]->Add(hMcpT[pTlead][k][cent-1]);
-				hMcpT[pTlead][k][cent]->Write();
+                hMcpT[pTlead][k][cent]->Write(Form("hMCpT_pTl%i_R0%.0f_%s",pTlead,R*10,centrality[cent].Data()));
 				hMcMatchedpT[pTlead][k][cent]->Add(hMcMatchedpT[pTlead][k][cent-1]);
 				hMcMatchedpT[pTlead][k][cent]->Write();
 				hRcMatchedpT[pTlead][k][cent]->Add(hRcMatchedpT[pTlead][k][cent-1]);
