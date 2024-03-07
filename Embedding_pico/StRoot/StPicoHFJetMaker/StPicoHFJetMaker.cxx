@@ -255,7 +255,7 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
 
         //cout<<"MC pT "<< pT_jetMc<<" MC eta  " << mcEta << " MC phi  " << mcPhi <<endl;
         for (unsigned int j = 0; j < RcJets.size(); j++) {
-            const PseudoJet& rcJet = Rcjets[j];
+            const PseudoJet& rcJet = RcJets[j];
             double rcEta = rcJet.eta();
             double rcPhi = rcJet.phi();
             double etaDiff = mcEta - rcEta;
