@@ -925,15 +925,16 @@ int StPicoHFJetMaker::MakeJets() {
 
                 }
 
-                for (size_t i = 0; i < deltaR.size(); ++i) {
-                    double deltaRvalue = deltaR[i];
-                    double pTvalue = Matched[j].second.perp();
 
-                    static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaR_R0%.0lf", fR[i]*10)))->Fill(pTvalue,deltaRvalue);
-
-                }
 
                 for (unsigned int j = 0; j < Matched.size(); j++) {
+                    for (size_t i = 0; i < deltaR.size(); ++i) {
+                        double deltaRvalue = deltaR[i];
+                        double pTvalue = Matched[j].second.perp();
+
+                        static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaR_R0%.0lf", fR[i]*10)))->Fill(pTvalue,deltaRvalue);
+
+                    }
 			double pT_det = Matched[j].second.perp();
 			double pT_true = Matched[j].first.perp();
 			double pT_corr_det = pT_det - Matched[j].second.area()*frho;
