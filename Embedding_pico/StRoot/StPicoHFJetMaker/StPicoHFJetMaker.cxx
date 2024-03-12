@@ -838,7 +838,8 @@ int StPicoHFJetMaker::MakeJets() {
 			for(unsigned int ic = 0; ic < constituents.size(); ++ic) {
 				if (constituents[ic].user_index() == 9999) {istriggerjet = true; break;}
 			}
-			if (!istriggerjet) continue; 
+			if (!istriggerjet) continue;
+            cout << "Trigger jet found" << endl;
                 	float phi_jet = fjets[pjet].phi();
                 	float eta_jet = fjets[pjet].eta();
                 	float pT_jet = fjets[pjet].perp();
