@@ -247,7 +247,7 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
         }
         nfractionMc = neutralpTMc / pT_jetMc;
 
-        //cout<<"MC pT "<< pT_jetMc<<" MC eta  " << mcEta << " MC phi  " << mcPhi <<endl;
+        cout<<"MC pT "<< pT_jetMc<<" MC eta  " << mcEta << " MC phi  " << mcPhi <<endl;
         for (unsigned int j = 0; j < RcJets.size(); j++) {
             const PseudoJet& rcJet = RcJets[j];
             double rcEta = rcJet.eta();
@@ -258,7 +258,7 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
             if (phiDiff >= TMath::Pi()) { phiDiff = phiDiff - TMath::TwoPi(); }
             double deltar = sqrt(etaDiff*etaDiff+phiDiff*phiDiff);
             double pT_jetRc = rcJet.perp();
-            // cout<<"RC eta  " << rcEta << "RC phi  " << rcPhi <<" RC pT "<< pT_jetRc<<endl;
+             cout<<"RC eta  " << rcEta << "RC phi  " << rcPhi <<" RC pT "<< pT_jetRc<<endl;
 
             //cout << "RC pT: " << pT_jetRc << " deltar " << deltar << endl;
 
@@ -958,10 +958,10 @@ int StPicoHFJetMaker::MakeJets() {
 			double matchedNF = MatchedNeutralFraction[j].first;
 
                     if (matchedNF < 0.01) continue; //throw out track-only MC jets
-                    cout << "Eta MC  " << MCmatchedeta << "Eta RC " << RCmatchedeta << endl;
+              /*      cout << "Eta MC  " << MCmatchedeta << "Eta RC " << RCmatchedeta << endl;
                     cout << "Phi MC  " << MCmatchedphi << "Phi RC " << RCmatchedphi << endl;
                     cout << "pT  MC  " << pT_true  << "pT RC  " << pT_det <<"pT_corr  "<<pT_corr_det<<endl;
-                    cout << "Matched neutral fraction" << matchedNF << endl;
+                    cout << "Matched neutral fraction" << matchedNF << endl;*/
 
                     static_cast<TH2D*>(mOutList->FindObject(Form("hpTleads_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(MatchedRCpTlead,MatchedMCpTlead,weight);
 			for(Int_t pTl = 0; pTl < npTlead; pTl++) {
