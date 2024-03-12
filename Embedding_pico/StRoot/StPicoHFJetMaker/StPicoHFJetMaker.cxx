@@ -836,6 +836,7 @@ int StPicoHFJetMaker::MakeJets() {
 			//look only for jets with associated trigger tower
 			bool istriggerjet = false;
 			for(unsigned int ic = 0; ic < constituents.size(); ++ic) {
+                cout << "user index  " << constituents[ic].user_index() << endl;
 				if (constituents[ic].user_index() == 9999) {istriggerjet = true; break;}
 			}
 			if (!istriggerjet) continue;
