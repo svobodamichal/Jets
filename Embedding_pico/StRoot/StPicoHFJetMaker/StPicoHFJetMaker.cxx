@@ -710,7 +710,8 @@ int StPicoHFJetMaker::MakeJets() {
 		//THIS LINE WILL NOT WORK
 		//if (find(Triggers.begin(), Triggers.end(), realtowID)!=Triggers.end()) inputTower.set_user_index(2); //mark trigger towers with user_index 2
         cout << "TOWE: " << TOWE << endl;
-		if (TOWE > fTrgthresh) inputTower.set_user_index(9999); //mark trigger towers with user_index 9999	
+		if (TOWE > fTrgthresh) inputTower.set_user_index(9999); //mark trigger towers with user_index 9999
+        cout << inputTower.user_index() << endl;
 		neutraljetTracks.push_back(inputTower);}
 	} //end get btow info
 
@@ -837,7 +838,7 @@ int StPicoHFJetMaker::MakeJets() {
 			//look only for jets with associated trigger tower
 			bool istriggerjet = false;
 			for(unsigned int ic = 0; ic < constituents.size(); ++ic) {
-                cout << "user index  " << constituents[ic].user_index() << endl;
+            //    cout << "user index  " << constituents[ic].user_index() << endl;
 				if (constituents[ic].user_index() == 9999) {istriggerjet = true; break;}
 			}
 			if (!istriggerjet) continue;
