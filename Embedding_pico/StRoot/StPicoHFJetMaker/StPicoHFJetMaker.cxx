@@ -896,7 +896,7 @@ int StPicoHFJetMaker::MakeJets() {
 		} // for(unsigned int pjet = 0; pjet < jets.size(); pjet++)
             	static_cast<TH1D*>(mOutList->FindObject(Form("hfNjets_R0%.0lf_centbin%d", fR[i]*10,centrality)))->Fill(naccJets, weight);
            	//cout << "total jet energy in this event: " << totaljetE << endl;
-   
+        cout << "RC jets: " << RcJets.size()  << endl;
    		if (RcJets.size() == 0) continue;
 		vector<pair<PseudoJet, PseudoJet>> Matched;
 		vector<pair<double, double>> MatchedpTleads;
