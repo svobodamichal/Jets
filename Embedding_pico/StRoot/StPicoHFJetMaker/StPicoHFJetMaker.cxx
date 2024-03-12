@@ -213,7 +213,7 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
 
     return found;
 }
-bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double> McPtLeads, vector<double> Rcleads, vector<pair<PseudoJet, PseudoJet>>* matched, vector<pair<double, double>>* matchedPtLead, vector<pair<double, double>>* matchedNeutralFraction, double R, vector<double> differEta, vector<double> differPhi, vector<double> deltaR,) {
+bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double> McPtLeads, vector<double> Rcleads, vector<pair<PseudoJet, PseudoJet>>* matched, vector<pair<double, double>>* matchedPtLead, vector<pair<double, double>>* matchedNeutralFraction, double R, vector<double>* differEta, vector<double>* differPhi, vector<pair<double, double>>* deltaR,) {
     bool found = false;
     vector<PseudoJet> RcJets = Rcjets; //copy RC jets, so we can remove after match
     vector<double> RcPtLeads = Rcleads; //copy RC leading particles, so we can remove after match
@@ -270,7 +270,7 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
             // double pTmatch = 0;
             differEta.push_back(etaDiff);
             differPhi.push_back(phiDiff);
-            deltaR.push_back(deltar);
+            deltaR.push_back(make_pair(deltar, pT_jetRc));
 
             for (unsigned int irc = 0; irc < constituentsRc.size(); ++irc) {
                 int uidx = constituentsRc[irc].user_index();
@@ -900,7 +900,7 @@ int StPicoHFJetMaker::MakeJets() {
 		vector<pair<double, double>> MatchedpTleads;
 		vector<pair<double, double>> MatchedNeutralFraction;
         vector<double> differEta, differPhi;
-        vector<double> deltaR;
+        vector<pair<double, double>> deltaR;
 		//vector<pair<int, int>> MatchedNNeutral, MatchedNCharged, MatchedNTot;
 		MatchJetsEtaPhi(McJets, RcJets, McPtLeads, RcPtLeads, &Matched, &MatchedpTleads, &MatchedNeutralFraction, /*&MatchedNNeutral, &MatchedNCharged, &MatchedNTot, */fR[i], &differEta, &differPhi, &deltaR);
 		//cout << deltaR << " " << deltapT << " " << pTtrue << endl;
@@ -926,15 +926,16 @@ int StPicoHFJetMaker::MakeJets() {
                 }
 
 
+                for (int i = 0; i < deltaR.size(); ++i) {
+                    double deltaRvalue = deltaR[i].first;
+                    double pTvalue = deltaR[i].second;
+
+                    static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaR_R0%.0lf", fR[i]*10)))->Fill(pTvalue,deltaRvalue);
+
+                }
 
                 for (unsigned int j = 0; j < Matched.size(); j++) {
-                    for (size_t i = 0; i < deltaR.size(); ++i) {
-                        double deltaRvalue = deltaR[i];
-                        double pTvalue = Matched[j].second.perp();
 
-                        static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaR_R0%.0lf", fR[i]*10)))->Fill(pTvalue,deltaRvalue);
-
-                    }
 			double pT_det = Matched[j].second.perp();
 			double pT_true = Matched[j].first.perp();
 			double pT_corr_det = pT_det - Matched[j].second.area()*frho;
