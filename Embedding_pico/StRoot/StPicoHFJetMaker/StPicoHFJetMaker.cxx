@@ -709,9 +709,7 @@ int StPicoHFJetMaker::MakeJets() {
 		inputTower.set_user_index(0); //default index is -1, 0 means neutral particle
 		//THIS LINE WILL NOT WORK
 		//if (find(Triggers.begin(), Triggers.end(), realtowID)!=Triggers.end()) inputTower.set_user_index(2); //mark trigger towers with user_index 2
-        cout << "TOWE: " << TOWE << endl;
 		if (TOWE > fTrgthresh) inputTower.set_user_index(9999); //mark trigger towers with user_index 9999
-        cout << inputTower.user_index() << endl;
 		neutraljetTracks.push_back(inputTower);}
 	} //end get btow info
 
@@ -829,7 +827,6 @@ int StPicoHFJetMaker::MakeJets() {
                 Selector fFiducial_cut_selector = SelectorAbsEtaMax(maxRapJet)* SelectorPtMax(1.5*fpThatmax); //throw out jets with pT larger than 1.5*pThat (upper edge) to eliminate high-weight fluctuations;// Fiducial cut for jets
             	vector<PseudoJet> fjets = fFiducial_cut_selector(fjets_all);
 
-                cout<< "Number of full jets: " << fjets.size() << endl;
 		int naccJets = 0;
 		vector<double> RcPtLeads;
 		vector<PseudoJet> RcJets;
@@ -838,7 +835,6 @@ int StPicoHFJetMaker::MakeJets() {
 			//look only for jets with associated trigger tower
 			bool istriggerjet = false;
 			for(unsigned int ic = 0; ic < constituents.size(); ++ic) {
-            //    cout << "user index  " << constituents[ic].user_index() << endl;
 				if (constituents[ic].user_index() == 9999) {istriggerjet = true; break;}
 			}
 			if (!istriggerjet) continue;

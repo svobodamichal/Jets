@@ -259,9 +259,10 @@ void runPicoHFJetMaker(const Char_t *inputFile, const Char_t *outputFile="output
     //stPicoHFJetMaker->setMaxNeutralFraction(95); //turn off for neutral jets
 
 	stPicoHFJetMaker->setMaxDcaZHadronCorr(3.0); //cm, max DCA_z for global tracks used for hadronic correction 
-	
+
+
+    if (pThatmax<0){pThatmax=100;}
 	stPicoHFJetMaker->setMCparameters(pThatmin, pThatmax, xweight); //pThat range and xsection weight
- 
   // set refmultCorr
   //cout<<"test"<<endl;
 
