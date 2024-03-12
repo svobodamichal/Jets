@@ -226,7 +226,7 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
     //cout << "MC jet pT, R = " << R << endl;
 
 
-    cout << "MC jets size " << McJets.size() << " RC jets size " << RcJets.size() << endl;
+//    cout << "MC jets size " << McJets.size() << " RC jets size " << RcJets.size() << endl;
     for (unsigned int i = 0; i < McJets.size(); i++) {
         found = false;
         vector<PseudoJet> constituentsMc = sorted_by_pt(McJets[i].constituents());
@@ -247,7 +247,7 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
         }
         nfractionMc = neutralpTMc / pT_jetMc;
 
-        cout<<"MC pT "<< pT_jetMc<<" MC eta  " << mcEta << " MC phi  " << mcPhi <<endl;
+     //   cout<<"MC pT "<< pT_jetMc<<" MC eta  " << mcEta << " MC phi  " << mcPhi <<endl;
         for (unsigned int j = 0; j < RcJets.size(); j++) {
             const PseudoJet& rcJet = RcJets[j];
             double rcEta = rcJet.eta();
@@ -258,7 +258,7 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
             if (phiDiff >= TMath::Pi()) { phiDiff = phiDiff - TMath::TwoPi(); }
             double deltar = sqrt(etaDiff*etaDiff+phiDiff*phiDiff);
             double pT_jetRc = rcJet.perp();
-             cout<<"RC eta  " << rcEta << "RC phi  " << rcPhi <<" RC pT "<< pT_jetRc<<endl;
+        //     cout<<"RC eta  " << rcEta << "RC phi  " << rcPhi <<" RC pT "<< pT_jetRc<<endl;
 
             //cout << "RC pT: " << pT_jetRc << " deltar " << deltar << endl;
 
@@ -838,7 +838,6 @@ int StPicoHFJetMaker::MakeJets() {
 				if (constituents[ic].user_index() == 9999) {istriggerjet = true; break;}
 			}
 			if (!istriggerjet) continue;
-            cout << "Trigger jet found" << endl;
                 	float phi_jet = fjets[pjet].phi();
                 	float eta_jet = fjets[pjet].eta();
                 	float pT_jet = fjets[pjet].perp();
@@ -898,7 +897,6 @@ int StPicoHFJetMaker::MakeJets() {
 		} // for(unsigned int pjet = 0; pjet < jets.size(); pjet++)
             	static_cast<TH1D*>(mOutList->FindObject(Form("hfNjets_R0%.0lf_centbin%d", fR[i]*10,centrality)))->Fill(naccJets, weight);
            	//cout << "total jet energy in this event: " << totaljetE << endl;
-        cout << "RC jets: " << RcJets.size()  << endl;
    		if (RcJets.size() == 0) continue;
 		vector<pair<PseudoJet, PseudoJet>> Matched;
 		vector<pair<double, double>> MatchedpTleads;
@@ -908,7 +906,7 @@ int StPicoHFJetMaker::MakeJets() {
 		//vector<pair<int, int>> MatchedNNeutral, MatchedNCharged, MatchedNTot;
 		MatchJetsEtaPhi(McJets, RcJets, McPtLeads, RcPtLeads, &Matched, &MatchedpTleads, &MatchedNeutralFraction, /*&MatchedNNeutral, &MatchedNCharged, &MatchedNTot, */fR[i], &differEta, &differPhi, &deltaR);
 		//cout << deltaR << " " << deltapT << " " << pTtrue << endl;
-
+                cout<< "Test 1" << end;
                 for (double value : differPhi) {
                     static_cast<TH1D*>(mOutList->FindObject(Form("hphi_MCRC_R0%.0lf", fR[i]*10)))->Fill(value + TMath::Pi());
                     static_cast<TH1D*>(mOutList->FindObject(Form("hphi_MCRCw_R0%.0lf", fR[i]*10)))->Fill(value + TMath::Pi(), weight);
@@ -929,7 +927,7 @@ int StPicoHFJetMaker::MakeJets() {
 
                 }
 
-
+                cout<< "Test 2" << end;
                 for (int i = 0; i < deltaR.size(); ++i) {
                     double deltaRvalue = deltaR[i].first;
                     double pTvalue = deltaR[i].second;
@@ -937,9 +935,9 @@ int StPicoHFJetMaker::MakeJets() {
                     static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaR_R0%.0lf", fR[i]*10)))->Fill(pTvalue,deltaRvalue);
 
                 }
-
+                cout << "Test 3" << end;
                 for (unsigned int j = 0; j < Matched.size(); j++) {
-
+            cout<< "Test 4" << end;
 			double pT_det = Matched[j].second.perp();
 			double pT_true = Matched[j].first.perp();
 			double pT_corr_det = pT_det - Matched[j].second.area()*frho;
