@@ -826,6 +826,8 @@ int StPicoHFJetMaker::MakeJets() {
             	vector<PseudoJet> fjets_all = sorted_by_pt(fclust_seq_hard.inclusive_jets(fJetPtMin));
                 Selector fFiducial_cut_selector = SelectorAbsEtaMax(maxRapJet)* SelectorPtMax(1.5*fpThatmax); //throw out jets with pT larger than 1.5*pThat (upper edge) to eliminate high-weight fluctuations;// Fiducial cut for jets
             	vector<PseudoJet> fjets = fFiducial_cut_selector(fjets_all);
+
+                cout<< "Number of full jets: " << fjets.size() << endl;
 		int naccJets = 0;
 		vector<double> RcPtLeads;
 		vector<PseudoJet> RcJets;
