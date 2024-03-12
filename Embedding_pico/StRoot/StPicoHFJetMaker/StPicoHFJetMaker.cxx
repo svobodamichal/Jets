@@ -709,6 +709,7 @@ int StPicoHFJetMaker::MakeJets() {
 		inputTower.set_user_index(0); //default index is -1, 0 means neutral particle
 		//THIS LINE WILL NOT WORK
 		//if (find(Triggers.begin(), Triggers.end(), realtowID)!=Triggers.end()) inputTower.set_user_index(2); //mark trigger towers with user_index 2
+        cout << "TOWE: " << TOWE << endl;
 		if (TOWE > fTrgthresh) inputTower.set_user_index(9999); //mark trigger towers with user_index 9999	
 		neutraljetTracks.push_back(inputTower);}
 	} //end get btow info
