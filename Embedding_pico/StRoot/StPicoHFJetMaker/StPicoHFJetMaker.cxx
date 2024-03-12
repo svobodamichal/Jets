@@ -958,10 +958,10 @@ int StPicoHFJetMaker::MakeJets() {
 			double matchedNF = MatchedNeutralFraction[j].first;
 
                     if (matchedNF < 0.01) continue; //throw out track-only MC jets
-            /*        cout << "Eta MC  " << MCmatchedeta << "Eta RC " << RCmatchedeta << endl;
+                    cout << "Eta MC  " << MCmatchedeta << "Eta RC " << RCmatchedeta << endl;
                     cout << "Phi MC  " << MCmatchedphi << "Phi RC " << RCmatchedphi << endl;
                     cout << "pT  MC  " << pT_true  << "pT RC  " << pT_det <<"pT_corr  "<<pT_corr_det<<endl;
-                    cout << "Matched neutral fraction" << matchedNF << endl;*/
+                    cout << "Matched neutral fraction" << matchedNF << endl;
 
                     static_cast<TH2D*>(mOutList->FindObject(Form("hpTleads_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(MatchedRCpTlead,MatchedMCpTlead,weight);
 			for(Int_t pTl = 0; pTl < npTlead; pTl++) {
