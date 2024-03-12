@@ -75,7 +75,7 @@ StChain *chain;
 void runPicoHFJetMaker(const Char_t *inputFile, const Char_t *outputFile="outputBaseName",  
 			const unsigned int makerMode = 0 /*kAnalyze*/,
 			const Char_t *badRunListFileName="BadRunList_14.list", const Char_t *treeName = "picoDst", 
-			const float pThatmin=0.,const float pThatmax=-1.,const float xweight=1.) { //this line added for Embedding analysis
+			const float pThatmin=0., float pThatmax=-1.,const float xweight=1.) { //this line added for Embedding analysis
 
 //void runPicoHFJetMaker(const Char_t *inputFile, const Char_t *outputFile="outputBaseName",  
 //			const unsigned int makerMode = 0 /*kAnalyze*/,
