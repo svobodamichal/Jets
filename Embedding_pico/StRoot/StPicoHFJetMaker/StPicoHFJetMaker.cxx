@@ -213,7 +213,7 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
 
     return found;
 }
-bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double> McPtLeads, vector<double> Rcleads, vector<pair<PseudoJet, PseudoJet>>* matched, vector<pair<double, double>>* matchedPtLead, vector<pair<double, double>>* matchedNeutralFraction, double R, vector<double>* differEta, vector<double>* differPhi, vector<pair<double, double>>* deltaR,) {
+bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double> McPtLeads, vector<double> Rcleads, vector<pair<PseudoJet, PseudoJet>>* matched, vector<pair<double, double>>* matchedPtLead, vector<pair<double, double>>* matchedNeutralFraction, double R, vector<double>* differEta, vector<double>* differPhi, vector<pair<double, double>>* deltaR) {
     bool found = false;
     vector<PseudoJet> RcJets = Rcjets; //copy RC jets, so we can remove after match
     vector<double> RcPtLeads = Rcleads; //copy RC leading particles, so we can remove after match
