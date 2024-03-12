@@ -459,19 +459,19 @@ int StPicoHFJetMaker::InitJets() {
         for(unsigned int r = 0; r < fR.size(); r++) {
 
             hname = Form("hphi_MCRC_R0%.0lf",fR[r]*10);
-            mOutList->Add(new TH1D("hname", "phi MC-RC", nphibins, phiminbin, phimaxbin));
+            mOutList->Add(new TH1D(hname, "phi MC-RC", nphibins, phiminbin, phimaxbin));
             hname = Form("heta_MCRC_R0%.0lf",fR[r]*10);
-            mOutList->Add(new TH1D("hname", "eta MC-RC", netabins, etaminbin, etamaxbin));
+            mOutList->Add(new TH1D(hname, "eta MC-RC", netabins, etaminbin, etamaxbin));
             hname = Form("hEtaPhi_MC-RC_R0%.0lf",fR[r]*10);
-            mOutList->Add(new TH2D("hname", "MC-RC #eta, #phi; #eta (-); #phi (-)", netabins, etaminbin, etamaxbin,nphibins, phiminbin, phimaxbin));
+            mOutList->Add(new TH2D(hname, "MC-RC #eta, #phi; #eta (-); #phi (-)", netabins, etaminbin, etamaxbin,nphibins, phiminbin, phimaxbin));
             hname = Form("hphi_MCRCw_R0%.0lf",fR[r]*10);
-            mOutList->Add(new TH1D("hname", "phi MC-RC", nphibins, phiminbin, phimaxbin));
+            mOutList->Add(new TH1D(hname, "phi MC-RC", nphibins, phiminbin, phimaxbin));
             hname = Form("heta_MCRCw_R0%.0lf",fR[r]*10);
-            mOutList->Add(new TH1D("hname", "eta MC-RC", netabins, etaminbin, etamaxbin));
+            mOutList->Add(new TH1D(hname, "eta MC-RC", netabins, etaminbin, etamaxbin));
             hname = Form("hEtaPhi_MC-RCw_R0%.0lf",fR[r]*10);
-            mOutList->Add(new TH2D("hname", "MC-RC #eta, #phi; #eta (-); #phi (-)", netabins, etaminbin, etamaxbin,nphibins, phiminbin, phimaxbin));
+            mOutList->Add(new TH2D(hname, "MC-RC #eta, #phi; #eta (-); #phi (-)", netabins, etaminbin, etamaxbin,nphibins, phiminbin, phimaxbin));
             hname = Form("hDeltaR_R0%.0lf",fR[r]*10);
-            mOutList->Add(new TH2D("hname", "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,100, 0, 1));
+            mOutList->Add(new TH2D(hname, "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,100, 0, 1));
 
 
 
