@@ -671,7 +671,7 @@ int StPicoHFJetMaker::MakeJets() {
 	
 	GetCaloTrackMomentum(mPicoDst,mPrimVtx); //fill array Sump with momenta of tracks which are matched to BEMC
 
-	int TOWE = 0;
+	double TOWE = 0;
 	for (int iTow = 0; iTow < 4800; iTow++){ //get btow info
 		StPicoBTowHit *towHit = mPicoDst->btowHit(iTow);
 		if (!towHit || towHit->isBad()) continue; //if the tower is marked as bad or missing info
