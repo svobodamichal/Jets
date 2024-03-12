@@ -226,7 +226,7 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
     //cout << "MC jet pT, R = " << R << endl;
 
 
-
+    cout << "MC jets size " << McJets.size() << " RC jets size " << RcJets.size() << endl;
     for (unsigned int i = 0; i < McJets.size(); i++) {
         found = false;
         vector<PseudoJet> constituentsMc = sorted_by_pt(McJets[i].constituents());
