@@ -140,8 +140,6 @@ bool MatchJets(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<double
                 double phiDiff = phiMC - phiRC;
                 if(phiDiff<=-TMath::Pi()){phiDiff=phiDiff+TMath::TwoPi();}
                 if(phiDiff>=TMath::Pi()){phiDiff=phiDiff-TMath::TwoPi();}
-                differEta.push_back(etaDiff);
-                differPhi.push_back(phiDiff);
 
 
                 for (unsigned int irc = 0; irc < constituentsRc.size(); ++irc) {
@@ -409,20 +407,6 @@ int StPicoHFJetMaker::InitJets() {
     float deltaptembmaxbin = 50;
     
     TH1::SetDefaultSumw2();
-    hname = Form("hphi_MCRC_R0%.0lf",fR[r]*10);
-    mOutList->Add(new TH1D("hname", "phi MC-RC", nphibins, phiminbin, phimaxbin));
-    hname = Form("heta_MCRC_R0%.0lf",fR[r]*10);
-    mOutList->Add(new TH1D("hname", "eta MC-RC", netabins, etaminbin, etamaxbin));
-    hname = Form("hEtaPhi_MC-RC_R0%.0lf",fR[r]*10);
-    mOutList->Add(new TH2D("hname", "MC-RC #eta, #phi; #eta (-); #phi (-)", netabins, etaminbin, etamaxbin,nphibins, phiminbin, phimaxbin));
-    hname = Form("hphi_MCRCw_R0%.0lf",fR[r]*10);
-    mOutList->Add(new TH1D("hname", "phi MC-RC", nphibins, phiminbin, phimaxbin));
-    hname = Form("heta_MCRCw_R0%.0lf",fR[r]*10);
-    mOutList->Add(new TH1D("hname", "eta MC-RC", netabins, etaminbin, etamaxbin));
-    hname = Form("hEtaPhi_MC-RCw_R0%.0lf",fR[r]*10);
-    mOutList->Add(new TH2D("hname", "MC-RC #eta, #phi; #eta (-); #phi (-)", netabins, etaminbin, etamaxbin,nphibins, phiminbin, phimaxbin));
-    hname = Form("hDeltaR_R0%.0lf",fR[r]*10);
-    mOutList->Add(new TH2D("hname", "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,100, 0, 1));
 
     mOutList->Add(new TH1D("hweight", "weight", 135, 0, 3));
 	mOutList->Add(new TH1D("hcent", "centrality", 10, -1, 9));
@@ -473,6 +457,24 @@ int StPicoHFJetMaker::InitJets() {
 
  	if (!isMcMode()) {
         for(unsigned int r = 0; r < fR.size(); r++) {
+
+            hname = Form("hphi_MCRC_R0%.0lf",fR[r]*10);
+            mOutList->Add(new TH1D("hname", "phi MC-RC", nphibins, phiminbin, phimaxbin));
+            hname = Form("heta_MCRC_R0%.0lf",fR[r]*10);
+            mOutList->Add(new TH1D("hname", "eta MC-RC", netabins, etaminbin, etamaxbin));
+            hname = Form("hEtaPhi_MC-RC_R0%.0lf",fR[r]*10);
+            mOutList->Add(new TH2D("hname", "MC-RC #eta, #phi; #eta (-); #phi (-)", netabins, etaminbin, etamaxbin,nphibins, phiminbin, phimaxbin));
+            hname = Form("hphi_MCRCw_R0%.0lf",fR[r]*10);
+            mOutList->Add(new TH1D("hname", "phi MC-RC", nphibins, phiminbin, phimaxbin));
+            hname = Form("heta_MCRCw_R0%.0lf",fR[r]*10);
+            mOutList->Add(new TH1D("hname", "eta MC-RC", netabins, etaminbin, etamaxbin));
+            hname = Form("hEtaPhi_MC-RCw_R0%.0lf",fR[r]*10);
+            mOutList->Add(new TH2D("hname", "MC-RC #eta, #phi; #eta (-); #phi (-)", netabins, etaminbin, etamaxbin,nphibins, phiminbin, phimaxbin));
+            hname = Form("hDeltaR_R0%.0lf",fR[r]*10);
+            mOutList->Add(new TH2D("hname", "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,100, 0, 1));
+
+
+
             //TString hname = Form("hpT_pTlead_R0%.0lf",fR[r]*10);
             //CHARGED JETS
             //mOutList->Add(new TH2D(hname, "jet pTcorr vs pTleading; p_{T} (GeV/c); p_{T}^{lead} (GeV/c)", nptbins, ptminbin, ptmaxbin, npTleadbins, pTleadmin, pTleadmax));
