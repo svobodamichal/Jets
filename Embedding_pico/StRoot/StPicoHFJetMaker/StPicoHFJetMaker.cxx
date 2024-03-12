@@ -268,9 +268,9 @@ bool MatchJetsEtaPhi(vector<PseudoJet> McJets, vector<PseudoJet> Rcjets, vector<
             double nfractionRc = 0;
             double neutralpTRc = 0;
             // double pTmatch = 0;
-            differEta.push_back(etaDiff);
-            differPhi.push_back(phiDiff);
-            deltaR.push_back(make_pair(deltar, pT_jetRc));
+            differEta->push_back(etaDiff);
+            differPhi->push_back(phiDiff);
+            deltaR->push_back(make_pair(deltar, pT_jetRc));
 
             for (unsigned int irc = 0; irc < constituentsRc.size(); ++irc) {
                 int uidx = constituentsRc[irc].user_index();
