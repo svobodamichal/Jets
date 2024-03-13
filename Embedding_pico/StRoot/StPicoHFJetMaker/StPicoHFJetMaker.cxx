@@ -912,7 +912,7 @@ int StPicoHFJetMaker::MakeJets() {
                     static_cast<TH1D*>(mOutList->FindObject(Form("hphi_MCRCw_R0%.0lf", fR[i]*10)))->Fill(value + TMath::Pi(), weight);
                 }
 
-                for (double value : differEta) {
+               /* for (double value : differEta) {
                     static_cast<TH1D*>(mOutList->FindObject(Form("heta_MCRC_R0%.0lf", fR[i]*10)))->Fill(value);
                     static_cast<TH1D*>(mOutList->FindObject(Form("heta_MCRCw_R0%.0lf", fR[i]*10)))->Fill(value, weight);
 
@@ -933,7 +933,7 @@ int StPicoHFJetMaker::MakeJets() {
                     double pTvalue = deltaR[j].second;
 
                     static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaR_R0%.0lf", fR[i]*10)))->Fill(pTvalue, deltaRvalue);
-                }
+                }*/
                 cout << "Test 3" << endl;
                 for (unsigned int j = 0; j < Matched.size(); j++) {
             cout<< "Test 4" << endl;
