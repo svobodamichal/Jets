@@ -918,17 +918,12 @@ int StPicoHFJetMaker::MakeJets() {
 
                 }
 
-                if (differPhi.size() != differEta.size()) {
-                    cout << "Error: Vector sizes are not consistent." << endl;
-                }
-
                 for (size_t i = 0; i < differEta.size(); ++i) {
                     double etaValue = differEta[i];
                     double phiValue = differPhi[i];
 
                     static_cast<TH2D*>(mOutList->FindObject(Form("hEtaPhi_MC-RC_R0%.0lf", fR[i]*10)))->Fill(etaValue, phiValue + TMath::Pi());
                     static_cast<TH2D*>(mOutList->FindObject(Form("hEtaPhi_MC-RCw_R0%.0lf", fR[i]*10)))->Fill(etaValue, phiValue + TMath::Pi(), weight);
-
                 }
 
                 cout<< "Test 2" << endl;
