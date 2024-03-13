@@ -907,7 +907,7 @@ int StPicoHFJetMaker::MakeJets() {
 		MatchJetsEtaPhi(McJets, RcJets, McPtLeads, RcPtLeads, &Matched, &MatchedpTleads, &MatchedNeutralFraction, /*&MatchedNNeutral, &MatchedNCharged, &MatchedNTot, */fR[i], &differEta, &differPhi, &deltaR);
 		//cout << deltaR << " " << deltapT << " " << pTtrue << endl;
                 cout<< "Test 1" << endl;
- /*               for (double value : differPhi) {
+                for (double value : differPhi) {
                     static_cast<TH1D*>(mOutList->FindObject(Form("hphi_MCRC_R0%.0lf", fR[i]*10)))->Fill(value + TMath::Pi());
                     static_cast<TH1D*>(mOutList->FindObject(Form("hphi_MCRCw_R0%.0lf", fR[i]*10)))->Fill(value + TMath::Pi(), weight);
                 }
@@ -928,13 +928,12 @@ int StPicoHFJetMaker::MakeJets() {
                 }
 
                 cout<< "Test 2" << endl;
-                for (int i = 0; i < deltaR.size(); ++i) {
-                    double deltaRvalue = deltaR[i].first;
-                    double pTvalue = deltaR[i].second;
+                for (int j = 0; j < deltaR.size(); ++j) {
+                    double deltaRvalue = deltaR[j].first;
+                    double pTvalue = deltaR[j].second;
 
-                    static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaR_R0%.0lf", fR[i]*10)))->Fill(pTvalue,deltaRvalue);
-
-                }*/
+                    static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaR_R0%.0lf", fR[i]*10)))->Fill(pTvalue, deltaRvalue);
+                }
                 cout << "Test 3" << endl;
                 for (unsigned int j = 0; j < Matched.size(); j++) {
             cout<< "Test 4" << endl;
