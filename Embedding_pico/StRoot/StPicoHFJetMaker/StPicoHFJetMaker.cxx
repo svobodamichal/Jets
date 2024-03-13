@@ -918,6 +918,11 @@ int StPicoHFJetMaker::MakeJets() {
 
                 }
 
+                if (differPhi.size() != differEta.size()) {
+                    cerr << "Error: Vector sizes are not consistent." << endl;
+                    return; // or handle the error appropriately
+                }
+
                 for (size_t i = 0; i < differEta.size(); ++i) {
                     double etaValue = differEta[i];
                     double phiValue = differPhi[i];
