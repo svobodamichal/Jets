@@ -11,4 +11,4 @@ set pthatmax = -1
 set xweight = 6.939e-09
 #root4star -l -b -q 'StRoot/macros/loadSharedHFLibraries.C' 'StRoot/macros/runPicoHFJetMaker.C("test.list","output_test",0,"BadRunList_14.list","PicoDst",'${pthatmin}', '${pthatmax}', '$xweight')'
 #root -l -b -q 'StRoot/macros/loadSharedHFLibraries.C' 'StRoot/macros/runPicoHFJetMaker.C++("test.list","output_test",0,"BadRunList_14.list","HotTowerList_14.list","PicoDst")'
-gdb --quiet --args root.exe -l -b -q 'StRoot/macros/loadSharedHFLibraries.C' 'StRoot/macros/runPicoHFJetMaker.C++("test.list","output_test",0,"BadRunList_14.list","HotTowerList_14.list","PicoDst")'
+gdb --quiet --args root4star -l -b -q 'StRoot/macros/loadSharedHFLibraries.C' 'StRoot/macros/runPicoHFJetMaker.C("test.list","output_test",0,"BadRunList_14.list","PicoDst",'${pthatmin}', '${pthatmax}', '$xweight')'
