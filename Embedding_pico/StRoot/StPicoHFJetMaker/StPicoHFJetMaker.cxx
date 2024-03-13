@@ -912,12 +912,12 @@ int StPicoHFJetMaker::MakeJets() {
                     static_cast<TH1D*>(mOutList->FindObject(Form("hphi_MCRCw_R0%.0lf", fR[i]*10)))->Fill(value + TMath::Pi(), weight);
                 }
 
-               /* for (double value : differEta) {
+                for (double value : differEta) {
                     static_cast<TH1D*>(mOutList->FindObject(Form("heta_MCRC_R0%.0lf", fR[i]*10)))->Fill(value);
                     static_cast<TH1D*>(mOutList->FindObject(Form("heta_MCRCw_R0%.0lf", fR[i]*10)))->Fill(value, weight);
 
                 }
-
+/*
                 for (size_t i = 0; i < differEta.size(); ++i) {
                     double etaValue = differEta[i];
                     double phiValue = differPhi[i];
