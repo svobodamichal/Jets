@@ -925,7 +925,7 @@ int StPicoHFJetMaker::MakeJets() {
                     static_cast<TH2D*>(mOutList->FindObject(Form("hEtaPhi_MC-RC_R0%.0lf", fR[i]*10)))->Fill(etaValue, phiValue + TMath::Pi());
                     static_cast<TH2D*>(mOutList->FindObject(Form("hEtaPhi_MC-RCw_R0%.0lf", fR[i]*10)))->Fill(etaValue, phiValue + TMath::Pi(), weight);
 
-                } */
+                }
 
                 cout<< "Test 2" << endl;
                 for (int i = 0; i < deltaR.size(); ++i) {
@@ -934,7 +934,7 @@ int StPicoHFJetMaker::MakeJets() {
 
                     static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaR_R0%.0lf", fR[i]*10)))->Fill(pTvalue,deltaRvalue);
 
-                }
+                }*/
                 cout << "Test 3" << endl;
                 for (unsigned int j = 0; j < Matched.size(); j++) {
             cout<< "Test 4" << endl;
