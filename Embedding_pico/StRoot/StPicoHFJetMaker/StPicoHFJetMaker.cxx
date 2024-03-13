@@ -472,7 +472,8 @@ int StPicoHFJetMaker::InitJets() {
             mOutList->Add(new TH2D(hname, "MC-RC #eta, #phi; #eta (-); #phi (-)", netabins, etaminbin, etamaxbin,nphibins, phiminbin, phimaxbin));
             hname = Form("hDeltaR_R0%.0lf",fR[r]*10);
             mOutList->Add(new TH2D(hname, "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,100, 0, 1));
-
+            hname = Form("hDeltaRw_R0%.0lf",fR[r]*10);
+            mOutList->Add(new TH2D(hname, "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,100, 0, 1));
 
 
             //TString hname = Form("hpT_pTlead_R0%.0lf",fR[r]*10);
@@ -932,6 +933,8 @@ int StPicoHFJetMaker::MakeJets() {
                     double pTvalue = deltaR[j].second;
 
                     static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaR_R0%.0lf", fR[i]*10)))->Fill(pTvalue, deltaRvalue);
+                    static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaRw_R0%.0lf", fR[i]*10)))->Fill(pTvalue, deltaRvalue, weight);
+
                 }
                 cout << "Test 3" << endl;
                 for (unsigned int j = 0; j < Matched.size(); j++) {
