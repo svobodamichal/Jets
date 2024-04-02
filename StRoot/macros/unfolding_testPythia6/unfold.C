@@ -240,9 +240,8 @@ hepsilon=(TH1D*) fepsilon->Get(Form("heffi_pTl%.0f_R0%.0f_%s",pTlead, R*10,centr
  // TH1D *hMCreco_tmp = (TH1D*)frmatrix->Get(Form("hMCreco_%s",prior_type[priorNo].Data())); //MC measured spectrum
   TH1D *hMCreco_tmp = (TH1D*)rmatrix_tmp->ProjectionX("hMCreco",0,-1,"e"); //MC measured spectrum 
   TH1D *hMCtrue = new TH1D("hmctrue","hmctrue",newbins2,pTbinArray2);
-  //TH1D *hMCtrue_tmp = (TH1D*)frmatrix->Get(Form("hMCtrue_%s",prior_type[priorNo].Data())); //MC input spectrum
-  //TH1D *hMCtrue_tmp = (TH1D*)rmatrix_tmp->ProjectionY("hMCtrue",0,-1,"e"); //MC measured spectrum - matched
-  TH1D *hMCtrue_tmp = (TH1D*)frmatrix->Get(Form("hMCpT_pTl%.0lf_R0%.0f_%s",pTlead,R*10,centrality.Data())); //MC measured spectrum 
+  TH1D *hMCtrue_tmp = (TH1D*)rmatrix_tmp->ProjectionY("hMCtrue",0,-1,"e"); //MC measured spectrum - matched
+ // TH1D *hMCtrue_tmp = (TH1D*)frmatrix->Get(Form("hMCpT_pTl%.0lf_R0%.0f_%s",pTlead,R*10,centrality.Data())); //MC measured spectrum
 
    rmatrix->Sumw2();
 	hMCreco->Sumw2();

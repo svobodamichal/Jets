@@ -470,10 +470,10 @@ int StPicoHFJetMaker::InitJets() {
             mOutList->Add(new TH1D(hname, "eta MC-RC", netabins, etaminbin, etamaxbin));
             hname = Form("hEtaPhi_MC-RCw_R0%.0lf",fR[r]*10);
             mOutList->Add(new TH2D(hname, "MC-RC #eta, #phi; #eta (-); #phi (-)", netabins, etaminbin, etamaxbin,nphibins, phiminbin, phimaxbin));
-            hname = Form("hDeltaR_R0%.0lf",fR[r]*10);
-            mOutList->Add(new TH2D(hname, "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,100, 0, 1));
-            hname = Form("hDeltaRw_R0%.0lf",fR[r]*10);
-            mOutList->Add(new TH2D(hname, "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,100, 0, 1));
+//            hname = Form("hDeltaR_R0%.0lf",fR[r]*10);
+//            mOutList->Add(new TH2D(hname, "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,100, 0, 1));
+//            hname = Form("hDeltaRw_R0%.0lf",fR[r]*10);
+//            mOutList->Add(new TH2D(hname, "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,100, 0, 1));
 
 
             //TString hname = Form("hpT_pTlead_R0%.0lf",fR[r]*10);
@@ -524,6 +524,10 @@ int StPicoHFJetMaker::InitJets() {
 			//hname = Form("hjetpT_R0%.0lf_centbin%i",fR[r]*10, centbin);
             		//mOutList->Add(new TH1D(hname, "jet p_{T}; p_{T} (GeV/c)", nptbins, 0, ptmaxbin));
 			//full jet histos
+
+                hname = Form("hDeltaRw_R0%.0lf",fR[r]*10, centbin);
+                mOutList->Add(new TH2D(hname, "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,100, 0, 1));
+
             		hname = Form("hfjetpT_R0%.0lf_centbin%i",fR[r]*10, centbin);
 		        mOutList->Add(new TH1D(hname, "full jet p_{T}; p_{T} (GeV/c)", nptbins, 0, ptmaxbin));
 			hname = Form("hjetpTlead_R0%.0lf_centbin%i",fR[r]*10, centbin);
@@ -641,7 +645,7 @@ int StPicoHFJetMaker::MakeJets() {
 		int geantId = mctrk->geantId();
 		double mcpt = mctrk->pt();
 		double mceta = mctrk->eta();
-		if ((geantId > 2 && geantId < 7) || fabs(mceta) > 1.0 || mcpt < 0.2) continue;
+		if ((geantId > 3 && geantId < 7) || fabs(mceta) > 1.0 || mcpt < 0.2) continue;
 		double mcp = mctrk->ptot(); 
 		TVector3 mcmom = mctrk->p();
    		double mcphi =mcmom.Phi();
@@ -930,8 +934,8 @@ int StPicoHFJetMaker::MakeJets() {
                     double deltaRvalue = deltaR[j].first;
                     double pTvalue = deltaR[j].second;
 
-                    static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaR_R0%.0lf", fR[i]*10)))->Fill(pTvalue, deltaRvalue);
-                    static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaRw_R0%.0lf", fR[i]*10)))->Fill(pTvalue, deltaRvalue, weight);
+//                    static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaR_R0%.0lf", fR[i]*10)))->Fill(pTvalue, deltaRvalue);
+                    static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaRw_R0%.0lf_centbin%i", fR[i]*10, centrality)))->Fill(pTvalue, deltaRvalue, weight);
 
                 }
                 for (unsigned int j = 0; j < Matched.size(); j++) {
