@@ -525,7 +525,7 @@ int StPicoHFJetMaker::InitJets() {
             		//mOutList->Add(new TH1D(hname, "jet p_{T}; p_{T} (GeV/c)", nptbins, 0, ptmaxbin));
 			//full jet histos
 
-                hname = Form("hDeltaRw_R0%.0lf",fR[r]*10, centbin);
+                hname = Form("hDeltaRw_R0%.0lf_centbin%i",fR[r]*10, centbin);
                 mOutList->Add(new TH2D(hname, "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,100, 0, 1));
 
             		hname = Form("hfjetpT_R0%.0lf_centbin%i",fR[r]*10, centbin);
