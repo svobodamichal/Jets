@@ -527,9 +527,9 @@ int StPicoHFJetMaker::InitJets() {
                 hname = Form("hDeltaR_R0%.0lf_centbin%i",fR[r]*10, centbin);
                 mOutList->Add(new TH2D(hname, "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,100, 0, 1));
                 hname = Form("hDeltaRw_R0%.0lf_centbin%i",fR[r]*10, centbin);
-                mOutList->Add(new TH2D(hname, "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,100, 0, 1));
+                mOutList->Add(new TH2D(hname, "Nconst vs reco pT",nptbins, ptminbin, ptmaxbin,100, 0, 1));
                 hname = Form("hNconst_R0%.0lf_centbin%i",fR[r]*10, centbin);
-                mOutList->Add(new TH2D(hname, "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,300, 0, 300));
+                mOutList->Add(new TH2D(hname, "Nconst vs reco pT",nptbins, ptminbin, ptmaxbin,300, 0, 300));
                 hname = Form("hNconstw_R0%.0lf_centbin%i",fR[r]*10, centbin);
                 mOutList->Add(new TH2D(hname, "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,300, 0, 300));
 
@@ -884,8 +884,8 @@ int StPicoHFJetMaker::MakeJets() {
                 if (constituents[ic].perp()>0.01) NumberOfConst++;
 			}
             cout << "Number of constituents "<< NumberOfConst <<endl;
-            static_cast<TH2D*>(mOutList->FindObject(Form("hNconst_R0%.0lf_centbin%i",fR[i]*10)))->Fill(NumberOfConst, pT_jet);
-            static_cast<TH2D*>(mOutList->FindObject(Form("hNconstw_R0%.0lf_centbin%i",fR[i]*10)))->Fill(NumberOfConst, pT_jet, weight);
+            static_cast<TH2D*>(mOutList->FindObject(Form("hNconst_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(NumberOfConst, pT_jet);
+            static_cast<TH2D*>(mOutList->FindObject(Form("hNconstw_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(NumberOfConst, pT_jet, weight);
 
 
 			float nfraction = neutralpT/pT_jet;
