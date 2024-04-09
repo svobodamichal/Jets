@@ -524,9 +524,14 @@ int StPicoHFJetMaker::InitJets() {
 			//hname = Form("hjetpT_R0%.0lf_centbin%i",fR[r]*10, centbin);
             		//mOutList->Add(new TH1D(hname, "jet p_{T}; p_{T} (GeV/c)", nptbins, 0, ptmaxbin));
 			//full jet histos
-
+                hname = Form("hDeltaR_R0%.0lf_centbin%i",fR[r]*10, centbin);
+                mOutList->Add(new TH2D(hname, "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,100, 0, 1));
                 hname = Form("hDeltaRw_R0%.0lf_centbin%i",fR[r]*10, centbin);
                 mOutList->Add(new TH2D(hname, "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,100, 0, 1));
+                hname = Form("hNconst_R0%.0lf_centbin%i",fR[r]*10, centbin);
+                mOutList->Add(new TH2D(hname, "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,300, 0, 300));
+                hname = Form("hNconstw_R0%.0lf_centbin%i",fR[r]*10, centbin);
+                mOutList->Add(new TH2D(hname, "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,300, 0, 300));
 
             		hname = Form("hfjetpT_R0%.0lf_centbin%i",fR[r]*10, centbin);
 		        mOutList->Add(new TH1D(hname, "full jet p_{T}; p_{T} (GeV/c)", nptbins, 0, ptmaxbin));
@@ -868,6 +873,7 @@ int StPicoHFJetMaker::MakeJets() {
                 	if(area_jet < fAcuts[i]) continue;
 			
 			float neutralpT = 0;
+            int NumberOfConst = 0;
 			//is the leading particle charged or neutral?
 			for(unsigned int ic = 0; ic < constituents.size(); ++ic) {
 				if (constituents[ic].user_index() == 0 || constituents[ic].user_index()== 9999) neutralpT+=constituents[ic].pt(); //select towers
@@ -875,7 +881,13 @@ int StPicoHFJetMaker::MakeJets() {
 				float cphi = constituents[ic].phi();
 				static_cast<TH1D*>(mOutList->FindObject(Form("hfceta_R0%.0lf",fR[i]*10)))->Fill(ceta, weight);
 				static_cast<TH1D*>(mOutList->FindObject(Form("hfcphi_R0%.0lf",fR[i]*10)))->Fill(cphi, weight);
-			}		
+                if (constituents[ic].perp()>0.01) NumberOfConst++;
+			}
+            cout << "Number of constituents "<< NumberOfConst <<endl;
+            static_cast<TH2D*>(mOutList->FindObject(Form("hNconst_R0%.0lf_centbin%i",fR[i]*10)))->Fill(NumberOfConst, pT_jet);
+            static_cast<TH2D*>(mOutList->FindObject(Form("hNconstw_R0%.0lf_centbin%i",fR[i]*10)))->Fill(NumberOfConst, pT_jet, weight);
+
+
 			float nfraction = neutralpT/pT_jet;
 			//cout << "neutral fraction " << nfraction << endl;
 			static_cast<TH1D*>(mOutList->FindObject(Form("hNF_R0%.0lf",fR[i]*10)))->Fill(nfraction, weight);
@@ -935,6 +947,7 @@ int StPicoHFJetMaker::MakeJets() {
                     double pTvalue = deltaR[j].second;
 
 //                    static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaR_R0%.0lf", fR[i]*10)))->Fill(pTvalue, deltaRvalue);
+                    static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaR_R0%.0lf_centbin%i", fR[i]*10, centrality)))->Fill(pTvalue, deltaRvalue);
                     static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaRw_R0%.0lf_centbin%i", fR[i]*10, centrality)))->Fill(pTvalue, deltaRvalue, weight);
 
                 }
