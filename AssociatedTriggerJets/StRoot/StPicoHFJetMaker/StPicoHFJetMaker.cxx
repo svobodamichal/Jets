@@ -369,7 +369,8 @@ int StPicoHFJetMaker::MakeJets() {
 	double vz = mPrimVtx.z();
 	mRefmultCorrUtil->setEvent(fRunNumber, refMult, mPicoDst->event()->ZDCx(), vz);
 	int centrality = mRefmultCorrUtil->centrality9(); //0 = 0-5 %,..., 8 = 70-80 %
-	float weight = 1.0;
+    if (centrality==-1) return kStOk; //no centrality
+    float weight = 1.0;
 	weight = mRefmultCorrUtil->weight();
 	static_cast<TH1D*>(mOutList->FindObject("hweight"))->Fill(weight);
 
