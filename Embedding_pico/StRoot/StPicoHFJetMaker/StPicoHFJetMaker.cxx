@@ -409,7 +409,7 @@ int StPicoHFJetMaker::InitJets() {
     TH1::SetDefaultSumw2();
 
     mOutList->Add(new TH1D("hweight", "weight", 135, 0, 3));
-	mOutList->Add(new TH1D("hcent", "centrality", 8, 0, 8));
+	mOutList->Add(new TH1D("hcent", "centrality", 10, -1, 9));
 
     //General track QA
 	mOutList->Add(new TH2D("heta_phi_tr", "track phi vs. eta;#phi [-];#eta [-]", nphibins, phiminbin, phimaxbin, netabins, etaminbin, etamaxbin));
