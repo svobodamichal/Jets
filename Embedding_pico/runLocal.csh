@@ -9,6 +9,6 @@ set weights=(1.616e+0 1.355e-01 2.288e-02 5.524e-03 2.203e-03 3.437e-04 4.681e-0
 set pthatmin = 50
 set pthatmax = -1
 set xweight = 6.939e-09
-#root4star -l -b -q 'StRoot/macros/loadSharedHFLibraries.C' 'StRoot/macros/runPicoHFJetMaker.C("test.list","output_test",0,"BadRunList_14.list","PicoDst",'${pthatmin}', '${pthatmax}', '$xweight')'
+root4star -l -b -q 'StRoot/macros/loadSharedHFLibraries.C' 'StRoot/macros/runPicoHFJetMaker.C("test.list","output_test",0,"BadRunList_14.list","PicoDst",'${pthatmin}', '${pthatmax}', '$xweight')'
 #root -l -b -q 'StRoot/macros/loadSharedHFLibraries.C' 'StRoot/macros/runPicoHFJetMaker.C++("test.list","output_test",0,"BadRunList_14.list","HotTowerList_14.list","PicoDst")'
-gdb --quiet --args root4star -l -b -q 'StRoot/macros/loadSharedHFLibraries.C' 'StRoot/macros/runPicoHFJetMaker.C("test.list","output_test",0,"BadRunList_14.list","PicoDst",'${pthatmin}', '${pthatmax}', '$xweight')'
+#gdb --quiet --args root4star -l -b -q 'StRoot/macros/loadSharedHFLibraries.C' 'StRoot/macros/runPicoHFJetMaker.C("test.list","output_test",0,"BadRunList_14.list","PicoDst",'${pthatmin}', '${pthatmax}', '$xweight')'

@@ -409,7 +409,7 @@ int StPicoHFJetMaker::InitJets() {
     TH1::SetDefaultSumw2();
 
     mOutList->Add(new TH1D("hweight", "weight", 135, 0, 3));
-	mOutList->Add(new TH1D("hcent", "centrality", 10, -1, 9));
+	mOutList->Add(new TH1D("hcent", "centrality", 8, 0, 8));
 
     //General track QA
 	mOutList->Add(new TH2D("heta_phi_tr", "track phi vs. eta;#phi [-];#eta [-]", nphibins, phiminbin, phimaxbin, netabins, etaminbin, etamaxbin));
@@ -520,7 +520,7 @@ int StPicoHFJetMaker::InitJets() {
 		hname = Form("hNF_R0%.0lf",fR[r]*10);
 	        mOutList->Add(new TH1D(hname, "jet neutral energy fraction; NEF", 100, 0, 1));
 	
-	        for (int centbin = 1; centbin < 8; centbin++) {
+	        for (int centbin = 0; centbin < 8; centbin++) {
 			//hname = Form("hjetpT_R0%.0lf_centbin%i",fR[r]*10, centbin);
             		//mOutList->Add(new TH1D(hname, "jet p_{T}; p_{T} (GeV/c)", nptbins, 0, ptmaxbin));
 			//full jet histos
@@ -784,7 +784,7 @@ int StPicoHFJetMaker::MakeJets() {
 	// full jets
 	JetDefinition fjet_def_bkgd(kt_algorithm, fRBg);
 	AreaDefinition farea_def_bkgd(active_area_explicit_ghosts,GhostedAreaSpec(fGhostMaxrap, 1, 0.01));
-	if (centrality == 0 || centrality == 1) nJetsRemove = 2;//remove two hardest jets in central collisions, one in others
+	if (centrality == 1) nJetsRemove = 2;//remove two hardest jets in central collisions, one in others
 	Selector fselector = SelectorAbsEtaMax(1.0) * (!SelectorNHardest(nJetsRemove)) * SelectorPtMin(0.01);
 	JetMedianBackgroundEstimator fbkgd_estimator(fselector, fjet_def_bkgd, farea_def_bkgd);
 	fbkgd_estimator.set_particles(fullTracks);
