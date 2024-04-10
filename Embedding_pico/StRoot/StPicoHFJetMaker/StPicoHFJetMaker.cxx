@@ -520,7 +520,7 @@ int StPicoHFJetMaker::InitJets() {
 		hname = Form("hNF_R0%.0lf",fR[r]*10);
 	        mOutList->Add(new TH1D(hname, "jet neutral energy fraction; NEF", 100, 0, 1));
 	
-	        for (int centbin = 0; centbin < 8; centbin++) {
+	        for (int centbin = 1; centbin < 8; centbin++) {
 			//hname = Form("hjetpT_R0%.0lf_centbin%i",fR[r]*10, centbin);
             		//mOutList->Add(new TH1D(hname, "jet p_{T}; p_{T} (GeV/c)", nptbins, 0, ptmaxbin));
 			//full jet histos
@@ -631,13 +631,17 @@ int StPicoHFJetMaker::MakeJets() {
 //	if (vr > 2) cout << "Vr: " << vr << endl; 
 	mRefmultCorrUtil->setEvent(fRunNumber, refMult, mPicoDst->event()->ZDCx(), vz);
 	int centrality = mRefmultCorrUtil->centrality9(); //0 = 0-5 %,..., 8 = 70-80 %
+    if (centrality==-1) return kStOk; //no centrality
 	float Weight = 1.0;
 	Weight = mRefmultCorrUtil->weight();
 	float weight = Weight*fWeight; //centrality weight * cross section weight
 	static_cast<TH1D*>(mOutList->FindObject("hweight"))->Fill(weight);
 
+
+
     if (centrality == 0) centrality = 1; // merge 0-5% and 5-10% into 0-10%
     if (centrality == 8) centrality = 7; // merge 60-70% and 70-80% into 60-80%
+
 
     static_cast<TH1D*>(mOutList->FindObject("hcent"))->Fill(centrality, weight);
 
