@@ -892,7 +892,7 @@ int StPicoHFJetMaker::MakeJets() {
 				static_cast<TH1D*>(mOutList->FindObject(Form("hfcphi_R0%.0lf",fR[i]*10)))->Fill(cphi, weight);
                 if (constituents[ic].perp()>0.01) NumberOfConst++;
 			}
-            cout << "Number of constituents "<< NumberOfConst <<endl;
+        //    cout << "Number of constituents "<< NumberOfConst <<endl;
             static_cast<TH2D*>(mOutList->FindObject(Form("hNconst_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(NumberOfConst, pT_jet);
             static_cast<TH2D*>(mOutList->FindObject(Form("hNconstw_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(NumberOfConst, pT_jet, weight);
 
