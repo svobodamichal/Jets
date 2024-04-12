@@ -44,9 +44,9 @@ void plothisto(string prod = "combined_response")
 	TH2D *hptleads_tmp[3][9];
 
 	TH1D *hMcpT[10][3][9];
-	TH1D *hRcpT[10][3][9];	
+	TH1D *hRcpT[10][3][9];
 	TH1D *hMcMatchedpT[10][3][9];
-	TH1D *hRcMatchedpT[10][3][9];	
+	TH1D *hRcMatchedpT[10][3][9];
 	TH1D *heffi[10][3][9];
 
 

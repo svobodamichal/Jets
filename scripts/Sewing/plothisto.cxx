@@ -15,7 +15,7 @@ void plothisto(string prod = "combined_response")
 
 
 	int k=0;
-	TString c[10][3][9];
+	TString c[10][3][7];
 	//TString cf[9][2];
  	
 
@@ -33,30 +33,30 @@ void plothisto(string prod = "combined_response")
 	double R;
 	//int pTlead = 0;
 	array<double, 3> Rarr = {0.2, 0.3, 0.4};
-	array<TString, 9> centrality = {"","central", "", "", "", "","","","peripheral"};
-	array<TString, 9> centbin = {"","0-10", "", "", "", "","","","60-80"};
-	
-	TH2D* hResponseM_tmp[10][3][9];
-	TH2D* hResponseM[10][3][9];
-	TH2D* hResponseMrebin[10][3][9]; //extend axis range
-    TH2D* hDeltaR[3];
-    TH2D* hDeltaRw[3];
+	array<TString, 8> centrality = {"","central", "", "", "", "","","peripheral"};
+	array<TString, 8> centbin = {"","0-10", "", "", "", "","","60-80"};
+
+	TH2D* hResponseM_tmp[10][3][7];
+	TH2D* hResponseM[10][3][7];
+	TH2D* hResponseMrebin[10][3][7]; //extend axis range
+    TH2D* hDeltaR[3][7];
+    TH2D* hDeltaRw[3][7];
     TH2D* hEtaPhiMc_Rc[3];
     TH2D* hEtaPhiMc_Rcw[3];
 
-	TH2D *hptleads[3][9];
-	TH2D *hptleads_tmp[3][9];
+	TH2D *hptleads[3][7];
+	TH2D *hptleads_tmp[3][7];
 
-	TH1D *hMcpT[10][3][9];
-	TH1D *hRcpT[10][3][9];	
-	TH1D *hMcMatchedpT[10][3][9];
-	TH1D *hRcMatchedpT[10][3][9];	
-	TH1D *heffi[10][3][9];
+	TH1D *hMcpT[10][3][7];
+	TH1D *hRcpT[10][3][7];
+	TH1D *hMcMatchedpT[10][3][7];
+	TH1D *hRcMatchedpT[10][3][7];
+	TH1D *heffi[10][3][7];
     TH1D *hEtaMc_Rc[3];
     TH1D *hPhiMc_Rc[3];
     TH1D *hEtaMc_Rcw[3];
     TH1D *hPhiMc_Rcw[3];
-    TH1D *hMcMatchedMCpT[10][3][9];
+    TH1D *hMcMatchedMCpT[10][3][7];
 
 
 	TCanvas* can = new TCanvas("can", "can", 1600, 1400);
@@ -74,9 +74,6 @@ void plothisto(string prod = "combined_response")
 	for(double &R : Rarr)
 	{
 
-        hDeltaR[k]=(TH2D*)list1->FindObject(Form("hDeltaR_R0%.0f", R*10));
-        hDeltaR[k]->Scale(1./Nevents);
-
         hEtaPhiMc_Rc[k]=(TH2D*)list1->FindObject(Form("hEtaPhi_MC-RC_R0%.0f", R*10));
         hEtaPhiMc_Rc[k]->Scale(1./Nevents);
 
@@ -85,9 +82,6 @@ void plothisto(string prod = "combined_response")
 
         hPhiMc_Rc[k]=(TH1D*)list1->FindObject(Form("hphi_MCRC_R0%.0f", R*10));
         hPhiMc_Rc[k]->Scale(1./Nevents);
-
-        hDeltaR[k]->Add(hDeltaR[k]);
-        hDeltaR[k]->Write();
 
         hEtaPhiMc_Rc[k]->Add(hEtaPhiMc_Rc[k]);
         hEtaPhiMc_Rc[k]->Write();
@@ -99,9 +93,6 @@ void plothisto(string prod = "combined_response")
         hPhiMc_Rc[k]->Write();
 
 
-        hDeltaRw[k]=(TH2D*)list1->FindObject(Form("hDeltaRw_R0%.0f", R*10));
-        hDeltaRw[k]->Scale(1./Nevents);
-
         hEtaPhiMc_Rcw[k]=(TH2D*)list1->FindObject(Form("hEtaPhi_MC-RCw_R0%.0f", R*10));
         hEtaPhiMc_Rcw[k]->Scale(1./Nevents);
 
@@ -110,9 +101,6 @@ void plothisto(string prod = "combined_response")
 
         hPhiMc_Rcw[k]=(TH1D*)list1->FindObject(Form("hphi_MCRCw_R0%.0f", R*10));
         hPhiMc_Rcw[k]->Scale(1./Nevents);
-
-        hDeltaRw[k]->Add(hDeltaRw[k]);
-        hDeltaRw[k]->Write();
 
         hEtaPhiMc_Rcw[k]->Add(hEtaPhiMc_Rcw[k]);
         hEtaPhiMc_Rcw[k]->Write();
@@ -136,22 +124,34 @@ void plothisto(string prod = "combined_response")
 		gStyle->SetLegendFont(62);
 		gStyle->SetLegendTextSize(0.05);
 		TGaxis::SetMaxDigits(3);
-			for(int cent = 0; cent < 9; cent++)
+			for(int cent = 1; cent < 8; cent++)
 			{
+                hDeltaR[k][cent]=(TH2D*)list1->FindObject(Form("hDeltaR_R0%.0f_centbin%i", R*10,cent));
+                hDeltaR[k][cent]->Scale(1./Nevents);
+
+                hDeltaRw[k][cent]=(TH2D*)list1->FindObject(Form("hDeltaRw_R0%.0f_centbin%i", R*10,cent));
+                hDeltaRw[k][cent]->Scale(1./Nevents);
+
+                hDeltaR[k][cent]->Add(hDeltaR[k][cent]);
+                hDeltaR[k][cent]->Write();
+
+                hDeltaRw[k][cent]->Add(hDeltaRw[k][cent]);
+                hDeltaRw[k][cent]->Write();
+
 				//cout << "first" << endl;
 				for(int pTlead =0; pTlead < 10; pTlead++)
 				{
 
 
 			//	hMcpT[pTlead][k][cent]=(TH1D*)list1->FindObject(Form("hMcpT_pTl%i_R0%.0f_cent%i", pTlead, R*10,cent));
-				hMcpT[pTlead][k][cent]=(TH1D*)list1->FindObject(Form("hMCpT_pTl%i_R0%.0f_centbin%i", pTlead, R*10,cent));	
+				hMcpT[pTlead][k][cent]=(TH1D*)list1->FindObject(Form("hMCpT_pTl%i_R0%.0f_centbin%i", pTlead, R*10,cent));
 				hMcpT[pTlead][k][cent]->Scale(1./Nevents);
 				
 				//hRcpT[pTlead][k][cent]=(TH1D*)list1->FindObject(Form("hfpT_pTl%i_R0%.0f_centbin%i", pTlead, R*10,cent));	
 				//hRcpT[pTlead][k][cent]->Scale(1./Nevents);
 				
 			//	hMcMatchedpT[pTlead][k][cent]=(TH1D*)list1->FindObject(Form("hMcmatchedpT_pTl%i_R0%.0f_cent%i", pTlead, R*10,cent));	
-				hMcMatchedpT[pTlead][k][cent]=(TH1D*)list1->FindObject(Form("hMCmatchedpT_pTl%i_R0%.0f_centbin%i", pTlead, R*10,cent));		
+				hMcMatchedpT[pTlead][k][cent]=(TH1D*)list1->FindObject(Form("hMCmatchedpT_pTl%i_R0%.0f_centbin%i", pTlead, R*10,cent));
 				hMcMatchedpT[pTlead][k][cent]->Scale(1./Nevents);
 //				heffi[pTlead][k][cent]=(TH1D*)hMcMatchedpT[pTlead][k][cent]->Clone(Form("heffi_pTl%i_R0%.0f_cent%i", pTlead, R*10,cent));
 //				heffi[pTlead][k][cent]->Divide(hMcpT[pTlead][k][cent]);		
@@ -170,7 +170,7 @@ void plothisto(string prod = "combined_response")
 		
 
 				cout << "name: " << c[pTlead][k][cent] << endl;
-				hResponseM_tmp[pTlead][k][cent] = (TH2D*)list1->FindObject(c[pTlead][k][cent]);	
+				hResponseM_tmp[pTlead][k][cent] = (TH2D*)list1->FindObject(c[pTlead][k][cent]);
 				if (hResponseM_tmp[pTlead][k][cent]->GetEntries() == 0) {cout << "empty histogram: " << hResponseM_tmp[pTlead][k][cent]->GetName() << ", skipping! " << endl; continue;}
 				hResponseM_tmp[pTlead][k][cent]->SetTitle("");
 				//hResponseM_tmp[pTlead][k][cent]->RebinY(10);
@@ -195,30 +195,21 @@ void plothisto(string prod = "combined_response")
 
 				if (!(!strcmp(centrality[cent].Data(),"peripheral") || !strcmp(centrality[cent].Data(),"central"))) continue;
 			//if (centbin == 7|| centbin == 8) hrescharged[j][k]->Scale(2);
-				if (hResponseM_tmp[pTlead][k][cent-1]->GetEntries()!=0) {
-				cout << "adding "<< hResponseM[pTlead][k][cent]->GetName() << " and " << hResponseM[pTlead][k][cent-1]->GetName()<<endl;
-				//adding
-				hResponseM[pTlead][k][cent]->Add(hResponseM[pTlead][k][cent-1]);
 				//hResponseM[pTlead][k][cent]->Write();
 				
-				//heffi[pTlead][k][cent]->Add(heffi[pTlead][k][cent-1]);
 				//heffi[pTlead][k][cent]->Write();
 
 
-				hMcpT[pTlead][k][cent]->Add(hMcpT[pTlead][k][cent-1]);
                 hMcpT[pTlead][k][cent]->Write(Form("hMCpT_pTl%i_R0%.0f_%s",pTlead,R*10,centrality[cent].Data()));
-				hMcMatchedpT[pTlead][k][cent]->Add(hMcMatchedpT[pTlead][k][cent-1]);
 				hMcMatchedpT[pTlead][k][cent]->Write(Form("hMcMatchedpT_pTl%i_R0%.0f_%s",pTlead,R*10,centrality[cent].Data()));
-                hMcMatchedMCpT[pTlead][k][cent]->Add(hMcMatchedMCpT[pTlead][k][cent-1]);
                 hMcMatchedMCpT[pTlead][k][cent]->Write(Form("hMcMatchedMCpT_pTl%i_R0%.0f_%s",pTlead,R*10,centrality[cent].Data()));
-				hRcMatchedpT[pTlead][k][cent]->Add(hRcMatchedpT[pTlead][k][cent-1]);
 				hRcMatchedpT[pTlead][k][cent]->Write(Form("hRcMatchedpT_pTl%i_R0%.0f_%s",pTlead,R*10,centrality[cent].Data()));
-				}
+
 				hResponseM[pTlead][k][cent]->Draw("colz");
 				hResponseM[pTlead][k][cent]->Write();
 
 
-		latex->DrawLatex(lleft + 0*lstep, lbottom+1*lstep, Form("PYTHIA6 p+p #otimes Au+Au %s%%",centbin[cent].Data()));	
+		latex->DrawLatex(lleft + 0*lstep, lbottom+1*lstep, Form("PYTHIA6 p+p #otimes Au+Au %s%%",centbin[cent].Data()));
 		latex->DrawLatex(lleft + 0*lstep, lbottom+2*lstep, Form("Anti-k_{T}, R = %.1f, #it{p}_{T}^{lead} > %d GeV/#it{c}", R, pTlead));
 		//latex->DrawLatex(lleft, lbottom+2*lstep, Form("Char. jets, anti-k_{T}, R = %.1f", R));				
 	
