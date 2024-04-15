@@ -41,6 +41,8 @@ void plothisto(string prod = "combined_response")
 	TH2D* hResponseMrebin[10][3][7]; //extend axis range
     TH2D* hDeltaR[3][7];
     TH2D* hDeltaRw[3][7];
+    TH2D* hNconst[3][7];
+    TH2D* hNconstw[3][7];
     TH2D* hEtaPhiMc_Rc[3];
     TH2D* hEtaPhiMc_Rcw[3];
 
@@ -132,11 +134,23 @@ void plothisto(string prod = "combined_response")
                 hDeltaRw[k][cent]=(TH2D*)list1->FindObject(Form("hDeltaRw_R0%.0f_centbin%i", R*10,cent));
                 hDeltaRw[k][cent]->Scale(1./Nevents);
 
+                hNconst[k][cent]=(TH2D*)list1->FindObject(Form("hNconst_R0%.0f_centbin%i", R*10,cent));
+                hNconst[k][cent]->Scale(1./Nevents);
+
+                hNconstw[k][cent]=(TH2D*)list1->FindObject(Form("hNconstw_R0%.0f_centbin%i", R*10,cent));
+                hNconstw[k][cent]->Scale(1./Nevents);
+
                 hDeltaR[k][cent]->Add(hDeltaR[k][cent]);
                 hDeltaR[k][cent]->Write();
 
                 hDeltaRw[k][cent]->Add(hDeltaRw[k][cent]);
                 hDeltaRw[k][cent]->Write();
+
+                hNconst[k][cent]->Add(hNconst[k][cent]);
+                hNconst[k][cent]->Write();
+
+                hNconstw[k][cent]->Add(hNconstw[k][cent]);
+                hNconstw[k][cent]->Write();
 
 				//cout << "first" << endl;
 				for(int pTlead =0; pTlead < 10; pTlead++)
