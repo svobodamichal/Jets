@@ -835,8 +835,6 @@ int StPicoHFJetMaker::MakeJets() {
             for(unsigned int icc = 0; icc < constituents.size(); ++icc) {
                 if (constituents[icc].perp()>0.2) NumberOfConst++;
             }
-            static_cast<TH2D*>(mOutList->FindObject(Form("hMCNconst_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(pT_jet, NumberOfConst);
-            static_cast<TH2D*>(mOutList->FindObject(Form("hMCNconstw_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(pT_jet, NumberOfConst, weight);
 
 
                 McPtLeads.push_back(pTlead);
@@ -905,8 +903,7 @@ int StPicoHFJetMaker::MakeJets() {
                 if (constituents[ic].perp()>0.2) NumberOfConst++;
 			}
         //    cout << "Number of constituents "<< NumberOfConst <<endl;
-            static_cast<TH2D*>(mOutList->FindObject(Form("hNconst_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(pTcorr_jet, NumberOfConst);
-            static_cast<TH2D*>(mOutList->FindObject(Form("hNconstw_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(pTcorr_jet, NumberOfConst, weight);
+
 
 
 
@@ -981,6 +978,25 @@ int StPicoHFJetMaker::MakeJets() {
 			double MCmatchedphi = Matched[j].first.phi();
 			double RCmatchedeta = Matched[j].second.eta();
 			double RCmatchedphi = Matched[j].second.phi();
+
+            int NumberOfConstMC = 0;
+            int NumberOfConstRC = 0;
+
+                vector<PseudoJet> constituentsMC = sorted_by_pt(Matched[j].first.constituents());
+                    for(unsigned int ic = 0; ic < constituentsMC.size(); ++ic) {
+                        if (constituentsMC[ic].perp()>0.2) NumberOfConstMC++;
+                    }
+                vector<PseudoJet> constituentsRC = sorted_by_pt(Matched[j].second.constituents());
+                    for(unsigned int icc = 0; icc < constituentsRC.size(); ++icc) {
+                        if (constituentsRC[icc].perp()>0.2) NumberOfConstRC++;
+                    }
+
+
+            static_cast<TH2D*>(mOutList->FindObject(Form("hMCNconst_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(pT_true, NumberOfConstMC);
+            static_cast<TH2D*>(mOutList->FindObject(Form("hMCNconstw_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(pT_true, NumberOfConstMC, weight);
+
+            static_cast<TH2D*>(mOutList->FindObject(Form("hNconst_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(pT_corr_det, NumberOfConstRC);
+            static_cast<TH2D*>(mOutList->FindObject(Form("hNconstw_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(pT_corr_det, NumberOfConstRC, weight);
 
 			static_cast<TH2D*>(mOutList->FindObject(Form("hetaphi_MCmatched_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(MCmatchedeta,MCmatchedphi, weight);
 			static_cast<TH2D*>(mOutList->FindObject(Form("hetaphi_RCmatched_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(RCmatchedeta,RCmatchedphi, weight);	
