@@ -532,6 +532,8 @@ int StPicoHFJetMaker::InitJets() {
                 mOutList->Add(new TH2D(hname, "Nconst vs reco pT",nptbins, ptminbin, ptmaxbin,150, 0, 150));
                 hname = Form("hNconstw_R0%.0lf_centbin%i",fR[r]*10, centbin);
                 mOutList->Add(new TH2D(hname, "Nconst vs reco pT",nptbins, ptminbin, ptmaxbin,150, 0, 150));
+                hname = Form("hMCNconst_R0%.0lf_centbin%i",fR[r]*10, centbin);
+                mOutList->Add(new TH2D(hname, "Nconst vs true pT",nptbins, ptminbin, ptmaxbin,150, 0, 150));
                 hname = Form("hMCNconstw_R0%.0lf_centbin%i",fR[r]*10, centbin);
                 mOutList->Add(new TH2D(hname, "Nconst vs true pT",nptbins, ptminbin, ptmaxbin,150, 0, 150));
 
@@ -833,6 +835,7 @@ int StPicoHFJetMaker::MakeJets() {
             for(unsigned int icc = 0; icc < constituents.size(); ++icc) {
                 if (constituents[icc].perp()>0.2) NumberOfConst++;
             }
+            static_cast<TH2D*>(mOutList->FindObject(Form("hMCNconst_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(pT_jet, NumberOfConst);
             static_cast<TH2D*>(mOutList->FindObject(Form("hMCNconstw_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(pT_jet, NumberOfConst, weight);
 
 
