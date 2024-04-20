@@ -43,6 +43,7 @@ void plothisto(string prod = "combined_response")
     TH2D* hDeltaRw[3][7];
     TH2D* hNconst[3][7];
     TH2D* hNconstw[3][7];
+    TH2D* hMCNconst[3][7];
     TH2D* hMCNconstw[3][7];
     TH2D* hEtaPhiMc_Rc[3];
     TH2D* hEtaPhiMc_Rcw[3];
@@ -141,6 +142,9 @@ void plothisto(string prod = "combined_response")
                 hNconstw[k][cent]=(TH2D*)list1->FindObject(Form("hNconstw_R0%.0f_centbin%i", R*10,cent));
                 hNconstw[k][cent]->Scale(1./Nevents);
 
+                hMCNconst[k][cent]=(TH2D*)list1->FindObject(Form("hMCNconst_R0%.0f_centbin%i", R*10,cent));
+                hMCNconst[k][cent]->Scale(1./Nevents);
+
                 hMCNconstw[k][cent]=(TH2D*)list1->FindObject(Form("hMCNconstw_R0%.0f_centbin%i", R*10,cent));
                 hMCNconstw[k][cent]->Scale(1./Nevents);
 
@@ -155,6 +159,9 @@ void plothisto(string prod = "combined_response")
 
                 hNconstw[k][cent]->Add(hNconstw[k][cent]);
                 hNconstw[k][cent]->Write();
+
+                hMCNconst[k][cent]->Add(hMCNconst[k][cent]);
+                hMCNconst[k][cent]->Write();
 
                 hMCNconstw[k][cent]->Add(hMCNconstw[k][cent]);
                 hMCNconstw[k][cent]->Write();

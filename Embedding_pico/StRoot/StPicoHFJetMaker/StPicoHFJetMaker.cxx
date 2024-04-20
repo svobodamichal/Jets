@@ -536,6 +536,15 @@ int StPicoHFJetMaker::InitJets() {
                 mOutList->Add(new TH2D(hname, "Nconst vs true pT",nptbins, ptminbin, ptmaxbin,150, 0, 150));
                 hname = Form("hMCNconstw_R0%.0lf_centbin%i",fR[r]*10, centbin);
                 mOutList->Add(new TH2D(hname, "Nconst vs true pT",nptbins, ptminbin, ptmaxbin,150, 0, 150));
+                hname = Form("hConstpTMC_R0%.0lf_centbin%i",fR[r]*10, centbin);
+                mOutList->Add(new TH1D(hname, "MC constituents pT", nptbins, ptminbin, ptmaxbin));
+                hname = Form("hConstpTRC_R0%.0lf_centbin%i",fR[r]*10, centbin);
+                mOutList->Add(new TH1D(hname, "RC constituents pT", nptbins, ptminbin, ptmaxbin));
+                hname = Form("hConstpTMatchedMC_R0%.0lf_centbin%i",fR[r]*10, centbin);
+                mOutList->Add(new TH1D(hname, "matched MC constituents pT", nptbins, ptminbin, ptmaxbin));
+                hname = Form("hConstpTMatchedRC_R0%.0lf_centbin%i",fR[r]*10, centbin);
+                mOutList->Add(new TH1D(hname, "matched RC constituents pT", nptbins, ptminbin, ptmaxbin));
+
 
             		hname = Form("hfjetpT_R0%.0lf_centbin%i",fR[r]*10, centbin);
 		        mOutList->Add(new TH1D(hname, "full jet p_{T}; p_{T} (GeV/c)", nptbins, 0, ptmaxbin));
@@ -833,7 +842,10 @@ int StPicoHFJetMaker::MakeJets() {
                	 	vector<PseudoJet> constituents = sorted_by_pt(McJets[pjet].constituents());							
                 	float pTlead = constituents[0].perp();
             for(unsigned int icc = 0; icc < constituents.size(); ++icc) {
-                if (constituents[icc].perp()>0.2) NumberOfConst++;
+                if (constituents[icc].perp()>0.2) {
+                    static_cast<TH1D*>(mOutList->FindObject(Form("hConstpTMC_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(constituents[icc].perp());
+                    NumberOfConst++;
+                }
             }
 
 
@@ -900,7 +912,10 @@ int StPicoHFJetMaker::MakeJets() {
 				float cphi = constituents[ic].phi();
 				static_cast<TH1D*>(mOutList->FindObject(Form("hfceta_R0%.0lf",fR[i]*10)))->Fill(ceta, weight);
 				static_cast<TH1D*>(mOutList->FindObject(Form("hfcphi_R0%.0lf",fR[i]*10)))->Fill(cphi, weight);
-                if (constituents[ic].perp()>0.2) NumberOfConst++;
+                if (constituents[ic].perp()>0.2) {
+                    static_cast<TH1D*>(mOutList->FindObject(Form("hConstpTRC_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(constituents[ic].perp());
+                    NumberOfConst++;
+                }
 			}
         //    cout << "Number of constituents "<< NumberOfConst <<endl;
 
@@ -984,11 +999,17 @@ int StPicoHFJetMaker::MakeJets() {
 
                 vector<PseudoJet> constituentsMC = sorted_by_pt(Matched[j].first.constituents());
                     for(unsigned int ic = 0; ic < constituentsMC.size(); ++ic) {
-                        if (constituentsMC[ic].perp()>0.2) NumberOfConstMC++;
+                        if (constituentsMC[ic].perp()>0.2) {
+                            static_cast<TH1D*>(mOutList->FindObject(Form("hConstpTMatchedMC_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(constituentsMC[ic].perp());
+                            NumberOfConstMC++;
+                        }
                     }
                 vector<PseudoJet> constituentsRC = sorted_by_pt(Matched[j].second.constituents());
                     for(unsigned int icc = 0; icc < constituentsRC.size(); ++icc) {
-                        if (constituentsRC[icc].perp()>0.2) NumberOfConstRC++;
+                        if (constituentsRC[icc].perp()>0.2) {
+                            static_cast<TH1D*>(mOutList->FindObject(Form("hConstpTMatchedRC_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(constituentsRC[icc].perp());
+                            NumberOfConstRC++;
+                        }
                     }
 
 
