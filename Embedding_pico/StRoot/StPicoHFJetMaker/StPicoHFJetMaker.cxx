@@ -843,7 +843,9 @@ int StPicoHFJetMaker::MakeJets() {
                 	float pTlead = constituents[0].perp();
             for(unsigned int icc = 0; icc < constituents.size(); ++icc) {
                 if (constituents[icc].perp()>0.2) {
+                    if(pT_jet>20.0){
                     static_cast<TH1D*>(mOutList->FindObject(Form("hConstpTMC_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(constituents[icc].perp());
+                    }
                     NumberOfConst++;
                 }
             }
@@ -913,7 +915,9 @@ int StPicoHFJetMaker::MakeJets() {
 				static_cast<TH1D*>(mOutList->FindObject(Form("hfceta_R0%.0lf",fR[i]*10)))->Fill(ceta, weight);
 				static_cast<TH1D*>(mOutList->FindObject(Form("hfcphi_R0%.0lf",fR[i]*10)))->Fill(cphi, weight);
                 if (constituents[ic].perp()>0.2) {
+                    if(pT_jet>20.0){
                     static_cast<TH1D*>(mOutList->FindObject(Form("hConstpTRC_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(constituents[ic].perp());
+                    }
                     NumberOfConst++;
                 }
 			}
@@ -1000,14 +1004,18 @@ int StPicoHFJetMaker::MakeJets() {
                 vector<PseudoJet> constituentsMC = sorted_by_pt(Matched[j].first.constituents());
                     for(unsigned int ic = 0; ic < constituentsMC.size(); ++ic) {
                         if (constituentsMC[ic].perp()>0.2) {
-                            static_cast<TH1D*>(mOutList->FindObject(Form("hConstpTMatchedMC_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(constituentsMC[ic].perp());
+                            if(pT_true>20.0) {
+                                static_cast<TH1D *>(mOutList->FindObject(Form("hConstpTMatchedMC_R0%.0lf_centbin%i", fR[i] * 10, centrality)))->Fill(constituentsMC[ic].perp());
+                            }
                             NumberOfConstMC++;
                         }
                     }
                 vector<PseudoJet> constituentsRC = sorted_by_pt(Matched[j].second.constituents());
                     for(unsigned int icc = 0; icc < constituentsRC.size(); ++icc) {
                         if (constituentsRC[icc].perp()>0.2) {
-                            static_cast<TH1D*>(mOutList->FindObject(Form("hConstpTMatchedRC_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(constituentsRC[icc].perp());
+                            if(pT_corr_det>20.0) {
+                                static_cast<TH1D *>(mOutList->FindObject(Form("hConstpTMatchedRC_R0%.0lf_centbin%i", fR[i] * 10, centrality)))->Fill(constituentsRC[icc].perp());
+                            }
                             NumberOfConstRC++;
                         }
                     }
