@@ -853,8 +853,11 @@ int StPicoHFJetMaker::MakeJets() {
                     if(pT_jet>20.0){
                         if (constituents[icc].user_index() == 0 || constituents[icc].user_index() == 9999) {
 
-                            static_cast<TH1D *>(mOutList->FindObject(Form("hConstpTMC_R0%.0lf_centbin%i", fR[i] * 10, centrality)))->Fill(constituents[icc].perp());
+                            static_cast<TH1D *>(mOutList->FindObject(Form("hConstpTMCN_R0%.0lf_centbin%i", fR[i] * 10, centrality)))->Fill(constituents[icc].perp());
                             }
+                        else {
+                            static_cast<TH1D *>(mOutList->FindObject(Form("hConstpTMCCH_R0%.0lf_centbin%i", fR[i] * 10, centrality)))->Fill(constituents[icc].perp());
+                        }
                         }
                     NumberOfConst++;
                 }
