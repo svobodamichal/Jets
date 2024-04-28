@@ -927,14 +927,14 @@ int StPicoHFJetMaker::MakeJets() {
 				static_cast<TH1D*>(mOutList->FindObject(Form("hfceta_R0%.0lf",fR[i]*10)))->Fill(ceta, weight);
 				static_cast<TH1D*>(mOutList->FindObject(Form("hfcphi_R0%.0lf",fR[i]*10)))->Fill(cphi, weight);
                 if (constituents[ic].perp()>0.2) {
-                    if(pT_jet>20.0){
+                    if(pT_jet>20.0){/*
                         if (constituents[ic].user_index() == 0 || constituents[ic].user_index()== 9999) {
                             static_cast<TH1D*>(mOutList->FindObject(Form("hConstpTMatchedRCN_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(constituents[ic].perp());
                         }
                         else {
                             static_cast<TH1D*>(mOutList->FindObject(Form("hConstpTRCCH_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(constituents[ic].perp());
                         }
-                    }
+                    }*/
                     NumberOfConst++;
                 }
 			}
