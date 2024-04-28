@@ -1039,7 +1039,13 @@ int StPicoHFJetMaker::MakeJets() {
                     for(unsigned int icc = 0; icc < constituentsRC.size(); ++icc) {
                         if (constituentsRC[icc].perp()>0.2) {
                             if(pT_corr_det>20.0) {
-                                static_cast<TH1D *>(mOutList->FindObject(Form("hConstpTMatchedRC_R0%.0lf_centbin%i", fR[i] * 10, centrality)))->Fill(constituentsRC[icc].perp());
+                                if (constituentsRC[icc].user_index() == 0 || constituentsRC[icc].user_index() == 9999) {
+
+                                    static_cast<TH1D *>(mOutList->FindObject(Form("hConstpTMatchedRCN_R0%.0lf_centbin%i", fR[i] * 10, centrality)))->Fill(constituentsRC[icc].perp());
+                                }
+                                else {
+                                    static_cast<TH1D *>(mOutList->FindObject(Form("hConstpTMatchedRCCH_R0%.0lf_centbin%i", fR[i] * 10, centrality)))->Fill(constituentsRC[icc].perp());
+                                }
                             }
                             NumberOfConstRC++;
                         }
