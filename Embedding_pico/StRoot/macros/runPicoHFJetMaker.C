@@ -215,9 +215,9 @@ void runPicoHFJetMaker(const Char_t *inputFile, const Char_t *outputFile="output
 
   picoCuts->setCutDcaMin(1.0);
   picoCuts->setCutEta(1);
-  picoCuts->setCutPtRange(1.0,30.0); //default
+  picoCuts->setCutPtRange(0.2,30.0); //default
   //picoCuts->setCutPtRange(0.5,30.0);  
-  picoCuts->setCutERange(1.0,30.0); //changed below //used for clustering
+  picoCuts->setCutERange(0.2,30.0); //changed below //used for clustering
 
 
  /* vector<float> R; R.push_back(0.2); R.push_back(0.3); R.push_back(0.4); R.push_back(0.5);
