@@ -679,7 +679,7 @@ int StPicoHFJetMaker::MakeJets() {
 		int geantId = mctrk->geantId();
 		double mcpt = mctrk->pt();
 		double mceta = mctrk->eta();
-		if ((geantId > 3 && geantId < 7) || fabs(mceta) > 1.0 || mcpt < 0.2) continue;
+		if ((geantId > 3 && geantId < 7) || fabs(mceta) > 1.0 || mcpt < 1.0) continue;
 		double mcp = mctrk->ptot(); 
 		TVector3 mcmom = mctrk->p();
    		double mcphi =mcmom.Phi();
