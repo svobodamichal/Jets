@@ -63,7 +63,7 @@ void ploteffi(string prod = "all")
 		//cout << "first" << endl;
 		for(int pTlead =0; pTlead < 10; pTlead++)
 		{
-			hMcpT_central_tmp[pTlead][k]=(TH1D*)f1->Get(Form("hMCpT_pTl%i_R0%.0f_centbin1", pTlead, R*10));
+			hMcpT_central_tmp[pTlead][k]=(TH1D*)f1->Get(Form("hMCpT_pTl%i_R0%.0f_central", pTlead, R*10));
 			hMcpT_central_tmp[pTlead][k]->Rebin(5);
 			
 			hMcpT_central[pTlead][k] = new TH1D(Form("hMCpT_pTl%i_R0%.0f_central", pTlead, R*10), "", 120,0,60);
@@ -73,13 +73,13 @@ void ploteffi(string prod = "all")
 				hMcpT_central[pTlead][k]->SetBinError(x,hMcpT_central_tmp[pTlead][k]->GetBinError(x+80));
 			}
 			
-			hMcMatchedpT_central[pTlead][k]=(TH1D*)f1->Get(Form("hMCmatchedpT_pTl%i_R0%.0f_centbin1", pTlead, R*10));	
+			hMcMatchedpT_central[pTlead][k]=(TH1D*)f1->Get(Form("hMcMatchedMCpT_pTl%i_R0%.0f_central", pTlead, R*10));
 			hMcMatchedpT_central[pTlead][k]->Rebin(5);
 			heffi_central[pTlead][k]=(TH1D*)hMcMatchedpT_central[pTlead][k]->Clone(Form("heffi_pTl%i_R0%.0f_central", pTlead, R*10));
 			//heffi_central[pTlead][k]->Divide(hMcpT_central[pTlead][k]);	
 			heffi_central[pTlead][k]->Divide(hMcMatchedpT_central[pTlead][k],hMcpT_central[pTlead][k],1,1,"B");	
 					
-			hMcpT_peripheral_tmp[pTlead][k]=(TH1D*)f1->Get(Form("hMCpT_pTl%i_R0%.0f_centbin8", pTlead, R*10));
+			hMcpT_peripheral_tmp[pTlead][k]=(TH1D*)f1->Get(Form("hMCpT_pTl%i_R0%.0f_peripheral", pTlead, R*10));
 			hMcpT_peripheral_tmp[pTlead][k]->Rebin(5);
 						
 			hMcpT_peripheral[pTlead][k] = new TH1D(Form("hMCpT_pTl%i_R0%.0f_peripheral", pTlead, R*10), "", 120,0,60);
@@ -90,7 +90,7 @@ void ploteffi(string prod = "all")
 			}
 			
 			
-			hMcMatchedpT_peripheral[pTlead][k]=(TH1D*)f1->Get(Form("hMCmatchedpT_pTl%i_R0%.0f_centbin8", pTlead, R*10));	
+			hMcMatchedpT_peripheral[pTlead][k]=(TH1D*)f1->Get(Form("hMcMatchedMCpT_pTl%i_R0%.0f_peripheral", pTlead, R*10));
 			hMcMatchedpT_peripheral[pTlead][k]->Rebin(5);
 			heffi_peripheral[pTlead][k]=(TH1D*)hMcMatchedpT_peripheral[pTlead][k]->Clone(Form("heffi_pTl%i_R0%.0f_peripheral", pTlead, R*10));
 			//heffi_peripheral[pTlead][k]->Divide(hMcpT_peripheral[pTlead][k]);			
