@@ -215,7 +215,7 @@ void runPicoHFJetMaker(const Char_t *inputFile, const Char_t *outputFile="output
 
   picoCuts->setCutDcaMin(1.0);
   picoCuts->setCutEta(1);
-  picoCuts->setCutPtRange(0.5,30.0); //default
+  picoCuts->setCutPtRange(0.2,30.0); //default
   //picoCuts->setCutPtRange(0.5,30.0);  
   picoCuts->setCutERange(0.2,30.0); //changed below //used for clustering // not used
 
@@ -240,7 +240,7 @@ void runPicoHFJetMaker(const Char_t *inputFile, const Char_t *outputFile="output
   stPicoHFJetMaker->setR(R);
   stPicoHFJetMaker->setJetPtMin(0.2); //default
   //stPicoHFJetMaker->setJetPtMin(0.5);
-  stPicoHFJetMaker->setCutETmin(0.5);
+  stPicoHFJetMaker->setCutETmin(0.2);
   stPicoHFJetMaker->setAcuts(Acuts);
   stPicoHFJetMaker->setNJetsRemove(1);
   stPicoHFJetMaker->setR_bg(0.3);
