@@ -1,7 +1,7 @@
 #include "util.h"
 
 
-//will take input histograms from .root file and add together histos for central and peripheral collisions. Output: .root file. 
+//will take input histograms from .root file and add together histos for central and peripheral collisions. Output: .root file.
 
 using namespace std;
 
@@ -9,7 +9,7 @@ using namespace std;
 //void plotspectra(string prod = "P18ih")
 void preparehistosforunfolding(string prod = "trig")
 {
- 
+
 //vpd mb 30+5
 	/*TFile *f1 = TFile::Open(Form("result_%s_low.root", prod.c_str()));
 	TFile *fout1 = new TFile(Form("spec_%s_low.root", prod.c_str()), "recreate");*/
@@ -27,9 +27,9 @@ void preparehistosforunfolding(string prod = "trig")
 	int l=0;
 
 	TString cf[7][9];
- 	
 
-	TList* list1 = (TList *)f1->Get("stPicoHFJetMaker"); 
+
+	TList* list1 = (TList *)f1->Get("stPicoHFJetMaker");
 
 
 	double R;
@@ -54,18 +54,18 @@ void preparehistosforunfolding(string prod = "trig")
 					k=0;
 				for(int &centbin : centbins)
 				{
-						j=0;	
+						j=0;
 					for(int &pTlead : pTarr)
 					{
 									//cout << "third" << endl;
-					//if (pTlead > 0) {			
+					//if (pTlead > 0) {
 						cf[j][k] = Form("hfpT_pTl%i_R0%.0f_centbin%i", pTlead, R*10, centbin);
 						//} else {c[j][k] = Form("hjetpT_R0%.0f_centbin%i_corr", R*10, centbin);cf[j][k] = Form("hfjetpT_R0%.0f_centbin%i_corr", R*10, centbin);}
-		
+
 
 	//cout << "name: " << c[j][k] << endl;
-		
-			hfull[j][k] = (TH1D*)list1->FindObject(cf[j][k]);	
+
+			hfull[j][k] = (TH1D*)list1->FindObject(cf[j][k]);
 			if (hfull[j][k]->GetEntries() == 0) {cout << "empty histogram: " << hfull[j][k]->GetName() << ", skipping! " << endl; continue;}
 			hresfull[j][k] = (TH1D*)hfull[j][k]->Clone(hfull[j][k]->GetName());
 			hresfull[j][k]->SetTitle("");
@@ -86,21 +86,21 @@ void preparehistosforunfolding(string prod = "trig")
 		hresfull[i][0]->Add(hresfull[i][1]);
 
 		}
-		
+
 		for (int i = 0; i<7; i++) {
 		TString namecent = Form("hfpT_pTl%d_R0%.0f_peripheral", pTarr[i], R*10);
 		hresfull[i][8]->Write(namecent);
 		namecent = Form("hfpT_pTl%d_R0%.0f_central", pTarr[i], R*10);
 		hresfull[i][0]->Write(namecent);
-		
+
 		}
 
-		
+
 		l++;
 
-		//leg->Clear();	
-	}	
+		//leg->Clear();
+	}
 
-	fout1->Close();		
+	fout1->Close();
 
 }
