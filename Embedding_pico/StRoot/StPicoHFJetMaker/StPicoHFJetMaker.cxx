@@ -890,11 +890,11 @@ int StPicoHFJetMaker::MakeJets() {
 		for(unsigned int pjet = 0; pjet < fjets.size(); pjet++) {
 		        vector<PseudoJet> constituents = sorted_by_pt(fjets[pjet].constituents());
 			//look only for jets with associated trigger tower
-	/*		bool istriggerjet = false;
+			bool istriggerjet = false;
 			for(unsigned int ic = 0; ic < constituents.size(); ++ic) {
 				if (constituents[ic].user_index() == 9999) {istriggerjet = true; break;}
 			}
-			if (!istriggerjet) continue;*/
+			if (!istriggerjet) continue;
                 	float phi_jet = fjets[pjet].phi();
                 	float eta_jet = fjets[pjet].eta();
                 	float pT_jet = fjets[pjet].perp();
