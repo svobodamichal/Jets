@@ -881,7 +881,7 @@ int StPicoHFJetMaker::MakeJets() {
         	//run full jet reconstruction
 		ClusterSequenceArea fclust_seq_hard(fullTracks, fjet_def, farea_def);
             	vector<PseudoJet> fjets_all = sorted_by_pt(fclust_seq_hard.inclusive_jets(fJetPtMin));
-                Selector fFiducial_cut_selector = SelectorAbsEtaMax(maxRapJet)* SelectorPtMax(1.5*fpThatmax); //throw out jets with pT larger than 1.5*pThat (upper edge) to eliminate high-weight fluctuations;// Fiducial cut for jets
+                Selector fFiducial_cut_selector = SelectorAbsEtaMax(maxRapJet); //throw out jets with pT larger than 1.5*pThat (upper edge) to eliminate high-weight fluctuations;// Fiducial cut for jets
             	vector<PseudoJet> fjets = fFiducial_cut_selector(fjets_all);
 
 		int naccJets = 0;

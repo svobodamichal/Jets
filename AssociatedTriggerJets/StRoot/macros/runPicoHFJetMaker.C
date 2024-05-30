@@ -215,9 +215,9 @@ void runPicoHFJetMaker(const Char_t *inputFile, const Char_t *outputFile="output
 
   picoCuts->setCutDcaMin(1.0);
   picoCuts->setCutEta(1);
-  picoCuts->setCutPtRange(1.0,30.0); //default
+  picoCuts->setCutPtRange(0.2,30.0); //default
   //picoCuts->setCutPtRange(0.5,30.0);  
-  picoCuts->setCutERange(1.0,30.0); //changed below //used for clustering
+  picoCuts->setCutERange(0.2,30.0); //changed below //used for clustering
 
 
  /* vector<float> R; R.push_back(0.2); R.push_back(0.3); R.push_back(0.4); R.push_back(0.5);
@@ -240,7 +240,7 @@ void runPicoHFJetMaker(const Char_t *inputFile, const Char_t *outputFile="output
   stPicoHFJetMaker->setR(R);
   stPicoHFJetMaker->setJetPtMin(0.2); //default
   //stPicoHFJetMaker->setJetPtMin(0.5);
-  stPicoHFJetMaker->setCutETmin(1.0);
+  stPicoHFJetMaker->setCutETmin(0.2);
   stPicoHFJetMaker->setAcuts(Acuts);
   stPicoHFJetMaker->setNJetsRemove(1);
   stPicoHFJetMaker->setR_bg(0.3);
@@ -255,7 +255,7 @@ void runPicoHFJetMaker(const Char_t *inputFile, const Char_t *outputFile="output
     
   stPicoHFJetMaker->setTriggerThreshold(4.2); //~4.2 is the HT2 threshold
 
-  stPicoHFJetMaker->setMaxNeutralFraction(0.99); //default
+  stPicoHFJetMaker->setMaxNeutralFraction(0.95); //default
     //stPicoHFJetMaker->setMaxNeutralFraction(95); //turn off for neutral jets
 
 	stPicoHFJetMaker->setMaxDcaZHadronCorr(3.0); //cm, max DCA_z for global tracks used for hadronic correction 

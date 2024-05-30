@@ -255,7 +255,7 @@ void runPicoHFJetMaker(const Char_t *inputFile, const Char_t *outputFile="output
     
   stPicoHFJetMaker->setTriggerThreshold(4.2); //~4.2 is the HT2 threshold
 
-  stPicoHFJetMaker->setMaxNeutralFraction(0.99); //default
+  stPicoHFJetMaker->setMaxNeutralFraction(0.95); //default
     //stPicoHFJetMaker->setMaxNeutralFraction(95); //turn off for neutral jets
 
 	stPicoHFJetMaker->setMaxDcaZHadronCorr(3.0); //cm, max DCA_z for global tracks used for hadronic correction 
