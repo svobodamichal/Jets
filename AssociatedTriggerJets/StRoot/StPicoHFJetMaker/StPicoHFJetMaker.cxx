@@ -138,7 +138,9 @@ int StPicoHFJetMaker::InitJets() {
     //mOutList->Add(new TH2D("hE_tow", "energy vs tower ID;tower ID;E [GeV]", 4800, 1, 4800, 300, -0.5, 29.5));
     //mOutList->Add(new TH2D("hp_tow", "track momentum vs tower ID;tower ID;p [GeV/c]", 4800, 1, 4800, 300, -0.5, 29.5));
   //mOutList->Add(new TH2D("heta_phi_tow", "tower eta vs phi; #eta [-]; #phi [-]", netabins, etaminbin, etamaxbin, nphibins, phiminbin, phimaxbin));		
-	  mOutList->Add(new TH2D("heta_phi_tow", "tower eta vs phi; #eta [-]; #phi [-]", netabins/5, etaminbin, etamaxbin, nphibins, phiminbin, phimaxbin));		
+	  mOutList->Add(new TH2D("heta_phi_tow", "tower eta vs phi; #eta [-]; #phi [-]", netabins/5, etaminbin, etamaxbin, nphibins, phiminbin, phimaxbin));
+      mOutList->Add(new TH1D("hET_tow", "tower ET; E_{T} (GeV)", npttrackbins, pttrackmin, pttrackmax));
+
 
     if (isMcMode()) {cout << "MC mode activated" << endl;
         //TODO: Add required histograms for MC Mode
@@ -409,7 +411,8 @@ int StPicoHFJetMaker::MakeJets() {
 		float Toweta = vertexCorrectedEta(Toweta_tmp, vz); //max eta 1.05258 max difference: ET = 0.124452 for E = 0.2, if we cut on |Vz| < 30 cm
 		static_cast<TH2D*>(mOutList->FindObject("heta_phi_tow"))->Fill(Toweta, Towphi+TMath::Pi(), weight);
 		double ET = towE/cosh(Toweta);
-		if (ET > 30) {/*cout << towE << endl;*/ return kStOK;} //discard events with E > 30 GeV towers 
+        static_cast<TH1D*>(mOutList->FindObject("hET_tow"))->Fill(ET, weight);
+        if (ET > 30) {/*cout << towE << endl;*/ return kStOK;} //discard events with E > 30 GeV towers
 		//no clustering
 		double px,py,pz;
 		//px = towE*cos(Towphi)/cosh(Toweta);
