@@ -15,7 +15,7 @@ pthatmax="${pthat[i+1]}"
 xweight="${weights[i]}"
 
 echo "$pthatmin $pthatmax $xweight"
-list="filelists/pythia6picoDsts_${pthatmin}_${pthatmax}_2.list"
+list="filelists/pythia6picoDsts_${pthatmin}_${pthatmax}.list"
 
 #pthatmin="25"
 #pthatmax="30"
