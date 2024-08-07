@@ -734,8 +734,10 @@ int StPicoHFJetMaker::MakeJets() {
 		float Toweta_tmp = 0, Towphi = 0;
 		mEmcGeom->getEtaPhi(realtowID,Toweta_tmp,Towphi);
         StThreeVectorF towerPosition = mEmcPosition->getPosFromVertex(StThreeVectorF(mPrimVtx.x(),mPrimVtx.y(),mPrimVtx.z()), realtowID);
-    //    float Toweta = vertexCorrectedEta(Toweta_tmp, vz); //max eta 1.05258 max difference: ET = 0.124452 for E = 0.2, if we cut on |Vz| < 30 cm
+        float Toweta2 = vertexCorrectedEta(Toweta_tmp, vz); //max eta 1.05258 max difference: ET = 0.124452 for E = 0.2, if we cut on |Vz| < 30 cm
         float Toweta = towerPosition.pseudoRapidity();
+
+        cout << "Toweta: " << Toweta << " Toweta2: " << Toweta2 << endl;
 		static_cast<TH2D*>(mOutList->FindObject("heta_phi_tow"))->Fill(Toweta, Towphi+TMath::Pi(), weight);
 		double ET = towE/cosh(Toweta);
 		static_cast<TH1D*>(mOutList->FindObject("hET_tow"))->Fill(ET, weight);
