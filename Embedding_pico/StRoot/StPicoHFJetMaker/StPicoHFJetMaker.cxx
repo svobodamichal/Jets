@@ -710,6 +710,9 @@ int StPicoHFJetMaker::MakeJets() {
 	
 	GetCaloTrackMomentum(mPicoDst,mPrimVtx); //fill array Sump with momenta of tracks which are matched to BEMC
 
+    StEmcPosition* mEmcPosition;
+    mEmcPosition = new StEmcPosition();
+
 	double TOWE = 0;
 	for (int iTow = 0; iTow < 4800; iTow++){ //get btow info
 		StPicoBTowHit *towHit = mPicoDst->btowHit(iTow);
@@ -730,7 +733,8 @@ int StPicoHFJetMaker::MakeJets() {
 		mEmcGeom = StEmcGeom::getEmcGeom("bemc");
 		float Toweta_tmp = 0, Towphi = 0;
 		mEmcGeom->getEtaPhi(realtowID,Toweta_tmp,Towphi);
-		float Toweta = vertexCorrectedEta(Toweta_tmp, vz); //max eta 1.05258 max difference: ET = 0.124452 for E = 0.2, if we cut on |Vz| < 30 cm
+        StThreeVectorF towerPosition = mEmcPosition->getPosFromVertex(StThreeVectorF(mPrimVtx.x(),mPrimVtx.y(),mPrimVtx.z()), realtowID);
+        float Toweta = vertexCorrectedEta(Toweta_tmp, vz); //max eta 1.05258 max difference: ET = 0.124452 for E = 0.2, if we cut on |Vz| < 30 cm
 		static_cast<TH2D*>(mOutList->FindObject("heta_phi_tow"))->Fill(Toweta, Towphi+TMath::Pi(), weight);
 		double ET = towE/cosh(Toweta);
 		static_cast<TH1D*>(mOutList->FindObject("hET_tow"))->Fill(ET, weight);
