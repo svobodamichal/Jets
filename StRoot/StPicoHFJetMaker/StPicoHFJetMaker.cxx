@@ -382,8 +382,8 @@ int StPicoHFJetMaker::MakeJets() {
 		if (!towHit || towHit->isBad()) {/*cout << "bad tower information" << endl; TowArr.push_back(-1111); TowEta.push_back(-1111); TowPhi.push_back(-1111); Clusters.push_back(ids); */continue;} //if the tower is bad or missing info
 		int realtowID = towHit->numericIndex2SoftId(iTow);
 		//if (any_of(begin(BadTowerArr), end(BadTowerArr), [=](int n){return n == realtowID;})) {
-		if (BadTowerMap[realtowID]) {		
             cout <<iTow<< " bad tower " << realtowID << endl;
+            if (BadTowerMap[realtowID]) {
 			//TowArr.push_back(-1111); TowEta.push_back(-1111); TowPhi.push_back(-1111); Clusters.push_back(ids);//if the tower is bad
 			continue;} //exclude bad towers
 

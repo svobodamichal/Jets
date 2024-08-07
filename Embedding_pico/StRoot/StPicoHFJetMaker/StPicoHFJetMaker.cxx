@@ -715,7 +715,8 @@ int StPicoHFJetMaker::MakeJets() {
 		StPicoBTowHit *towHit = mPicoDst->btowHit(iTow);
 		if (!towHit || towHit->isBad()) continue; //if the tower is marked as bad or missing info
 		int realtowID = towHit->numericIndex2SoftId(iTow);
-		if (BadTowerMap[realtowID]) continue; //exclude bad towers (map in JetInfo.h)
+        cout <<iTow<< " bad tower " << realtowID << endl;
+        if (BadTowerMap[realtowID]) continue; //exclude bad towers (map in JetInfo.h)
 
 		double towE = GetTowerCalibEnergy(iTow+1); //get tower energy
 		TOWE=towE; //just keep track of the original energy for trigger approximation
