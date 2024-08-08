@@ -399,7 +399,7 @@ int StPicoHFJetMaker::MakeJets() {
 
 		double towE = GetTowerCalibEnergy(iTow+1); //get tower energy
 
-        if(towErr = true){
+        if(towErr == true){
 
             towE = towE - 0.038*towE;
         }
@@ -438,7 +438,7 @@ int StPicoHFJetMaker::MakeJets() {
     //loop over primary tracks
 	for (unsigned int i = 0; i < mIdxPicoParticles.size(); i++) {
         	StPicoTrack *trk = mPicoDst->track(mIdxPicoParticles[i]);
-        if(trackErr = true) {
+        if(trackErr == true) {
             double randomNumber = randGen.Rndm();
             if (randomNumber > 0.96) { continue; }
         }

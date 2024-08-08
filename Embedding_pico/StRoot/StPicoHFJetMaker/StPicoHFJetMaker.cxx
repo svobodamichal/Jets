@@ -723,7 +723,6 @@ int StPicoHFJetMaker::MakeJets() {
 		double towE = GetTowerCalibEnergy(iTow+1); //get tower energy
 		TOWE=towE; //just keep track of the original energy for trigger approximation
         if(towErr == true){
-            cout << "towErr  "<< towErr << endl;
             towE = towE - 0.038*towE;
         }
         if( towE > 5.0)
@@ -769,7 +768,7 @@ int StPicoHFJetMaker::MakeJets() {
 	//loop over primary tracks
 	for (unsigned int i = 0; i < mIdxPicoParticles.size(); i++) {
         	StPicoTrack *trk = mPicoDst->track(mIdxPicoParticles[i]);
-        if(trackErr = true) {
+        if(trackErr == true) {
             double randomNumber = randGen.Rndm();
             if (randomNumber > 0.96) { continue; }
         }
@@ -1183,9 +1182,11 @@ Bool_t StPicoHFJetMaker::GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPri
 	TowIndex = trk->bemcTowerIndex();
 //	cout << TowIndex << endl;
 	float p = 0;
-	if (TowIndex > 0) {
-		p = gMom.Mag();
-		Sump[TowIndex-1] += p;
+//	if (TowIndex > 0) {
+    if (TowIndex > 0) { //TowIndex test
+        p = gMom.Mag();
+//        Sump[TowIndex-1] += p;
+        Sump[TowIndex] += p;
 		//cout << p << " " << Sump[TowIndex-1] << endl;
 		}
 	}// END global track loop
