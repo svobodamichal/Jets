@@ -726,6 +726,7 @@ int StPicoHFJetMaker::MakeJets() {
 
             towE = towE - 0.038*towE;
         }
+        cout << "TowE: " << towE << " SumP: " << Sump[iTow] << endl;
 		towE-= fHadronCorr*Sump[iTow]; //subtract hadronic energy deposition
 		if (towE < 0) towE = 0;
 						
@@ -1174,7 +1175,7 @@ Bool_t StPicoHFJetMaker::GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPri
         if (fabs(dca_z) > maxdcazhadroncorr) continue; 
 	int TowIndex = -99999;
 	TowIndex = trk->bemcTowerIndex();
-	cout << TowIndex << endl;
+//	cout << TowIndex << endl;
 	float p = 0;
 	if (TowIndex > 0) {
 		p = gMom.Mag();
