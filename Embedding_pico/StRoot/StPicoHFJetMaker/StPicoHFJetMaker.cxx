@@ -734,11 +734,9 @@ int StPicoHFJetMaker::MakeJets() {
 		float Toweta_tmp = 0, Towphi = 0;
 		mEmcGeom->getEtaPhi(realtowID,Toweta_tmp,Towphi);
         StThreeVectorF towerPosition = mEmcPosition->getPosFromVertex(StThreeVectorF(mPrimVtx.x(),mPrimVtx.y(),mPrimVtx.z()), realtowID);
-        float Toweta2 = vertexCorrectedEta(Toweta_tmp, vz); //max eta 1.05258 max difference: ET = 0.124452 for E = 0.2, if we cut on |Vz| < 30 cm
+    //    float Toweta2 = vertexCorrectedEta(Toweta_tmp, vz); //max eta 1.05258 max difference: ET = 0.124452 for E = 0.2, if we cut on |Vz| < 30 cm
         float Toweta = towerPosition.pseudoRapidity();
-
-        cout << "Toweta: " << Toweta << " Toweta2: " << Toweta2 << endl;
-		static_cast<TH2D*>(mOutList->FindObject("heta_phi_tow"))->Fill(Toweta, Towphi+TMath::Pi(), weight);
+        static_cast<TH2D*>(mOutList->FindObject("heta_phi_tow"))->Fill(Toweta, Towphi+TMath::Pi(), weight);
 		double ET = towE/cosh(Toweta);
 		static_cast<TH1D*>(mOutList->FindObject("hET_tow"))->Fill(ET, weight);
 		if (ET > 30) {/*cout << towE << endl;*/ continue;} //ignore E > 30 GeV towers 
@@ -816,7 +814,7 @@ int StPicoHFJetMaker::MakeJets() {
 	JetDefinition fjet_def_bkgd(kt_algorithm, fRBg);
 	AreaDefinition farea_def_bkgd(active_area_explicit_ghosts,GhostedAreaSpec(fGhostMaxrap, 1, 0.01));
 	if (centrality == 1) nJetsRemove = 2;//remove two hardest jets in central collisions, one in others
-	Selector fselector = SelectorAbsEtaMax(1.0) * (!SelectorNHardest(nJetsRemove)) * SelectorPtMin(0.01);
+	Selector fselector =  (!SelectorNHardest(nJetsRemove)) * SelectorAbsEtaMax(1.0) * SelectorPtMin(0.01);
 	JetMedianBackgroundEstimator fbkgd_estimator(fselector, fjet_def_bkgd, farea_def_bkgd);
 	fbkgd_estimator.set_particles(fullTracks);
 
@@ -1130,7 +1128,7 @@ Double_t StPicoHFJetMaker::GetTowerCalibEnergy(Int_t TowerId)
 
 
 //----------------------------------------------------------------------------- 
-//Correct tower eta for Vz position
+////Correct tower eta for Vz position //// Not used anymore
 //----------------------------------------------------------------------------- 
 Double_t StPicoHFJetMaker::vertexCorrectedEta(double eta, double vz) {
     double tower_theta = 2.0 * atan(exp(-eta));
@@ -1176,7 +1174,7 @@ Bool_t StPicoHFJetMaker::GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPri
         if (fabs(dca_z) > maxdcazhadroncorr) continue; 
 	int TowIndex = -99999;
 	TowIndex = trk->bemcTowerIndex();
-	//cout << TowIndex << endl;
+	cout << TowIndex << endl;
 	float p = 0;
 	if (TowIndex > 0) {
 		p = gMom.Mag();

@@ -477,7 +477,7 @@ int StPicoHFJetMaker::MakeJets() {
 	JetDefinition jet_def_bkgd(kt_algorithm, fRBg);
 	AreaDefinition area_def_bkgd(active_area_explicit_ghosts,GhostedAreaSpec(fGhostMaxrap, 1, 0.01));
 	if (centrality == 0 || centrality == 1) nJetsRemove = 2;//remove two hardest jets in central collisions, one in others
-	Selector selector = SelectorAbsEtaMax(1.0) * (!SelectorNHardest(nJetsRemove)) * SelectorPtMin(0.01);
+	Selector selector = (!SelectorNHardest(nJetsRemove)) * SelectorAbsEtaMax(1.0) * SelectorPtMin(0.01);
 	JetMedianBackgroundEstimator bkgd_estimator(selector, jet_def_bkgd, area_def_bkgd);
 	bkgd_estimator.set_particles(jetTracks);
 
@@ -490,7 +490,7 @@ int StPicoHFJetMaker::MakeJets() {
 	JetDefinition fjet_def_bkgd(kt_algorithm, fRBg);
 	AreaDefinition farea_def_bkgd(active_area_explicit_ghosts,GhostedAreaSpec(fGhostMaxrap, 1, 0.01));
 	if (centrality == 0 || centrality == 1) nJetsRemove = 2;//remove two hardest jets in central collisions, one in others
-	Selector fselector = SelectorAbsEtaMax(1.0) * (!SelectorNHardest(nJetsRemove)) * SelectorPtMin(0.01);
+	Selector fselector = (!SelectorNHardest(nJetsRemove)) * SelectorAbsEtaMax(1.0) * SelectorPtMin(0.01);
 	JetMedianBackgroundEstimator fbkgd_estimator(fselector, fjet_def_bkgd, farea_def_bkgd);
 	fbkgd_estimator.set_particles(fullTracks);
 
@@ -540,7 +540,7 @@ int StPicoHFJetMaker::MakeJets() {
 	           	JetDefinition jet_def_bkgd(kt_algorithm, fRBg);
 	           	AreaDefinition area_def_bkgd(active_area_explicit_ghosts,GhostedAreaSpec(fGhostMaxrap, 1, 0.01));
 			if (centrality == 0 || centrality == 1) nJetsRemove = 2; //remove two hardest jets in central collisions, one in others
-	        	Selector selector = SelectorAbsEtaMax(1.0) * (!SelectorNHardest(nJetsRemove)) * SelectorPtMin(0.01);
+	        	Selector selector = (!SelectorNHardest(nJetsRemove)) * SelectorAbsEtaMax(1.0) * SelectorPtMin(0.01);
 	            	JetMedianBackgroundEstimator bkgd_estimator(selector, jet_def_bkgd, area_def_bkgd);
 	        	bkgd_estimator.set_particles(jetTracks_emb);
 						
@@ -876,7 +876,7 @@ Bool_t StPicoHFJetMaker::makeRealCluster(StPicoDst *mPicoDst, StEmcGeom *mEmcGeo
 
 
 //----------------------------------------------------------------------------- 
-//Correct tower eta for Vz position
+//// Correct tower eta for Vz position // NOT USED ANYMORE
 //----------------------------------------------------------------------------- 
 Double_t StPicoHFJetMaker::vertexCorrectedEta(double eta, double vz) {
     double tower_theta = 2.0 * atan(exp(-eta));
