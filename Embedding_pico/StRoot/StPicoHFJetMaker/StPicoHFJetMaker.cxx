@@ -723,7 +723,7 @@ int StPicoHFJetMaker::MakeJets() {
 		double towE = GetTowerCalibEnergy(iTow+1); //get tower energy
 		TOWE=towE; //just keep track of the original energy for trigger approximation
         if(towErr = true){
-
+            cout << "towErr  "<< towErr << endl;
             towE = towE - 0.038*towE;
         }
         if( towE > 5.0)
@@ -731,6 +731,7 @@ int StPicoHFJetMaker::MakeJets() {
             cout <<"prev TowID  "<<iTow << "TowE:  "<< GetTowerCalibEnergy(iTow) << " SumP: " << Sump[iTow-1] << endl;
             cout <<"TowID  "<< iTow+1  <<"TowE: " << towE << " SumP: " << Sump[iTow] << endl;
             cout <<"next TowID  "<<iTow+2 << "TowE:  "<< GetTowerCalibEnergy(iTow+2) << " SumP: " << Sump[iTow+1] << endl;
+            cour <<"_____________________________________________________" << endl;
         }
 		towE-= fHadronCorr*Sump[iTow]; //subtract hadronic energy deposition
 		if (towE < 0) towE = 0;
