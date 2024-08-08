@@ -726,7 +726,7 @@ int StPicoHFJetMaker::MakeJets() {
 
             towE = towE - 0.038*towE;
         }
-        if towE > 5.0
+        if( towE > 5.0)
         {
             cout <<"prev TowID  "<<iTow << "TowE:  "<< GetTowerCalibEnergy(iTow) << " SumP: " << Sump[iTow-1] << endl;
             cout <<"TowID  "<< iTow+1  <<"TowE: " << towE << " SumP: " << Sump[iTow] << endl;
