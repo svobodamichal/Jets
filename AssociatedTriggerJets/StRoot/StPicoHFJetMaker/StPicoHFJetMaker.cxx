@@ -924,9 +924,9 @@ Bool_t StPicoHFJetMaker::GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPri
 	TowIndex = trk->bemcTowerIndex();
 	//cout << TowIndex << endl;
 	float p = 0;
-	if (TowIndex > 0) {
+	if (TowIndex >= 0) {
 		p = gMom.Mag();
-		Sump[TowIndex-1] += p;
+		Sump[TowIndex] += p;
 		//cout << p << " " << Sump[TowIndex-1] << endl;
 		}
 	}// END global track loop

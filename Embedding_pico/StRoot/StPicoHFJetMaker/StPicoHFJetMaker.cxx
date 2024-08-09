@@ -1180,19 +1180,16 @@ Bool_t StPicoHFJetMaker::GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPri
         if (fabs(dca_z) > maxdcazhadroncorr) continue; 
 	int TowIndex = -99999;
 	TowIndex = trk->bemcTowerIndex();
-//	cout << TowIndex << endl;
 	float p = 0;
-	if (TowIndex > 0) {
-//    if (TowIndex > -1) { //TowIndex test
-        if (TowIndex % 20 == 0){
-            cout << "TowIndex " << TowIndex << " Eta " << eta << endl;
+	if (TowIndex >= 0) {
+//        if (TowIndex % 20 == 0){
+//            cout << "TowIndex " << TowIndex << " Eta " << eta << endl;
 
 
-        }
+//        }
 
         p = gMom.Mag();
-        Sump[TowIndex-1] += p;
-//        Sump[TowIndex] += p;
+        Sump[TowIndex] += p;
 		//cout << p << " " << Sump[TowIndex-1] << endl;
 		}
 	}// END global track loop
