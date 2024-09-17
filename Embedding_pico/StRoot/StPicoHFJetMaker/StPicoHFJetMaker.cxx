@@ -1168,9 +1168,7 @@ Bool_t StPicoHFJetMaker::GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPri
 	float vtx_y = mPrimVtx.y();
 	float vtx_z = mPrimVtx.z();
 
-
-	TVector3 dcaPoint = trkhelix.at(trkhelix.pathLength(vtx_x, vtx_y));
-        float dca_z = dcaPoint.z() - vtx_z; //check
+        float dca_z = abs(trk->gDCAz(mVertex.z()));
         if (fabs(dca_z) > maxdcazhadroncorr) continue; 
 	int TowIndex = -99999;
 	TowIndex = trk->bemcTowerIndex();
