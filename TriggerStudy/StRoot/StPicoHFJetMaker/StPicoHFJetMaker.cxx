@@ -129,7 +129,7 @@ int StPicoHFJetMaker::InitJets() {
 	mOutList->Add(new TH1D("hcharged_tr", "track charge", 90, 0, 3));
 
     for (int centbin = 1; centbin < 8; centbin++) {
-        hname = Form("hPrimTrackMB_centbin%i", centbin);
+        TString hname = Form("hPrimTrackMB_centbin%i", centbin);
         mOutList->Add(new TH1D(hname, "primary track p_{T} for MB; p_{T} [GeV/c]", npttrackbins, pttrackmin, pttrackmax));
         hname = Form("hPrimTrackHT1_centbin%i", centbin);
         mOutList->Add(new TH1D(hname, "primary track p_{T} for HT1; p_{T} [GeV/c]", npttrackbins, pttrackmin, pttrackmax));
