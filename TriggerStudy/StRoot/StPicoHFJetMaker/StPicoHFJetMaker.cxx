@@ -368,6 +368,12 @@ int StPicoHFJetMaker::FinishJets() {
 // _________________________________________________________
 int StPicoHFJetMaker::MakeJets() {
 
+    StPicoEvent* picoEvent = mPicoDst->event();
+    if (!picoEvent) {
+        std::cerr << "Error: picoEvent is null" << std::endl;
+        return kStErr;
+    }
+
 	vector<PseudoJet> jetTracks;
 	vector<PseudoJet> jetTracks_emb; //tmp for embedding
 	vector<PseudoJet> neutraljetTracks; //from bemc towers only
