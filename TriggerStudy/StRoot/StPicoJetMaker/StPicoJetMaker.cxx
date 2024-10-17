@@ -238,15 +238,23 @@ void StPicoJetMaker::initializeEventStats() {
 
   const char *aEventCutNames[]   = {"all", "good run", "trigger", "#it{v}_{z}", "#it{v}_{z}-#it{v}^{VPD}_{z}", "refMult", "accepted"};
 
-  mOutList->Add(new TH1F("hEventStat0","Event cut statistics 0;Event Cuts;Events", mPicoCuts->eventStatMax(), -0.5, mPicoCuts->eventStatMax()-0.5));
-  TH1F *hEventStat0 = static_cast<TH1F*>(mOutList->Last());
+  mOutList->Add(new TH1F("hEventStat0HT2","Event cut statistics 0;Event Cuts;Events", mPicoCuts->eventStatMax(), -0.5, mPicoCuts->eventStatMax()-0.5));
+  TH1F *hEventStat0HT2 = static_cast<TH1F*>(mOutList->Last());
 
-  mOutList->Add(new TH1F("hEventStat1","Event cut statistics 1;Event Cuts;Events", mPicoCuts->eventStatMax(), -0.5, mPicoCuts->eventStatMax()-0.5));
-  TH1F *hEventStat1 = static_cast<TH1F*>(mOutList->Last());
+  mOutList->Add(new TH1F("hEventStat1HT2","Event cut statistics 1;Event Cuts;Events", mPicoCuts->eventStatMax(), -0.5, mPicoCuts->eventStatMax()-0.5));
+  TH1F *hEventStat1HT2 = static_cast<TH1F*>(mOutList->Last());
+
+  mOutList->Add(new TH1F("hEventStat0MB","Event cut statistics 0;Event Cuts;Events", mPicoCuts->eventStatMax(), -0.5, mPicoCuts->eventStatMax()-0.5));
+  TH1F *hEventStat0MB = static_cast<TH1F*>(mOutList->Last());
+
+  mOutList->Add(new TH1F("hEventStat1MB","Event cut statistics 1;Event Cuts;Events", mPicoCuts->eventStatMax(), -0.5, mPicoCuts->eventStatMax()-0.5));
+  TH1F *hEventStat1MB = static_cast<TH1F*>(mOutList->Last());
 
   for (unsigned int ii = 0; ii < mPicoCuts->eventStatMax(); ii++) {
-    hEventStat0->GetXaxis()->SetBinLabel(ii+1, aEventCutNames[ii]);
-    hEventStat1->GetXaxis()->SetBinLabel(ii+1, aEventCutNames[ii]);
+    hEventStat0HT2->GetXaxis()->SetBinLabel(ii+1, aEventCutNames[ii]);
+    hEventStat1HT2->GetXaxis()->SetBinLabel(ii+1, aEventCutNames[ii]);
+    hEventStat0MB->GetXaxis()->SetBinLabel(ii+1, aEventCutNames[ii]);
+    hEventStat1MB->GetXaxis()->SetBinLabel(ii+1, aEventCutNames[ii]);
   }
 
   //TODO: Add event ID histograms for AuAu Run 2016 and observables vs day information
@@ -275,18 +283,30 @@ void StPicoJetMaker::initializeEventStats() {
 void StPicoJetMaker::fillEventStats(int *aEventStat) {
   // -- Fill event statistics 
 
-  TH1F *hEventStat0 = static_cast<TH1F*>(mOutList->FindObject("hEventStat0"));
-  TH1F *hEventStat1 = static_cast<TH1F*>(mOutList->FindObject("hEventStat1"));
+  TH1F *hEventStat0HT2 = static_cast<TH1F*>(mOutList->FindObject("hEventStat0HT2"));
+  TH1F *hEventStat1HT2 = static_cast<TH1F*>(mOutList->FindObject("hEventStat1HT2"));
+  TH1F *hEventStat0MB = static_cast<TH1F*>(mOutList->FindObject("hEventStat0MB"));
+  TH1F *hEventStat1MB = static_cast<TH1F*>(mOutList->FindObject("hEventStat1MB"));
 
   for (unsigned int idx = 0; idx < mPicoCuts->eventStatMax() ; ++idx) {
     if (!aEventStat[idx])
-      hEventStat0->Fill(idx);
+        if(mPicoEvent->isTrigger(450202) || mPicoEvent->isTrigger(450212)) {
+            hEventStat0HT2->Fill(idx);
+        }
+        if(mPicoEvent->isTrigger(450010) || mPicoEvent->isTrigger(450201)) {
+          hEventStat0MB->Fill(idx);
+        }
   }
   
   for (unsigned int idx = 0; idx < mPicoCuts->eventStatMax(); ++idx) {
     if (aEventStat[idx])
       break;
-    hEventStat1->Fill(idx);
+      if(mPicoEvent->isTrigger(450202) || mPicoEvent->isTrigger(450212)) {
+          hEventStat1HT2->Fill(idx);
+      }
+      if(mPicoEvent->isTrigger(450010) || mPicoEvent->isTrigger(450201)) {
+          hEventStat1MB->Fill(idx);
+      }
   }
 }
 
