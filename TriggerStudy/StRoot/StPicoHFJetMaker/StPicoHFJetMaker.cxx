@@ -465,7 +465,7 @@ int StPicoHFJetMaker::MakeJets() {
             static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTowerHT3_centbin%i",centrality)))->Fill(ET, weight);
         }
 
-        if((picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211)&&picoEvent->!isTrigger(450202) || picoEvent->!isTrigger(450212)){
+        if((picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211))&& (!picoEvent->isTrigger(450202) || !picoEvent->isTrigger(450212))){
             static_cast<TH1D*>(mOutList->FindObject("hET_tow_HT1"))->Fill(ET, weight);
         }
 
@@ -523,7 +523,7 @@ int StPicoHFJetMaker::MakeJets() {
         if(picoEvent->isTrigger(450203) || picoEvent->isTrigger(450213)){
             static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTrackHT3_centbin%i",centrality)))->Fill(pT, weight);
         }
-        if((picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211)&&picoEvent->!isTrigger(450202) || picoEvent->!isTrigger(450212)){
+        if((picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211)) && (!picoEvent->isTrigger(450202) || !picoEvent->isTrigger(450212))){
             static_cast<TH1D*>(mOutList->FindObject("hpT_tr_HT1"))->Fill(pT, weight);
         }
 
