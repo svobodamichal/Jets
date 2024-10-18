@@ -412,7 +412,7 @@ int StPicoHFJetMaker::MakeJets() {
 		
 	//if (centrality > 1) return kStOk; //REMEMBER NOW ONLY CENTRAL
 					
-	if (!FindTriggerTowers(2)) return kStOk; //2 = HT2, don't continue if there is no HT2-trigger tower with sufficient energy
+//	if (!FindTriggerTowers(2)) return kStOk; //2 = HT2, don't continue if there is no HT2-trigger tower with sufficient energy
 
 	GetCaloTrackMomentum(mPicoDst,mPrimVtx); //fill array Sump with momenta of tracks which are matched to BEMC
 
@@ -448,7 +448,7 @@ int StPicoHFJetMaker::MakeJets() {
         static_cast<TH1D*>(mOutList->FindObject("hET_tow"))->Fill(ET, weight);
         if (ET > 30) {/*cout << towE << endl;*/ return kStOK;} //discard events with E > 30 GeV towers
 
-        if(picoEvent->isTrigger(450010) || picoEvent->isTrigger(450201)){
+        if(picoEvent->isTrigger(450010) || picoEvent->isTrigger(450020)){
             static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTowerMB_centbin%i",centrality)))->Fill(ET, weight);
         }
         if(picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211)){
@@ -504,7 +504,7 @@ int StPicoHFJetMaker::MakeJets() {
 		static_cast<TH1D*>(mOutList->FindObject("hcharged_tr"))->Fill(charged, weight);
 
 
-        if(picoEvent->isTrigger(450010) || picoEvent->isTrigger(450201)){
+        if(picoEvent->isTrigger(450010) || picoEvent->isTrigger(450020)){
             static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTrackMB_centbin%i",centrality)))->Fill(pT, weight);
         }
         if(picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211)){
