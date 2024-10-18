@@ -467,6 +467,7 @@ int StPicoHFJetMaker::MakeJets() {
 
         if((picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211))&& (!picoEvent->isTrigger(450202) || !picoEvent->isTrigger(450212))){
             static_cast<TH1D*>(mOutList->FindObject("hET_tow_HT1"))->Fill(ET, weight);
+            cout<<"Baf tower"<<endl;
         }
 
 		//no clustering
@@ -525,6 +526,7 @@ int StPicoHFJetMaker::MakeJets() {
         }
         if((picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211)) && (!picoEvent->isTrigger(450202) || !picoEvent->isTrigger(450212))){
             static_cast<TH1D*>(mOutList->FindObject("hpT_tr_HT1"))->Fill(pT, weight);
+            cout<<"Baf track"<<endl;
         }
 
         //PseudoJet inputParticle(trk->gMom().x(), trk->gMom().y(), trk->gMom().z(), trk->gMom().Mag());
