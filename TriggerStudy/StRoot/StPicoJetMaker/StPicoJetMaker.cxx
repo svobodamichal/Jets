@@ -293,7 +293,7 @@ void StPicoJetMaker::fillEventStats(int *aEventStat) {
         if(mPicoEvent->isTrigger(450202) || mPicoEvent->isTrigger(450212)) {
             hEventStat0HT2->Fill(idx);
         }
-        if(mPicoEvent->isTrigger(450010) || mPicoEvent->isTrigger(450201)) {
+        if(mPicoEvent->isTrigger(450010) || mPicoEvent->isTrigger(450020)) {
           hEventStat0MB->Fill(idx);
         }
   }
@@ -304,7 +304,7 @@ void StPicoJetMaker::fillEventStats(int *aEventStat) {
       if(mPicoEvent->isTrigger(450202) || mPicoEvent->isTrigger(450212)) {
           hEventStat1HT2->Fill(idx);
       }
-      if(mPicoEvent->isTrigger(450010) || mPicoEvent->isTrigger(450201)) {
+      if(mPicoEvent->isTrigger(450010) || mPicoEvent->isTrigger(450020)) {
           hEventStat1MB->Fill(idx);
       }
   }

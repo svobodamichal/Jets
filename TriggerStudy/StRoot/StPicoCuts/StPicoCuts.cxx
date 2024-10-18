@@ -245,7 +245,7 @@ bool StPicoCuts::isGoodTowHit(StPicoBTowHit const * const towHit) const {
   	float towE = towHit->energy();
 		float towADC = towHit->adc();
 
-    return (towE > mERangeMin && towADC > 4 && towE < mERangeMax);
+    return (towE > mERangeMin && towADC > 0.2 && towE < mERangeMax);
 
 }
 
