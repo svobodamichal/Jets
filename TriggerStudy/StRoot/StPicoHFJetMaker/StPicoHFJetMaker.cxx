@@ -452,18 +452,22 @@ int StPicoHFJetMaker::MakeJets() {
         static_cast<TH1D*>(mOutList->FindObject("hET_tow"))->Fill(ET, weight);
         if (ET > 30) {/*cout << towE << endl;*/ return kStOK;} //discard events with E > 30 GeV towers
 
-        if(picoEvent->isTrigger(450010) || picoEvent->isTrigger(450020)){
-            static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTowerMB_centbin%i",centrality)))->Fill(ET, weight);
-        }
-        if(picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211)){
-            static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTowerHT1_centbin%i",centrality)))->Fill(ET, weight);
-        }
-        if(picoEvent->isTrigger(450202) || picoEvent->isTrigger(450212)){
-            static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTowerHT2_centbin%i",centrality)))->Fill(ET, weight);
-        }
         if(picoEvent->isTrigger(450203) || picoEvent->isTrigger(450213)){
             static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTowerHT3_centbin%i",centrality)))->Fill(ET, weight);
         }
+
+        else if(picoEvent->isTrigger(450202) || picoEvent->isTrigger(450212)){
+            static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTowerHT2_centbin%i",centrality)))->Fill(ET, weight);
+        }
+
+        else if(picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211)){
+            static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTowerHT1_centbin%i",centrality)))->Fill(ET, weight);
+        }
+
+        else if(picoEvent->isTrigger(450010) || picoEvent->isTrigger(450020)){
+            static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTowerMB_centbin%i",centrality)))->Fill(ET, weight);
+        }
+
 
         if((picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211))&& !(picoEvent->isTrigger(450202) || picoEvent->isTrigger(450212))){
             static_cast<TH1D*>(mOutList->FindObject("hET_tow_HT1"))->Fill(ET, weight);
@@ -510,19 +514,21 @@ int StPicoHFJetMaker::MakeJets() {
 	        static_cast<TH1D*>(mOutList->FindObject("hdca_tr"))->Fill(dca, weight);
 		static_cast<TH1D*>(mOutList->FindObject("hcharged_tr"))->Fill(charged, weight);
 
-
-        if(picoEvent->isTrigger(450010) || picoEvent->isTrigger(450020)){
-            static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTrackMB_centbin%i",centrality)))->Fill(pT, weight);
-        }
-        if(picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211)){
-            static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTrackHT1_centbin%i",centrality)))->Fill(pT, weight);
-        }
-       if(picoEvent->isTrigger(450202) || picoEvent->isTrigger(450212)){
-            static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTrackHT2_centbin%i",centrality)))->Fill(pT, weight);
-        }
         if(picoEvent->isTrigger(450203) || picoEvent->isTrigger(450213)){
             static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTrackHT3_centbin%i",centrality)))->Fill(pT, weight);
         }
+        else if(picoEvent->isTrigger(450202) || picoEvent->isTrigger(450212)){
+            static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTrackHT2_centbin%i",centrality)))->Fill(pT, weight);
+        }
+        else if(picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211)){
+            static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTrackHT1_centbin%i",centrality)))->Fill(pT, weight);
+        }
+        else if(picoEvent->isTrigger(450010) || picoEvent->isTrigger(450020)){
+            static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTrackMB_centbin%i",centrality)))->Fill(pT, weight);
+        }
+
+
+
         if((picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211)) && !(picoEvent->isTrigger(450202) || picoEvent->isTrigger(450212))){
             static_cast<TH1D*>(mOutList->FindObject("hpT_tr_HT1"))->Fill(pT, weight);
         }
