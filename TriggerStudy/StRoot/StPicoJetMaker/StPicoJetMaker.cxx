@@ -288,7 +288,19 @@ void StPicoJetMaker::fillEventStats(int *aEventStat) {
   TH1F *hEventStat0MB = static_cast<TH1F*>(mOutList->FindObject("hEventStat0MB"));
   TH1F *hEventStat1MB = static_cast<TH1F*>(mOutList->FindObject("hEventStat1MB"));
 
-  for (unsigned int idx = 0; idx < mPicoCuts->eventStatMax() ; ++idx) {
+    for (unsigned int idx = 0; idx < mPicoCuts->eventStatMax(); ++idx) {
+        if (!aEventStat[idx]) { // This condition ensures that statistics are filled only for unfilled event stats.
+            if (mPicoEvent->isTrigger(450202) || mPicoEvent->isTrigger(450212)) {
+                hEventStat0HT2->Fill(idx); // Fill HT2-specific histograms
+            }
+            if (mPicoEvent->isTrigger(450010) || mPicoEvent->isTrigger(450020)) {
+                hEventStat0MB->Fill(idx); // Fill MB-specific histograms
+            }
+        }
+    }
+
+
+  /*  for (unsigned int idx = 0; idx < mPicoCuts->eventStatMax() ; ++idx) {
     if (!aEventStat[idx])
         if(mPicoEvent->isTrigger(450202) || mPicoEvent->isTrigger(450212)) {
             hEventStat0HT2->Fill(idx);
@@ -307,6 +319,18 @@ void StPicoJetMaker::fillEventStats(int *aEventStat) {
       if(mPicoEvent->isTrigger(450010) || mPicoEvent->isTrigger(450020)) {
           hEventStat1MB->Fill(idx);
       }
-  }
+  }*/
+    for (unsigned int idx = 0; idx < mPicoCuts->eventStatMax(); ++idx) {
+        if (aEventStat[idx]) continue; // Skip already-filled stats, but don't break the loop
+
+        // Fill both histograms if either of the triggers is present
+        if (mPicoEvent->isTrigger(450202) || mPicoEvent->isTrigger(450212)) {
+            hEventStat1HT2->Fill(idx); // Fill HT2-specific histograms for accepted events
+        }
+        if (mPicoEvent->isTrigger(450010) || mPicoEvent->isTrigger(450020)) {
+            hEventStat1MB->Fill(idx); // Fill MB-specific histograms for accepted events
+        }
+    }
+
 }
 

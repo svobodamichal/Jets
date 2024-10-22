@@ -109,6 +109,10 @@ int StPicoHFJetMaker::InitJets() {
     float deltaptembminbin = -30;
     float deltaptembmaxbin = 50;
 
+    int refmultbins = 130;
+    float refmultmin = 0;
+    float refmultmax = 650;
+
 
     
 	TH1::SetDefaultSumw2();
@@ -127,9 +131,6 @@ int StPicoHFJetMaker::InitJets() {
 	mOutList->Add(new TH1D("hdca_tr", "track DCA", 90, 0, 3));
     	mOutList->Add(new TH2D("hdca_pT", "track DCA vs. p_{T}", 90, 0, 3, npttrackbins, pttrackmin, pttrackmax));
 	mOutList->Add(new TH1D("hcharged_tr", "track charge", 90, 0, 3));
-
-    mOutList->Add(new TH1D("hpT_tr_HT1", "track pT; p_{T} [GeV/c]", npttrackbins, pttrackmin, pttrackmax));
-    mOutList->Add(new TH1D("hET_tow_HT1", "tower ET; E_{T} (GeV)", npttrackbins, pttrackmin, pttrackmax));
 
 
     for (int centbin = 1; centbin < 8; centbin++) {
@@ -150,6 +151,18 @@ int StPicoHFJetMaker::InitJets() {
         mOutList->Add(new TH1D(hname, "Tower energy E_{T} for HT2; E_{T} [GeV/c^2]", npttrackbins, pttrackmin, pttrackmax));
         hname = Form("hPrimTowerHT3_centbin%i", centbin);
         mOutList->Add(new TH1D(hname, "Tower energy E_{T} for HT3; E_{T} [GeV/c^2]", npttrackbins, pttrackmin, pttrackmax));
+
+        hname = Form("hrefmultMB_centbin%i", centbin);
+        mOutList->Add(new TH1I(hname, "Reference multiplicity for MB", refmultbins, refmultmin, refmultmax));
+        hname = Form("hrefmultHT1_centbin%i", centbin);
+        mOutList->Add(new TH1I(hname, "Reference multiplicity for HT1", refmultbins, refmultmin, refmultmax));
+        hname = Form("hrefmultHT2_centbin%i", centbin);
+        mOutList->Add(new TH1I(hname, "Reference multiplicity for HT2", refmultbins, refmultmin, refmultmax));
+        hname = Form("hrefmultHT3_centbin%i", centbin);
+        mOutList->Add(new TH1I(hname, "Reference multiplicity for HT3", refmultbins, refmultmin, refmultmax));
+
+
+
 
     }
 
@@ -418,6 +431,21 @@ int StPicoHFJetMaker::MakeJets() {
 					
 //	if (!FindTriggerTowers(2)) return kStOk; //2 = HT2, don't continue if there is no HT2-trigger tower with sufficient energy
 
+    if(picoEvent->isTrigger(450203) || picoEvent->isTrigger(450213)){
+        static_cast<TH1D*>(mOutList->FindObject(Form("hrefmultHT3_centbin%i",centrality)))->Fill(refMult);
+    }
+    if(picoEvent->isTrigger(450202) || picoEvent->isTrigger(450212)){
+        static_cast<TH1D*>(mOutList->FindObject(Form("hrefmultHT2_centbin%i",centrality)))->Fill(refMult);
+    }
+    if(picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211)){
+        static_cast<TH1D*>(mOutList->FindObject(Form("hrefmultHT1_centbin%i",centrality)))->Fill(refMult);
+    }
+    if(picoEvent->isTrigger(450010) || picoEvent->isTrigger(450020)){
+        static_cast<TH1D*>(mOutList->FindObject(Form("hrefmultMB_centbin%i",centrality)))->Fill(refMult);
+    }
+
+
+
 	GetCaloTrackMomentum(mPicoDst,mPrimVtx); //fill array Sump with momenta of tracks which are matched to BEMC
 
     StEmcPosition* mEmcPosition;
@@ -456,22 +484,18 @@ int StPicoHFJetMaker::MakeJets() {
             static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTowerHT3_centbin%i",centrality)))->Fill(ET, weight);
         }
 
-        else if(picoEvent->isTrigger(450202) || picoEvent->isTrigger(450212)){
+        if(picoEvent->isTrigger(450202) || picoEvent->isTrigger(450212)){
             static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTowerHT2_centbin%i",centrality)))->Fill(ET, weight);
         }
 
-        else if(picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211)){
+        if(picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211)){
             static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTowerHT1_centbin%i",centrality)))->Fill(ET, weight);
         }
 
-        else if(picoEvent->isTrigger(450010) || picoEvent->isTrigger(450020)){
+        if(picoEvent->isTrigger(450010) || picoEvent->isTrigger(450020)){
             static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTowerMB_centbin%i",centrality)))->Fill(ET, weight);
         }
 
-
-        if((picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211))&& !(picoEvent->isTrigger(450202) || picoEvent->isTrigger(450212))){
-            static_cast<TH1D*>(mOutList->FindObject("hET_tow_HT1"))->Fill(ET, weight);
-        }
 
 		//no clustering
 		double px,py,pz;
@@ -517,21 +541,18 @@ int StPicoHFJetMaker::MakeJets() {
         if(picoEvent->isTrigger(450203) || picoEvent->isTrigger(450213)){
             static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTrackHT3_centbin%i",centrality)))->Fill(pT, weight);
         }
-        else if(picoEvent->isTrigger(450202) || picoEvent->isTrigger(450212)){
+        if(picoEvent->isTrigger(450202) || picoEvent->isTrigger(450212)){
             static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTrackHT2_centbin%i",centrality)))->Fill(pT, weight);
         }
-        else if(picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211)){
+        if(picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211)){
             static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTrackHT1_centbin%i",centrality)))->Fill(pT, weight);
         }
-        else if(picoEvent->isTrigger(450010) || picoEvent->isTrigger(450020)){
+        if(picoEvent->isTrigger(450010) || picoEvent->isTrigger(450020)){
             static_cast<TH1D*>(mOutList->FindObject(Form("hPrimTrackMB_centbin%i",centrality)))->Fill(pT, weight);
         }
 
 
 
-        if((picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211)) && !(picoEvent->isTrigger(450202) || picoEvent->isTrigger(450212))){
-            static_cast<TH1D*>(mOutList->FindObject("hpT_tr_HT1"))->Fill(pT, weight);
-        }
 
         //PseudoJet inputParticle(trk->gMom().x(), trk->gMom().y(), trk->gMom().z(), trk->gMom().Mag());
 				//primary tracks        
