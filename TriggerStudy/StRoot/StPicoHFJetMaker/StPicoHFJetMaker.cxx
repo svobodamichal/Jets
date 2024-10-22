@@ -133,6 +133,12 @@ int StPicoHFJetMaker::InitJets() {
 	mOutList->Add(new TH1D("hcharged_tr", "track charge", 90, 0, 3));
 
 
+    mOutList->Add(new TH1I("hrefmultMB", "Reference multiplicity for MB", refmultbins, refmultmin, refmultmax));
+    mOutList->Add(new TH1I("hrefmultHT1", "Reference multiplicity for HT1", refmultbins, refmultmin, refmultmax));
+    mOutList->Add(new TH1I("hrefmultHT2", "Reference multiplicity for HT2", refmultbins, refmultmin, refmultmax));
+    mOutList->Add(new TH1I("hrefmultHT3", "Reference multiplicity for HT3", refmultbins, refmultmin, refmultmax));
+
+
     for (int centbin = 1; centbin < 8; centbin++) {
         TString hname = Form("hPrimTrackMB_centbin%i", centbin);
         mOutList->Add(new TH1D(hname, "primary track p_{T} for MB; p_{T} [GeV/c]", npttrackbins, pttrackmin, pttrackmax));
@@ -433,15 +439,23 @@ int StPicoHFJetMaker::MakeJets() {
 
     if(picoEvent->isTrigger(450203) || picoEvent->isTrigger(450213)){
         static_cast<TH1D*>(mOutList->FindObject(Form("hrefmultHT3_centbin%i",centrality)))->Fill(refMult);
+        static_cast<TH1I*>(mOutList->FindObject("hrefmultHT3"))->Fill(refMult);
+
     }
     if(picoEvent->isTrigger(450202) || picoEvent->isTrigger(450212)){
         static_cast<TH1D*>(mOutList->FindObject(Form("hrefmultHT2_centbin%i",centrality)))->Fill(refMult);
+        static_cast<TH1I*>(mOutList->FindObject("hrefmultHT2"))->Fill(refMult);
+
     }
     if(picoEvent->isTrigger(450201) || picoEvent->isTrigger(450211)){
         static_cast<TH1D*>(mOutList->FindObject(Form("hrefmultHT1_centbin%i",centrality)))->Fill(refMult);
+        static_cast<TH1I*>(mOutList->FindObject("hrefmultHT1"))->Fill(refMult);
+
     }
     if(picoEvent->isTrigger(450010) || picoEvent->isTrigger(450020)){
         static_cast<TH1D*>(mOutList->FindObject(Form("hrefmultMB_centbin%i",centrality)))->Fill(refMult);
+        static_cast<TH1I*>(mOutList->FindObject("hrefmultMB"))->Fill(refMult);
+
     }
 
 
