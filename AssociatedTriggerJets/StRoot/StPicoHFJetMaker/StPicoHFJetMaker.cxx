@@ -634,6 +634,7 @@ int StPicoHFJetMaker::MakeJets() {
                 	int nparticles = constituents.size();
 			//cout << nparticles << endl;
 			for(unsigned int ic = 0; ic < constituents.size(); ++ic) {
+                cout << " constituent " << ic << " pt: "<< constituents[j].perp() << endl;
 				float ceta = constituents[ic].eta();
 				float cphi = constituents[ic].phi();
 				static_cast<TH1D*>(mOutList->FindObject(Form("hceta_R0%.0lf",fR[i]*10)))->Fill(ceta, weight);
