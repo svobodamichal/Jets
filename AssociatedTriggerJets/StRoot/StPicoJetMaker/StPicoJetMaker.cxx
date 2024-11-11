@@ -204,7 +204,7 @@ Int_t StPicoJetMaker::Make() {
 // _________________________________________________________
 bool StPicoJetMaker::setupEvent() {
 
-  // -- fill members from pico event, check for good eventa and fill event statistics
+  // -- fill members from pico event, check for good events and fill event statistics
 
   mPicoEvent = mPicoDst->event();
   
