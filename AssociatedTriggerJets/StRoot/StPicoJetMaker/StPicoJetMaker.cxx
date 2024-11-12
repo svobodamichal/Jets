@@ -350,8 +350,7 @@ std::map<int, StPicoJetMaker::RunData> StPicoJetMaker::readDataFromFile(const st
 double StPicoJetMaker::calculateWeight(const RunData& htRunData, const RunData& mbRunData) {
     if (htRunData.sampledLuminosity == 0 || htRunData.prescale == 0 || mbRunData.sampledLuminosity == 0 || mbRunData.prescale == 0) {
             std::cerr << "Error: sampledLuminosity or prescale cannot be zero in weight calculation." << std::endl;
-            continue;
-        }
+            return 0;}
 
     // Extract data for calculation
     double nEtvHT = 1.0;
@@ -361,8 +360,8 @@ double StPicoJetMaker::calculateWeight(const RunData& htRunData, const RunData& 
     double ltMB = mbRunData.livetime;
     double nMBTotal = mbRunData.numberOfEvents;  // Assuming this is the total for MB
     double nHTTotal = htRunData.numberOfEvents;  // Assuming this is the total for HT
-    double rMB = 0.88   // Replace with actual rate if different
-    double rHT = 0.98    // Replace with actual rate if different
+    double rMB = 0.88;   // Replace with actual rate if different
+    double rHT = 0.98;    // Replace with actual rate if different
 
     double ratioPS = psMB / psHT;
     double ratioLT = ltHT / ltMB;
