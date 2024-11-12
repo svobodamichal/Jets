@@ -55,7 +55,7 @@ class StPicoJetMaker : public StMaker
     void  Clear(Option_t *opt="");
     Int_t Finish();
 
-    struct RunData {
+    struct StPicoJetMaker::RunData {
         int runNumber;
         int numberOfEvents;
         double sampledLuminosity;
