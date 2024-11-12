@@ -59,17 +59,6 @@ class StPicoJetMaker : public StMaker
     void  Clear(Option_t *opt="");
     Int_t Finish();
 
-    struct RunData {
-        int runNumber;
-        int numberOfEvents;
-        double sampledLuminosity;
-        double prescale;
-        double livetime;
-    };  // Struct to hold data from the .txt files
-
-    std::map<int, RunData> readDataFromFile(const std::string& filename);
-    double calculateWeight(const std::vector<RunData>& htRunDataList, const RunData& mbRunData);
-
   protected:
     bool         isMcMode() const;
     unsigned int isMakerMode() const;
@@ -95,6 +84,18 @@ class StPicoJetMaker : public StMaker
     
     void  initializeEventStats();
     void  fillEventStats(int *aEventStat);
+
+    struct RunData {
+        int runNumber;
+        int numberOfEvents;
+        double sampledLuminosity;
+        double prescale;
+        double livetime;
+    };  // Struct to hold data from the .txt files
+
+    std::map<int, RunData> readDataFromFile(const std::string& filename);
+    double calculateWeight(const std::vector<RunData>& htRunDataList, const RunData& mbRunData);
+
 
     // -- private members ------------------------
 
