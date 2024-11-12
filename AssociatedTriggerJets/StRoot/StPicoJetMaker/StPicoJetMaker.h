@@ -25,10 +25,6 @@
 
 #include "../StPicoCuts/StPicoCuts.h"
 
-#include "../runProperties/BHT2VPDMB-30_matched_cleaned.txt"
-#include "../runProperties/VPDMB-30_matched_cleaned.txt"
-
-
 class StPicoJetMaker : public StMaker
 {
   public:

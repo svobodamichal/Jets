@@ -150,8 +150,8 @@ Int_t StPicoJetMaker::Make() {
   Int_t iReturn = kStOK;
 
     // Read data from both files into separate maps
-    std::map<int, RunData> bhtRunDataMap = readDataFromFile("BHT2VPDMB-30_matched_cleaned.txt");
-    std::map<int, RunData> vpdRunDataMap = readDataFromFile("VPDMB-30_matched_cleaned.txt");
+    std::map<int, RunData> bhtRunDataMap = readDataFromFile("../runProperties/BHT2VPDMB-30_matched_cleaned.txt");
+    std::map<int, RunData> vpdRunDataMap = readDataFromFile("../runProperties/VPDMB-30_matched_cleaned.txt");
 
     // Check if the maps have been successfully filled
     if (bhtRunDataMap.empty()) {
@@ -327,31 +327,20 @@ void StPicoJetMaker::fillEventStats(int *aEventStat) {
 }
 
 //________________________________________________________________________
-std::map<int, RunData> readDataFromFile(const std::string& filename) {
-    std::map<int, RunData> runDataMap;
+std::map<int, StPicoJetMaker::RunData> StPicoJetMaker::readDataFromFile(const std::string& filename) {
     std::ifstream file(filename);
+    std::map<int, RunData> runDataMap;
 
     if (!file.is_open()) {
-        std::cerr << "Error: Could not open file " << filename << std::endl;
-        return runDataMap;  // Return an empty map if the file could not be opened
+        std::cerr << "Error: Unable to open file " << filename << std::endl;
+        return runDataMap;
     }
 
-    std::string line;
-    // Skip the header line if necessary
-    std::getline(file, line);
-
-    while (std::getline(file, line)) {
-        std::istringstream iss(line);
-        RunData runData;
-
-        // Parse the line into the RunData struct
-        if (iss >> runData.runNumber >> runData.numberOfEvents >> runData.sampledLuminosity
+    int runNumber;
+    RunData runData;
+    while (file >> runNumber >> runData.numberOfEvents >> runData.sampledLuminosity
                 >> runData.prescale >> runData.livetime) {
-            // Store the parsed data in the map with run number as the key
-            runDataMap[runData.runNumber] = runData;
-        } else {
-            std::cerr << "Warning: Could not parse line: " << line << std::endl;
-        }
+        runDataMap[runNumber] = runData;
     }
 
     file.close();
