@@ -1,5 +1,6 @@
 #include "StPicoJetMaker.h"
-
+#include <map>
+#include <string>
 
 ClassImp(StPicoJetMaker)
 
@@ -150,8 +151,8 @@ Int_t StPicoJetMaker::Make() {
   Int_t iReturn = kStOK;
 
     // Read data from both files into separate maps
-    std::map<int, RunData> bhtRunDataMap = readDataFromFile("../runProperties/BHT2VPDMB-30_matched_cleaned.txt");
-    std::map<int, RunData> vpdRunDataMap = readDataFromFile("../runProperties/VPDMB-30_matched_cleaned.txt");
+    std::map<int, StPicoJetMaker::RunData> bhtRunDataMap = readDataFromFile("../runProperties/BHT2VPDMB-30_matched_cleaned.txt");
+    std::map<int, StPicoJetMaker::RunData> vpdRunDataMap = readDataFromFile("../runProperties/VPDMB-30_matched_cleaned.txt");
 
     // Check if the maps have been successfully filled
     if (bhtRunDataMap.empty()) {
@@ -329,7 +330,7 @@ void StPicoJetMaker::fillEventStats(int *aEventStat) {
 //________________________________________________________________________
 std::map<int, StPicoJetMaker::RunData> StPicoJetMaker::readDataFromFile(const std::string& filename) {
     std::ifstream file(filename);
-    std::map<int, RunData> runDataMap;
+    std::map<int, StPicoJetMaker::RunData> runDataMap;
 
     if (!file.is_open()) {
         std::cerr << "Error: Unable to open file " << filename << std::endl;
