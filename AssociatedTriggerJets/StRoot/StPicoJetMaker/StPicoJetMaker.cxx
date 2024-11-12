@@ -167,6 +167,8 @@ Int_t StPicoJetMaker::Make() {
 
       int runNumber = mPicoDst->event()->runId();
 
+      std::cout << "Checking run number: " << runNumber << std::endl;
+
       // Check if the run number exists in both maps
       auto bhtIt = bhtRunDataMap.find(runNumber);
       auto vpdIt = vpdRunDataMap.find(runNumber);
@@ -328,7 +330,7 @@ void StPicoJetMaker::fillEventStats(int *aEventStat) {
 }
 
 //________________________________________________________________________
-std::map<int, StPicoJetMaker::RunData> StPicoJetMaker::readDataFromFile(const std::string& filename) {
+/*std::map<int, StPicoJetMaker::RunData> StPicoJetMaker::readDataFromFile(const std::string& filename) {
     std::ifstream file(filename);
     std::map<int, StPicoJetMaker::RunData> runDataMap;
 
@@ -346,6 +348,28 @@ std::map<int, StPicoJetMaker::RunData> StPicoJetMaker::readDataFromFile(const st
 
     file.close();
     return runDataMap;
+}*/
+
+std::map<int, RunData> readDataFromFile(const std::string& filename) {
+    std::map<int, RunData> dataMap;
+    std::ifstream file(filename);
+
+    if (!file.is_open()) {
+        std::cerr << "Error: Could not open file " << filename << std::endl;
+        return dataMap;
+    }
+
+    int runNumber, numberOfEvents;
+    double sampledLuminosity, prescale, livetime;
+
+    // Reading line-by-line and extracting data into the struct
+    while (file >> runNumber >> numberOfEvents >> sampledLuminosity >> prescale >> livetime) {
+        RunData runData = {runNumber, numberOfEvents, sampledLuminosity, prescale, livetime};
+        dataMap[runNumber] = runData;
+    }
+
+    file.close();
+    return dataMap;
 }
 //________________________________________________________________________
 double StPicoJetMaker::calculateWeight(const RunData& htRunData, const RunData& mbRunData) {
