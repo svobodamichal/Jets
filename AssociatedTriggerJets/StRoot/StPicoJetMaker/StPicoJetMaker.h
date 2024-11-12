@@ -1,7 +1,12 @@
 #ifndef StPicoJetMaker_h
 #define StPicoJetMaker_h
 
+#include <iostream>
+#include <fstream>
 #include <vector>
+#include <string>
+#include <sstream>
+
 
 #include "TVector3.h"
 #include "StarClassLibrary/StLorentzVectorF.hh"
@@ -19,6 +24,10 @@
 #include "TH2D.h"
 
 #include "../StPicoCuts/StPicoCuts.h"
+
+#include "../runProperties/BHT2VPDMB-30_matched_cleaned.txt"
+#include "../runProperties/VPDMB-30_matched_cleaned.txt"
+
 
 class StPicoJetMaker : public StMaker
 {
@@ -50,6 +59,17 @@ class StPicoJetMaker : public StMaker
     void  Clear(Option_t *opt="");
     Int_t Finish();
 
+    struct RunData {
+        int runNumber;
+        int numberOfEvents;
+        double sampledLuminosity;
+        double prescale;
+        double livetime;
+    };  // Struct to hold data from the .txt files
+
+    std::map<int, RunData> readDataFromFile(const std::string& filename);
+    double calculateWeight(const std::vector<RunData>& htRunDataList, const RunData& mbRunData);
+
   protected:
     bool         isMcMode() const;
     unsigned int isMakerMode() const;
@@ -77,6 +97,7 @@ class StPicoJetMaker : public StMaker
     void  fillEventStats(int *aEventStat);
 
     // -- private members ------------------------
+
 
     TString   mInputFileName;        //! *.list - MuDst or picoDst  //Jana    
 

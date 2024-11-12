@@ -149,8 +149,42 @@ Int_t StPicoJetMaker::Make() {
   
   Int_t iReturn = kStOK;
 
+    // Read data from both files into separate maps
+    std::map<int, RunData> bhtRunDataMap = readDataFromFile("BHT2VPDMB-30_matched_cleaned.txt");
+    std::map<int, RunData> vpdRunDataMap = readDataFromFile("VPDMB-30_matched_cleaned.txt");
+
+    // Check if the maps have been successfully filled
+    if (bhtRunDataMap.empty()) {
+        std::cerr << "Warning: BHT file data is empty or could not be read." << std::endl;
+    }
+    if (vpdRunDataMap.empty()) {
+        std::cerr << "Warning: VPD file data is empty or could not be read." << std::endl;
+    }
+
   if (setupEvent()) {
     UInt_t nTracks = mPicoDst->numberOfTracks();
+
+      int runNumber = mPicoDst->event()->runId();
+
+      // Check if the run number exists in both maps
+      auto bhtIt = bhtRunDataMap.find(runNumber);
+      auto vpdIt = vpdRunDataMap.find(runNumber);
+
+      if (bhtIt != bhtRunDataMap.end() && vpdIt != vpdRunDataMap.end()) {
+          const RunData& bhtRunData = bhtIt->second;
+          const RunData& vpdRunData = vpdIt->second;
+
+          // Calculate the weight using data from both sources
+          double weightEVT = calculateWeight(bhtRunData, vpdRunData);
+
+          // Fill your histogram with the weight
+          static_cast<TH1D*>(mOutList->FindObject("hrunId_weighted"))->Fill(runNumber, weightEVT);
+      } else {
+          std::cerr << "Warning: Run number " << runNumber << " not found in one or both run data maps." << std::endl;
+      }
+
+
+
 
     // -- Fill vectors of particle types
     if (mMakerMode == StPicoJetMaker::kWrite || mMakerMode == StPicoJetMaker::kAnalyze) {
@@ -250,6 +284,10 @@ void StPicoJetMaker::initializeEventStats() {
 
   //TODO: Add event ID histograms for AuAu Run 2016 and observables vs day information
 
+
+  mOutList->Add(new TH1D("hrunId_weighted", "minimum bias events", 90913, 15076101, 15167014)); //15076101−15167014
+
+
   //All event histograms
   mOutList->Add(new TH1I("hevents", "number of events", 2, 0, 2));
   mOutList->Add(new TH1I("hrefmult", "Reference multiplicity", refmultbins, refmultmin, refmultmax));
@@ -288,3 +326,63 @@ void StPicoJetMaker::fillEventStats(int *aEventStat) {
   }
 }
 
+//________________________________________________________________________
+std::map<int, RunData> readDataFromFile(const std::string& filename) {
+    std::map<int, RunData> runDataMap;
+    std::ifstream file(filename);
+
+    if (!file.is_open()) {
+        std::cerr << "Error: Could not open file " << filename << std::endl;
+        return runDataMap;  // Return an empty map if the file could not be opened
+    }
+
+    std::string line;
+    // Skip the header line if necessary
+    std::getline(file, line);
+
+    while (std::getline(file, line)) {
+        std::istringstream iss(line);
+        RunData runData;
+
+        // Parse the line into the RunData struct
+        if (iss >> runData.runNumber >> runData.numberOfEvents >> runData.sampledLuminosity
+                >> runData.prescale >> runData.livetime) {
+            // Store the parsed data in the map with run number as the key
+            runDataMap[runData.runNumber] = runData;
+        } else {
+            std::cerr << "Warning: Could not parse line: " << line << std::endl;
+        }
+    }
+
+    file.close();
+    return runDataMap;
+}
+//________________________________________________________________________
+double StPicoJetMaker::calculateWeight(const RunData& htRunData, const RunData& mbRunData) {
+    if (htRunData.sampledLuminosity == 0 || htRunData.prescale == 0 || mbRunData.sampledLuminosity == 0 || mbRunData.prescale == 0) {
+            std::cerr << "Error: sampledLuminosity or prescale cannot be zero in weight calculation." << std::endl;
+            continue;
+        }
+
+    // Extract data for calculation
+    double nEtvHT = 1.0;
+    double psMB = mbRunData.prescale;
+    double psHT = htRunData.prescale;
+    double ltHT = htRunData.livetime;
+    double ltMB = mbRunData.livetime;
+    double nMBTotal = mbRunData.numberOfEvents;  // Assuming this is the total for MB
+    double nHTTotal = htRunData.numberOfEvents;  // Assuming this is the total for HT
+    double rMB = 0.88   // Replace with actual rate if different
+    double rHT = 0.98    // Replace with actual rate if different
+
+    double ratioPS = psMB / psHT;
+    double ratioLT = ltHT / ltMB;
+    double nevtMB = nMBTotal * rMB;
+    double nevtHT = nHTTotal * rHT;
+    double ratioNevt = nevtMB / nevtHT;
+
+    // Calculate the contribution for this run
+    double weight = nEtvHT * ratioPS * ratioLT * ratioNevt;
+
+    return weight;
+}
