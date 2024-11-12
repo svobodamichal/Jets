@@ -64,7 +64,7 @@ class StPicoJetMaker : public StMaker
     };  // Struct to hold data from the .txt files
 
     std::map<int, RunData> readDataFromFile(const std::string& filename);
-    double calculateWeight(const std::vector<RunData>& htRunDataList, const RunData& mbRunData);
+    double calculateWeight(const RunData& htRunData, const RunData& mbRunData);
 
 
 protected:
