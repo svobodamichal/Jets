@@ -151,8 +151,8 @@ Int_t StPicoJetMaker::Make() {
   Int_t iReturn = kStOK;
 
     // Read data from both files into separate maps
-    std::map<int, StPicoJetMaker::RunData> bhtRunDataMap = readDataFromFile("../runProperties/BHT2VPDMB-30_matched_cleaned.txt");
-    std::map<int, StPicoJetMaker::RunData> vpdRunDataMap = readDataFromFile("../runProperties/VPDMB-30_matched_cleaned.txt");
+    std::map<int, StPicoJetMaker::RunData> bhtRunDataMap = readDataFromFile("BHT2VPDMB-30_matched_cleaned.txt");
+    std::map<int, StPicoJetMaker::RunData> vpdRunDataMap = readDataFromFile("VPDMB-30_matched_cleaned.txt");
 
     // Check if the maps have been successfully filled
     if (bhtRunDataMap.empty()) {
