@@ -150,8 +150,8 @@ Int_t StPicoJetMaker::Make() {
   
   Int_t iReturn = kStOK;
 
-    std::string file1 = "BHT2VPDMB-30_matched_cleaned.txt";
-    std::string file2 = "VPDMB-30_matched_cleaned.txt";
+    std::string file1 = "/gpfs01/star/pwg/svomich/Jets/AssociatedTriggerJets/StRoot/StPicoJetMaker/BHT2VPDMB-30_matched_cleaned.txt";
+    std::string file2 = "/gpfs01/star/pwg/svomich/Jets/AssociatedTriggerJets/StRoot/StPicoJetMaker/VPDMB-30_matched_cleaned.txt";
 
     // Read data from both files into separate maps
     std::map<int, RunData> bhtRunDataMap = readDataFromFile(file1);
