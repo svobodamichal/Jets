@@ -154,8 +154,8 @@ Int_t StPicoJetMaker::Make() {
     std::string file2 = "VPDMB-30_matched_cleaned.txt";
 
     // Read data from both files into separate maps
-    std::map<int, StPicoJetMaker::RunData> bhtRunDataMap = readDataFromFile(file1);
-    std::map<int, StPicoJetMaker::RunData> vpdRunDataMap = readDataFromFile(file2);
+    std::map<int, RunData> bhtRunDataMap = readDataFromFile(file1);
+    std::map<int, RunData> vpdRunDataMap = readDataFromFile(file2);
 
     // Output the results for testing
     std::cout << "Data from " << file1 << ":\n";
@@ -378,8 +378,8 @@ void StPicoJetMaker::fillEventStats(int *aEventStat) {
     return runDataMap;
 }*/
 
-std::map<int, StPicoJetMaker::RunData> StPicoJetMaker::readDataFromFile(const std::string& filename) {
-    std::map<int, StPicoJetMaker::RunData> dataMap;
+std::map<int, RunData> readDataFromFile(const std::string& filename) {
+    std::map<int, RunData> dataMap;
     std::ifstream file(filename);
 
     if (!file.is_open()) {
@@ -400,7 +400,7 @@ std::map<int, StPicoJetMaker::RunData> StPicoJetMaker::readDataFromFile(const st
     return dataMap;
 }
 //________________________________________________________________________
-double StPicoJetMaker::calculateWeight(const RunData& htRunData, const RunData& mbRunData) {
+double calculateWeight(const RunData& htRunData, const RunData& mbRunData) {
     if (htRunData.sampledLuminosity == 0 || htRunData.prescale == 0 || mbRunData.sampledLuminosity == 0 || mbRunData.prescale == 0) {
             std::cerr << "Error: sampledLuminosity or prescale cannot be zero in weight calculation." << std::endl;
             return 0;}
