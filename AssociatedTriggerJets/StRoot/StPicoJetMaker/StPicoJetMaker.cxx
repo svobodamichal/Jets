@@ -180,7 +180,6 @@ Int_t StPicoJetMaker::Make() {
 
           // Calculate the weight using data from both sources
           double weightEVT = calculateWeight(bhtRunData, vpdRunData);
-          cout << "Weight: " << weightEVT << endl;
 
           // Fill your histogram with the weight
           static_cast<TH1D*>(mOutList->FindObject("hrunId_weighted"))->Fill(runNumber, weightEVT);
