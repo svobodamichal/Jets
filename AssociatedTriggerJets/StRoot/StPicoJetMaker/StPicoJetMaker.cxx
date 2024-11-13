@@ -170,29 +170,6 @@ Int_t StPicoJetMaker::Make() {
 
       int runNumber = mPicoDst->event()->runId();
 
-      // Check if the run number exists in both maps
-      auto bhtIt = bhtRunDataMap.find(runNumber);
-      auto vpdIt = vpdRunDataMap.find(runNumber);
-
-      if (bhtIt != bhtRunDataMap.end() && vpdIt != vpdRunDataMap.end()) {
-          const RunData& bhtRunData = bhtIt->second;
-          const RunData& vpdRunData = vpdIt->second;
-
-          // Calculate the weight using data from both sources
-          double weightEVT = calculateWeight(bhtRunData, vpdRunData);
-
-          cout << "Weight: " << weightEVT << endl;
-
-          // Fill your histogram with the weight
-          static_cast<TH1D*>(mOutList->FindObject("hrunId_weighted"))->Fill(runNumber, weightEVT);
-          static_cast<TH1D*>(mOutList->FindObject("hevents_weighted"))->Fill(1, weightEVT);
-      } else {
-          std::cerr << "Warning: Run number " << runNumber << " not found in one or both run data maps." << std::endl;
-      }
-
-
-
-
     // -- Fill vectors of particle types
     if (mMakerMode == StPicoJetMaker::kWrite || mMakerMode == StPicoJetMaker::kAnalyze) {
       for (unsigned short iTrack = 0; iTrack < nTracks; ++iTrack) {
@@ -204,10 +181,27 @@ Int_t StPicoJetMaker::Make() {
 
 			 if (!trk || !mPicoCuts->isGoodPrimaryTrack(trk)) continue;
 
-
         mIdxPicoParticles.push_back(iTrack);
       }
     }
+
+      // Check if the run number exists in both maps
+      auto bhtIt = bhtRunDataMap.find(runNumber);
+      auto vpdIt = vpdRunDataMap.find(runNumber);
+
+      if (bhtIt != bhtRunDataMap.end() && vpdIt != vpdRunDataMap.end()) {
+          const RunData& bhtRunData = bhtIt->second;
+          const RunData& vpdRunData = vpdIt->second;
+
+          // Calculate the weight using data from both sources
+          double weightEVT = calculateWeight(bhtRunData, vpdRunData);
+
+          // Fill your histogram with the weight
+          static_cast<TH1D*>(mOutList->FindObject("hrunId_weighted"))->Fill(runNumber, weightEVT);
+          static_cast<TH1D*>(mOutList->FindObject("hevents_weighted"))->Fill(1, weightEVT);
+      } else {
+          std::cerr << "Warning: Run number " << runNumber << " not found in one or both run data maps." << std::endl;
+      }
 
     // -- call method of daughter class
     iReturn = MakeJets();
