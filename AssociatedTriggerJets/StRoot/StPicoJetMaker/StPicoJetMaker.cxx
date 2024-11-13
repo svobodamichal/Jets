@@ -150,9 +150,37 @@ Int_t StPicoJetMaker::Make() {
   
   Int_t iReturn = kStOK;
 
+    std::string file1 = "BHT2VPDMB-30_matched_cleaned.txt";
+    std::string file2 = "VPDMB-30_matched_cleaned.txt";
+
     // Read data from both files into separate maps
-    std::map<int, StPicoJetMaker::RunData> bhtRunDataMap = readDataFromFile("BHT2VPDMB-30_matched_cleaned.txt");
-    std::map<int, StPicoJetMaker::RunData> vpdRunDataMap = readDataFromFile("VPDMB-30_matched_cleaned.txt");
+    std::map<int, StPicoJetMaker::RunData> bhtRunDataMap = readDataFromFile(file1);
+    std::map<int, StPicoJetMaker::RunData> vpdRunDataMap = readDataFromFile(file2);
+
+    // Output the results for testing
+    std::cout << "Data from " << file1 << ":\n";
+    for (const auto& entry : bhtRunDataMap) {
+        const int& runNumber = entry.first;
+        const RunData& runData = entry.second;
+
+        std::cout << "Run: " << runData.runNumber
+                  << ", Events: " << runData.numberOfEvents
+                  << ", Luminosity: " << runData.sampledLuminosity
+                  << ", Prescale: " << runData.prescale
+                  << ", Livetime: " << runData.livetime << '\n';
+    }
+
+    std::cout << "\nData from " << file2 << ":\n";
+    for (const auto& entry : vpdRunDataMap) {
+        const int& runNumber = entry.first;
+        const RunData& runData = entry.second;
+
+        std::cout << "Run: " << runData.runNumber
+                  << ", Events: " << runData.numberOfEvents
+                  << ", Luminosity: " << runData.sampledLuminosity
+                  << ", Prescale: " << runData.prescale
+                  << ", Livetime: " << runData.livetime << '\n';
+    }
 
     // Check if the maps have been successfully filled
     if (bhtRunDataMap.empty()) {
