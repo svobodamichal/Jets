@@ -352,7 +352,7 @@ std::map<int, RunData> StPicoJetMaker::readDataFromFile(const std::string& filen
     return dataMap;
 }
 //________________________________________________________________________
-double calculateWeight(const RunData& htRunData, const RunData& mbRunData) {
+double StPicoJetMaker::calculateWeight(const RunData& htRunData, const RunData& mbRunData) {
     if (htRunData.sampledLuminosity == 0 || htRunData.prescale == 0 || mbRunData.sampledLuminosity == 0 || mbRunData.prescale == 0) {
             std::cerr << "Error: sampledLuminosity or prescale cannot be zero in weight calculation." << std::endl;
             return 0;}
