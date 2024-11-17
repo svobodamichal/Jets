@@ -330,7 +330,7 @@ void StPicoJetMaker::fillEventStats(int *aEventStat) {
     return runDataMap;
 }*/
 
-std::map<int, RunData> readDataFromFile(const std::string& filename) {
+std::map<int, RunData> StPicoJetMaker::readDataFromFile(const std::string& filename) {
     std::map<int, RunData> dataMap;
     std::ifstream file(filename);
 
