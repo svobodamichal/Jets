@@ -183,15 +183,6 @@ Int_t StPicoJetMaker::Make() {
       }
     }
 
-      // Check if the run number exists in both maps
-      auto bhtIt = bhtRunDataMap.find(runNumber);
-      auto vpdIt = vpdRunDataMap.find(runNumber);
-
-      if (bhtIt != bhtRunDataMap.end() && vpdIt != vpdRunDataMap.end()) {
-          const RunData& bhtRunData = bhtIt->second;
-          const RunData& vpdRunData = vpdIt->second;
-
-
 
     // -- call method of daughter class
     iReturn = MakeJets();
