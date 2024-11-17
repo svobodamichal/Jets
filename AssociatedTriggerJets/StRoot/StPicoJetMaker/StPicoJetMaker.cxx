@@ -198,7 +198,7 @@ Int_t StPicoJetMaker::Make() {
 
           // Fill your histogram with the weight
           static_cast<TH1D*>(mOutList->FindObject("hrunId_weighted"))->Fill(runNumber, weightEVT);
-          static_cast<TH1D*>(mOutList->FindObject("hevents_weighted"))->Fill(1, weightEVT);
+          static_cast<TH1D*>(mOutList->FindObject("hevents_weighted"))->Fill(1, 1*weightEVT);
       } else {
           std::cerr << "Warning: Run number " << runNumber << " not found in one or both run data maps." << std::endl;
       }
