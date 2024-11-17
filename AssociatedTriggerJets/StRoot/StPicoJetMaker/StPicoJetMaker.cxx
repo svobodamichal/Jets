@@ -397,7 +397,10 @@ void StPicoJetMaker::precomputeWeights() {
         std::cerr << "Warning: VPD file data is empty or could not be read." << std::endl;
     }
 
-    for (const auto& [runNumber, bhtRunData] : bhtRunDataMap) {
+    for (const auto& pair : bhtRunDataMap) {
+        int runNumber = pair.first;
+        const RunData& bhtRunData = pair.second;
+
         auto vpdIt = vpdRunDataMap.find(runNumber);
         if (vpdIt != vpdRunDataMap.end()) {
             const RunData& vpdRunData = vpdIt->second;
