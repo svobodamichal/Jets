@@ -33,8 +33,6 @@ struct RunData {
     double livetime;
 };  // Struct to hold data from the .txt files
 
-std::map<int, RunData> readDataFromFile(const std::string& filename);
-double calculateWeight(const RunData& htRunData, const RunData& mbRunData);
 
 
 class StPicoJetMaker : public StMaker
@@ -67,6 +65,7 @@ class StPicoJetMaker : public StMaker
     void  Clear(Option_t *opt="");
     Int_t Finish();
 
+    double calculateWeight(const RunData& htRunData, const RunData& mbRunData);
     void precomputeWeights();
 
 
@@ -121,6 +120,9 @@ protected:
     ClassDef(StPicoJetMaker, 0)
 
     std::map<int, double> mWeightMap;
+    std::map<int, RunData> bhtRunDataMap;
+    std::map<int, RunData> vpdRunDataMap;
+    std::map<int, RunData> readDataFromFile(const std::string& filename);
 
 };
 
