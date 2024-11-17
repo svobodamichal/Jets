@@ -63,7 +63,7 @@ Int_t StPicoJetMaker::Init() {
     int Split = 1;
     if (!mTree) 
       mTree = new TTree("T", "T", BufSize);
-    mTree->SetAutoSave(1000000); // autosave every 1 Mbytes
+    mTree->SetAutoSave(1000000); // autosave every 1 MBytes
   }
 
   // -- disable automatic adding of objects to file
@@ -92,7 +92,7 @@ Int_t StPicoJetMaker::Init() {
 
 // _________________________________________________________
 Int_t StPicoJetMaker::Finish() {
-  // -- Inhertited from StMaker 
+  // -- Inherited from StMaker
   //    NOT TO BE OVERWRITTEN by daughter class
   //    daughter class should implement FinishHF()
 
@@ -122,7 +122,7 @@ void StPicoJetMaker::resetEvent() {
 
 // _________________________________________________________
 void StPicoJetMaker::Clear(Option_t *opt) {
-  // -- Inhertited from StMaker 
+  // -- Inherited from StMaker
   //    NOT TO BE OVERWRITTEN by daughter class
   //    daughter class should implement ClearHF()
 
@@ -131,7 +131,7 @@ void StPicoJetMaker::Clear(Option_t *opt) {
 
 // _________________________________________________________
 Int_t StPicoJetMaker::Make() {
-  // -- Inhertited from StMaker 
+  // -- Inherited from StMaker
   //    NOT TO BE OVERWRITTEN by daughter class
   //    daughter class should implement MakeHF()
   // -- isPion, isKaon, isProton methods are to be 
@@ -150,21 +150,6 @@ Int_t StPicoJetMaker::Make() {
   }
   
   Int_t iReturn = kStOK;
-
-    std::string file1 = "/gpfs01/star/pwg/svomich/Jets/AssociatedTriggerJets/StRoot/StPicoJetMaker/BHT2VPDMB-30_matched_cleaned.txt";
-    std::string file2 = "/gpfs01/star/pwg/svomich/Jets/AssociatedTriggerJets/StRoot/StPicoJetMaker/VPDMB-30_matched_cleaned.txt";
-
-    // Read data from both files into separate maps
-    std::map<int, RunData> bhtRunDataMap = readDataFromFile(file1);
-    std::map<int, RunData> vpdRunDataMap = readDataFromFile(file2);
-
-    // Check if the maps have been successfully filled
-    if (bhtRunDataMap.empty()) {
-        std::cerr << "Warning: BHT file data is empty or could not be read." << std::endl;
-    }
-    if (vpdRunDataMap.empty()) {
-        std::cerr << "Warning: VPD file data is empty or could not be read." << std::endl;
-    }
 
   if (setupEvent()) {
     UInt_t nTracks = mPicoDst->numberOfTracks();
@@ -405,6 +390,22 @@ double calculateWeight(const RunData& htRunData, const RunData& mbRunData) {
 }
 //________________________________________________________________________
 void StPicoJetMaker::precomputeWeights() {
+
+    std::string file1 = "/gpfs01/star/pwg/svomich/Jets/AssociatedTriggerJets/StRoot/StPicoJetMaker/BHT2VPDMB-30_matched_cleaned.txt";
+    std::string file2 = "/gpfs01/star/pwg/svomich/Jets/AssociatedTriggerJets/StRoot/StPicoJetMaker/VPDMB-30_matched_cleaned.txt";
+
+    // Read data from both files into separate maps
+    std::map<int, RunData> bhtRunDataMap = readDataFromFile(file1);
+    std::map<int, RunData> vpdRunDataMap = readDataFromFile(file2);
+
+    // Check if the maps have been successfully filled
+    if (bhtRunDataMap.empty()) {
+        std::cerr << "Warning: BHT file data is empty or could not be read." << std::endl;
+    }
+    if (vpdRunDataMap.empty()) {
+        std::cerr << "Warning: VPD file data is empty or could not be read." << std::endl;
+    }
+
     for (const auto& [runNumber, bhtRunData] : bhtRunDataMap) {
         auto vpdIt = vpdRunDataMap.find(runNumber);
         if (vpdIt != vpdRunDataMap.end()) {
