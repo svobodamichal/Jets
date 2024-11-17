@@ -86,6 +86,7 @@ Int_t StPicoJetMaker::Init() {
   // -- reset event to be in a defined state
   resetEvent();
 
+  precomputeWeights();
   return kStOK;
 }
 
@@ -170,6 +171,18 @@ Int_t StPicoJetMaker::Make() {
 
       int runNumber = mPicoDst->event()->runId();
 
+      auto weightIt = mWeightMap.find(runNumber);
+      if (weightIt != mWeightMap.end()) {
+          double weightEVT = weightIt->second;
+
+          // Fill histograms with the precomputed weight
+          static_cast<TH1D*>(mOutList->FindObject("hrunId_weighted"))->Fill(runNumber, weightEVT);
+          static_cast<TH1D*>(mOutList->FindObject("hevents_weighted"))->Fill(1, 1 * weightEVT);
+      } else {
+          std::cerr << "Warning: Precomputed weight not found for run number " << runNumber << std::endl;
+      }
+
+
     // -- Fill vectors of particle types
     if (mMakerMode == StPicoJetMaker::kWrite || mMakerMode == StPicoJetMaker::kAnalyze) {
       for (unsigned short iTrack = 0; iTrack < nTracks; ++iTrack) {
@@ -193,15 +206,7 @@ Int_t StPicoJetMaker::Make() {
           const RunData& bhtRunData = bhtIt->second;
           const RunData& vpdRunData = vpdIt->second;
 
-          // Calculate the weight using data from both sources
-          double weightEVT = calculateWeight(bhtRunData, vpdRunData);
 
-          // Fill your histogram with the weight
-          static_cast<TH1D*>(mOutList->FindObject("hrunId_weighted"))->Fill(runNumber, weightEVT);
-          static_cast<TH1D*>(mOutList->FindObject("hevents_weighted"))->Fill(1, 1*weightEVT);
-      } else {
-          std::cerr << "Warning: Run number " << runNumber << " not found in one or both run data maps." << std::endl;
-      }
 
     // -- call method of daughter class
     iReturn = MakeJets();
@@ -397,4 +402,16 @@ double calculateWeight(const RunData& htRunData, const RunData& mbRunData) {
     double weight = nEtvHT * ratioPS * ratioLT * ratioNevt;
 
     return weight;
+}
+//________________________________________________________________________
+void StPicoJetMaker::precomputeWeights() {
+    for (const auto& [runNumber, bhtRunData] : bhtRunDataMap) {
+        auto vpdIt = vpdRunDataMap.find(runNumber);
+        if (vpdIt != vpdRunDataMap.end()) {
+            const RunData& vpdRunData = vpdIt->second;
+            mWeightMap[runNumber] = calculateWeight(bhtRunData, vpdRunData);
+        } else {
+            std::cerr << "Warning: Run number " << runNumber << " not found in VPD data map." << std::endl;
+        }
+    }
 }

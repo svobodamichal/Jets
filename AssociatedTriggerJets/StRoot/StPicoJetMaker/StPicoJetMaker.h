@@ -67,6 +67,7 @@ class StPicoJetMaker : public StMaker
     void  Clear(Option_t *opt="");
     Int_t Finish();
 
+    void precomputeWeights();
 
 
 protected:
@@ -118,6 +119,9 @@ protected:
     TFile*          mOutputFileTree;     // ptr to file saving the HFtree
     TFile*          mOutputFileList;     // ptr to file saving the list of histograms
     ClassDef(StPicoJetMaker, 0)
+
+    std::map<int, double> mWeightMap;
+
 };
 
 inline void StPicoJetMaker::setPicoCuts(StPicoCuts *cuts) {mPicoCuts = cuts;}
