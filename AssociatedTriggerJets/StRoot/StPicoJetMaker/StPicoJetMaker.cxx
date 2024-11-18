@@ -160,6 +160,8 @@ Int_t StPicoJetMaker::Make() {
       if (weightIt != mWeightMap.end()) {
           double weightEVT = weightIt->second;
 
+          cout << "Run number: " << runNumber << " Weight: " << weightEVT << endl;
+
           // Fill histograms with the precomputed weight
           static_cast<TH1D*>(mOutList->FindObject("hrunId_weighted"))->Fill(runNumber, weightEVT);
           static_cast<TH1D*>(mOutList->FindObject("hevents_weighted"))->Fill(1, 1 * weightEVT);
