@@ -65,6 +65,8 @@ class StPicoHFJetMaker : public StPicoJetMaker {
 	virtual Bool_t GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPrimVtx);
 	virtual Int_t FindTriggerTowers(Int_t level);
 
+    int SetHighTowerVar(StMcTrack* mcTrack, bool isele);
+
 
     StEmcADCtoEMaker *mADCtoEMaker;
   StBemcTables     *mTables;
@@ -155,6 +157,9 @@ private:
 	float fpThatmin;
 	float fpThatmax;
 	float fWeight;
+
+    float bemcEnergy[4801];
+    int bemcADC[4801];
 
   // -- ADD USER MEMBERS HERE -------------------
 

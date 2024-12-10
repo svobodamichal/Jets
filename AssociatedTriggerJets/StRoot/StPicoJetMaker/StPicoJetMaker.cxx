@@ -160,8 +160,6 @@ Int_t StPicoJetMaker::Make() {
       if (weightIt != mWeightMap.end()) {
           double weightEVT = weightIt->second;
 
-          cout << "Run number: " << runNumber << " Weight: " << weightEVT << endl;
-
           // Fill histograms with the precomputed weight
           static_cast<TH1D*>(mOutList->FindObject("hrunId_weighted"))->Fill(runNumber, weightEVT);
           static_cast<TH1D*>(mOutList->FindObject("hevents_weighted"))->Fill(1, 1 * weightEVT);
@@ -312,26 +310,6 @@ void StPicoJetMaker::fillEventStats(int *aEventStat) {
 }
 
 //________________________________________________________________________
-/*std::map<int, StPicoJetMaker::RunData> StPicoJetMaker::readDataFromFile(const std::string& filename) {
-    std::ifstream file(filename);
-    std::map<int, StPicoJetMaker::RunData> runDataMap;
-
-    if (!file.is_open()) {
-        std::cerr << "Error: Unable to open file " << filename << std::endl;
-        return runDataMap;
-    }
-
-    int runNumber;
-    RunData runData;
-    while (file >> runNumber >> runData.numberOfEvents >> runData.sampledLuminosity
-                >> runData.prescale >> runData.livetime) {
-        runDataMap[runNumber] = runData;
-    }
-
-    file.close();
-    return runDataMap;
-}*/
-
 std::map<int, RunData> StPicoJetMaker::readDataFromFile(const std::string& filename) {
     std::map<int, RunData> dataMap;
     std::ifstream file(filename);

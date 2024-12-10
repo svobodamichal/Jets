@@ -706,9 +706,37 @@ int StPicoHFJetMaker::MakeJets() {
 
 
 	//RC part
-	
-	
-	GetCaloTrackMomentum(mPicoDst,mPrimVtx); //fill array Sump with momenta of tracks which are matched to BEMC
+
+
+    //Save all the pedestal subtracted ADC values and energies
+    StEmcDetector* bemcDet = mEvent->emcCollection()->detector(kBarrelEmcTowerId);
+    for (int i = 0;i<4801;i++){    bemcEnergy[i] = 0;bemcADC[i]=0;}
+    for (unsigned int m = 1; m<=bemcDet->numberOfModules(); ++m){
+        StSPtrVecEmcRawHit& hits = bemcDet->module(m)->hits();
+        for (StSPtrVecEmcRawHitIterator i = hits.begin(); i != hits.end(); ++i){
+            StEmcRawHit* hit = *i;
+            if (hit->energy()<=0) continue;
+            int softId;
+            int modN = hit->module();
+            int etaN = hit->eta();
+            int subN = hit->sub();
+            StEmcGeom *geomBemc = StEmcGeom::getEmcGeom(1);
+            geomBemc->getId(modN, etaN, subN, softId);
+            int status;
+            Float_t pedestal, rms;
+            mBemcTables->getStatus(1, softId, status);
+            mBemcTables->getPedestal(1,softId,0,pedestal,rms);
+            if (hit->adc() < pedestal + 3 * rms) continue;
+            bemcADC[softId]= hit->adc();
+            //cout << "Id: " << softId << ", ADC: " << hit->adc() << endl;
+            bemcEnergy[softId] = hit->energy();
+            if (bemcADC[softId]>75)
+                cout<<"bemcADC["<<softId<<"] = "<<bemcADC[softId]<<" energy = "<<bemcEnergy[softId]<<endl;
+        }
+    }
+
+
+    GetCaloTrackMomentum(mPicoDst,mPrimVtx); //fill array Sump with momenta of tracks which are matched to BEMC
 
     StEmcPosition* mEmcPosition;
     mEmcPosition = new StEmcPosition();
@@ -756,6 +784,7 @@ int StPicoHFJetMaker::MakeJets() {
 		if (TOWE > fTrgthresh) inputTower.set_user_index(9999); //mark trigger towers with user_index 9999
 		neutraljetTracks.push_back(inputTower);}
 	} //end get btow info
+
 
     TRandom3 randGen;
 
@@ -1210,5 +1239,6 @@ Bool_t StPicoHFJetMaker::GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPri
 	
 	return Triggers.size();
  }
+//-----------------------------------------------------------------------------
 
 
