@@ -27,6 +27,20 @@
 //#include </gpfs01/star/pwg/licenrob/jets/fastjet/contrib/RecursiveSoftDrop.hh>
 //#include <fastjet/internal/base.hh> //robotmon
 //#endif
+
+#include "StEventTypes.h"
+#include "StMcEvent/StMcEventTypes.hh"
+#include "StAssociationMaker/StAssociationMaker.h"
+#include "StAssociationMaker/StTrackPairInfo.hh"
+#include "StEmcTriggerMaker/StEmcTriggerMaker.h"
+#include "tables/St_g2t_event_Table.h"
+#include "tables/St_g2t_pythia_Table.h"
+#include "StEventUtilities/StuRefMult.hh"
+#include "StEmcUtil/geometry/StEmcGeom.h"
+#include "StEmcUtil/projection/StEmcPosition.h"
+#include "StContainers.h"
+#include "StEmcUtil/database/StBemcTables.h"
+
 #include <vector>
 
 #include <TRandom3.h>
