@@ -163,6 +163,7 @@ private:
     float bemcEnergy[4801];
     int bemcADC[4801];
     StBemcTables* mBemcTables;
+    StEvent* mEvent;
 
 
     // -- ADD USER MEMBERS HERE -------------------

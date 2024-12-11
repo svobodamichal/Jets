@@ -673,7 +673,11 @@ int StPicoHFJetMaker::MakeJets() {
 	float weight = Weight*fWeight; //centrality weight * cross section weight
 	static_cast<TH1D*>(mOutList->FindObject("hweight"))->Fill(weight);
 
-
+    mEvent = (StEvent*)GetDataSet("StEvent");
+    if (!mEvent) {
+        LOG_WARN << "No StEvent" << endm;
+        return kStWarn;
+    }
 
     if (centrality == 0) centrality = 1; // merge 0-5% and 5-10% into 0-10%
     if (centrality == 8) centrality = 7; // merge 60-70% and 70-80% into 60-80%
@@ -726,7 +730,7 @@ int StPicoHFJetMaker::MakeJets() {
     mBemcTables->loadTables(fRunNumber);
 
     //Save all the pedestal subtracted ADC values and energies
-    StEmcDetector* bemcDet = mPicoDst->event()->emcCollection()->detector(kBarrelEmcTowerId);
+    StEmcDetector* bemcDet = mEvent->emcCollection()->detector(kBarrelEmcTowerId);
     for (int i = 0;i<4801;i++){    bemcEnergy[i] = 0;bemcADC[i]=0;}
     for (unsigned int m = 1; m<=bemcDet->numberOfModules(); ++m){
         StSPtrVecEmcRawHit& hits = bemcDet->module(m)->hits();
@@ -745,10 +749,8 @@ int StPicoHFJetMaker::MakeJets() {
             mBemcTables->getPedestal(1,softId,0,pedestal,rms);
             if (hit->adc() < pedestal + 3 * rms) continue;
             bemcADC[softId]= hit->adc();
-            //cout << "Id: " << softId << ", ADC: " << hit->adc() << endl;
+            cout << "Id: " << softId << ", ADC: " << hit->adc() << endl;
             bemcEnergy[softId] = hit->energy();
-            if (bemcADC[softId]>75)
-                cout<<"bemcADC["<<softId<<"] = "<<bemcADC[softId]<<" energy = "<<bemcEnergy[softId]<<endl;
         }
     }
 
@@ -798,7 +800,7 @@ int StPicoHFJetMaker::MakeJets() {
 		inputTower.set_user_index(0); //default index is -1, 0 means neutral particle
 		//THIS LINE WILL NOT WORK
 		//if (find(Triggers.begin(), Triggers.end(), realtowID)!=Triggers.end()) inputTower.set_user_index(2); //mark trigger towers with user_index 2
-		if (TOWE > fTrgthresh) inputTower.set_user_index(9999); //mark trigger towers with user_index 9999
+		if (bemcEnergy[iTow] > 18) inputTower.set_user_index(9999); //mark trigger towers with user_index 9999
 		neutraljetTracks.push_back(inputTower);}
 	} //end get btow info
 
