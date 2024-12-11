@@ -801,6 +801,7 @@ int StPicoHFJetMaker::MakeJets() {
 		//THIS LINE WILL NOT WORK
 		//if (find(Triggers.begin(), Triggers.end(), realtowID)!=Triggers.end()) inputTower.set_user_index(2); //mark trigger towers with user_index 2
 		if (bemcEnergy[iTow] > 18) inputTower.set_user_index(9999); //mark trigger towers with user_index 9999
+        cout << "Tower i = "<< iTow <<"ADC = " << bemcADC[iTow] <<endl;
 		neutraljetTracks.push_back(inputTower);}
 	} //end get btow info
 
