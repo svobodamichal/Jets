@@ -51,6 +51,13 @@ class StEmcADCtoEMaker;
 class StBemcTables;
 
 
+class StMcEvent;
+class StMcTrack;
+class StEvent;
+class StTrack;
+class StEmcDecoder;
+
+
 class StPicoHFJetMaker : public StPicoJetMaker {
  public:
   //  StPicoHFJetMaker(char const* name, StPicoDstMaker* picoMaker, char const* outputBaseFileName);
