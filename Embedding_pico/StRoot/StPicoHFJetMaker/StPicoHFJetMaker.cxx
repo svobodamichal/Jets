@@ -419,7 +419,9 @@ int StPicoHFJetMaker::InitJets() {
     float ptembmaxbin = 25;
     float deltaptembminbin = -30;
     float deltaptembmaxbin = 50;
-    
+
+    mBemcTables = new StBemcTables;
+
     TH1::SetDefaultSumw2();
 
     mOutList->Add(new TH1D("hweight", "weight", 135, 0, 3));
@@ -721,9 +723,10 @@ int StPicoHFJetMaker::MakeJets() {
 
 	//RC part
 
+    mBemcTables->loadTables(fRunNumber);
 
     //Save all the pedestal subtracted ADC values and energies
-    StEmcDetector* bemcDet = mEvent->emcCollection()->detector(kBarrelEmcTowerId);
+    StEmcDetector* bemcDet = mPicoDst->event()->emcCollection()->detector(kBarrelEmcTowerId);
     for (int i = 0;i<4801;i++){    bemcEnergy[i] = 0;bemcADC[i]=0;}
     for (unsigned int m = 1; m<=bemcDet->numberOfModules(); ++m){
         StSPtrVecEmcRawHit& hits = bemcDet->module(m)->hits();

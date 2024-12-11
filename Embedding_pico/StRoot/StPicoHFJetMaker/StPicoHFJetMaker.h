@@ -162,8 +162,10 @@ private:
 
     float bemcEnergy[4801];
     int bemcADC[4801];
+    StBemcTables* mBemcTables;
 
-  // -- ADD USER MEMBERS HERE -------------------
+
+    // -- ADD USER MEMBERS HERE -------------------
 
   ClassDef(StPicoHFJetMaker, 0)
 
