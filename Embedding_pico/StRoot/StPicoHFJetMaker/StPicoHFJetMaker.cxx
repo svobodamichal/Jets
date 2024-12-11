@@ -727,7 +727,7 @@ int StPicoHFJetMaker::MakeJets() {
 
 	//RC part
 
-    mBemcTables->loadTables(fRunNumber);
+    mBemcTables->loadTables(this);
 
     //Save all the pedestal subtracted ADC values and energies
     StEmcDetector* bemcDet = mEvent->emcCollection()->detector(kBarrelEmcTowerId);
