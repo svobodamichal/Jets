@@ -683,6 +683,7 @@ int StPicoHFJetMaker::MakeJets() {
 
     mEvent = (StEvent*)GetDataSet("StEvent");
     if (!mEvent) {
+        cout << "POJEBÁNO" << endl;
         LOG_WARN << "No StEvent" << endm;
         return kStWarn;
     }
