@@ -28,6 +28,8 @@
 //#include <fastjet/internal/base.hh> //robotmon
 //#endif
 
+#include "StDaqLib/EMC/StEmcDecoder.h"
+
 #include "StEventTypes.h"
 #include "StMcEvent/StMcEventTypes.hh"
 #include "StAssociationMaker/StAssociationMaker.h"
