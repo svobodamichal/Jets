@@ -643,6 +643,13 @@ int StPicoHFJetMaker::FinishJets() {
   return kStOK;
 }
 
+int StPicoHFJetMaker::InitRun(int runNumber)
+{
+    mEmcDecoder->SetDateTime(GetDate(), GetTime());
+    mBemcTables->loadTables(this);
+    return StMaker::InitRun(runNumber);
+}
+
 // _________________________________________________________
 int StPicoHFJetMaker::MakeJets() {
 
@@ -726,8 +733,6 @@ int StPicoHFJetMaker::MakeJets() {
 
 
 	//RC part
-
-    mBemcTables->loadTables(this);
 
     //Save all the pedestal subtracted ADC values and energies
     StEmcDetector* bemcDet = mEvent->emcCollection()->detector(kBarrelEmcTowerId);

@@ -117,6 +117,8 @@ class StPicoHFJetMaker : public StPicoJetMaker {
 
 	enum eMcJetType {SingleParticle, Pythia, Jewel};
 
+    int InitRun(int runNumber);
+
  protected:
 	TString   mInputFileName;        //! *.list - MuDst or picoDst  //Jana
 
@@ -169,6 +171,7 @@ private:
 
     float bemcEnergy[4801];
     int bemcADC[4801];
+    StEmcDecoder* mEmcDecoder;
     StBemcTables* mBemcTables;
     StEvent* mEvent;
 
