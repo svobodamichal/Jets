@@ -645,7 +645,6 @@ int StPicoHFJetMaker::FinishJets() {
 
 int StPicoHFJetMaker::InitRun(int runNumber)
 {
-    mEmcDecoder->SetDateTime(GetDate(), GetTime());
     mBemcTables->loadTables(this);
     return StMaker::InitRun(runNumber);
 }
