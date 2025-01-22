@@ -27,22 +27,6 @@
 //#include </gpfs01/star/pwg/licenrob/jets/fastjet/contrib/RecursiveSoftDrop.hh>
 //#include <fastjet/internal/base.hh> //robotmon
 //#endif
-
-#include "StDaqLib/EMC/StEmcDecoder.h"
-
-#include "StEventTypes.h"
-#include "StMcEvent/StMcEventTypes.hh"
-#include "StAssociationMaker/StAssociationMaker.h"
-#include "StAssociationMaker/StTrackPairInfo.hh"
-#include "StEmcTriggerMaker/StEmcTriggerMaker.h"
-#include "tables/St_g2t_event_Table.h"
-#include "tables/St_g2t_pythia_Table.h"
-#include "StEventUtilities/StuRefMult.hh"
-#include "StEmcUtil/geometry/StEmcGeom.h"
-#include "StEmcUtil/projection/StEmcPosition.h"
-#include "StContainers.h"
-#include "StEmcUtil/database/StBemcTables.h"
-
 #include <vector>
 
 #include <TRandom3.h>
@@ -421,9 +405,7 @@ int StPicoHFJetMaker::InitJets() {
     float ptembmaxbin = 25;
     float deltaptembminbin = -30;
     float deltaptembmaxbin = 50;
-
-    mBemcTables = new StBemcTables;
-
+    
     TH1::SetDefaultSumw2();
 
     mOutList->Add(new TH1D("hweight", "weight", 135, 0, 3));
@@ -459,7 +441,9 @@ int StPicoHFJetMaker::InitJets() {
     //mOutList->Add(new TH2D("hp_tow", "track momentum vs tower ID;tower ID;p (GeV/c)", 4800, 1, 4800, 300, -0.5, 29.5));
   //mOutList->Add(new TH2D("heta_phi_tow", "tower eta vs phi; #eta [-]; #phi [-]", netabins, etaminbin, etamaxbin, nphibins, phiminbin, phimaxbin));		
 	  mOutList->Add(new TH2D("heta_phi_tow", "tower eta vs phi; #eta [-]; #phi [-]", netabins/5, etaminbin, etamaxbin, nphibins, phiminbin, phimaxbin));	
-	  mOutList->Add(new TH1D("hET_tow", "tower ET; E_{T} (GeV)", npttrackbins, pttrackmin, pttrackmax));	
+	  mOutList->Add(new TH1D("hET_tow", "tower ET; E_{T} (GeV)", npttrackbins, pttrackmin, pttrackmax));
+      mOutList->Add(new TH1D("hADC", "tower ADC; Nevím jendotky", 100, 0, 100));
+
 
     if (isMcMode()) { //not used
     }
@@ -645,12 +629,6 @@ int StPicoHFJetMaker::FinishJets() {
   return kStOK;
 }
 
-int StPicoHFJetMaker::InitRun(int runNumber)
-{
-    mBemcTables->loadTables(this);
-    return StMaker::InitRun(runNumber);
-}
-
 // _________________________________________________________
 int StPicoHFJetMaker::MakeJets() {
 
@@ -681,13 +659,7 @@ int StPicoHFJetMaker::MakeJets() {
 	float weight = Weight*fWeight; //centrality weight * cross section weight
 	static_cast<TH1D*>(mOutList->FindObject("hweight"))->Fill(weight);
 
-    mEvent = (StEvent*)GetDataSet("StEvent");
-    cout <<"Adresa  "<< mEvent << endl;
-    cout << "ID: "<< mEvent->id() << endl;
 
-    if (!mEvent) {
-        cout << "No StEvent" << endl;
-    }
 
     if (centrality == 0) centrality = 1; // merge 0-5% and 5-10% into 0-10%
     if (centrality == 8) centrality = 7; // merge 60-70% and 70-80% into 60-80%
@@ -736,41 +708,9 @@ int StPicoHFJetMaker::MakeJets() {
 
 
 	//RC part
-    cout << "Just test 1 "<<endl;
-
-    //Save all the pedestal subtracted ADC values and energies
-    StEmcDetector* bemcDet = mEvent->emcCollection()->detector(kBarrelEmcTowerId);
-    if (!bemcDet) {
-        cout << "No bemcDet" << endl;
-    }
-
-/*    for (int i = 0;i<4801;i++){    bemcEnergy[i] = 0;bemcADC[i]=0;}
-    cout << "Just test 2"<<endl;
-    cout << "Number of modules: " << bemcDet->numberOfModules() << endl;
-    for (unsigned int m = 1; m<=bemcDet->numberOfModules(); ++m){
-        StSPtrVecEmcRawHit& hits = bemcDet->module(m)->hits();
-        for (StSPtrVecEmcRawHitIterator i = hits.begin(); i != hits.end(); ++i){
-            StEmcRawHit* hit = *i;
-            if (hit->energy()<=0) continue;
-            int softId;
-            int modN = hit->module();
-            int etaN = hit->eta();
-            int subN = hit->sub();
-            StEmcGeom *geomBemc = StEmcGeom::getEmcGeom(1);
-            geomBemc->getId(modN, etaN, subN, softId);
-            int status;
-            Float_t pedestal, rms;
-            mBemcTables->getStatus(1, softId, status);
-            mBemcTables->getPedestal(1,softId,0,pedestal,rms);
-            if (hit->adc() < pedestal + 3 * rms) continue;
-            bemcADC[softId]= hit->adc();
-            cout << "Id: " << softId << ", ADC: " << hit->adc() << endl;
-            bemcEnergy[softId] = hit->energy();
-        }
-    }*/
-
-
-    GetCaloTrackMomentum(mPicoDst,mPrimVtx); //fill array Sump with momenta of tracks which are matched to BEMC
+	
+	
+	GetCaloTrackMomentum(mPicoDst,mPrimVtx); //fill array Sump with momenta of tracks which are matched to BEMC
 
     StEmcPosition* mEmcPosition;
     mEmcPosition = new StEmcPosition();
@@ -784,7 +724,7 @@ int StPicoHFJetMaker::MakeJets() {
 
         cout << "ADC: "<< (towHit->adc()>>4) << endl;
 
-		double towE = GetTowerCalibEnergy(iTow+1); //get tower energy
+        double towE = GetTowerCalibEnergy(iTow+1); //get tower energy
 		TOWE=towE; //just keep track of the original energy for trigger approximation
         if(towErr == true){
             towE = towE - 0.038*towE;
@@ -811,17 +751,17 @@ int StPicoHFJetMaker::MakeJets() {
 		px = ET*cos(Towphi);
 		py = ET*sin(Towphi);
 		pz = towE*tanh(Toweta);
-
+	
 		PseudoJet inputTower(px, py, pz, towE);
 		if (inputTower.perp() > fETmincut){
 		inputTower.set_user_index(0); //default index is -1, 0 means neutral particle
 		//THIS LINE WILL NOT WORK
 		//if (find(Triggers.begin(), Triggers.end(), realtowID)!=Triggers.end()) inputTower.set_user_index(2); //mark trigger towers with user_index 2
-		if (bemcEnergy[iTow] > 18) inputTower.set_user_index(9999); //mark trigger towers with user_index 9999
-        cout << "Tower i = "<< iTow <<"ADC = " << bemcADC[iTow] <<endl;
+        int ADC = towHit->adc()>>4;
+        static_cast<TH1D*>(mOutList->FindObject("hADC"))->Fill(ADC, weight);
+		if (ADC > fTrgthresh) inputTower.set_user_index(9999); //mark trigger towers with user_index 9999
 		neutraljetTracks.push_back(inputTower);}
 	} //end get btow info
-
 
     TRandom3 randGen;
 
@@ -1271,11 +1211,11 @@ Bool_t StPicoHFJetMaker::GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPri
 		int towid = trg->id();
 		if (BadTowerMap[towid]) continue; 
 		float energy = GetTowerCalibEnergy(towid);
-		if (energy > fTrgthresh) Triggers.push_back(towid);
+        float ADC = mPicoDst->btowHit(towid-1)->adc();
+		if (ADC > fTrgthresh) Triggers.push_back(towid);
 	} 	
 	
 	return Triggers.size();
  }
-//-----------------------------------------------------------------------------
 
 

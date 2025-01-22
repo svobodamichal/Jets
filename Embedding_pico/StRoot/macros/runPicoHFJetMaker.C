@@ -253,7 +253,7 @@ void runPicoHFJetMaker(const Char_t *inputFile, const Char_t *outputFile="output
   stPicoHFJetMaker->setHadronCorr(1.0);
     //stPicoHFJetMaker->setHadronCorr(0.);
     
-  stPicoHFJetMaker->setTriggerThreshold(4.2); //~4.2 is the HT2 threshold
+  stPicoHFJetMaker->setTriggerThreshold(18); //~4.2 GeV is the HT2 threshold = 18 ADC
 
   stPicoHFJetMaker->setMaxNeutralFraction(0.95); //default
     //stPicoHFJetMaker->setMaxNeutralFraction(95); //turn off for neutral jets
