@@ -682,7 +682,7 @@ int StPicoHFJetMaker::MakeJets() {
 	static_cast<TH1D*>(mOutList->FindObject("hweight"))->Fill(weight);
 
     mEvent = (StEvent*)GetDataSet("StEvent");
-    cout <<"Adresa  "< mEvent << endl;
+    cout <<"Adresa  "<< mEvent << endl;
     if (!mEvent) {
         cout << "No StEvent" << endl;
     }
