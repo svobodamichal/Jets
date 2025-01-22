@@ -683,8 +683,7 @@ int StPicoHFJetMaker::MakeJets() {
 
     mEvent = (StEvent*)GetDataSet("StEvent");
     if (!mEvent) {
-        LOG_WARN << "No StEvent" << endm;
-        return kStWarn;
+        cout << "No StEvent" << endl;
     }
 
     if (centrality == 0) centrality = 1; // merge 0-5% and 5-10% into 0-10%
