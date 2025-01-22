@@ -422,7 +422,7 @@ int StPicoHFJetMaker::InitJets() {
     float deltaptembminbin = -30;
     float deltaptembmaxbin = 50;
 
-    mBemcTables = new StBemcTables;
+   // mBemcTables = new StBemcTables;
 
     TH1::SetDefaultSumw2();
 
@@ -644,13 +644,13 @@ void StPicoHFJetMaker::ClearJets(Option_t *opt="") {
 int StPicoHFJetMaker::FinishJets() {
   return kStOK;
 }
-
+/*
 int StPicoHFJetMaker::InitRun(int runNumber)
 {
     mBemcTables->loadTables(this);
     return StMaker::InitRun(runNumber);
 }
-
+*/
 // _________________________________________________________
 int StPicoHFJetMaker::MakeJets() {
 
@@ -680,7 +680,7 @@ int StPicoHFJetMaker::MakeJets() {
 	Weight = mRefmultCorrUtil->weight();
 	float weight = Weight*fWeight; //centrality weight * cross section weight
 	static_cast<TH1D*>(mOutList->FindObject("hweight"))->Fill(weight);
-
+/*
     mEvent = (StEvent*)GetDataSet("StEvent");
     cout <<"Adresa  "<< mEvent << endl;
     cout << "ID: "<< mEvent->id() << endl;
@@ -688,7 +688,7 @@ int StPicoHFJetMaker::MakeJets() {
     cout << "Time: "<< mEvent->time() << endl;
     if (!mEvent) {
         cout << "No StEvent" << endl;
-    }
+    }*/
 
     if (centrality == 0) centrality = 1; // merge 0-5% and 5-10% into 0-10%
     if (centrality == 8) centrality = 7; // merge 60-70% and 70-80% into 60-80%
@@ -737,7 +737,7 @@ int StPicoHFJetMaker::MakeJets() {
 
 
 	//RC part
-    cout << "Just test 1 "<<endl;
+ /*   cout << "Just test 1 "<<endl;
 
     //Save all the pedestal subtracted ADC values and energies
     StEmcDetector* bemcDet = mEvent->emcCollection()->detector(kBarrelEmcTowerId);
@@ -770,7 +770,7 @@ int StPicoHFJetMaker::MakeJets() {
         }
     }
 
-
+*/
     GetCaloTrackMomentum(mPicoDst,mPrimVtx); //fill array Sump with momenta of tracks which are matched to BEMC
 
     StEmcPosition* mEmcPosition;
@@ -810,7 +810,9 @@ int StPicoHFJetMaker::MakeJets() {
 		px = ET*cos(Towphi);
 		py = ET*sin(Towphi);
 		pz = towE*tanh(Toweta);
-	
+
+        cout << "ADC: "<<  towHit->adc() << endl;
+
 		PseudoJet inputTower(px, py, pz, towE);
 		if (inputTower.perp() > fETmincut){
 		inputTower.set_user_index(0); //default index is -1, 0 means neutral particle
