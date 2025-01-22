@@ -683,6 +683,7 @@ int StPicoHFJetMaker::MakeJets() {
 
     mEvent = (StEvent*)GetDataSet("StEvent");
     cout <<"Adresa  "<< mEvent << endl;
+    cout << "ID: "<< mEvent->id() << endl;
     if (!mEvent) {
         cout << "No StEvent" << endl;
     }
