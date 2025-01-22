@@ -683,7 +683,6 @@ int StPicoHFJetMaker::MakeJets() {
 
     mEvent = (StEvent*)GetDataSet("StEvent");
     if (!mEvent) {
-        cout << "POJEBÁNO" << endl;
         LOG_WARN << "No StEvent" << endm;
         return kStWarn;
     }
@@ -739,9 +738,13 @@ int StPicoHFJetMaker::MakeJets() {
 
     //Save all the pedestal subtracted ADC values and energies
     StEmcDetector* bemcDet = mEvent->emcCollection()->detector(kBarrelEmcTowerId);
+    if (!bemcDet) {
+        cout << "No bemcDet" << endl;
+    }
+
     for (int i = 0;i<4801;i++){    bemcEnergy[i] = 0;bemcADC[i]=0;}
     cout << "Just test 2"<<endl;
-    cout << "Number of modules: " << bemcDet->numberOfModules() << endl;;
+    cout << "Number of modules: " << bemcDet->numberOfModules() << endl;
     for (unsigned int m = 1; m<=bemcDet->numberOfModules(); ++m){
         StSPtrVecEmcRawHit& hits = bemcDet->module(m)->hits();
         for (StSPtrVecEmcRawHitIterator i = hits.begin(); i != hits.end(); ++i){
