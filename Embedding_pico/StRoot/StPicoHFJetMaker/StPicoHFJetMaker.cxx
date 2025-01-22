@@ -782,7 +782,7 @@ int StPicoHFJetMaker::MakeJets() {
 		int realtowID = towHit->numericIndex2SoftId(iTow);
         if (BadTowerMap[realtowID]) continue; //exclude bad towers (map in JetInfo.h)
 
-        cout << "ADC: "<< towHit->adc()>>4 << endl;
+        cout << "ADC: "<< (towHit->adc()>>4) << endl;
 
 		double towE = GetTowerCalibEnergy(iTow+1); //get tower energy
 		TOWE=towE; //just keep track of the original energy for trigger approximation
