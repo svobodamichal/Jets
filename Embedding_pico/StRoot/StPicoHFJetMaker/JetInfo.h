@@ -27,10 +27,10 @@ Some additional info and functions for the analysis
 #include "TDatime.h"
 
 #include <fastjet1/fastjet_install/include/fastjet/config.h>
-#include <../../fastjet/PseudoJet.hh>
-#include <../../fastjet/JetDefinition.hh>
-#include <../../fastjet/ClusterSequence.hh>
-#include <../../fastjet/ClusterSequenceArea.hh>
+#include <fastjet1/fastjet_install/include/fastjet/PseudoJet.hh>
+#include <fastjet1/fastjet_install/include/fastjet/JetDefinition.hh>
+#include <fastjet1/fastjet_install/include/fastjet/ClusterSequence.hh>
+#include <fastjet1/fastjet_install/include/fastjet/ClusterSequenceArea.hh>
 
 
 #include <vector>
