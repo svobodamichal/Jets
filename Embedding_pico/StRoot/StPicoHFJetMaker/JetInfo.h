@@ -26,7 +26,7 @@ Some additional info and functions for the analysis
 #include "TParticlePDG.h"
 #include "TDatime.h"
 
-#include <../../fastjet/config.h>
+#include <fastjet1/fastjet_install/include/fastjet/config.h>
 #include <../../fastjet/PseudoJet.hh>
 #include <../../fastjet/JetDefinition.hh>
 #include <../../fastjet/ClusterSequence.hh>
