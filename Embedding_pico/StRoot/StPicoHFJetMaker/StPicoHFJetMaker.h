@@ -117,7 +117,7 @@ class StPicoHFJetMaker : public StPicoJetMaker {
 
 	enum eMcJetType {SingleParticle, Pythia, Jewel};
 
-    int InitRun(int runNumber);
+//    int InitRun(int runNumber);
 
  protected:
 	TString   mInputFileName;        //! *.list - MuDst or picoDst  //Jana
