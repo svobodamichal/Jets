@@ -14,6 +14,7 @@
 #include <sstream>
 #include <iomanip>
 #include <cmath>
+/*
 #include <../../fastjet/config.h>
 #include <../../fastjet/PseudoJet.hh>
 #include <../../fastjet/JetDefinition.hh>
@@ -22,7 +23,18 @@
 //#ifdef FASTJET_VERSION
 #include <../../fastjet/Selector.hh>
 #include <../../fastjet/tools/Subtractor.hh>
-#include <../../fastjet/tools/JetMedianBackgroundEstimator.hh>
+#include <../../fastjet/tools/JetMedianBackgroundEstimator.hh>*/
+
+#include </gpfs01/star/pwg/svomich/Jets/AssociatedTriggerJets/fastjet1/fastjet_install/include/fastjet/config.h>
+#include </gpfs01/star/pwg/svomich/Jets/AssociatedTriggerJets/fastjet1/fastjet_install/include/fastjet/PseudoJet.hh>
+#include </gpfs01/star/pwg/svomich/Jets/AssociatedTriggerJets/fastjet1/fastjet_install/include/fastjet/JetDefinition.hh>
+#include </gpfs01/star/pwg/svomich/Jets/AssociatedTriggerJets/fastjet1/fastjet_install/include/fastjet/ClusterSequence.hh>
+#include </gpfs01/star/pwg/svomich/Jets/AssociatedTriggerJets/fastjet1/fastjet_install/include/fastjet/ClusterSequenceArea.hh>
+//#ifdef FASTJET_VERSION
+#include </gpfs01/star/pwg/svomich/Jets/AssociatedTriggerJets/fastjet1/fastjet_install/include/fastjet/Selector.hh>
+#include </gpfs01/star/pwg/svomich/Jets/AssociatedTriggerJets/fastjet1/fastjet_install/include/fastjet/tools/Subtractor.hh>
+#include </gpfs01/star/pwg/svomich/Jets/AssociatedTriggerJets/fastjet1/fastjet_install/include/fastjet/tools/JetMedianBackgroundEstimator.hh>
+
 //#include </gpfs01/star/pwg/licenrob/jets/fastjet/contrib/SoftDrop.hh>	//robotmon 
 //#include </gpfs01/star/pwg/licenrob/jets/fastjet/contrib/RecursiveSoftDrop.hh>
 //#include <fastjet/internal/base.hh> //robotmon
