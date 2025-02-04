@@ -776,8 +776,8 @@ Double_t StPicoHFJetMaker::GetTowerCalibEnergy(Int_t TowerId)
 
   Double_t calibEnergy = TowerCoeff[TowerId-1]*(tower->adc() - pedestal);
     int ADC = tower->adc()>>4;
-    if (ADC>17)
-    cout <<"Tower ID: "<<TowerId-1 <<"Tow ADC: "<< ADC<<" Calib Energy: " << calibEnergy << " Pedestal: "<<pedestal<<"ToweCoeff: "<<TowerCoeff[TowerId-1]<<  endl;
+  //  if (ADC>17)
+  //  cout <<"Tower ID: "<<TowerId-1 <<"Tow ADC: "<< ADC<<" Calib Energy: " << calibEnergy << " Pedestal: "<<pedestal<<"ToweCoeff: "<<TowerCoeff[TowerId-1]<<  endl;
 
 
   return calibEnergy;
