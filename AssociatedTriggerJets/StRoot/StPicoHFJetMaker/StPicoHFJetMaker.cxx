@@ -152,6 +152,8 @@ int StPicoHFJetMaker::InitJets() {
   //mOutList->Add(new TH2D("heta_phi_tow", "tower eta vs phi; #eta [-]; #phi [-]", netabins, etaminbin, etamaxbin, nphibins, phiminbin, phimaxbin));		
 	  mOutList->Add(new TH2D("heta_phi_tow", "tower eta vs phi; #eta [-]; #phi [-]", netabins/5, etaminbin, etamaxbin, nphibins, phiminbin, phimaxbin));
       mOutList->Add(new TH1D("hET_tow", "tower ET; E_{T} (GeV)", npttrackbins, pttrackmin, pttrackmax));
+      mOutList->Add(new TH1D("hADC", "tower ADC; Nevím jendotky", 100, 0, 100));
+
 
 
     if (isMcMode()) {cout << "MC mode activated" << endl;
@@ -972,7 +974,9 @@ Bool_t StPicoHFJetMaker::GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPri
 		double vz = mPrimVtx.z();
 		float Toweta = vertexCorrectedEta(Toweta_tmp, vz); 
 		float energy = GetTowerCalibEnergy(towid);
-		if (energy > fTrgthresh) Triggers.push_back(towid);
+        int ADC = trg->adc()>>4;
+        cout<<"Tower ID: "<<towid-1 <<"Tow ADC: "<< ADC<<" Calib Energy: " << energy << endl;
+		if (ADC > fTrgthresh) Triggers.push_back(towid); // This cut used to be on energy level, now trying to use ADC
 	} 	
 	
 	return Triggers.size();
