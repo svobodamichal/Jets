@@ -439,7 +439,10 @@ int StPicoHFJetMaker::MakeJets() {
 		px = ET*cos(Towphi);
 		py = ET*sin(Towphi);
 		pz = towE*tanh(Toweta);
-	
+
+        int ADC = towHit->adc()>>4;
+        static_cast<TH1D*>(mOutList->FindObject("hADC"))->Fill(ADC, weight);
+
 		PseudoJet inputTower(px, py, pz, towE);
 		if (inputTower.perp() > fETmincut){
 		inputTower.set_user_index(0); //default index is -1, 0 means neutral particle
