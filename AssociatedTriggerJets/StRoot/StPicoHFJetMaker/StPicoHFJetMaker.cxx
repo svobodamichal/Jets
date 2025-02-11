@@ -441,6 +441,7 @@ int StPicoHFJetMaker::MakeJets() {
 		pz = towE*tanh(Toweta);
 
         int ADC = towHit->adc()>>4;
+        cout << "ADC tower loop: " << ADC << endl;
         static_cast<TH1D*>(mOutList->FindObject("hADC"))->Fill(ADC, weight);
 
 		PseudoJet inputTower(px, py, pz, towE);
