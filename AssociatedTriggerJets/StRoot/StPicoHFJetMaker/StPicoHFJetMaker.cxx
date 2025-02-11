@@ -441,6 +441,7 @@ int StPicoHFJetMaker::MakeJets() {
 		pz = towE*tanh(Toweta);
 
         int ADC = towHit->adc()>>4;
+        if (ADC>18)
         cout << "ADC tower loop: " << ADC << endl;
         static_cast<TH1D*>(mOutList->FindObject("hADC"))->Fill(ADC, weight);
 
@@ -978,8 +979,8 @@ Bool_t StPicoHFJetMaker::GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPri
 		double vz = mPrimVtx.z();
 		float Toweta = vertexCorrectedEta(Toweta_tmp, vz); 
 		float energy = GetTowerCalibEnergy(towid);
-        int ADC = trg->adc();
-        cout<<"Tower ID: "<<towid-1 <<"Tow ADC: "<< ADC<<" Calib Energy: " << energy << endl;
+        int ADC = trg->adc()>>4;
+       // cout<<"Tower ID: "<<towid-1 <<"Tow ADC: "<< ADC<<" Calib Energy: " << energy << endl;
 		if (ADC > fTrgthresh) Triggers.push_back(towid); // This cut used to be on energy level, now trying to use ADC
 	} 	
 	
