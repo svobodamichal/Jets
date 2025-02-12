@@ -442,7 +442,7 @@ int StPicoHFJetMaker::MakeJets() {
 
         int ADC = towHit->adc();
         if (ADC>18)
-        cout << "ADC tower loop: " << ADC << endl;
+        cout << "ADC tower loop: " << ADC <<" Energy: " << towE<< endl;
         static_cast<TH1D*>(mOutList->FindObject("hADC"))->Fill(ADC, weight);
 
 		PseudoJet inputTower(px, py, pz, towE);
