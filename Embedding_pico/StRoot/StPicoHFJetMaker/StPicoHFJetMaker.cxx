@@ -50,7 +50,8 @@ using namespace fastjet;
 ClassImp(StPicoHFJetMaker)
 
 bool trackErr = false;
-bool towErr = false;
+bool towErrPlus = false;
+bool towErrMinus = false;
 
 
 
@@ -738,7 +739,11 @@ int StPicoHFJetMaker::MakeJets() {
 
         double towE = GetTowerCalibEnergy(iTow+1); //get tower energy
 		TOWE=towE; //just keep track of the original energy for trigger approximation
-        if(towErr == true){
+
+        if(towErrPlus == true){
+            towE = towE + 0.038*towE;
+        }
+        if(towErrMinus == true){
             towE = towE - 0.038*towE;
         }
 
