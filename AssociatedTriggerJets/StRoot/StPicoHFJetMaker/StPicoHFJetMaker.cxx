@@ -378,7 +378,6 @@ int StPicoHFJetMaker::MakeJets() {
 		if (refMult > 364 && refMult <= 430) centrality = 7;
 		if (refMult > 430) centrality = 8;
 	*/
-cout<<"Test 0.1"<<endl;
 	fRunNumber = mPicoDst->event()->runId();
 	int eventId = mPicoDst->event()->eventId(); //eventID
 	int refMult = mPicoDst->event()->refMult();
@@ -390,7 +389,6 @@ cout<<"Test 0.1"<<endl;
     float weight = 1.0;
 	weight = mRefmultCorrUtil->weight();
 	static_cast<TH1D*>(mOutList->FindObject("hweight"))->Fill(weight);
-    cout<<"Test 0.2"<<endl;
 
     if (centrality == 0) centrality = 1; // merge 0-5% and 5-10% into 0-10%
     if (centrality == 8) centrality = 7; // merge 60-70% and 70-80% into 60-80%
@@ -398,17 +396,14 @@ cout<<"Test 0.1"<<endl;
 	//static_cast<TH2D*>(mOutList->FindObject("hrunIdcent"))->Fill(fRunNumber,centrality,weight); //not used
 		
 	//if (centrality > 1) return kStOk; //REMEMBER NOW ONLY CENTRAL
-    cout<<"Test 0.3"<<endl;
 
 	if (!FindTriggerTowers(2)) return kStOk; //2 = HT2, don't continue if there is no HT2-trigger tower with sufficient energy
 
 	GetCaloTrackMomentum(mPicoDst,mPrimVtx); //fill array Sump with momenta of tracks which are matched to BEMC
-    cout<<"Test 0.4"<<endl;
 
     StEmcPosition* mEmcPosition;
     mEmcPosition = new StEmcPosition();
 
-    cout << "Test 1" << endl;
 
 	for (int iTow = 0; iTow < 4800; iTow++){ //get btow info
 		StPicoBTowHit *towHit = mPicoDst->btowHit(iTow);
@@ -416,8 +411,6 @@ cout<<"Test 0.1"<<endl;
 		if (!towHit || towHit->isBad()) continue; //if the tower is marked as bad or missing info
 		int realtowID = towHit->numericIndex2SoftId(iTow);
 		if (BadTowerMap[realtowID]) continue; //exclude bad towers (map in JetInfo.h)
-
-        cout << "Test 2" << endl;
 
 		double towE = GetTowerCalibEnergy(iTow+1); //get tower energy
 
@@ -453,7 +446,6 @@ cout<<"Test 0.1"<<endl;
 		py = ET*sin(Towphi);
 		pz = towE*tanh(Toweta);
 
-        cout << "Test 3" << endl;
 
         int ADC = towHit->adc()>>4;
     //    cout << "ADC tower loop: " << ADC <<" Energy: " << towE<< endl;
@@ -993,7 +985,7 @@ Bool_t StPicoHFJetMaker::GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPri
 		double vz = mPrimVtx.z();
 		float Toweta = vertexCorrectedEta(Toweta_tmp, vz); 
 		float energy = GetTowerCalibEnergy(towid);
-        int ADC = trg->adc()>>4;
+        int ADC = trg->adc();
        // cout<<"Tower ID: "<<towid-1 <<"Tow ADC: "<< ADC<<" Calib Energy: " << energy << endl;
 		if (ADC > fTrgthresh) Triggers.push_back(towid); // This cut used to be on energy level, now trying to use ADC
 	} 	
