@@ -405,12 +405,16 @@ int StPicoHFJetMaker::MakeJets() {
     StEmcPosition* mEmcPosition;
     mEmcPosition = new StEmcPosition();
 
+    cout << "Test 1" << endl;
+
 	for (int iTow = 0; iTow < 4800; iTow++){ //get btow info
 		StPicoBTowHit *towHit = mPicoDst->btowHit(iTow);
 		vector<int> ids = {0,0,0,0,0,0,0,0,0}; 
 		if (!towHit || towHit->isBad()) continue; //if the tower is marked as bad or missing info
 		int realtowID = towHit->numericIndex2SoftId(iTow);
 		if (BadTowerMap[realtowID]) continue; //exclude bad towers (map in JetInfo.h)
+
+        cout << "Test 2" << endl;
 
 		double towE = GetTowerCalibEnergy(iTow+1); //get tower energy
 
@@ -445,6 +449,8 @@ int StPicoHFJetMaker::MakeJets() {
 		px = ET*cos(Towphi);
 		py = ET*sin(Towphi);
 		pz = towE*tanh(Toweta);
+
+        cout << "Test 3" << endl;
 
         int ADC = towHit->adc()>>4;
     //    cout << "ADC tower loop: " << ADC <<" Energy: " << towE<< endl;
