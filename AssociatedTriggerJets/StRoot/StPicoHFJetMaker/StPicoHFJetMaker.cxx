@@ -378,7 +378,7 @@ int StPicoHFJetMaker::MakeJets() {
 		if (refMult > 364 && refMult <= 430) centrality = 7;
 		if (refMult > 430) centrality = 8;
 	*/
-
+cout<<"Test 0.1"<<endl;
 	fRunNumber = mPicoDst->event()->runId();
 	int eventId = mPicoDst->event()->eventId(); //eventID
 	int refMult = mPicoDst->event()->refMult();
