@@ -390,6 +390,7 @@ cout<<"Test 0.1"<<endl;
     float weight = 1.0;
 	weight = mRefmultCorrUtil->weight();
 	static_cast<TH1D*>(mOutList->FindObject("hweight"))->Fill(weight);
+    cout<<"Test 0.2"<<endl;
 
     if (centrality == 0) centrality = 1; // merge 0-5% and 5-10% into 0-10%
     if (centrality == 8) centrality = 7; // merge 60-70% and 70-80% into 60-80%
@@ -397,10 +398,12 @@ cout<<"Test 0.1"<<endl;
 	//static_cast<TH2D*>(mOutList->FindObject("hrunIdcent"))->Fill(fRunNumber,centrality,weight); //not used
 		
 	//if (centrality > 1) return kStOk; //REMEMBER NOW ONLY CENTRAL
-					
+    cout<<"Test 0.3"<<endl;
+
 	if (!FindTriggerTowers(2)) return kStOk; //2 = HT2, don't continue if there is no HT2-trigger tower with sufficient energy
 
 	GetCaloTrackMomentum(mPicoDst,mPrimVtx); //fill array Sump with momenta of tracks which are matched to BEMC
+    cout<<"Test 0.4"<<endl;
 
     StEmcPosition* mEmcPosition;
     mEmcPosition = new StEmcPosition();
