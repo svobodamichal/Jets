@@ -144,7 +144,6 @@ Int_t StPicoJetMaker::Make() {
     LOG_WARN << " StPicoJetMaker - No PicoDst! Skip! " << endm;
     return kStWarn;
   }
-  cout << "Test 1" << endl;
   Int_t iReturn = kStOK;
 
     if (setupEvent()) {
@@ -157,7 +156,6 @@ Int_t StPicoJetMaker::Make() {
 
      // if (!trk || !mPicoCuts->isGoodTrack(trk)) continue;
 		//good primary tracks only
-cout << "Test 2" << endl;
           double pTtrack = trk->pMom().Perp(); //using primary tracks
 
           if (pTtrack > 30) return kStOK; //throw out events with trk > 30 GeV/c
@@ -176,7 +174,6 @@ cout << "Test 2" << endl;
         mIdxPicoParticles.push_back(iTrack);
       }
     }
-cout<< "Test 3" << endl;
     // -- call method of daughter class
     //// Uncomment here to include jets again
     iReturn = MakeJets();

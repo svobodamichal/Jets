@@ -15,7 +15,7 @@ merge_files() {
 
 PTHARD=(3 5 7 9 11 15 20 25 30 40 50 -1)
 
-year=2024
+year=2025
 files=(${year}*)
 
 for (( i=0; i<${#PTHARD[@]}-1 ; i+=1 ))

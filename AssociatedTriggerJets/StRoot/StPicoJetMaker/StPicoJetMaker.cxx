@@ -167,7 +167,7 @@ Int_t StPicoJetMaker::Make() {
           std::cerr << "Warning: Precomputed weight not found for run number " << runNumber << std::endl;
       }
 
-
+cout<<"Test 1"<<endl;
     // -- Fill vectors of particle types
     if (mMakerMode == StPicoJetMaker::kWrite || mMakerMode == StPicoJetMaker::kAnalyze) {
       for (unsigned short iTrack = 0; iTrack < nTracks; ++iTrack) {
@@ -183,10 +183,10 @@ Int_t StPicoJetMaker::Make() {
       }
     }
 
-
+cout<<"Test 2"<<endl;
     // -- call method of daughter class
     iReturn = MakeJets();
-
+cout<<"Test 3"<<endl;
     //TODO: Fill good event histograms here - expand for other observables
     static_cast<TH1I*>(mOutList->FindObject("hevents_acc"))->Fill(1);
     static_cast<TH1I*>(mOutList->FindObject("hrefmult_acc"))->Fill(mPicoDst->event()->refMult());
@@ -213,7 +213,7 @@ Int_t StPicoJetMaker::Make() {
 
   // -- reset event to be in a defined state
   resetEvent();
-
+cout<<"Test 4"<<endl;
   return (kStOK && iReturn);
 }
 
