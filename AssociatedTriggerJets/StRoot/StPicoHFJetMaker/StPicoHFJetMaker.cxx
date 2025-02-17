@@ -153,7 +153,7 @@ int StPicoHFJetMaker::InitJets() {
   //mOutList->Add(new TH2D("heta_phi_tow", "tower eta vs phi; #eta [-]; #phi [-]", netabins, etaminbin, etamaxbin, nphibins, phiminbin, phimaxbin));		
 	  mOutList->Add(new TH2D("heta_phi_tow", "tower eta vs phi; #eta [-]; #phi [-]", netabins/5, etaminbin, etamaxbin, nphibins, phiminbin, phimaxbin));
       mOutList->Add(new TH1D("hET_tow", "tower ET; E_{T} (GeV)", npttrackbins, pttrackmin, pttrackmax));
-      mOutList->Add(new TH1D("hADC", "tower ADC; Nevím jendotky", 100, 0, 100));
+      mOutList->Add(new TH1D("hADC", "tower ADC; Nevim jendotky", 100, 0, 300));
 
 
 
