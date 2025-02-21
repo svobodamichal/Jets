@@ -56,7 +56,7 @@ if [ $CENTRAL -eq 1 ]; then
 	SUFFIX="central"
 	#PTLEADCUTS="5 6 7"
 	PTLEAD_MIN=0
-	PTLEAD_MAX=7
+	PTLEAD_MAX=9
 	#PTLEAD_MAX=7 #test only
 elif [ $CENTRAL -eq 0 ]; then
 	#SUFFIX="_peripheral"
@@ -64,7 +64,7 @@ elif [ $CENTRAL -eq 0 ]; then
 	#PTLEADCUTS="4 5 6 7"
 	#PTLEAD_MIN=4
 	PTLEAD_MIN=0
-	PTLEAD_MAX=7
+	PTLEAD_MAX=9
 	#PTLEAD_MAX=5 #test only
 else #p+p
 	SUFFIX="_pp" 
