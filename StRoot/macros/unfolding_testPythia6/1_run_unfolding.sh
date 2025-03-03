@@ -47,7 +47,7 @@ do
 #USE2DHISTO=1 # is the histogram with the measured distribution a 2D histogram?
 USE2DHISTO=0 # is the histogram with the measured distribution a 2D histogram?
 
-TRG="HT2" #HT2, MB
+TRG="MB" #HT2, MB
 #TRG="MB"
 export TRG
 
@@ -111,7 +111,7 @@ do
 for TSUFF in `echo $TSUFFIX_ARR`
 do
 export TSUFF
-SYS="ADC" #SYSTEMATIC UNCERTAINTY VARIATION
+SYS="MBT" #SYSTEMATIC UNCERTAINTY VARIATION
 export SYS
 
 
