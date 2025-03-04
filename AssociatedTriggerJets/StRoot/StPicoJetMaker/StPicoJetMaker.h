@@ -25,6 +25,8 @@
 
 #include "../StPicoCuts/StPicoCuts.h"
 #include "../StRefMultCorr/StRefMultCorr.h"
+#include "../StPicoHFJetMaker/StPicoHFJetMaker.h"
+
 
 
 struct RunData {
@@ -67,8 +69,8 @@ class StPicoJetMaker : public StMaker
     void  Clear(Option_t *opt="");
     Int_t Finish();
 
-    void setRefMultCorr(StRefMultCorr* RefMultCorr);
-    StRefMultCorr* getRefMultCorr();
+ //   void setRefMultCorr(StRefMultCorr* RefMultCorr);
+ //   StRefMultCorr* getRefMultCorr();
     
     std::map<int, RunData> readDataFromFile(const std::string& filename);
     double calculateWeight(const RunData& htRunData, const RunData& mbRunData);
@@ -102,8 +104,8 @@ protected:
     void  fillEventStats(int *aEventStat);
 
 
-    int fRunNumber;
-    StRefMultCorr* mRefmultCorrUtil;
+ //   int fRunNumber;
+ //   StRefMultCorr* mRefmultCorrUtil;
 
 
     // -- private members ------------------------
@@ -143,11 +145,11 @@ inline bool StPicoJetMaker::isMcMode() const                { return mMcMode; }
 inline void StPicoJetMaker::setMakerMode(unsigned short us) { mMakerMode = us; }
 inline unsigned int StPicoJetMaker::isMakerMode() const { return mMakerMode; }
 
-inline void StPicoJetMaker::setRefMultCorr(StRefMultCorr *RefMultCorr) {
+/*inline void StPicoJetMaker::setRefMultCorr(StRefMultCorr *RefMultCorr) {
     StPicoJetMaker::mRefmultCorrUtil = RefMultCorr;
 }
 
 inline StRefMultCorr* StPicoJetMaker::getRefMultCorr() {
     return mRefmultCorrUtil;
-}
+}*/
 #endif
