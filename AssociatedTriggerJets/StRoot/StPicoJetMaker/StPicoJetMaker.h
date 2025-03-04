@@ -24,6 +24,8 @@
 #include "TH2D.h"
 
 #include "../StPicoCuts/StPicoCuts.h"
+#include "../StRefMultCorr/StRefMultCorr.h"
+
 
 struct RunData {
     int runNumber;
@@ -97,6 +99,9 @@ protected:
     void  fillEventStats(int *aEventStat);
 
 
+    int fRunNumber;
+    StRefMultCorr* mRefmultCorrUtil;
+
 
     // -- private members ------------------------
 
@@ -134,4 +139,12 @@ inline bool StPicoJetMaker::isMcMode() const                { return mMcMode; }
 
 inline void StPicoJetMaker::setMakerMode(unsigned short us) { mMakerMode = us; }
 inline unsigned int StPicoJetMaker::isMakerMode() const { return mMakerMode; }
+
+inline void StPicoHFJetMaker::setRefMultCorr(StRefMultCorr *RefMultCorr) {
+    StPicoHFJetMaker::mRefmultCorrUtil = RefMultCorr;
+}
+
+inline StRefMultCorr* StPicoHFJetMaker::getRefMultCorr() {
+    return mRefmultCorrUtil;
+}
 #endif

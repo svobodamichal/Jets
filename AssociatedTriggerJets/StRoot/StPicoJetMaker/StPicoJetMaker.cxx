@@ -160,9 +160,21 @@ Int_t StPicoJetMaker::Make() {
       if (weightIt != mWeightMap.end()) {
           double weightEVT = weightIt->second;
 
+          fRunNumber = mPicoDst->event()->runId();
+          int eventId = mPicoDst->event()->eventId(); //eventID
+          int refMult = mPicoDst->event()->refMult();
+          double vz = mPrimVtx.z();
+          mRefmultCorrUtil->setEvent(fRunNumber, refMult, mPicoDst->event()->ZDCx(), vz);
+          int centrality = mRefmultCorrUtil->centrality9(); //0 = 0-5 %,..., 8 = 70-80 %
+          float WeightCentr = 1.0;
+          WeightCentr = mRefmultCorrUtil->weight();
+
+          float WeightTotal = WeightCentr * weightEVT; // To arrive to corresponding number of MB events
+
           // Fill histograms with the precomputed weight
           static_cast<TH1D*>(mOutList->FindObject("hrunId_weighted"))->Fill(runNumber, weightEVT);
           static_cast<TH1D*>(mOutList->FindObject("hevents_weighted"))->Fill(1, 1 * weightEVT);
+          static_cast<TH1D*>(mOutList->FindObject("hrefmult_weighted"))->Fill(centrality, 1*WeightTotal);
       } else {
           std::cerr << "Warning: Precomputed weight not found for run number " << runNumber << std::endl;
       }
@@ -265,6 +277,7 @@ void StPicoJetMaker::initializeEventStats() {
 
   mOutList->Add(new TH1D("hrunId_weighted", "minimum bias events", 90913, 15076101, 15167014)); //15076101−15167014
   mOutList->Add(new TH1D("hevents_weighted", "number of minimum bias events", 2, 0, 2));
+  mOutList->Add(new TH1D("hEVTcentral", "centrality", 10, -1, 9));
 
 
   //All event histograms
