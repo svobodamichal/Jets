@@ -166,6 +166,8 @@ Int_t StPicoJetMaker::Make() {
           double vz = mPrimVtx.z();
           mRefmultCorrUtil->setEvent(fRunNumber, refMult, mPicoDst->event()->ZDCx(), vz);
           int centrality = mRefmultCorrUtil->centrality9(); //0 = 0-5 %,..., 8 = 70-80 %
+
+          cout<<"centrality: "<<centrality<<endl;
           float WeightCentr = 1.0;
           WeightCentr = mRefmultCorrUtil->weight();
 

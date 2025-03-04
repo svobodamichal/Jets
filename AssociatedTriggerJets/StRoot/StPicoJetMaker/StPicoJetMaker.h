@@ -66,6 +66,9 @@ class StPicoJetMaker : public StMaker
     Int_t Make();
     void  Clear(Option_t *opt="");
     Int_t Finish();
+
+    void setRefMultCorr(StRefMultCorr* RefMultCorr);
+    StRefMultCorr* getRefMultCorr();
     
     std::map<int, RunData> readDataFromFile(const std::string& filename);
     double calculateWeight(const RunData& htRunData, const RunData& mbRunData);
