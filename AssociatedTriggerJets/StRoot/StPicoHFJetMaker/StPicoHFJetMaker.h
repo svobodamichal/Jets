@@ -64,8 +64,8 @@ class StPicoHFJetMaker : public StPicoJetMaker {
 	virtual Bool_t GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPrimVtx);
 	virtual Int_t FindTriggerTowers(Int_t level);
 
-    virtual void setRefMultCorr(StRefMultCorr* refMultCorr) override;
-    virtual StRefMultCorr* getRefMultCorr() override;
+    virtual void setRefMultCorr(StRefMultCorr* refMultCorr);
+    virtual StRefMultCorr* getRefMultCorr();
 
   StEmcADCtoEMaker *mADCtoEMaker;
   StBemcTables     *mTables;
