@@ -125,7 +125,7 @@ protected:
     TFile*          mOutputFileList;     // ptr to file saving the list of histograms
     ClassDef(StPicoJetMaker, 0)
 
-    StRefMultCorr* mRefmultCorrUtil1;
+    mRefmultCorrUtil1 = new StRefMultCorr();
 
 
     std::map<int, double> mWeightMap;
