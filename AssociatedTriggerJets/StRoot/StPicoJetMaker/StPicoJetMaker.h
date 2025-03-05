@@ -144,7 +144,7 @@ inline void StPicoJetMaker::setMakerMode(unsigned short us) { mMakerMode = us; }
 inline unsigned int StPicoJetMaker::isMakerMode() const { return mMakerMode; }
 
 inline void StPicoJetMaker::setRefMultCorr1(StRefMultCorr *RefMultCorr1) {
-    StPicoJetMaker::mRefmultCorrUtil = RefMultCorr1;
+    StPicoJetMaker::mRefmultCorrUtil1 = RefMultCorr1;
 }
 
 inline StRefMultCorr* StPicoJetMaker::getRefMultCorr1() {
