@@ -26,6 +26,7 @@
 #include "../StPicoCuts/StPicoCuts.h"
 #include "../StRefMultCorr/StRefMultCorr.h"
 
+
 struct RunData {
     int runNumber;
     int numberOfEvents;
@@ -50,9 +51,6 @@ class StPicoJetMaker : public StMaker
     virtual void  ClearJets(Option_t *opt="") { return; }
     virtual Int_t FinishJets()                { return kStOK; }
 
-    virtual void setRefMultCorr(StRefMultCorr* refMultCorr) { }
-    virtual StRefMultCorr* getRefMultCorr() { return nullptr; }
-
     void setPicoCuts(StPicoCuts* cuts);
     void setTreeName(const char* tName);
     void setMcMode(bool b);
@@ -68,6 +66,9 @@ class StPicoJetMaker : public StMaker
     Int_t Make();
     void  Clear(Option_t *opt="");
     Int_t Finish();
+
+    void setRefMultCorr1(StRefMultCorr* RefMultCorr1);
+    StRefMultCorr* getRefMultCorr1();
     
     std::map<int, RunData> readDataFromFile(const std::string& filename);
     double calculateWeight(const RunData& htRunData, const RunData& mbRunData);
@@ -124,6 +125,9 @@ protected:
     TFile*          mOutputFileList;     // ptr to file saving the list of histograms
     ClassDef(StPicoJetMaker, 0)
 
+    StRefMultCorr* mRefmultCorrUtil1;
+
+
     std::map<int, double> mWeightMap;
     std::map<int, RunData> bhtRunDataMap;
     std::map<int, RunData> vpdRunDataMap;
@@ -138,4 +142,13 @@ inline bool StPicoJetMaker::isMcMode() const                { return mMcMode; }
 
 inline void StPicoJetMaker::setMakerMode(unsigned short us) { mMakerMode = us; }
 inline unsigned int StPicoJetMaker::isMakerMode() const { return mMakerMode; }
+
+inline void StPicoJetMaker::setRefMultCorr1(StRefMultCorr *RefMultCorr1) {
+    StPicoJetMaker::mRefmultCorrUtil = RefMultCorr1;
+}
+
+inline StRefMultCorr* StPicoJetMaker::getRefMultCorr1() {
+    return mRefmultCorrUtil1;
+}
+
 #endif

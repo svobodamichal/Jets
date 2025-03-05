@@ -160,11 +160,11 @@ Int_t StPicoJetMaker::Make() {
       if (weightIt != mWeightMap.end()) {
           double weightEVT = weightIt->second;
 
-          fRunNumber = mPicoDst->event()->runId();
+          int RunNumber = mPicoDst->event()->runId();
           int eventId = mPicoDst->event()->eventId(); //eventID
           int refMult = mPicoDst->event()->refMult();
           double vz = mPrimVtx.z();
-          mRefmultCorrUtil->setEvent(fRunNumber, refMult, mPicoDst->event()->ZDCx(), vz);
+          mRefmultCorrUtil->setEvent(RunNumber, refMult, mPicoDst->event()->ZDCx(), vz);
           int centrality = mRefmultCorrUtil->centrality9(); //0 = 0-5 %,..., 8 = 70-80 %
 
           cout<<"centrality: "<<centrality<<endl;
