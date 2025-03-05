@@ -64,6 +64,9 @@ class StPicoHFJetMaker : public StPicoJetMaker {
 	virtual Bool_t GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPrimVtx);
 	virtual Int_t FindTriggerTowers(Int_t level);
 
+    virtual void setRefMultCorr(StRefMultCorr* refMultCorr) override;
+    virtual StRefMultCorr* getRefMultCorr() override;
+
   StEmcADCtoEMaker *mADCtoEMaker;
   StBemcTables     *mTables;
 
@@ -215,12 +218,12 @@ inline void StPicoHFJetMaker::setRefMutCorr(StRefMultCorr *gRefMultCorr) {
 
 inline void StPicoHFJetMaker::setTriggerThreshold(float trgthresh) {fTrgthresh = trgthresh;}
 
-inline void StPicoHFJetMaker::setRefMultCorr(StRefMultCorr *RefMultCorr) {
-	StPicoHFJetMaker::mRefmultCorrUtil = RefMultCorr;
+void StPicoHFJetMaker::setRefMultCorr(StRefMultCorr* refMultCorr) {
+    mRefmultCorrUtil = refMultCorr;
 }
 
-inline StRefMultCorr* StPicoHFJetMaker::getRefMultCorr() {
-	return mRefmultCorrUtil;
+StRefMultCorr* StPicoHFJetMaker::getRefMultCorr() {
+    return mRefmultCorrUtil;
 }
 
 #endif

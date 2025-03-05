@@ -25,7 +25,6 @@
 
 #include "../StPicoCuts/StPicoCuts.h"
 #include "../StRefMultCorr/StRefMultCorr.h"
-#include "../StPicoHFJetMaker/StPicoHFJetMaker.h"
 
 struct RunData {
     int runNumber;
@@ -50,6 +49,9 @@ class StPicoJetMaker : public StMaker
     virtual Int_t MakeJets()                  { return kStOK; }
     virtual void  ClearJets(Option_t *opt="") { return; }
     virtual Int_t FinishJets()                { return kStOK; }
+
+    virtual void setRefMultCorr(StRefMultCorr* refMultCorr) { }
+    virtual StRefMultCorr* getRefMultCorr() { return nullptr; }
 
     void setPicoCuts(StPicoCuts* cuts);
     void setTreeName(const char* tName);
