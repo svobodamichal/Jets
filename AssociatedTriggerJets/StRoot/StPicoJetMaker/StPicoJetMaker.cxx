@@ -164,12 +164,12 @@ Int_t StPicoJetMaker::Make() {
           int eventId = mPicoDst->event()->eventId(); //eventID
           int refMult = mPicoDst->event()->refMult();
           double vz = mPrimVtx.z();
-          mRefmultCorrUtil->setEvent(RunNumber, refMult, mPicoDst->event()->ZDCx(), vz);
-          int centrality = mRefmultCorrUtil->centrality9(); //0 = 0-5 %,..., 8 = 70-80 %
+          mRefmultCorrUtil1->setEvent(RunNumber, refMult, mPicoDst->event()->ZDCx(), vz);
+          int centrality = mRefmultCorrUtil1->centrality9(); //0 = 0-5 %,..., 8 = 70-80 %
 
           cout<<"centrality: "<<centrality<<endl;
           float WeightCentr = 1.0;
-          WeightCentr = mRefmultCorrUtil->weight();
+          WeightCentr = mRefmultCorrUtil1->weight();
 
           float WeightTotal = WeightCentr * weightEVT; // To arrive to corresponding number of MB events
 
