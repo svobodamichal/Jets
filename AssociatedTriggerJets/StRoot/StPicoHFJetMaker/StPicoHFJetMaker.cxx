@@ -405,23 +405,27 @@ int StPicoHFJetMaker::MakeJets() {
     static_cast<TH1D*>(mOutList->FindObject("hrefmult_weighted"))->Fill(centrality, 1*WeightTotal);
 
 
+    cout << "Test 4" << endl;
 
 
     if (centrality == 0) centrality = 1; // merge 0-5% and 5-10% into 0-10%
     if (centrality == 8) centrality = 7; // merge 60-70% and 70-80% into 60-80%
 	static_cast<TH1D*>(mOutList->FindObject("hcent"))->Fill(centrality, weight);
 	//static_cast<TH2D*>(mOutList->FindObject("hrunIdcent"))->Fill(fRunNumber,centrality,weight); //not used
-		
-	//if (centrality > 1) return kStOk; //REMEMBER NOW ONLY CENTRAL
+    cout << "Test 5" << endl;
+
+    //if (centrality > 1) return kStOk; //REMEMBER NOW ONLY CENTRAL
 
 	if (!FindTriggerTowers(2)) return kStOk; //2 = HT2, don't continue if there is no HT2-trigger tower with sufficient energy
+    cout << "Test 6" << endl;
 
 	GetCaloTrackMomentum(mPicoDst,mPrimVtx); //fill array Sump with momenta of tracks which are matched to BEMC
+    cout << "Test 7" << endl;
 
     StEmcPosition* mEmcPosition;
     mEmcPosition = new StEmcPosition();
 
-cout << "Test 4" << endl;
+cout << "Test 8" << endl;
 	for (int iTow = 0; iTow < 4800; iTow++){ //get btow info
 		StPicoBTowHit *towHit = mPicoDst->btowHit(iTow);
 		vector<int> ids = {0,0,0,0,0,0,0,0,0}; 
