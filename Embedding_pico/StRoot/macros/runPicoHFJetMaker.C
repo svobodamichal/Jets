@@ -178,7 +178,7 @@ void runPicoHFJetMaker(const Char_t *inputFile, const Char_t *outputFile="output
 /*	picoCuts->addTriggerId(450010);    // vpdmb-30
 	picoCuts->addTriggerId(450020);    // vpdmb-30
 	picoCuts->addTriggerId(450008);    // vpdmb-5
-	picoCuts->addTriggerId(450018);    // vpdmb-5*
+	picoCuts->addTriggerId(450018);    // vpdmb-5**/
 
 
 	//2014 BHT2*VPD30 triggers
