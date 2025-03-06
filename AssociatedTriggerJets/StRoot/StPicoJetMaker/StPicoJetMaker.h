@@ -67,9 +67,8 @@ class StPicoJetMaker : public StMaker
     void  Clear(Option_t *opt="");
     Int_t Finish();
 
-    void setRefMultCorr1(StRefMultCorr* RefMultCorr1);
-    StRefMultCorr* getRefMultCorr1();
-    
+    virtual double getWeight(int runNumber) { return 0.0; }
+
     std::map<int, RunData> readDataFromFile(const std::string& filename);
     double calculateWeight(const RunData& htRunData, const RunData& mbRunData);
     void precomputeWeights();
@@ -125,9 +124,6 @@ protected:
     TFile*          mOutputFileList;     // ptr to file saving the list of histograms
     ClassDef(StPicoJetMaker, 0)
 
-    StRefMultCorr* mRefmultCorrUtil1;
-
-
     std::map<int, double> mWeightMap;
     std::map<int, RunData> bhtRunDataMap;
     std::map<int, RunData> vpdRunDataMap;
@@ -143,12 +139,5 @@ inline bool StPicoJetMaker::isMcMode() const                { return mMcMode; }
 inline void StPicoJetMaker::setMakerMode(unsigned short us) { mMakerMode = us; }
 inline unsigned int StPicoJetMaker::isMakerMode() const { return mMakerMode; }
 
-inline void StPicoJetMaker::setRefMultCorr1(StRefMultCorr *RefMultCorr1) {
-    StPicoJetMaker::mRefmultCorrUtil1 = RefMultCorr1;
-}
-
-inline StRefMultCorr* StPicoJetMaker::getRefMultCorr1() {
-    return mRefmultCorrUtil1;
-}
 
 #endif

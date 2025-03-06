@@ -123,7 +123,9 @@ int StPicoHFJetMaker::InitJets() {
 
     
 	TH1::SetDefaultSumw2();
-	mOutList->Add(new TH1D("hweight", "weight", 135, 0, 3));
+    mOutList->Add(new TH1D("hEVTcentral", "centrality", 10, -1, 9));
+
+    mOutList->Add(new TH1D("hweight", "weight", 135, 0, 3));
 	mOutList->Add(new TH1D("hcent", "centrality", 10, -1, 9));
 	//mOutList->Add(new TH2D("hrunIdcent", "runId vs centrality", 90913, 15076101, 15167014, 10, -1, 9)); //not used
 
@@ -389,6 +391,15 @@ int StPicoHFJetMaker::MakeJets() {
     float weight = 1.0;
 	weight = mRefmultCorrUtil->weight();
 	static_cast<TH1D*>(mOutList->FindObject("hweight"))->Fill(weight);
+
+    int runNumber = mPicoDst->event()->runId();
+    double weightEVT = getWeight(runNumber);
+
+    float WeightTotal = weight * weightEVT; // To arrive to corresponding number of MB events
+    static_cast<TH1D*>(mOutList->FindObject("hrefmult_weighted"))->Fill(centrality, 1*WeightTotal);
+
+
+
 
     if (centrality == 0) centrality = 1; // merge 0-5% and 5-10% into 0-10%
     if (centrality == 8) centrality = 7; // merge 60-70% and 70-80% into 60-80%
@@ -992,4 +1003,13 @@ Bool_t StPicoHFJetMaker::GetCaloTrackMomentum(StPicoDst *mPicoDst, TVector3 mPri
 	
 	return Triggers.size();
  }
-
+//------------------------------------------------------------------------------------------------
+double StPicoHFJetMaker::getWeight(int runNumber) {
+    auto weightIt = mWeightMap.find(runNumber);
+    if (weightIt != mWeightMap.end()) {
+        return weightIt->second;
+    } else {
+        std::cerr << "Warning: Precomputed weight not found for run number " << runNumber << std::endl;
+        return 0.0;
+    }
+}

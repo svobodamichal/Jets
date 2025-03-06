@@ -92,6 +92,8 @@ class StPicoHFJetMaker : public StPicoJetMaker {
 	void setRefMultCorr(StRefMultCorr* RefMultCorr);
 	StRefMultCorr* getRefMultCorr();
 
+    double getWeight(int runNumber);
+
     unsigned int mcJetType();
 		
 		
