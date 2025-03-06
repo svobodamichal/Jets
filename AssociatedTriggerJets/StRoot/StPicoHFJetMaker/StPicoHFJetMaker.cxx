@@ -421,7 +421,7 @@ int StPicoHFJetMaker::MakeJets() {
     StEmcPosition* mEmcPosition;
     mEmcPosition = new StEmcPosition();
 
-
+cout << "Test 4" << endl;
 	for (int iTow = 0; iTow < 4800; iTow++){ //get btow info
 		StPicoBTowHit *towHit = mPicoDst->btowHit(iTow);
 		vector<int> ids = {0,0,0,0,0,0,0,0,0}; 
