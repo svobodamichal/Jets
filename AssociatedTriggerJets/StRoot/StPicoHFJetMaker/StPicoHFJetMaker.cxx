@@ -380,6 +380,7 @@ int StPicoHFJetMaker::MakeJets() {
 		if (refMult > 364 && refMult <= 430) centrality = 7;
 		if (refMult > 430) centrality = 8;
 	*/
+    cout<<"Test 1"<<endl;
 	fRunNumber = mPicoDst->event()->runId();
 	int eventId = mPicoDst->event()->eventId(); //eventID
 	int refMult = mPicoDst->event()->refMult();
@@ -392,8 +393,13 @@ int StPicoHFJetMaker::MakeJets() {
 	weight = mRefmultCorrUtil->weight();
 	static_cast<TH1D*>(mOutList->FindObject("hweight"))->Fill(weight);
 
+    cout<<"Test 2"<<endl;
+
     int runNumber = mPicoDst->event()->runId();
+    cout<<"Test 3"<<endl;
     double weightEVT = getWeight(runNumber);
+
+    cout<<"Weight: "<<weightEVT<<endl;
 
     float WeightTotal = weight * weightEVT; // To arrive to corresponding number of MB events
     static_cast<TH1D*>(mOutList->FindObject("hrefmult_weighted"))->Fill(centrality, 1*WeightTotal);
