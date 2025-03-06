@@ -124,7 +124,6 @@ int StPicoHFJetMaker::InitJets() {
     
 	TH1::SetDefaultSumw2();
     mOutList->Add(new TH1D("hEVTcentral", "centrality", 10, -1, 9));
-
     mOutList->Add(new TH1D("hweight", "weight", 135, 0, 3));
 	mOutList->Add(new TH1D("hcent", "centrality", 10, -1, 9));
 	//mOutList->Add(new TH2D("hrunIdcent", "runId vs centrality", 90913, 15076101, 15167014, 10, -1, 9)); //not used
@@ -394,9 +393,6 @@ int StPicoHFJetMaker::MakeJets() {
 
     int runNumber = mPicoDst->event()->runId();
     double weightEVT = getWeight(runNumber);
-
-    cout<<"Weight: "<<weightEVT<<endl;
-
     float WeightTotal = weight * weightEVT; // To arrive to corresponding number of MB events
     static_cast<TH1D*>(mOutList->FindObject("hEVTcentral"))->Fill(centrality, 1*WeightTotal);
 

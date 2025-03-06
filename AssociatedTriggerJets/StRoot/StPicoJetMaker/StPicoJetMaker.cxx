@@ -157,6 +157,10 @@ Int_t StPicoJetMaker::Make() {
       int runNumber = mPicoDst->event()->runId();
 
       auto weightIt = mWeightMap.find(runNumber);
+      for (const auto& pair : mWeightMap) {
+          std::cout << "Run Number: " << pair.first << ", Weight: " << pair.second << std::endl;
+      }
+
       if (weightIt != mWeightMap.end()) {
           double weightEVT = weightIt->second;
 
