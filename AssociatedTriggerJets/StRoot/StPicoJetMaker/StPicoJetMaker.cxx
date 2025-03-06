@@ -162,7 +162,6 @@ Int_t StPicoJetMaker::Make() {
 
           // Fill histograms with the precomputed weight
           static_cast<TH1D*>(mOutList->FindObject("hrunId_weighted"))->Fill(runNumber, weightEVT);
-          static_cast<TH1D*>(mOutList->FindObject("hevents_weighted"))->Fill(1, 1 * weightEVT);
       } else {
           std::cerr << "Warning: Precomputed weight not found for run number " << runNumber << std::endl;
       }
@@ -264,8 +263,6 @@ void StPicoJetMaker::initializeEventStats() {
 
 
   mOutList->Add(new TH1D("hrunId_weighted", "minimum bias events", 90913, 15076101, 15167014)); //15076101−15167014
-  mOutList->Add(new TH1D("hevents_weighted", "number of minimum bias events", 2, 0, 2));
-
 
   //All event histograms
   mOutList->Add(new TH1I("hevents", "number of events", 2, 0, 2));
