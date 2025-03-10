@@ -47,7 +47,7 @@ do
 #USE2DHISTO=1 # is the histogram with the measured distribution a 2D histogram?
 USE2DHISTO=0 # is the histogram with the measured distribution a 2D histogram?
 
-TRG="MB" #HT2, MB
+TRG="HT2" #HT2, MB
 #TRG="MB"
 export TRG
 
