@@ -395,7 +395,10 @@ int StPicoHFJetMaker::MakeJets() {
     double weightEVT = getWeight(runNumber);
     float WeightTotal = weight * weightEVT; // To arrive to corresponding number of MB events
     static_cast<TH1D*>(mOutList->FindObject("hEVTcentral"))->Fill(centrality, 1*WeightTotal);
-
+    cout<<"centrality 1: "<<weight<<endl;
+    cout<<"centrality 2: "<<weight<<endl;
+    cout<<"centrality 7: "<<weight<<endl;
+    cout<<"centrality 8: "<<weight<<endl;
 
     if (centrality == 0) centrality = 1; // merge 0-5% and 5-10% into 0-10%
     if (centrality == 8) centrality = 7; // merge 60-70% and 70-80% into 60-80%
