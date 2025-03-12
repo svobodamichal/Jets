@@ -11,5 +11,5 @@
 #root4star -l -b -q 'runPicoHFJetMaker.C("test.list","output_test",0,"BadRunList_14.list","PicoDst")'
 #root -l -b -q 'StRoot/macros/loadSharedHFLibraries.C' 'jobs/2019-04-23_07-19/StRoot/macros/runPicoHFJetMaker.C++("test.list","output_test",0,"BadRunList_14.list","PicoDst")'
 #root -l -b -q 'StRoot/macros/loadSharedHFLibraries.C' 'StRoot/macros/runPicoHFJetMaker.C++("test.list","output_test",0,"BadRunList_14.list","HotTowerList_14.list","PicoDst")'
-gdb --quiet --args root4star -l -b -q 'StRoot/macros/loadSharedHFLibraries.C' 'StRoot/macros/runPicoHFJetMaker.C("test.list","output_test",0,"BadRunList_14.list","PicoDst")'
-#root4star -l -b -q 'StRoot/macros/loadSharedHFLibraries.C' 'StRoot/macros/runPicoHFJetMaker.C("test.list","output_test",0,"BadRunList_14.list","PicoDst")'
+#gdb --quiet --args root4star -l -b -q 'StRoot/macros/loadSharedHFLibraries.C' 'StRoot/macros/runPicoHFJetMaker.C("test.list","output_test",0,"BadRunList_14.list","PicoDst")'
+root4star -l -b -q 'StRoot/macros/loadSharedHFLibraries.C' 'StRoot/macros/runPicoHFJetMaker.C("test.list","output_test",0,"BadRunList_14.list","PicoDst")'

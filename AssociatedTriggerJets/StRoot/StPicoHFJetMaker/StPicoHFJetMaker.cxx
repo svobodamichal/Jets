@@ -290,9 +290,9 @@ int StPicoHFJetMaker::InitJets() {
             mOutList->Add(new TH2D(hname, "jet neutral energy fraction vs jet pT corr", nptbins, ptminbin, ptmaxbin, 100, 0, 1));*/
 
             for (int centbin = 1; centbin < 8; centbin++) {
-						
-						hname = Form("hjetpT_R0%.0lf_centbin%i",fR[r]*10, centbin);
-            mOutList->Add(new TH1D(hname, "jet p_{T}; p_{T} [GeV/c]", nptbins, 0, ptmaxbin));
+
+             /*   hname = Form("hjetpT_R0%.0lf_centbin%i",fR[r]*10, centbin);
+            mOutList->Add(new TH1D(hname, "jet p_{T}; p_{T} [GeV/c]", nptbins, 0, ptmaxbin));*/
 
             //hname = Form("hjetpT_R0%.0lf_centbin%i_corr",fR[r]*10, centbin);
             //mOutList->Add(new TH1D(hname, "Corrected jet pT; p_{T} [GeV/c]", nptbins, ptminbin, ptmaxbin));
@@ -672,7 +672,7 @@ int StPicoHFJetMaker::MakeJets() {
 				static_cast<TH1D*>(mOutList->FindObject(Form("hcphi_R0%.0lf",fR[i]*10)))->Fill(cphi, weight);
 			}		
 
-                	static_cast<TH1D*>(mOutList->FindObject(Form("hjetpT_R0%.0lf_centbin%d",fR[i]*10, centrality)))->Fill(pT_jet, weight);
+            //    	static_cast<TH1D*>(mOutList->FindObject(Form("hjetpT_R0%.0lf_centbin%d",fR[i]*10, centrality)))->Fill(pT_jet, weight);
                 	static_cast<TH1D*>(mOutList->FindObject(Form("hjetpTlead_R0%.0lf_centbin%d",fR[i]*10, centrality)))->Fill(pTlead, weight);
 
 			//static_cast<TH1D*>(mOutList->FindObject(Form("hjetpT_R0%.0lf_centbin%d_corr",fR[i]*10, centrality)))->Fill(pTcorr_jet);
