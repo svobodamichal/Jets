@@ -326,7 +326,7 @@ int StPicoHFJetMaker::InitJets() {
                 mOutList->Add(new TH1D(hname, hdesc, nptbins, ptminbin, ptmaxbin));
 
                 hname = Form("hfpT_pTl%i_R0%.0lf_centbin%i",pTl,fR[r]*10,centbin);
-                TString hdesc = Form("full jet p_{T} for p_{T}lead>%i ; p_{T}^{corr} [GeV/c]",pTl);
+                hdesc = Form("full jet p_{T} for p_{T}lead>%i ; p_{T}^{corr} [GeV/c]",pTl);
                 mOutList->Add(new TH1D(hname, hdesc, nptbins, ptminbin, ptmaxbin));
             		}
         		}
