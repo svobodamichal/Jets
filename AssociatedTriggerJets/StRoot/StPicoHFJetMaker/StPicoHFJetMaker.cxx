@@ -193,7 +193,7 @@ int StPicoHFJetMaker::InitJets() {
     }
 
    
-						TString hname ="hrho";
+            TString hname ="hrho";
             mOutList->Add(new TH1D(hname,"median energy density; #rho_{ch} [GeV/sr]",50,0,50));
 					
             hname = "hrho_mult";
@@ -282,11 +282,12 @@ int StPicoHFJetMaker::InitJets() {
 						hname = Form("hNF_R0%.0lf",fR[r]*10);
             mOutList->Add(new TH1D(hname, "jet neutral energy fraction; NEF", 100, 0, 1));
 
-                hname = Form("hNF_pT_R0%.0lf",fR[r]*10);
+
+        /*    hname = Form("hNF_pT_R0%.0lf",fR[r]*10);
             mOutList->Add(new TH2D(hname, "jet neutral energy fraction vs jet pT", nptbins, ptminbin, ptmaxbin, 100, 0, 1));
 
             hname = Form("hNF_pT_corr_R0%.0lf",fR[r]*10);
-            mOutList->Add(new TH2D(hname, "jet neutral energy fraction vs jet pT corr", nptbins, ptminbin, ptmaxbin, 100, 0, 1));
+            mOutList->Add(new TH2D(hname, "jet neutral energy fraction vs jet pT corr", nptbins, ptminbin, ptmaxbin, 100, 0, 1));*/
 
             for (int centbin = 1; centbin < 8; centbin++) {
 						
@@ -398,8 +399,8 @@ int StPicoHFJetMaker::MakeJets() {
     cout<<"centrality: "<<centrality<<"weight:  "<<weight  <<endl;
 
 
-    if (centrality == 0) centrality = 1; // merge 0-5% and 5-10% into 0-10%
-    if (centrality == 8) centrality = 7; // merge 60-70% and 70-80% into 60-80%
+//    if (centrality == 0) centrality = 1; // merge 0-5% and 5-10% into 0-10%
+//    if (centrality == 8) centrality = 7; // merge 60-70% and 70-80% into 60-80%
 	static_cast<TH1D*>(mOutList->FindObject("hcent"))->Fill(centrality, weight);
 	//static_cast<TH2D*>(mOutList->FindObject("hrunIdcent"))->Fill(fRunNumber,centrality,weight); //not used
 
@@ -741,8 +742,8 @@ int StPicoHFJetMaker::MakeJets() {
 			float nfraction = neutralpT/pT_jet;
 			//cout << "neutral fraction " << nfraction << endl;
 			static_cast<TH1D*>(mOutList->FindObject(Form("hNF_R0%.0lf",fR[i]*10)))->Fill(nfraction, weight);
-            static_cast<TH2D*>(mOutList->FindObject(Form("hNF_pT_R0%.0lf",fR[i]*10)))->Fill(pT_jet, nfraction, weight);
-            static_cast<TH2D*>(mOutList->FindObject(Form("hNF_pT_corr_R0%.0lf",fR[i]*10)))->Fill(pTcorr_jet, nfraction, weight);
+        //    static_cast<TH2D*>(mOutList->FindObject(Form("hNF_pT_R0%.0lf",fR[i]*10)))->Fill(pT_jet, nfraction, weight);
+        //    static_cast<TH2D*>(mOutList->FindObject(Form("hNF_pT_corr_R0%.0lf",fR[i]*10)))->Fill(pTcorr_jet, nfraction, weight);
 
 
             if (nfraction > maxneutralfrac) continue; //keep only jets with reasonable cluster fraction of jet pT (default 0.95)
@@ -755,14 +756,14 @@ int StPicoHFJetMaker::MakeJets() {
 			else { static_cast<TH1D*>(mOutList->FindObject(Form("hfjetpTleadCharged_R0%.0lf_centbin%d",fR[i]*10, centrality)))->Fill(pTlead, weight);}
 			static_cast<TH1D*>(mOutList->FindObject(Form("hfjetpT_R0%.0lf_centbin%d",fR[i]*10, centrality)))->Fill(pT_jet, weight);
                 	static_cast<TH1D*>(mOutList->FindObject(Form("hfjetpTlead_R0%.0lf_centbin%d",fR[i]*10, centrality)))->Fill(pTlead, weight);
-			static_cast<TH1D*>(mOutList->FindObject(Form("hfpT_R0%.0lf",fR[i]*10)))->Fill(pT_jet, weight);
+			static_cast<TH1D*>(mOutList->FindObject(Form("hfpT_R0%.0lf",fR[i]*10)))->Fill(pT_jet);
 			//static_cast<TH2D*>(mOutList->FindObject(Form("heta_phi_R0%.0lf", fR[i]*10)))->Fill(eta_jet, phi_jet);
 			static_cast<TH1D*>(mOutList->FindObject(Form("hfeta_R0%.0lf", fR[i]*10)))->Fill(eta_jet, weight);
 			static_cast<TH1D*>(mOutList->FindObject(Form("hfphi_R0%.0lf", fR[i]*10)))->Fill(phi_jet, weight);
 	                static_cast<TH2D*>(mOutList->FindObject(Form("hfnparticlesinjet_R0%.0lf",fR[i]*10)))->Fill(nparticles, pTlead);
 
 	                for(Int_t pTl = 0; pTl < npTlead; pTl++) {
-                     	   if(pTl < pTlead) {static_cast<TH1D*>(mOutList->FindObject(Form("hfpT_pTl%i_R0%.0lf_centbin%d",pTl,fR[i]*10, centrality)))->Fill(pTcorr_jet, weight);}
+                     	   if(pTl < pTlead) {static_cast<TH1D*>(mOutList->FindObject(Form("hfpT_pTl%i_R0%.0lf_centbin%d",pTl,fR[i]*10, centrality)))->Fill(pTcorr_jet);}
                     	}
 
 
