@@ -166,7 +166,7 @@ int StPicoHFJetMaker::InitJets() {
 				TString hname=Form("hjetpTembArea_R0%.0lf",fR[r]*10);
 				mOutList->Add(new TH2D(hname,"jet pTemb vs area; A [-]; p_{T} [GeV/c]", 100, 0, 1, nptembbins, ptembminbin, ptembmaxbin));
 				TString htitle = "delta pT for BG corrections, using sp probe; p_{T}^{emb} [GeV/c]; #delta p_{T} [GeV/c]";
-				for (int centbin = 1; centbin < 8; centbin++) {
+				for (int centbin = 0; centbin < 9; centbin++) {
 				for(Int_t pTlcut = 0; pTlcut<npTlead; pTlcut++)
 					{
 						hname=Form("delta_pt_BG_sp_%i_R0%.0lf_centbin%i", pTlcut, fR[r]*10, centbin);
@@ -289,7 +289,7 @@ int StPicoHFJetMaker::InitJets() {
             hname = Form("hNF_pT_corr_R0%.0lf",fR[r]*10);
             mOutList->Add(new TH2D(hname, "jet neutral energy fraction vs jet pT corr", nptbins, ptminbin, ptmaxbin, 100, 0, 1));*/
 
-            for (int centbin = 1; centbin < 8; centbin++) {
+            for (int centbin = 0; centbin < 9; centbin++) {
 
              /*   hname = Form("hjetpT_R0%.0lf_centbin%i",fR[r]*10, centbin);
             mOutList->Add(new TH1D(hname, "jet p_{T}; p_{T} [GeV/c]", nptbins, 0, ptmaxbin));*/
