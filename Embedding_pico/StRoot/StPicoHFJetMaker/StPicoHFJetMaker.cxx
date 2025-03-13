@@ -535,11 +535,11 @@ int StPicoHFJetMaker::InitJets() {
 		hname = Form("hNF_R0%.0lf",fR[r]*10);
 	        mOutList->Add(new TH1D(hname, "jet neutral energy fraction; NEF", 100, 0, 1));
 	
-	        for (int centbin = 1; centbin < 8; centbin++) {
+	        for (int centbin = 0; centbin < 9; centbin++) {
 			//hname = Form("hjetpT_R0%.0lf_centbin%i",fR[r]*10, centbin);
             		//mOutList->Add(new TH1D(hname, "jet p_{T}; p_{T} (GeV/c)", nptbins, 0, ptmaxbin));
 			//full jet histos
-                hname = Form("hDeltaR_R0%.0lf_centbin%i",fR[r]*10, centbin);
+             /*   hname = Form("hDeltaR_R0%.0lf_centbin%i",fR[r]*10, centbin);
                 mOutList->Add(new TH2D(hname, "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,100, 0, 1));
                 hname = Form("hDeltaRw_R0%.0lf_centbin%i",fR[r]*10, centbin);
                 mOutList->Add(new TH2D(hname, "deltaR vs reco pT",nptbins, ptminbin, ptmaxbin,100, 0, 1));
@@ -566,7 +566,7 @@ int StPicoHFJetMaker::InitJets() {
                 hname = Form("hConstpTMatchedMCN_R0%.0lf_centbin%i",fR[r]*10, centbin);
                 mOutList->Add(new TH1D(hname, "matched MC constituents pT", nptbins, ptminbin, ptmaxbin));
                 hname = Form("hConstpTMatchedRCN_R0%.0lf_centbin%i",fR[r]*10, centbin);
-                mOutList->Add(new TH1D(hname, "matched RC constituents pT", nptbins, ptminbin, ptmaxbin));
+                mOutList->Add(new TH1D(hname, "matched RC constituents pT", nptbins, ptminbin, ptmaxbin));*/
 
             		hname = Form("hfjetpT_R0%.0lf_centbin%i",fR[r]*10, centbin);
 		        mOutList->Add(new TH1D(hname, "full jet p_{T}; p_{T} (GeV/c)", nptbins, 0, ptmaxbin));
@@ -674,8 +674,8 @@ int StPicoHFJetMaker::MakeJets() {
 
 
 
-    if (centrality == 0) centrality = 1; // merge 0-5% and 5-10% into 0-10%
-    if (centrality == 8) centrality = 7; // merge 60-70% and 70-80% into 60-80%
+//    if (centrality == 0) centrality = 1; // merge 0-5% and 5-10% into 0-10%
+//    if (centrality == 8) centrality = 7; // merge 60-70% and 70-80% into 60-80%
 
 
     static_cast<TH1D*>(mOutList->FindObject("hcent"))->Fill(centrality, weight);
@@ -878,7 +878,7 @@ int StPicoHFJetMaker::MakeJets() {
                 	float pTlead = constituents[0].perp();
             for(unsigned int icc = 0; icc < constituents.size(); ++icc) {
                 if (constituents[icc].perp()>0.2) {
-                    if(pT_jet>20.0){
+                   /* if(pT_jet>20.0){
                         if (constituents[icc].user_index() == 0 || constituents[icc].user_index() == 9999) {
 
                             static_cast<TH1D *>(mOutList->FindObject(Form("hConstpTMCN_R0%.0lf_centbin%i", fR[i] * 10, centrality)))->Fill(constituents[icc].perp());
@@ -886,7 +886,7 @@ int StPicoHFJetMaker::MakeJets() {
                         else {
                             static_cast<TH1D *>(mOutList->FindObject(Form("hConstpTMCCH_R0%.0lf_centbin%i", fR[i] * 10, centrality)))->Fill(constituents[icc].perp());
                         }
-                        }
+                        }*/
                     NumberOfConst++;
                 }
             }
@@ -956,7 +956,7 @@ int StPicoHFJetMaker::MakeJets() {
 				static_cast<TH1D*>(mOutList->FindObject(Form("hfceta_R0%.0lf",fR[i]*10)))->Fill(ceta, weight);
 				static_cast<TH1D*>(mOutList->FindObject(Form("hfcphi_R0%.0lf",fR[i]*10)))->Fill(cphi, weight);
                 if (constituents[ic].perp()>0.2) {
-                    if(pT_jet>20.0){
+                   /* if(pT_jet>20.0){
                         if (constituents[ic].user_index() == 0 || constituents[ic].user_index() == 9999) {
 
                             static_cast<TH1D *>(mOutList->FindObject(Form("hConstpTRCN_R0%.0lf_centbin%i", fR[i] * 10, centrality)))->Fill(constituents[ic].perp());
@@ -964,7 +964,7 @@ int StPicoHFJetMaker::MakeJets() {
                         else {
                             static_cast<TH1D *>(mOutList->FindObject(Form("hConstpTRCCH_R0%.0lf_centbin%i", fR[i] * 10, centrality)))->Fill(constituents[ic].perp());
                         }
-                    }
+                    }*/
                     NumberOfConst++;
                 }
 			}
@@ -1032,8 +1032,8 @@ int StPicoHFJetMaker::MakeJets() {
                     double pTvalue = deltaR[j].second;
 
 //                    static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaR_R0%.0lf", fR[i]*10)))->Fill(pTvalue, deltaRvalue);
-                    static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaR_R0%.0lf_centbin%i", fR[i]*10, centrality)))->Fill(pTvalue, deltaRvalue);
-                    static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaRw_R0%.0lf_centbin%i", fR[i]*10, centrality)))->Fill(pTvalue, deltaRvalue, weight);
+                  //  static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaR_R0%.0lf_centbin%i", fR[i]*10, centrality)))->Fill(pTvalue, deltaRvalue);
+                  //  static_cast<TH2D*>(mOutList->FindObject(Form("hDeltaRw_R0%.0lf_centbin%i", fR[i]*10, centrality)))->Fill(pTvalue, deltaRvalue, weight);
 
                 }
                 for (unsigned int j = 0; j < Matched.size(); j++) {
@@ -1051,7 +1051,7 @@ int StPicoHFJetMaker::MakeJets() {
                 vector<PseudoJet> constituentsMC = sorted_by_pt(Matched[j].first.constituents());
                     for(unsigned int ic = 0; ic < constituentsMC.size(); ++ic) {
                         if (constituentsMC[ic].perp()>0.2) {
-                            if(pT_true>20.0) {
+                           /* if(pT_true>20.0) {
                                 if (constituentsMC[ic].user_index() == 0 || constituentsMC[ic].user_index() == 9999) {
 
                                     static_cast<TH1D *>(mOutList->FindObject(Form("hConstpTMatchedMCN_R0%.0lf_centbin%i", fR[i] * 10, centrality)))->Fill(constituentsMC[ic].perp());
@@ -1059,14 +1059,14 @@ int StPicoHFJetMaker::MakeJets() {
                                 else {
                                     static_cast<TH1D *>(mOutList->FindObject(Form("hConstpTMatchedMCCH_R0%.0lf_centbin%i", fR[i] * 10, centrality)))->Fill(constituentsMC[ic].perp());
                                 }
-                            }
+                            }*/
                             NumberOfConstMC++;
                         }
                     }
                 vector<PseudoJet> constituentsRC = sorted_by_pt(Matched[j].second.constituents());
                     for(unsigned int icc = 0; icc < constituentsRC.size(); ++icc) {
                         if (constituentsRC[icc].perp()>0.2) {
-                            if(pT_corr_det>20.0) {
+                           /* if(pT_corr_det>20.0) {
                                 if (constituentsRC[icc].user_index() == 0 || constituentsRC[icc].user_index() == 9999) {
 
                                     static_cast<TH1D *>(mOutList->FindObject(Form("hConstpTMatchedRCN_R0%.0lf_centbin%i", fR[i] * 10, centrality)))->Fill(constituentsRC[icc].perp());
@@ -1074,17 +1074,17 @@ int StPicoHFJetMaker::MakeJets() {
                                 else {
                                     static_cast<TH1D *>(mOutList->FindObject(Form("hConstpTMatchedRCCH_R0%.0lf_centbin%i", fR[i] * 10, centrality)))->Fill(constituentsRC[icc].perp());
                                 }
-                            }
+                            }*/
                             NumberOfConstRC++;
                         }
                     }
 
 
-            static_cast<TH2D*>(mOutList->FindObject(Form("hMCNconst_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(pT_true, NumberOfConstMC);
+        /*    static_cast<TH2D*>(mOutList->FindObject(Form("hMCNconst_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(pT_true, NumberOfConstMC);
             static_cast<TH2D*>(mOutList->FindObject(Form("hMCNconstw_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(pT_true, NumberOfConstMC, weight);
 
             static_cast<TH2D*>(mOutList->FindObject(Form("hNconst_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(pT_corr_det, NumberOfConstRC);
-            static_cast<TH2D*>(mOutList->FindObject(Form("hNconstw_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(pT_corr_det, NumberOfConstRC, weight);
+            static_cast<TH2D*>(mOutList->FindObject(Form("hNconstw_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(pT_corr_det, NumberOfConstRC, weight);*/
 
 			static_cast<TH2D*>(mOutList->FindObject(Form("hetaphi_MCmatched_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(MCmatchedeta,MCmatchedphi, weight);
 			static_cast<TH2D*>(mOutList->FindObject(Form("hetaphi_RCmatched_R0%.0lf_centbin%i",fR[i]*10, centrality)))->Fill(RCmatchedeta,RCmatchedphi, weight);	
