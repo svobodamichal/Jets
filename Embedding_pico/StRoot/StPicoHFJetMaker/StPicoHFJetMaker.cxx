@@ -49,7 +49,7 @@ using namespace fastjet;
 
 ClassImp(StPicoHFJetMaker)
 
-bool trackErr = false;
+bool trackErr = true;
 bool towErrPlus = false;
 bool towErrMinus = false;
 
@@ -774,7 +774,7 @@ int StPicoHFJetMaker::MakeJets() {
 		inputTower.set_user_index(0); //default index is -1, 0 means neutral particle
 		//THIS LINE WILL NOT WORK
 		//if (find(Triggers.begin(), Triggers.end(), realtowID)!=Triggers.end()) inputTower.set_user_index(2); //mark trigger towers with user_index 2
-        int ADC = towHit->adc();
+        int ADC = towHit->adc()>>4;
         static_cast<TH1D*>(mOutList->FindObject("hADC"))->Fill(ADC, weight);
 		if (ADC > fTrgthresh) inputTower.set_user_index(9999); //mark trigger towers with user_index 9999
 		neutraljetTracks.push_back(inputTower);}
