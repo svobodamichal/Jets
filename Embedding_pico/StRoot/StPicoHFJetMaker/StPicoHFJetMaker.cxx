@@ -50,7 +50,7 @@ using namespace fastjet;
 ClassImp(StPicoHFJetMaker)
 
 bool trackErr = false;
-bool towErrPlus = false;
+bool towErrPlus = true;
 bool towErrMinus = false;
 
 
