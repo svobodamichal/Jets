@@ -51,7 +51,7 @@ ClassImp(StPicoHFJetMaker)
 
 
 bool trackErr = false;
-bool towErrPlus = true;
+bool towErrPlus = false;
 bool towErrMinus = false;
 
 // was
@@ -209,8 +209,8 @@ int StPicoHFJetMaker::InitJets() {
         for(unsigned int r = 0; r < fR.size(); r++) {
             //TString hname = Form("hpT_pTlead_R0%.0lf",fR[r]*10);
             //mOutList->Add(new TH2D(hname, "jet pTcorr vs pTleading; p_{T} [GeV/c]; p_{T}^{lead} [GeV/c]", nptbins, ptminbin, ptmaxbin, npTleadbins, pTleadmin, pTleadmax));
-	    			hname = Form("hpT_R0%.0lf",fR[r]*10);
-	    			mOutList->Add(new TH1D(hname, "pT; p_{T} [GeV/c]", nptbins, ptminbin, ptmaxbin)); 
+	    		/*	hname = Form("hpT_R0%.0lf",fR[r]*10);
+	    			mOutList->Add(new TH1D(hname, "pT; p_{T} [GeV/c]", nptbins, ptminbin, ptmaxbin));*/
 
             //hname = Form("heta_phi_R0%.0lf",fR[r]*10);
             //mOutList->Add(new TH2D(hname, "jet eta vs phi;#eta;#phi", netabins, etaminbin, etamaxbin, nphibins, phiminbin, phimaxbin));
@@ -321,13 +321,24 @@ int StPicoHFJetMaker::InitJets() {
             //mOutList->Add(new TH1D(hname, "Corrected full jet pT; p_{T} [GeV/c]", nptbins, ptminbin, ptmaxbin));
 
             		for(Int_t pTl = 0; pTl < npTlead; pTl++) {
-                hname = Form("hpT_pTl%i_R0%.0lf_centbin%i",pTl,fR[r]*10,centbin);
+             /*   hname = Form("hpT_pTl%i_R0%.0lf_centbin%i",pTl,fR[r]*10,centbin);
                 TString hdesc = Form("jet p_{T} for p_{T}lead>%i ; p_{T}^{corr} [GeV/c]",pTl);
-                mOutList->Add(new TH1D(hname, hdesc, nptbins, ptminbin, ptmaxbin));
+                mOutList->Add(new TH1D(hname, hdesc, nptbins, ptminbin, ptmaxbin));*/
 
                 hname = Form("hfpT_pTl%i_R0%.0lf_centbin%i",pTl,fR[r]*10,centbin);
                 hdesc = Form("full jet p_{T} for p_{T}lead>%i ; p_{T}^{corr} [GeV/c]",pTl);
                 mOutList->Add(new TH1D(hname, hdesc, nptbins, ptminbin, ptmaxbin));
+
+                hname = Form("hfpTw_pTl%i_R0%.0lf_centbin%i",pTl,fR[r]*10,centbin);
+                hdesc = Form("full jet p_{T} for p_{T}lead>%i weighted; p_{T}^{corr} [GeV/c]",pTl);
+                mOutList->Add(new TH1D(hname, hdesc, nptbins, ptminbin, ptmaxbin));
+
+                hname = Form("hfpTwEVT_pTl%i_R0%.0lf_centbin%i",pTl,fR[r]*10,centbin);
+                hdesc = Form("full jet p_{T} for p_{T}lead>%i EVTweighted; p_{T}^{corr} [GeV/c]",pTl);
+                mOutList->Add(new TH1D(hname, hdesc, nptbins, ptminbin, ptmaxbin));
+
+
+
             		}
         		}
 							
@@ -677,17 +688,17 @@ int StPicoHFJetMaker::MakeJets() {
 
 			//static_cast<TH1D*>(mOutList->FindObject(Form("hjetpT_R0%.0lf_centbin%d_corr",fR[i]*10, centrality)))->Fill(pTcorr_jet);
 			//static_cast<TH2D*>(mOutList->FindObject(Form("hpT_pTlead_R0%.0lf",fR[i]*10)))->Fill(pTcorr_jet, pTlead);
-		    	static_cast<TH1D*>(mOutList->FindObject(Form("hpT_R0%.0lf",fR[i]*10)))->Fill(pT_jet, weight);
+		//    	static_cast<TH1D*>(mOutList->FindObject(Form("hpT_R0%.0lf",fR[i]*10)))->Fill(pT_jet, weight);
                     	//static_cast<TH2D*>(mOutList->FindObject(Form("heta_phi_R0%.0lf", fR[i]*10)))->Fill(eta_jet, phi_jet);
 		    	static_cast<TH1D*>(mOutList->FindObject(Form("heta_R0%.0lf", fR[i]*10)))->Fill(eta_jet, weight);
 		    	static_cast<TH1D*>(mOutList->FindObject(Form("hphi_R0%.0lf", fR[i]*10)))->Fill(phi_jet, weight);
                 	static_cast<TH2D*>(mOutList->FindObject(Form("hnparticlesinjet_R0%.0lf",fR[i]*10)))->Fill(nparticles, pTlead); //this includes ghosts and is probably not correct!
 
-                   	for(Int_t pTl = 0; pTl < npTlead; pTl++) {
+                 /*  	for(Int_t pTl = 0; pTl < npTlead; pTl++) {
                         	if(pTl < pTlead) {
                         	    static_cast<TH1D*>(mOutList->FindObject(Form("hpT_pTl%i_R0%.0lf_centbin%d",pTl,fR[i]*10, centrality)))->Fill(pTcorr_jet, weight);
                         	}
-                    	}
+                    	}*/
              
            	 } // for(unsigned int pjet = 0; pjet < jets.size(); pjet++)
 
@@ -762,8 +773,11 @@ int StPicoHFJetMaker::MakeJets() {
 	                static_cast<TH2D*>(mOutList->FindObject(Form("hfnparticlesinjet_R0%.0lf",fR[i]*10)))->Fill(nparticles, pTlead);
 
 	                for(Int_t pTl = 0; pTl < npTlead; pTl++) {
-                     	   if(pTl < pTlead) {static_cast<TH1D*>(mOutList->FindObject(Form("hfpT_pTl%i_R0%.0lf_centbin%d",pTl,fR[i]*10, centrality)))->Fill(pTcorr_jet);}
-                    	}
+                     	    if(pTl < pTlead) {static_cast<TH1D*>(mOutList->FindObject(Form("hfpT_pTl%i_R0%.0lf_centbin%d",pTl,fR[i]*10, centrality)))->Fill(pTcorr_jet);}
+                            if(pTl < pTlead) {static_cast<TH1D*>(mOutList->FindObject(Form("hfpTw_pTl%i_R0%.0lf_centbin%d",pTl,fR[i]*10, centrality)))->Fill(pTcorr_jet, weight);}
+                            if(pTl < pTlead) {static_cast<TH1D*>(mOutList->FindObject(Form("hfpTwEVT_pTl%i_R0%.0lf_centbin%d",pTl,fR[i]*10, centrality)))->Fill(pTcorr_jet, WeightTotal);}
+
+                    }
 
 
 		} // for(unsigned int pjet = 0; pjet < jets.size(); pjet++)
