@@ -82,8 +82,8 @@
 	//Dimitry binning
     const int nbinsarr9a=12;
     float binarr9a[]={6.9, 8.2, 9.7, 11.5, 13.6, 16.1, 19.0, 22.5, 26.6, 31.4, 37.2, 44.0, 52.0};
-    const int nbinsarr9b=9;
-    float binarr9b[]={5,10,15,20,25,30,35,40,50,60};
+    const int nbinsarr9b=12;
+    float binarr9b[]={6.9, 8.2, 9.7, 11.5, 13.6, 16.1, 19.0, 22.5, 26.6, 31.4, 37.2, 44.0, 52.0};
 
 
 /*
