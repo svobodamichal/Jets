@@ -79,11 +79,11 @@
 	float binarr8b[]={20,25,30,35,40,45,50,60};
 
 
-	//test Michal
-    const int nbinsarr9a=28;
-    float binarr9a[]={-20,-15,-10,-7.5,-5,-2.5,0,2.5,5,7.5,10,12.5,15,17.5,20,22.5,25,27.5,30,32.5,35,37.5,40,42.5,45,47.5,50,55,60};
-    const int nbinsarr9b=10;
-    float binarr9b[]={20,22.5,25,27.5,30,32.5,35,40,45,50,60};
+	//Dimitry binning
+    const int nbinsarr9a=12;
+    float binarr9a[]={6.9, 8.2, 9.7, 11.5, 13.6, 16.1, 19.0, 22.5, 26.6, 31.4, 37.2, 44.0, 52.0};
+    const int nbinsarr9b=9;
+    float binarr9b[]={5,10,15,20,25,30,35,40,50,60};
 
 
 /*
