@@ -72,6 +72,7 @@ class StPicoJetMaker : public StMaker
     std::map<int, RunData> readDataFromFile(const std::string& filename);
     double calculateWeight(const RunData& htRunData, const RunData& mbRunData);
     void precomputeWeights();
+    void printWeightMap();
 
 
 protected:
