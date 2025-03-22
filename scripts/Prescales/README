@@ -15,3 +15,5 @@ merge_files.sh merges two files for each trigger and keeps only the info importa
 remove_bad_runs.sh removes the lines which contain run number from bad run list
 
 find_missing.sh checks if there are some run numbers in either of the triggers whuch are not in the other cleaned file
+
+And remove the first lines in the cleaned files, which are the headers
