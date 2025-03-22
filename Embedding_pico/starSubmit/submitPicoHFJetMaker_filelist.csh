@@ -76,10 +76,10 @@ set productionbasePath=/star/data41/reco/AuAu_200_production_low_2014/ReversedFu
 set xmlFile=submitPicoHFJetMaker_filelist.xml
 
 # -- set min and mx number of files, orig 80 to 90
-set minNFiles=15
-set maxNFiles=15
+set minNFiles=30
+set maxNFiles=30
 
-set filesPerH=20
+set filesPerH=40
 
 # ###############################################
 # -- DON'T CHANGE BELOW THAT LINE
