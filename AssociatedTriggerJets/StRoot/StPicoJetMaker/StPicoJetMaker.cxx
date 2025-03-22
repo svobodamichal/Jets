@@ -388,7 +388,4 @@ void StPicoJetMaker::precomputeWeights() {
             std::cerr << "Warning: Run number " << runNumber << " not found in VPD data map." << std::endl;
         }
     }
-
-    // Print the contents of mWeightMap
-    printWeightMap();
 }

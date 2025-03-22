@@ -80,7 +80,7 @@ set xmlFile=submitPicoHFJetMaker.xml
 set minNFiles=15
 set maxNFiles=15
 
-set filesPerH=20
+set filesPerH=40
 
 # ###############################################
 # -- DON'T CHANGE BELOW THAT LINE
