@@ -163,7 +163,7 @@ Int_t StPicoJetMaker::Make() {
           // Fill histograms with the precomputed weight
           static_cast<TH1D*>(mOutList->FindObject("hrunId_weighted"))->Fill(runNumber, weightEVT);
       } else {
-          std::cerr << "Warning: Precomputed weight not found for run number " << runNumber << std::endl;
+          std::cerr << "Warning: Precomputed weight not found in StPicoJetMaker for run number " << runNumber << std::endl;
       }
 
     // -- Fill vectors of particle types
@@ -341,8 +341,6 @@ double StPicoJetMaker::calculateWeight(const RunData& htRunData, const RunData& 
     double rMB = 0.88;   // Replace with actual rate if different
     double rHT = 0.98;    // Replace with actual rate if different
 
-    cout << psMB << " " << psHT << " " << ltHT << " " << ltMB << " " << nMBTotal << " " << nHTTotal << " " << rMB << " " << rHT << endl;
-
     double ratioPS = psMB / psHT;
     double ratioLT = ltHT / ltMB;
     double nevtMB = nMBTotal * rMB;
@@ -351,9 +349,6 @@ double StPicoJetMaker::calculateWeight(const RunData& htRunData, const RunData& 
 
     // Calculate the contribution for this run
     double weight = nEtvHT * ratioPS * ratioLT * ratioNevt;
-
-
-    cout << "Weight: " << weight << endl;
     return weight;
 }
 //________________________________________________________________________
