@@ -351,6 +351,13 @@ double StPicoJetMaker::calculateWeight(const RunData& htRunData, const RunData& 
     double weight = nEtvHT * ratioPS * ratioLT * ratioNevt;
     return weight;
 }
+//------------------------------------------------------------------------
+void StPicoJetMaker::printWeightMap() {
+    for (const auto& pair : mWeightMap) {
+        std::cout << "Run Number: " << pair.first << ", Weight: " << pair.second << std::endl;
+    }
+}
+
 //________________________________________________________________________
 void StPicoJetMaker::precomputeWeights() {
 
@@ -381,4 +388,7 @@ void StPicoJetMaker::precomputeWeights() {
             std::cerr << "Warning: Run number " << runNumber << " not found in VPD data map." << std::endl;
         }
     }
+
+    // Print the contents of mWeightMap
+    printWeightMap();
 }
