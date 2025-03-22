@@ -160,8 +160,6 @@ Int_t StPicoJetMaker::Make() {
       if (weightIt != mWeightMap.end()) {
           double weightEVT = weightIt->second;
 
-          cout << "Weight for run number " << runNumber << " is " << weightEVT << endl;
-
           // Fill histograms with the precomputed weight
           static_cast<TH1D*>(mOutList->FindObject("hrunId_weighted"))->Fill(runNumber, weightEVT);
       } else {
@@ -343,6 +341,8 @@ double StPicoJetMaker::calculateWeight(const RunData& htRunData, const RunData& 
     double rMB = 0.88;   // Replace with actual rate if different
     double rHT = 0.98;    // Replace with actual rate if different
 
+    cout << psMB << " " << psHT << " " << ltHT << " " << ltMB << " " << nMBTotal << " " << nHTTotal << " " << rMB << " " << rHT << endl;
+
     double ratioPS = psMB / psHT;
     double ratioLT = ltHT / ltMB;
     double nevtMB = nMBTotal * rMB;
@@ -352,6 +352,8 @@ double StPicoJetMaker::calculateWeight(const RunData& htRunData, const RunData& 
     // Calculate the contribution for this run
     double weight = nEtvHT * ratioPS * ratioLT * ratioNevt;
 
+
+    cout << "Weight: " << weight << endl;
     return weight;
 }
 //________________________________________________________________________
