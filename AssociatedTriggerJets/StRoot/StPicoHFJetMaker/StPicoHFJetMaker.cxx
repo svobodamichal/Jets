@@ -406,6 +406,9 @@ int StPicoHFJetMaker::MakeJets() {
     int runNumber = mPicoDst->event()->runId();
     double weightEVT = getWeight(runNumber);
     float WeightTotal = weight * weightEVT; // To arrive to corresponding number of MB events
+
+    cout<<"centrality: "<<centrality<<" weight: "<<weight<<" weightEVT: "<<weightEVT<<" WeightTotal: "<<WeightTotal<<endl;
+
     static_cast<TH1D*>(mOutList->FindObject("hEVTcentral"))->Fill(centrality, 1*WeightTotal);
 
 
