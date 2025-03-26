@@ -407,13 +407,13 @@ int StPicoHFJetMaker::MakeJets() {
 
     static_cast<TH1D*>(mOutList->FindObject("hEVTcentral"))->Fill(centrality, 1*WeightTotal);
 
-    cout<<"centrality: "<<centrality<<" weight: "<<weight<<" weightEVT: "<<weightEVT<<" WeightTotal: "<<WeightTotal<<endl;
-
     if (centrality == 0) centrality = 1; // merge 0-5% and 5-10% into 0-10%
     if (centrality == 8) centrality = 7; // merge 60-70% and 70-80% into 60-80%
 
+    cout<<"centrality: "<<centrality<<" weight: "<<weight<<" weightEVT: "<<weightEVT<<" WeightTotal: "<<WeightTotal<<endl;
 
-	static_cast<TH1D*>(mOutList->FindObject("hcent"))->Fill(centrality, weight);
+
+    static_cast<TH1D*>(mOutList->FindObject("hcent"))->Fill(centrality, weight);
 	//static_cast<TH2D*>(mOutList->FindObject("hrunIdcent"))->Fill(fRunNumber,centrality,weight); //not used
 
     //if (centrality > 1) return kStOk; //REMEMBER NOW ONLY CENTRAL
