@@ -50,7 +50,7 @@ using namespace fastjet;
 ClassImp(StPicoHFJetMaker)
 
 
-bool trackErr = false;
+bool trackErr = true;
 bool towErrPlus = false;
 bool towErrMinus = false;
 
@@ -166,7 +166,7 @@ int StPicoHFJetMaker::InitJets() {
 				TString hname=Form("hjetpTembArea_R0%.0lf",fR[r]*10);
 				mOutList->Add(new TH2D(hname,"jet pTemb vs area; A [-]; p_{T} [GeV/c]", 100, 0, 1, nptembbins, ptembminbin, ptembmaxbin));
 				TString htitle = "delta pT for BG corrections, using sp probe; p_{T}^{emb} [GeV/c]; #delta p_{T} [GeV/c]";
-				for (int centbin = 0; centbin < 9; centbin++) {
+				for (int centbin = 1; centbin < 8; centbin++) {
 				for(Int_t pTlcut = 0; pTlcut<npTlead; pTlcut++)
 					{
 						hname=Form("delta_pt_BG_sp_%i_R0%.0lf_centbin%i", pTlcut, fR[r]*10, centbin);
@@ -289,7 +289,7 @@ int StPicoHFJetMaker::InitJets() {
             hname = Form("hNF_pT_corr_R0%.0lf",fR[r]*10);
             mOutList->Add(new TH2D(hname, "jet neutral energy fraction vs jet pT corr", nptbins, ptminbin, ptmaxbin, 100, 0, 1));*/
 
-            for (int centbin = 0; centbin < 9; centbin++) {
+            for (int centbin = 1; centbin < 8; centbin++) {
 
                 hname = Form("hjetpT_R0%.0lf_centbin%i",fR[r]*10, centbin);
             mOutList->Add(new TH1D(hname, "jet p_{T}; p_{T} [GeV/c]", nptbins, 0, ptmaxbin));
@@ -321,16 +321,12 @@ int StPicoHFJetMaker::InitJets() {
             //mOutList->Add(new TH1D(hname, "Corrected full jet pT; p_{T} [GeV/c]", nptbins, ptminbin, ptmaxbin));
 
             		for(Int_t pTl = 0; pTl < npTlead; pTl++) {
-             /*   hname = Form("hpT_pTl%i_R0%.0lf_centbin%i",pTl,fR[r]*10,centbin);
+                hname = Form("hpT_pTl%i_R0%.0lf_centbin%i",pTl,fR[r]*10,centbin);
                 TString hdesc = Form("jet p_{T} for p_{T}lead>%i ; p_{T}^{corr} [GeV/c]",pTl);
-                mOutList->Add(new TH1D(hname, hdesc, nptbins, ptminbin, ptmaxbin));*/
+                mOutList->Add(new TH1D(hname, hdesc, nptbins, ptminbin, ptmaxbin));
 
                 hname = Form("hfpT_pTl%i_R0%.0lf_centbin%i",pTl,fR[r]*10,centbin);
                 TString hdesc = Form("full jet p_{T} for p_{T}lead>%i ; p_{T}^{corr} [GeV/c]",pTl);
-                mOutList->Add(new TH1D(hname, hdesc, nptbins, ptminbin, ptmaxbin));
-
-                hname = Form("hfpTuw_pTl%i_R0%.0lf_centbin%i",pTl,fR[r]*10,centbin);
-                hdesc = Form("full jet p_{T} for p_{T}lead>%i unweighted; p_{T}^{corr} [GeV/c]",pTl);
                 mOutList->Add(new TH1D(hname, hdesc, nptbins, ptminbin, ptmaxbin));
 
                 hname = Form("hfpTwEVT_pTl%i_R0%.0lf_centbin%i",pTl,fR[r]*10,centbin);
@@ -411,9 +407,12 @@ int StPicoHFJetMaker::MakeJets() {
 
     static_cast<TH1D*>(mOutList->FindObject("hEVTcentral"))->Fill(centrality, 1*WeightTotal);
 
+    cout<<"centrality: "<<centrality<<" weight: "<<weight<<" weightEVT: "<<weightEVT<<" WeightTotal: "<<WeightTotal<<endl;
 
-//    if (centrality == 0) centrality = 1; // merge 0-5% and 5-10% into 0-10%
-//    if (centrality == 8) centrality = 7; // merge 60-70% and 70-80% into 60-80%
+    if (centrality == 0) centrality = 1; // merge 0-5% and 5-10% into 0-10%
+    if (centrality == 8) centrality = 7; // merge 60-70% and 70-80% into 60-80%
+
+
 	static_cast<TH1D*>(mOutList->FindObject("hcent"))->Fill(centrality, weight);
 	//static_cast<TH2D*>(mOutList->FindObject("hrunIdcent"))->Fill(fRunNumber,centrality,weight); //not used
 
@@ -776,7 +775,6 @@ int StPicoHFJetMaker::MakeJets() {
 	                static_cast<TH2D*>(mOutList->FindObject(Form("hfnparticlesinjet_R0%.0lf",fR[i]*10)))->Fill(nparticles, pTlead);
 
 	                for(Int_t pTl = 0; pTl < npTlead; pTl++) {
-                     	    if(pTl < pTlead) {static_cast<TH1D*>(mOutList->FindObject(Form("hfpTuw_pTl%i_R0%.0lf_centbin%d",pTl,fR[i]*10, centrality)))->Fill(pTcorr_jet);}
                             if(pTl < pTlead) {static_cast<TH1D*>(mOutList->FindObject(Form("hfpT_pTl%i_R0%.0lf_centbin%d",pTl,fR[i]*10, centrality)))->Fill(pTcorr_jet, weight);}
                             if(pTl < pTlead) {static_cast<TH1D*>(mOutList->FindObject(Form("hfpTwEVT_pTl%i_R0%.0lf_centbin%d",pTl,fR[i]*10, centrality)))->Fill(pTcorr_jet, WeightTotal);}
 
