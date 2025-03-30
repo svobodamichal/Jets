@@ -243,7 +243,7 @@ void runPicoHFJetMaker(const Char_t *inputFile, const Char_t *outputFile="output
   stPicoHFJetMaker->setCutETmin(0.2);
   stPicoHFJetMaker->setAcuts(Acuts);
   stPicoHFJetMaker->setNJetsRemove(1);
-  stPicoHFJetMaker->setR_bg(0.3);
+  stPicoHFJetMaker->setR_bg(0.4);
 	stPicoHFJetMaker->setEmbPt(EmbPt);
 	
 	stPicoHFJetMaker->setEmbPythia(0); //0 = single particle, 1 = pythia6
