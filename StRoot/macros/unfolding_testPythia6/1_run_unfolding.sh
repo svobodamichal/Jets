@@ -154,7 +154,7 @@ export BININGCH
 #	for PTLEAD in `echo $PTLEADCUTS`
 #	do
 #		export PTLEAD
-	  root -l -b -q run_unfolding.C
+	  root -l -b -q run_unfolding.C 2>/dev/null
 #	done #pT threshold
 #done #prior
 done #bining
