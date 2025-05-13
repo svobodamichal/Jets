@@ -176,18 +176,19 @@ if(use2Dmeasured)
 }
 else
 {
-	//TH1D *htemp= (TH1D*)finput->Get(Form("hpT_pTl%.0lf_R0%.0lf",pTlead,R*10));
-	TH1D *htemp= (TH1D*)finput->Get(Form("hfpT_pTl%.0lf_R0%.0lf_%s",pTlead,R*10, centrality.Data())); //full jets
-	//TH1D *htemp= (TH1D*)finput->Get(Form("hsmeared")); //test only
+//	TH1D *htemp= (TH1D*)finput->Get(Form("hfpT_pTl%.0lf_R0%.0lf_%s",pTlead,R*10, centrality.Data())); //full jets
+	TH1D *hSignalSpectrum= (TH1D*)finput->Get(Form("hfpT_pTl%.0lf_R0%.0lf_%s",pTlead,R*10, centrality.Data())); //full jets
+
 }
 
 	//Double_t binWidth=htemp->GetBinWidth(1);
-	TH1D *hSignalSpectrum = new TH1D("hSignalSpectrum","measured data",newbins,pTbinArray); 
+//	TH1D *hSignalSpectrum = new TH1D("hSignalSpectrum","measured data",newbins,pTbinArray);
 	hSignalSpectrum->Sumw2();
 
 	
-	hSignalSpectrum = rebin_histogram(htemp, hSignalSpectrum, "hSignalSpectrum", COUNTS, COUNTS);
-	delete htemp;
+//	hSignalSpectrum = rebin_histogram(htemp, hSignalSpectrum, "hSignalSpectrum", COUNTS, COUNTS);
+
+//	delete htemp;
 
 /*	
 	
